@@ -1,0 +1,33 @@
+.signup-page-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.close-button-div{
+    position: absolute;
+    left: 30px;
+}
+
+.login-button-div{
+    position: absolute;
+    right: 30px;
+}
+
+.create-profile-container{
+    text-align: center;
+    width: 400px;
+}
+
+.field-one{
+    margin-bottom: 20px;
+}
+
+.input-field{
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-style: none;
+    background-color: rgb(207, 207, 207);
+}
