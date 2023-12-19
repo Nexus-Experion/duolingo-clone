@@ -221,16 +221,41 @@
   font-family: "feather-bold";
   src: url("../assets/fonts/feather-bold.woff2") format("woff");
 }
+
 @font-face {
   font-family: "din-round-bold";
   src: url("../assets/fonts/din-next-rounded-bold.woff2") format("woff");
 }
+
 @font-face {
   font-family: "din-round";
   src: url("../assets/fonts/din-next-rounded-regular.woff2") format("woff");
 }
 
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
+
+/* button animation in duolingo */
+.button-div {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  font-family: "din-round-bold";
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-radius: 16px;
+  /* background-color: rgb(var(--color-snow)); */
+  /* color: rgb(var(--color-eclipse)); */
+  /* box-shadow: 0 4px 0 rgb(var(--color-snow-always-light), 0.6); */
+  transition: box-shadow translate 0.2s ease;
+}
+
+.clicked {
+  box-shadow: 0 !important;
+  translate: 0 3px;
+}
+
+/* button animation in duolingo */
