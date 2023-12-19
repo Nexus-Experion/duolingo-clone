@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/landingpage.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/landingpage.js"></script>
     <title>Duolingo Clone</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header class="landing-header">
+      <!-- //navbar in landing page -->
+      <div class="header-navbar">
+        <nav class="landing-navbar">
+          <a>
+            <img
+              alt="Duolingo"
+              class="landing-header-logo"
+              src="../assets/svg/duolingo_landing_header_logo.svg"
+            />
+          </a>
+          <div class="select-site-language">
+            <button class="site-language-button">
+              <span id="site-language"> SITE LANGUAGE: ENGLISH </span>
+              <img
+                alt=" "
+                class="site-language-select-dropdown"
+                src="../assets/svg/site-language-select-dropdown.svg"
+              />
+            </button>
+          </div>
+        </nav>
+      </div>
+      <!-- content below navbar -->
+      <div class="header-logging">
+        <div class="left-logging-header">
+          <span id="left-logging-header-video">
+            <video autoplay muted loop id="myVideo">
+              <source src="../assets/videos/video.mp4" type="video/mp4" />
+            </video>
+          </span>
+        </div>
+        <div class="right-logging-header">
+          <h1>The free, fun, and effective way to learn a language!</h1>
+          <div class="right-logging-button-section">
+            <div class="get-started-btn-div">
+              <button
+                class="logging-get-started-button button-div"
+                onclick="getStartedButtonAnimation();"
+                id="get-started-button"
+              >
+                <span>GET STARTED</span>
+              </button>
+            </div>
+            <div class="already-have-account-btn-div">
+              <button
+                class="logging-already-have-account-button button-div"
+                onclick="alreadyAccountButtonAnimation();"
+                id="already-have-account-button"
+              >
+                <span>I ALREADY HAVE AN ACCOUNT</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- scrollable navbar -->
+      <div class="scrollable-navabar-header">
+        <nav>
+          <svg></svg>
+          <div></div>
+          <svg></svg>
+        </nav>
+      </div>
+    </header>
+  </body>
 </html>
