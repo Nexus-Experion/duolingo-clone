@@ -217,6 +217,19 @@
   --color-yir-page5-shadow: 255, 183, 80;
 }
 
+@font-face {
+  font-family: "feather-bold";
+  src: url("../assets/fonts/feather-bold.woff2") format("woff");
+}
+@font-face {
+  font-family: "din-round-bold";
+  src: url("../assets/fonts/din-next-rounded-bold.woff2") format("woff");
+}
+@font-face {
+  font-family: "din-round";
+  src: url("../assets/fonts/din-next-rounded-regular.woff2") format("woff");
+}
+
 body{
     margin: 0;
     padding: 0;
