@@ -1,8 +1,13 @@
+body{
+    font-family: 'din-round';
+}
+
 .signup-page-container{
     align-items: center;
     display: flex;
     justify-content: center;
-   position: relative;
+    position: relative;
+    margin-top: 10px;
 }
 
 .close-button-div {
@@ -18,23 +23,31 @@
     top: 30px;
 }
 
+.login-button{
+    background-color: var(--__internal__background-color);
+    color: rgb(var(--color-macaw));
+    border: 2px solid rgb(var(--color-swan));
+}
+
 .signup-section-main {
     margin-top: 0;
     width: 375px;
     position: relative;
     text-align: center;
+    margin-top: 20px;
 }
 
 .create-profile-heading{
     margin: 10px 0 15px;
+    font-size: 26px;
+    font-weight: bolder;
 }
 
-.field-one{
-    margin-top: 8px;
-    width: 100%;
+.input-fields-div{
     display: inline-flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
+    width: 100%;
 }
 
 .input-field{
@@ -45,12 +58,35 @@
     box-sizing: border-box;
     color: var(--web-ui_input-color,rgb(var(--color-eel)));
     caret-color: rgb(var(--color-macaw));
-    padding: 10px;
+    padding: 14px;
+    font-size: 18px;
+}
+
+.input-field:focus {
+    border: 2px solid #00dcfe;
+}
+
+.error-message{
+    text-align: start;
+    color: rgb(var(--color-fire-ant));
+    display: flex;
+}
+
+.field-one{
+    margin-top: 8px;
     width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .age-privacy-div{
     text-align: start;
+}
+
+.age-privacy-span{
+    font-weight: 100;
+    color: rgb(var(--color-wolf));
 }
 
 .age-privacy-div a{
@@ -63,10 +99,13 @@
     width: 100%;
     background-color: var(--__internal__background-color);
     border-radius: 18px;
-    padding: 10px;
+    border-style: none;
+    padding: 14px;
     justify-content: center;
     background-color: rgb(var(--color-macaw));
     color: white;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .terms-privacy-container{
@@ -80,14 +119,17 @@
 }
 
 .terms-privacy{
-    margin-bottom: 20px 
+    margin-bottom: 20px;
 }
 
 .terms-privacy a{
-    color: rgb(var(--color-macaw));
+    color: rgb(var(--color-hare));
+    font-weight: 700;
     text-decoration: none;
 }
 
-hr{
-    margin-top: 30px;
+.split-line{
+    margin-top: 50px;
+    background: rgb(var(--color-swan));
+    height: 2px;
 }
