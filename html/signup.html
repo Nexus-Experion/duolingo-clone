@@ -4,6 +4,7 @@
     <head>
         <title>Signup Page</title>
         <link rel="stylesheet" href="../css/signup.css">
+        <link rel="stylesheet" href="../css/main.css">
     </head>
 
     <body>
@@ -17,11 +18,17 @@
                 </div>
                 <form class="signup-section-main">
                     <div class="signup-information-div">
-                        <h1>Create your profile</h1>
+                        <h1 class="create-profile-heading">Create your profile</h1>
                         <div class="input-fields-div">
-                            <div class="field-one">
+                            <div class="field-one ">
                                 <input class="input-field" type="text" placeholder="Age">
-                                <p>Providing your age ensures you get the right Duolingo experience. For more details, please visit our Privacy Policy.</p>
+                                <div class="age-privacy-div">
+                                    <span class="age-privacy-span">
+                                        <span>
+                                            Providing your age ensures you get the right Duolingo experience. For more details, please visit our <a href="Privacy Policy." class="privacy-policy-link"><b>Privacy Policy</b></a>
+                                        </span>
+                                    </span>
+                                </div>
                             </div>
                             <div class="field-one">
                                 <input class="input-field" type="text" placeholder="Name (optional)">
@@ -34,19 +41,22 @@
                             </div>
                         </div>
 
-                        <div class="create-button-div">
-                            <button class="create-button">Create Account</button>
-                        </div>
+                        <button class="create-button">Create Account</button>
+                    </div> 
 
-                        <div class="terms-container">
-                            <div class="terms-one">
-                                By signing in to Duolingo, you agree to our Terms and Privacy Policy.
-                            </div>
-                            <div class="terms-two">
-                                This site is protected by reCAPTCHA Enterprise and the Google Privacy Policy and Terms of Service apply.
-                            </div>
+                    <hr>
+                    
+                    <div class="terms-privacy-container">
+                        <div class="terms-privacy">
+                            <span>By signing in to Duolingo, you agree to our <a href=""><b>Terms</b></a> and 
+                                <a href=""><b>Privacy Policy</b></a>.</span>
                         </div>
-                    </div>  
+                        <div class="terms-privacy">
+                            <span>This site is protected by reCAPTCHA Enterprise and the Google <a href="">
+                                <b>Privacy Policy</b></a> and <a href=""><b>Terms of Service</b></a> apply.</span>
+                        </div>
+                    </div>
+ 
                 </form>
             </div>
         </div>

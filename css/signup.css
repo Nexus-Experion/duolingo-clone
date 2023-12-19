@@ -1,33 +1,93 @@
 .signup-page-container{
+    align-items: center;
     display: flex;
     justify-content: center;
-    position: relative;
+   position: relative;
 }
 
-.close-button-div{
+.close-button-div {
     position: absolute;
     left: 30px;
+    top: 30px;
+    right: auto;
 }
 
-.login-button-div{
+.login-button-div {
     position: absolute;
     right: 30px;
+    top: 30px;
 }
 
-.create-profile-container{
+.signup-section-main {
+    margin-top: 0;
+    width: 375px;
+    position: relative;
     text-align: center;
-    width: 400px;
+}
+
+.create-profile-heading{
+    margin: 10px 0 15px;
 }
 
 .field-one{
-    margin-bottom: 20px;
+    margin-top: 8px;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .input-field{
-    border-radius: 10px;
-    width: 100%;
+    background: rgb(var(--color-polar));
+    border: 2px solid rgb(var(--color-swan));
+    border-radius: 12px;
+    display: flex;
     box-sizing: border-box;
+    color: var(--web-ui_input-color,rgb(var(--color-eel)));
+    caret-color: rgb(var(--color-macaw));
     padding: 10px;
-    border-style: none;
-    background-color: rgb(207, 207, 207);
+    width: 100%;
+}
+
+.age-privacy-div{
+    text-align: start;
+}
+
+.age-privacy-div a{
+    color: rgb(var(--color-macaw));
+    text-decoration: none;
+}
+
+.create-button{
+    margin-top: 20px;
+    width: 100%;
+    background-color: var(--__internal__background-color);
+    border-radius: 18px;
+    padding: 10px;
+    justify-content: center;
+    background-color: rgb(var(--color-macaw));
+    color: white;
+}
+
+.terms-privacy-container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 40px;
+    color: rgb(var(--color-hare));
+    font-size: 14px;
+}
+
+.terms-privacy{
+    margin-bottom: 20px 
+}
+
+.terms-privacy a{
+    color: rgb(var(--color-macaw));
+    text-decoration: none;
+}
+
+hr{
+    margin-top: 30px;
 }
