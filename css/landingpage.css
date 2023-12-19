@@ -17,6 +17,7 @@
 
     .select-site-language {
         display: flex;
+        position: relative;
     }
 
     .landing-navbar {
@@ -40,11 +41,54 @@
     }
 }
 
+.hover-site-language {
+    font-family: 'din-round-bold';
+    border: 1px solid #c5c3c3;
+    margin-top: 10px;
+    margin-left: -180px;
+    width: 360px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.select-site-language:hover span {
+    color: #c5c3c3;
+}
+
+.select-site-language:hover .hover-site-language {
+    display: grid;
+}
+
+.site-language-unordered-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.site-language-list-single {
+    align-items: start;
+    color: rgb(var(--color-wolf));
+    display: flex;
+    font-size: 15px;
+    font-weight: 500;
+    height: 42px;
+    padding: 0 20px;
+    white-space: nowrap;
+}
+
 .landing-navbar {
     align-items: center;
     display: flex;
     height: 70px;
     padding: 0 15px;
+    border-bottom: 1px #1cb0f6;
 }
 
 .header-navbar {
@@ -116,6 +160,22 @@
         flex-direction: column;
 
     }
+}
+
+.country-name-flag-language img {
+    padding-right: 10px;
+}
+
+.country-name-flag-language {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.country-flag-language-selection {
+    /* padding-top: 10px; */
+    height: 19.31px;
+    width: 24px;
 }
 
 .header-logging {
