@@ -1,0 +1,111 @@
+.mainDiv{
+
+
+}
+.parentDiv{
+    padding: 30px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+
+    /* justify-content: space-between; */
+}
+.closeButton{
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+.imgPic{
+}
+.signUp{
+   
+   position: absolute;
+   right: 30px;
+   top: 30px;
+}
+.buttonSign{
+    height: 50px;
+    padding: 16px;
+    border-radius: 16px;
+    border:2px solid rgb(var(--color-swan));
+    color: rgb(var(--color-macaw));
+    background-color:rgb(var(--color-snow));
+    box-shadow: 0 2px 0 rgb(var(--color-swan));
+}
+.buttonSign:hover {
+    filter:brightness(0.9);
+}
+.form{
+    width:375px;
+    text-align: center;
+}
+.inputEmail{
+    /* border: none; */
+    border: 2px solid rgb(var(--color-swan));
+    width: 100%;
+    padding: 20px;
+    height: 28px;
+    background: rgb(var(--color-polar));
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+.inputEmailDiv{
+    margin-top: 8px;
+    width: 100%;
+    /* border: 2px solid rgb(var(--color-swan)); */
+    /* border-radius: 12px; */
+    background: rgb(var(--color-polar));
+
+}
+
+.passwordDiv{
+    width: 100%;
+}
+.inputPassword{
+    width: 100%;
+}
+.emailPass{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.inputPassword{
+    border: none;
+    /* border: 2px solid rgb(var(--color-swan)); */
+    width: 100%;
+    padding: 20px;
+    height: 28px;
+    background: rgb(var(--color-polar));
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+.passwordDiv{
+    margin-top: 8px;
+    width: 100%;
+    border: 2px solid rgb(var(--color-swan));
+    border-radius: 12px;
+    background: rgb(var(--color-polar));
+    display: flex;
+    overflow: hidden;
+
+}
+.forgot{
+    align-self:center;
+    color: rgb(var(--color-hare));
+    letter-spacing: .8px;
+    margin-left: 2px;
+    margin-right: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.buttonLogIn{
+    height: 50px;
+    padding: 16px;
+    width: 100%;
+    border-radius: 16px;
+    border:2px solid rgb(var(--color-swan));
+    color: rgb(var(--color-macaw));
+    background-color:rgb(var(--color-snow));
+    box-shadow: 0 2px 0 rgb(var(--color-swan));
+}
