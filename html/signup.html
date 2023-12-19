@@ -14,8 +14,8 @@
                 <div class="close-button-div">
                     <img src="../assets/svg/close-button.svg" alt="close button">
                 </div>
-                <div class="login-button-div">
-                    <button class="login-button">LOGIN</button>
+                <div class="login-button-container" id="login-button-container">
+                    <button class="login-button button-div">LOGIN</button>
                 </div>
                 <form class="signup-section-main">
                     <div class="signup-information-div">
@@ -44,7 +44,9 @@
                             </div>
                         </div>
 
-                        <button class="create-button" onclick="validate(event)">CREATE ACCOUNT</button>
+                        <div class="create-account-button-container">
+                            <button class="create-account-button button-div" id="create-account-button" onclick="createAccountButtonAnimation(), validate(event)">CREATE ACCOUNT</button>
+                        </div>
                     </div> 
 
                     <div class="split-line"></div>

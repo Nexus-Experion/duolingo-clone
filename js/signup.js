@@ -1,4 +1,4 @@
-validate = (event) => {
+const validate = (event) => {
     event.preventDefault()
     var ageInput = document.getElementById('age-input');
     var emailInput = document.getElementById('email-input');
@@ -39,4 +39,9 @@ validate = (event) => {
         passwordErrorMessage.innerHTML = '';
         passwordInput.style.border = ''; // Reset to the default border color
     }
+}
+
+const createAccountButtonAnimation = () => {
+    document.getElementById("create-account-button").classList.toggle('clicked');
+    setTimeout(() => document.getElementById("create-account-button").classList.toggle('clicked'), 300)
 }

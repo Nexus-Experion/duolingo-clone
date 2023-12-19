@@ -17,7 +17,7 @@ body{
     right: auto;
 }
 
-.login-button-div {
+.login-button-container {
     position: absolute;
     right: 30px;
     top: 30px;
@@ -94,18 +94,23 @@ body{
     text-decoration: none;
 }
 
-.create-button{
+.create-account-button-container{
+    box-shadow: 0 4px 0px rgb( 24,153,214 );
+    border-radius: 18px;
+}
+
+.create-account-button{
     margin-top: 20px;
     width: 100%;
-    background-color: var(--__internal__background-color);
-    border-radius: 18px;
-    border-style: none;
     padding: 14px;
-    justify-content: center;
     background-color: rgb(var(--color-macaw));
     color: white;
-    font-size: 14px;
-    font-weight: bold;
+    border-style: none;
+}
+
+.clicked {
+    box-shadow: 0 !important;
+    translate: 0 3px;
 }
 
 .terms-privacy-container{
