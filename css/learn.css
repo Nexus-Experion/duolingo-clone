@@ -66,21 +66,20 @@
   margin-right: 20px;
 }
 
-.icon-in-button img{
+.icon-in-button img {
   width: 32px;
   height: 32px;
 }
-.profile{
+.profile {
   border-radius: 50%;
 }
-.content-container{
+.content-container {
   padding: 24px 24px 24px;
   display: flex;
   gap: 8px;
   flex-direction: row-reverse;
-
 }
-.right-sidebar{
+.right-sidebar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -89,7 +88,7 @@
   min-height: 100vh;
   width: 368px;
 }
-.right-sidebar-header{
+.right-sidebar-header {
   height: 44px;
   display: flex;
   justify-content: space-between;
@@ -97,24 +96,24 @@
   z-index: 2;
   gap: 10px;
 }
-.heart-text{
+.heart-text {
   color: rgb(var(--color-cardinal));
 }
-.gem-text{
-  color:rgb(var(--color-macaw));
+.gem-text {
+  color: rgb(var(--color-macaw));
 }
-.fire-text{
-  color:rgb(var(--color-fox));
+.fire-text {
+  color: rgb(var(--color-fox));
 }
-.try-super-box{
+.try-super-box {
   background: rgb(var(--color-snow));
   border: 2px solid rgb(var(--color-swan));
   border-radius: 16px;
   padding: 18px;
   position: relative;
-  margin-bottom:12px;
+  margin-bottom: 12px;
 }
-.try-super-box h2{
+.try-super-box h2 {
   color: rgb(var(--color-eel));
   margin: 8px 0;
   font-family: din-round-bold;
@@ -122,7 +121,7 @@
   line-height: 21px;
 }
 
-.try-super-box .description{
+.try-super-box .description {
   margin: 8px 0 24px;
   width: calc(100% - 83px);
   color: rgb(var(--color-wolf));
@@ -131,7 +130,7 @@
   line-height: 25px;
 }
 
-.try-super-box button{
+.try-super-box button {
   width: 100%;
   position: relative;
   width: 100%;
@@ -140,19 +139,19 @@
   font-family: "din-round-bold";
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  border:1px solid rgb(var(--color-nebula));
+  border: 1px solid rgb(var(--color-nebula));
   border-radius: 16px;
   background-color: rgb(var(--color-cosmos));
-  color : rgb(var(--color-snow-always-light));
-  box-shadow:rgb(var(--color-nebula)) 0 4px 0;
+  color: rgb(var(--color-snow-always-light));
+  box-shadow: rgb(var(--color-nebula)) 0 4px 0;
   transition: box-shadow translate 0.2s ease;
 }
 
-#try-super-image-one{
+#try-super-image-one {
   width: 78px;
 }
 
-#try-super-image-two{
+#try-super-image-two {
   position: absolute;
   right: 24px;
   top: 24px;
@@ -163,29 +162,29 @@
   margin-right: 5px;
 }
 
-.league-header-with-link{
+.league-header-with-link {
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
 }
-.league-header-with-link img{
+.league-header-with-link img {
   margin-right: 40px;
-  height:63px;
-  margin-top:8px;
+  height: 63px;
+  margin-top: 8px;
 }
 
-.league-text-container .description{
+.league-text-container .description {
   width: calc(100% - 10px);
-  margin:0
+  margin: 0;
 }
-.league-text-container h2{
+.league-text-container h2 {
   font-size: 17px;
   letter-spacing: 0.8px;
 }
 
-.league-header-with-link a{
+.league-header-with-link a {
   text-decoration: none;
-  color:rgb(var(--color-macaw));
+  color: rgb(var(--color-macaw));
   font-size: 15px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
@@ -198,24 +197,56 @@
 
 /* Here starts the middle section specific css  */
 
-.scrollable-lesson-div{
+.scrollable-lesson-div {
   width: 95%;
   padding-right: 5%;
 }
-.section-name-header{
+.section-name-header {
   display: flex;
   justify-content: center;
   position: relative;
   align-items: center;
-  border-bottom:  2px solid rgb(var(--color-swan));
+  border-bottom: 2px solid rgb(var(--color-swan));
 }
-.section-name-header a{
+.section-name-header a {
   position: absolute;
-  left:0;
+  left: 0;
 }
-.section-name-header h2{
+.section-name-header h2 {
   color: rgb(var(--color-hare));
   font-size: 19px;
   font-family: din-round-bold;
   line-height: 26.6px;
+}
+.unit{
+  background-size: 100% 100%;
+  border-radius: 13px;
+  padding: 22px 16px;
+  row-gap: 6px;
+  align-items: center;
+  column-gap: 16px;
+  display: grid;
+  grid-auto-columns: 1fr min-content;
+  overflow: hidden;
+  position: relative;
+}
+.unit-colorful{
+  background: var(--shine-background-color, var(--path-unit-background-color));
+  color: var(--path-unit-foreground-color);
+}
+.unit-unfinished{
+  background:rgb(var( --color-peacock));
+  color: rgb(var( --color-snow));
+}
+.unit h1{
+  font-family: din-round-bold;
+  margin: 0px;
+}
+.unit .unit-description{
+  font-family: din-round;
+  font-size: 19px;
+}
+
+section{
+  margin-top: 14px;
 }
