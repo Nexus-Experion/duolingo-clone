@@ -2,6 +2,9 @@
 
 
 }
+body{
+    font-family: 'din-round';
+}
 .parentDiv{
     padding: 30px;
     display: flex;
@@ -24,13 +27,19 @@
    top: 30px;
 }
 .buttonSign{
-    height: 50px;
-    padding: 16px;
+    padding: 15px;
+    justify-content: center;
+    letter-spacing: 0.8px;
     border-radius: 16px;
     border:2px solid rgb(var(--color-swan));
     color: rgb(var(--color-macaw));
     background-color:rgb(var(--color-snow));
     box-shadow: 0 2px 0 rgb(var(--color-swan));
+    font-family:  'din-round-bold';
+    font-size: 15pxs;
+    text-transform: uppercase;
+    align-items: center;
+    box-sizing: border-box;
 }
 .buttonSign:hover {
     filter:brightness(0.9);
@@ -47,8 +56,11 @@
     height: 28px;
     background: rgb(var(--color-polar));
     border-radius: 12px;
+    font-size: 20px;
+    font-family: 'din-round';
     box-sizing: border-box;
 }
+
 .inputEmailDiv{
     margin-top: 8px;
     width: 100%;
@@ -78,6 +90,8 @@
     height: 28px;
     background: rgb(var(--color-polar));
     border-radius: 12px;
+    font-size: 20px;
+    font-family: 'din-round';
     box-sizing: border-box;
 }
 .passwordDiv{
@@ -86,7 +100,9 @@
     border: 2px solid rgb(var(--color-swan));
     border-radius: 12px;
     background: rgb(var(--color-polar));
+    font-family: 'din-round';
     display: flex;
+
     overflow: hidden;
 
 }
@@ -96,16 +112,63 @@
     letter-spacing: .8px;
     margin-left: 2px;
     margin-right: 14px;
+    font-family: 'din-round-bold';
     text-decoration: none;
     text-transform: uppercase;
 }
 .buttonLogIn{
+    margin-top: 15px;
     height: 50px;
     padding: 16px;
     width: 100%;
+    font-size: 15px;
+    font-family: 'din-round-bold';
     border-radius: 16px;
-    border:2px solid rgb(var(--color-swan));
-    color: rgb(var(--color-macaw));
-    background-color:rgb(var(--color-snow));
-    box-shadow: 0 2px 0 rgb(var(--color-swan));
+    border:2px solid rgb(var(--color-macaw));
+    color: rgb(var(--color-snow));
+    background-color:rgb(var(--color-macaw));
+    box-shadow: 0 4px 0 rgb(var(--color-whale));
+    letter-spacing: 0.8px;
+}
+.paragraph{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 40px;
+}
+.para{
+    color: rgb(var(--color-hare));
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+.logIn{
+    font-size: 26px;
+    margin: 10px 0 15px;
+    font-family: din-round,sans-serif;
+}
+.signUpSpan{
+    font-family: din-round,sans-serif;
+    font-size: 15px;
+    width: fit-content;
+}
+.para a{
+    text-decoration: none;
+
+    color: rgb(var(--color-hare));
+}
+#errorEmail{
+    display: flex;
+    text-align: start;
+    color: rgb(var(--color-fire-ant));
+}
+#errorPassword{
+    display: flex;
+    text-align: start;
+    color: rgb(var(--color-fire-ant));
+}
+.form{
+    position: absolute;
+    margin-top: 40px;
 }
