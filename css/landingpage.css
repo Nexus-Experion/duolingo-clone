@@ -17,6 +17,7 @@
 
     .select-site-language {
         display: flex;
+        position: relative;
     }
 
     .landing-navbar {
@@ -40,11 +41,63 @@
     }
 }
 
+.hover-site-language {
+    font-family: 'din-round-bold';
+    border: 1px solid #c5c3c3;
+    /* margin-top: 3px; */
+    margin-left: -170px;
+    width: 360px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.select-site-language:hover span {
+    color: #c5c3c3;
+}
+
+.select-site-language:hover .hover-site-language {
+    display: grid;
+}
+
+.site-language-unordered-list {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+}
+
+.site-language-list-single {
+
+    align-items: center;
+    color: rgb(var(--color-wolf));
+    display: flex;
+    font-size: 15px;
+    font-weight: 500;
+    height: 42px;
+    padding: 0 20px;
+    white-space: nowrap;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.site-language-list-single:hover {
+    background-color: rgb(207, 207, 207);
+}
+
 .landing-navbar {
     align-items: center;
     display: flex;
     height: 70px;
     padding: 0 15px;
+    border-bottom: 1px #1cb0f6;
 }
 
 .header-navbar {
@@ -116,6 +169,24 @@
         flex-direction: column;
 
     }
+}
+
+.country-name-flag-language img {
+    margin-right: 10px;
+}
+
+.country-name-flag-language {
+    align-items: center;
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.country-flag-language-selection {
+    border: 2px solid white;
+    border-radius: 6px;
+    height: 19.31px;
+    width: 24px;
 }
 
 .header-logging {
