@@ -6,6 +6,7 @@ const getStartedButtonAnimation = () => {
 const getSignInButton = () => {
     document.getElementById("buttonSignButton").classList.toggle('clicked');
     setTimeout(() => document.getElementById("buttonSignButton").classList.toggle('clicked'), 300)
+    window.location.href="/html/signup.html"
 }
 
 const validateEntry = (event) =>{

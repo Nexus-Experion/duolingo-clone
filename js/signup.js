@@ -49,4 +49,5 @@ const createAccountButtonAnimation = () => {
 const loginButtonAnimation = () => {
     document.getElementById("login-button").classList.toggle('clicked');
     setTimeout(() => document.getElementById("login-button").classList.toggle('clicked'), 300)
+    window.location.href="/html/loginpage.html";
 }
