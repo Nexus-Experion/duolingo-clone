@@ -21,12 +21,20 @@ body{
     position: absolute;
     right: 30px;
     top: 30px;
+    box-shadow: 0 4px 0px #e5e5e5;
+    border-radius: 18px;
 }
 
 .login-button{
-    background-color: var(--__internal__background-color);
+    background-color: #ffffff;
     color: rgb(var(--color-macaw));
     border: 2px solid rgb(var(--color-swan));
+    padding: 14px;
+    cursor: pointer;
+}
+
+.login-button:hover{
+    filter: brightness(0.9);
 }
 
 .signup-section-main {
@@ -106,6 +114,11 @@ body{
     background-color: rgb(var(--color-macaw));
     color: white;
     border-style: none;
+    cursor: pointer;
+}
+
+.create-account-button:hover{
+    filter: brightness(1.1);
 }
 
 .clicked {
