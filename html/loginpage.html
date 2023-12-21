@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/loginpage.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/loginpage.js"></script>
+  </head>
+  <body>
+    <div class="mainDiv">
+      <div class="parentDiv">
+        <div class="closeButton">
+          <a href="../index.html">
+            <img src="../assets/svg/close-button.svg" class="imgPic"
+          /></a>
+        </div>
+        <div class="form">
+          <form>
+            <div><h1 class="logIn">Log in</h1></div>
+            <div class="emailPass">
+              <div class="inputEmailDiv">
+                <input
+                  data-test="email-input"
+                  onclick="borderColorChange(event)"
+                  autocomplete="email"
+                  placeholder="Email or username"
+                  type="text"
+                  value=""
+                  id="emailInput"
+                  class="inputEmail"
+                />
+                <div id="errorEmail"></div>
+              </div>
+
+              <div>
+                <div class="passwordDiv" id="divPassword">
+                  <input
+                    data-test="password-input"
+                    autocomplete="current-password"
+                    placeholder="Password"
+                    class="inputPassword"
+                    id="passInput"
+                    type="password"
+                    value=""
+                  />
+                  <a
+                    class="forgot"
+                    data-test="forgot-password"
+                    href="/forgot_password"
+                    >Forgot?</a
+                  >
+                </div>
+                <div id="errorPassword"></div>
+              </div>
+            </div>
+            <div>
+              <button
+                class="buttonLogIn"
+                id="buttonLogInButton"
+                data-test="sign-up-button"
+                onclick="getStartedButtonAnimation(),validateEntry(event)"
+              >
+                LOG IN
+              </button>
+            </div>
+
+            <div class="paragraph">
+              <div class="para">
+                <span
+                  >By signing in to Duolingo, you agree to our
+                  <a href="https://www.duolingo.com/terms?wantsPlainInfo=1">
+                    <b>Terms</b>
+                  </a>
+                  and
+                  <a href="https://www.duolingo.com/privacy?wantsPlainInfo=1">
+                    <b>Privacy Policy</b>
+                  </a>
+                  .
+                </span>
+              </div>
+              <div class="para">
+                <span
+                  >This site is protected by reCAPTCHA Enterprise and the Google
+                  <a href="https://policies.google.com/privacy"
+                    ><b>Privacy Policy</b></a
+                  >
+                  and
+                  <a href="https://policies.google.com/terms"
+                    ><b>Terms of Service</b></a
+                  >
+                  apply.
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="signUp">
+          <button
+            class="buttonSign"
+            id="buttonSignButton"
+            data-test="sign-up-button"
+            onclick="getSignInButton()"
+          >
+            Sign up
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

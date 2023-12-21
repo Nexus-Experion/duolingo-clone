@@ -218,7 +218,7 @@
   font-family: din-round-bold;
   line-height: 26.6px;
 }
-.unit{
+.unit {
   background-size: 100% 100%;
   border-radius: 13px;
   padding: 22px 16px;
@@ -229,24 +229,188 @@
   grid-auto-columns: 1fr min-content;
   overflow: hidden;
   position: relative;
+  z-index: -1;
+  margin-bottom: 80px;
 }
-.unit-colorful{
+.unit-colorful {
   background: var(--shine-background-color, var(--path-unit-background-color));
   color: var(--path-unit-foreground-color);
 }
-.unit-unfinished{
-  background:rgb(var( --color-peacock));
-  color: rgb(var( --color-snow));
+.unit-unfinished {
+  background: rgb(var(--color-peacock));
+  color: rgb(var(--color-snow));
 }
-.unit h1{
+.unit h1 {
   font-family: din-round-bold;
   margin: 0px;
 }
-.unit .unit-description{
+.unit .unit-description {
   font-family: din-round;
   font-size: 19px;
 }
 
-section{
+section {
   margin-top: 14px;
+}
+.alignment-div{
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  position: relative;
+}
+.circle_box{
+  position: relative;
+  width: 70px;
+}
+.lesson-button {
+  height: 65px;
+  width: 70px;
+  border: none;
+  border-radius: 50%/50%;
+  z-index: 0;
+  background: rgb(var(--color-owl));
+  box-shadow:  0 5px 0 rgb(var(--color-black),.2),0 5px 0 rgb(var(--color-owl));
+}
+.lesson-button:hover{
+  background: rgb(var(--color-owl),0.8);
+  cursor:pointer;
+}
+.star-image {
+  height: 34px;
+  left: 14px;
+  position: absolute;
+  top: 11.5px;
+  width: 42px;
+}
+circle-progress{
+  position: absolute;
+  scale:.95;
+  bottom:-35%;
+  right:-20%;
+  z-index: 0;
+}
+
+circle-progress::part(value) {
+  stroke-linecap: round;
+  stroke:rgb(var(--color-owl));
+}
+
+.floating-start-box{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: -50px;
+  left:-5px;
+  animation: upAndDown 2s ease-in-out infinite;
+}
+.floating-start-box-bottom{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left:50%;
+  bottom:-300%;
+  transform: translateX(-50%);
+}
+.floating-start-box .text{
+  background-color: rgb(var(--color-owl));
+  color: rgb(var(--color-swan));
+  font-family: din-round-bold;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  line-height: 1;
+  padding: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: 2px solid rgb(var(--color-swan));
+  border-radius: 10px;
+}
+.triangle{
+   width: 8px;
+   height: 8px;
+   background-color: rgb(var(--color-owl));
+   color: rgb(var(--color-snow-always-light));
+   border-bottom: 2px solid rgb(var(--color-swan));
+   border-right: 2px solid rgb(var(--color-swan));
+   transform: rotate(45deg) translateX(-4px) translateY(-4px);
+}
+.triangle-top{
+  width: 16px;
+  height: 16px;
+  background-color: rgb(var(--color-owl));
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+.floating-start-box-bottom .text-container{
+  background-color: rgb(var(--color-owl));
+  color: rgb(var(--color-swan));
+  font-family: din-round-bold;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  width:300px;
+  line-height: 1;
+  padding: 12px;
+  display: inline-block;
+  z-index: 2;
+  text-align: left;
+  white-space: nowrap;
+  border-radius: 10px;
+}
+.floating-start-box-bottom .text-container h1{
+  line-height: 26.6px;
+  font-size: 19px;
+  margin: 0;
+}
+.floating-start-box-bottom .text-container p{
+  font-size: 17px;
+  line-height: 26.6px;
+  font-family: din-round;
+  margin: 0;
+}
+.floating-start-box-bottom .text-container button{
+  padding:0 16px;
+  font-size: 15px;
+  height:50px;
+  margin-top: 16px;
+  margin-bottom:8px;
+  font-family: "din-round-bold";
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border: none;
+  width: 100%;
+  color: rgb(var(--color-owl));
+  background-color: rgb(var(--color-snow));
+  border-radius: 16px;
+  box-shadow: 0 4px 0 rgb(var(--color-snow),.6);
+
+}
+.hidden{
+  display: none;
+}
+.locked .text-container{
+  background-color: rgb(var(--color-polar));
+  color: rgb(var(--color-hare));
+  border: 2px solid rgb(var(--color-swan));
+}
+
+.locked .triangle-top{
+  background-color: rgb(var(--color-polar));
+  border-top: 2px solid rgb(var(--color-swan));
+  border-left:2px solid rgb(var(--color-swan));
+  z-index: 3;
+}
+.locked .text-container button{
+  background-color: rgb(var(--color-swan));
+  color: rgb(var(--color-hare));
+}
+@keyframes upAndDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
