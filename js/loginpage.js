@@ -6,7 +6,7 @@ const getStartedButtonAnimation = () => {
 const getSignInButton = () => {
     document.getElementById("buttonSignButton").classList.toggle('clicked');
     setTimeout(() => document.getElementById("buttonSignButton").classList.toggle('clicked'), 300)
-    window.location.href="/html/signup.html"
+    window.location.href="./signup.html"
 }
 
 const validateEntry = (event) =>{
@@ -38,7 +38,9 @@ const validateEntry = (event) =>{
         errorPassword.innerHTML = '';
         divPassword.style.border = ''; // Reset to the default border color
     }
-
+    if(emailInput.value && passwordInput.value){
+        window.location.href="./learn.html"
+    }
 }
 var emailInput = document.getElementById('emailInput');
 const borderColorChange = (event) =>{

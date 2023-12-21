@@ -1,7 +1,4 @@
 :root {
-  --viewport-height: 100dvh;
-  --web-ui_button-border-radius: 16px;
-  --rtl-sign: 1;
   --color-snow: 255, 255, 255;
   --color-snow-always-light: 255, 255, 255;
   --color-snow-always-dark: 19, 31, 36;

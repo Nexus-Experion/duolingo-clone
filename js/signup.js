@@ -39,6 +39,10 @@ const validate = (event) => {
         passwordErrorMessage.innerHTML = '';
         passwordInput.style.border = ''; // Reset to the default border color
     }
+
+    if(ageInput.value && emailInput.value && passwordInput.value){
+        window.location.href="./learn.html"
+    }
 }
 
 const createAccountButtonAnimation = () => {
