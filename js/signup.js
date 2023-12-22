@@ -39,10 +39,6 @@ const validate = (event) => {
         passwordErrorMessage.innerHTML = '';
         passwordInput.style.border = ''; // Reset to the default border color
     }
-
-    if(ageInput.value && emailInput.value && passwordInput.value){
-        window.location.href="./learn.html"
-    }
 }
 
 const createAccountButtonAnimation = () => {
@@ -55,3 +51,4 @@ const loginButtonAnimation = () => {
     setTimeout(() => document.getElementById("login-button").classList.toggle('clicked'), 300)
     window.location.href="/html/loginpage.html";
 }
+
