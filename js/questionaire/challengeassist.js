@@ -57,3 +57,82 @@ const selectOptionButton = (id) => {
 }
 
 
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Fetch the external JSON file
+    fetch('../assets/JSON/german_lev_1.json')
+        .then(response => response.json())
+        .then(data => {
+            // num = Math.floor(Math.random() * data.challenges.length);
+            // if (data.challenges[1].type == 'assist') {
+            //     console.log('hello')
+            // }
+
+            //question section
+            document.getElementById('assist-text').textContent = data.challenges[1].prompt;
+            const choices = data.challenges[1].options;
+            // console.log(choices)
+            // console.log(data.challenges.length)
+            // num = Math.floor(Math.random() * data.challenges.length);
+            // console.log(num)
+
+            // Get the container where buttons will be added
+            const assistContent = document.getElementById('assist-content-options');
+            let outerOptionsCounter = 1;
+            let optionCounter = 1;
+            choices.forEach(choice => {
+                const outerOptionsDiv = document.createElement("div");
+                outerOptionsDiv.className = "outer-options-div";
+                outerOptionsDiv.id = "outer-options-div-" + optionCounter;
+                //audio
+                const audio = new Audio(choice.tts);
+
+                // Create option div
+                const optionDiv = document.createElement("div");
+                optionDiv.className = "option-div";
+                optionDiv.id = optionCounter.toString();
+                optionDiv.addEventListener("click", function () {
+                    selectOptionButton(this.id);
+                    buttonClickAnimation(this.id);
+                    audio.play();
+                });
+
+                // Create option number span
+                const optionNoSpan = document.createElement("span");
+                optionNoSpan.className = "option-no";
+                optionNoSpan.id = "option-no-" + optionCounter;
+                optionNoSpan.textContent = optionCounter;
+
+                // Create option name span
+                const optionNameSpan = document.createElement("span");
+                optionNameSpan.className = "option-name";
+                optionNameSpan.id = "option-name-" + optionCounter;
+                optionNameSpan.textContent = choice.text;
+
+                // Append spans to the option div
+                optionDiv.appendChild(optionNoSpan);
+                optionDiv.appendChild(optionNameSpan);
+
+                // Append option div to outer options div
+                outerOptionsDiv.appendChild(optionDiv);
+
+                // Append outer options div to the body
+                assistContent.appendChild(outerOptionsDiv);
+
+                // Increment counters for unique IDs
+                outerOptionsCounter++;
+                optionCounter++;
+            });
+        })
+
+        .catch(error => {
+            console.error('Error fetching choices:', error);
+        });
+})
