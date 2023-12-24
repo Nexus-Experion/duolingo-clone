@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/questionaire.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/questionaire.js"></script>
+
+    <title>Duolingo Question</title>
+  </head>
+  <body onload="currentHearts()">
+    <div class="question-overlay-page">
+      <div class="question-page-sections">
+        <div class="top-row-question-page-sections">
+          <div class="fields-top-row">
+            <a href="../html/learn.html"
+              ><img src="../assets/svg/close-button.svg"
+            /></a>
+            <div class="progress-bar-container">
+              <div class="inner-green-bar">
+                <div class="inner-light-green-bar"></div>
+              </div>
+            </div>
+            <div class="top-row-life">
+              <img class="heart-life" src="../assets/svg/heart.svg" />
+              <span id="heart-count">5</span>
+            </div>
+          </div>
+        </div>
+        <div class="mid-row-question-page-sections">
+          <div class="mid-row-sections">
+            <div class="mid-row">
+              <div class="challenge-assist">
+                <div class="assist-section">
+                  <div class="assist-header">
+                    <h1>
+                      <span>Select the correct meaning</span>
+                    </h1>
+                    <div class="assist-content">
+                      <div class="assist-content-question">
+                        <div class="assist-question-row">
+                          <div id="assist-character"></div>
+                          <div class="assist-word-container">
+                            <div class="container">
+                              <div id="assist-text"></div>
+                              <div class="container-projection">
+                                <div class="projection"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div id="assist-content-options">
+                        <div class="outer-options-div" id="outer-options-div-1">
+                          <div
+                            class="option-div"
+                            id="1"
+                            onclick="selectOptionButton(this.id),buttonClickAnimation(this.id)"
+                          >
+                            <span class="option-no" id="option-no-1">1</span>
+                            <span class="option-name" id="option-name-1"
+                              >Dominican Republic</span
+                            >
+                          </div>
+                        </div>
+                        <div class="outer-options-div" id="outer-options-div-2">
+                          <div
+                            class="option-div"
+                            id="2"
+                            onclick="selectOptionButton(this.id),buttonClickAnimation(this.id)"
+                          >
+                            <span class="option-no" id="option-no-2">2</span>
+                            <span class="option-name" id="option-name-2"
+                              >Dominican Republic</span
+                            >
+                          </div>
+                        </div>
+                        <div class="outer-options-div" id="outer-options-div-3">
+                          <div
+                            class="option-div"
+                            id="3"
+                            onclick="selectOptionButton(this.id),buttonClickAnimation(this.id)"
+                          >
+                            <span class="option-no" id="option-no-3">3</span>
+                            <span class="option-name" id="option-name-3"
+                              >Dominican Republic</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-row-question-page-sections">
+          <div class="bottom-row">
+            <div class="bottom-buttons">
+              <div class="skip-button">
+                <button
+                  class="button-div skip-button-inner"
+                  id="skip-button"
+                  onclick="skipButton(this.id)"
+                >
+                  <span>Skip</span>
+                </button>
+              </div>
+              <div class="check-button check-button-outer-active">
+                <button
+                  class="button-div check-button-inner-active"
+                  id="check-button"
+                  onclick="checkButton(this.id)"
+                >
+                  <span>Check</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.7/lottie.min.js"></script>
+    <script src="../js/questionaire/challengeassist.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
