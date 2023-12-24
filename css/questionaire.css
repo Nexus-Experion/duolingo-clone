@@ -344,6 +344,14 @@ body {
 
 }
 
+.outer-options-div-correct {
+    box-shadow: 0 4px 0px rgb(165, 237, 110);
+    border-radius: 12px;
+    margin-bottom: 15px;
+
+}
+
+
 
 .outer-options-div:hover {
     filter: brightness(0.95);
@@ -380,6 +388,25 @@ body {
     border: solid 2px rgb(132, 216, 255);
     cursor: pointer;
     background-color: #ddf4ff;
+    height: 32px;
+    align-items: center;
+    display: flex;
+    font-size: 19px;
+    padding: 12px 16px;
+
+}
+
+.option-div-correct {
+    position: relative;
+    font-size: 15px;
+    font-family: "din-round-medium";
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border-radius: 12px;
+    transition: box-shadow translate 0.2s ease;
+    border: 2px solid rgb(165, 237, 110);
+    cursor: pointer;
+    background-color: #d7ffb8;
     height: 32px;
     align-items: center;
     display: flex;
@@ -426,6 +453,20 @@ body {
     font-size: 15px;
 }
 
+.option-no-correct {
+    align-items: center;
+    border: 2px solid rgb(165, 237, 110);
+    border-radius: 8px;
+    color: #58a700;
+    font-weight: 700;
+    height: 30px;
+    justify-content: center;
+    width: 30px;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: 15px;
+}
+
 .option-name {
     color: rgb(var(--color-eel));
     margin-left: 12px;
@@ -440,6 +481,18 @@ body {
 
 .option-name-selected {
     color: #1899d6;
+    margin-left: 12px;
+    margin-right: 14px;
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.option-name-correct {
+    color: #58a700;
     margin-left: 12px;
     margin-right: 14px;
     align-items: center;
@@ -465,7 +518,7 @@ body {
 }
 
 .bottom-row {
-    background: rgb(var(--color-snow));
+    background-color: rgb(var(--color-snow));
     border-top: 2px solid rgb(var(--color-swan));
     max-height: 140px;
 
@@ -530,6 +583,12 @@ body {
     width: 180px;
 }
 
+.check-button-outer-wrong {
+    box-shadow: 0 4px 0px rgb(234, 43, 43);
+    border-radius: 18px;
+    width: 180px;
+}
+
 .check-button-inner-active {
     font-size: 17px;
     border: none;
@@ -538,11 +597,19 @@ body {
     color: white;
 }
 
+.check-button-inner-wrong {
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    background-color: #ff4b4b;
+    color: white;
+}
+
 .check-button-inner-active:hover {
     filter: brightness(1.05);
 }
 
-.check-inactive {
+.check-button-inner-inactive {
     cursor: default;
     font-size: 17px;
     border: none;
@@ -550,6 +617,7 @@ body {
     background-color: #e5e5e5;
     color: #afafaf;
     width: 200px;
+    pointer-events: none;
 }
 
 .skip-button {

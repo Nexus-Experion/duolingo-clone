@@ -11,10 +11,10 @@ const animation = bodymovin.loadAnimation({
 
 //change question header
 
-function changeAssistQuestion(assistText) {
-    document.getElementById('assist-text').textContent = assistText;
-}
-changeAssistQuestion('Hellos');
+// function changeAssistQuestion(assistText) {
+//     document.getElementById('assist-text').textContent = assistText;
+// }
+// changeAssistQuestion('Hellos');
 
 
 
@@ -29,24 +29,34 @@ const buttonClickAnimation = (id) => {
 }
 
 //select option animation toggle
+window.selectedOption = 0;
 
 
 const selectOptionButton = (id) => {
+
+    //same 3 statements for activating check button
+    document.getElementById('check-button-div').classList.add('check-button-outer-active');
+    document.getElementById('check-button').classList.remove('check-button-inner-inactive')
+    document.getElementById('check-button').classList.add('check-button-inner-active')
+
+
+    selectedOption = parseInt(id);
+    console.log(selectedOption)
     document.querySelectorAll('.option-no-selected').forEach((option) => {
-        option.classList.toggle('option-no-selected');
+        option.classList.remove('option-no-selected');
         option.className = 'option-no'
     })
     document.querySelectorAll('.outer-options-div-selected').forEach((option) => {
-        option.classList.toggle('outer-options-div-selected');
+        option.classList.remove('outer-options-div-selected');
         option.className = 'outer-options-div'
     });
     document.querySelectorAll('.option-name-selected').forEach((option) => {
-        option.classList.toggle('option-name-selected');
+        option.classList.remove('option-name-selected');
         option.className = 'option-name'
 
     });
     document.querySelectorAll('.option-div-selected').forEach((option) => {
-        option.classList.toggle('.option-div-selected');
+        option.classList.remove('.option-div-selected');
         option.className = 'option-div'
     });
     document.getElementById('option-no-' + id).className = 'option-no-selected';
@@ -57,8 +67,23 @@ const selectOptionButton = (id) => {
 }
 
 
+function correctOption(selectedOption) {
+
+    document.getElementById('option-no-' + selectedOption).className = 'option-no-correct';
+    document.getElementById('option-name-' + selectedOption).className = 'option-name-correct';
+    document.getElementById(selectedOption).className = 'option-div-correct';
+    document.getElementById('outer-options-div-' + selectedOption).className = 'outer-options-div-correct';
+}
 
 
+function disablePointer() {
+    const parentDiv = document.getElementById('assist-content-options');
+    const childElements = parentDiv.getElementsByTagName('*');
+
+    for (const childElement of childElements) {
+        childElement.style.pointerEvents = 'none';
+    }
+}
 
 
 
@@ -78,6 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
             //question section
             document.getElementById('assist-text').textContent = data.challenges[1].prompt;
             const choices = data.challenges[1].options;
+
+            //set correct answer in local storage
+            localStorage.setItem('correctIndex', data.challenges[1].correctIndex + 1);
+
             // console.log(choices)
             // console.log(data.challenges.length)
             // num = Math.floor(Math.random() * data.challenges.length);
@@ -109,7 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 optionNoSpan.className = "option-no";
                 optionNoSpan.id = "option-no-" + optionCounter;
                 optionNoSpan.textContent = optionCounter;
-
                 // Create option name span
                 const optionNameSpan = document.createElement("span");
                 optionNameSpan.className = "option-name";
