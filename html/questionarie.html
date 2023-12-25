@@ -80,7 +80,7 @@
         <div class="bottom-row-question-page-sections">
           <div class="bottom-row">
             <div class="bottom-buttons">
-              <div class="skip-button">
+              <div class="skip-button" style="display: block">
                 <button
                   class="button-div skip-button-inner"
                   id="skip-button"
@@ -88,6 +88,33 @@
                 >
                   <span>Skip</span>
                 </button>
+              </div>
+              <div class="correct-left" id="correct-left" style="display: none">
+                <div class="correct-content">
+                  <div class="correct-tick">
+                    <img
+                      class="green-tick"
+                      src="../assets/svg/correct-tick-green.svg"
+                    />
+                  </div>
+                  <div class="correct-text">
+                    <h2>Good job!</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="correct-left" id="wrong-left" style="display: none">
+                <div class="correct-content">
+                  <div class="correct-tick">
+                    <img
+                      class="green-tick"
+                      src="../assets/svg/wrong-x-red.svg"
+                    />
+                  </div>
+                  <div class="wrong-text">
+                    <h2>Correct Solution:</h2>
+                    <div class="solution-text">Correct Answer</div>
+                  </div>
+                </div>
               </div>
               <div class="check-button" id="check-button-div">
                 <button

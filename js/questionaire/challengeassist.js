@@ -103,9 +103,10 @@ document.addEventListener("DOMContentLoaded", function () {
             //question section
             document.getElementById('assist-text').textContent = data.challenges[1].prompt;
             const choices = data.challenges[1].options;
-
+            // console.log(data.challenges[1].choices[data.challenges[1].correctIndex])
             //set correct answer in local storage
             localStorage.setItem('correctIndex', data.challenges[1].correctIndex + 1);
+            localStorage.setItem('solution', data.challenges[1].choices[data.challenges[1].correctIndex]);
 
             // console.log(choices)
             // console.log(data.challenges.length)
