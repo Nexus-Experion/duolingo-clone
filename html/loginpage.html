@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/loginpage.css" />
     <link rel="stylesheet" href="../css/main.css" />
     <script src="../js/loginpage.js"></script>
+    <script type="module" src="../js/firebaseLogin.js"></script>
   </head>
   <body>
     <div class="mainDiv">
@@ -17,7 +18,7 @@
           /></a>
         </div>
         <div class="form">
-          <form>
+          <form id="main-form">
             <div><h1 class="logIn">Log in</h1></div>
             <div class="emailPass">
               <div class="inputEmailDiv">
@@ -57,10 +58,11 @@
             </div>
             <div>
               <button
+              type="submit"
                 class="buttonLogIn"
                 id="buttonLogInButton"
                 data-test="sign-up-button"
-                onclick="getStartedButtonAnimation(),validateEntry(event)"
+                onclick="getStartedButtonAnimation()"
               >
                 LOG IN
               </button>

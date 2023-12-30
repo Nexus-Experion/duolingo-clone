@@ -74,25 +74,28 @@
   border-radius: 50%;
 }
 .content-container {
-  padding: 24px 24px 24px;
+  padding-left: 24px;
   display: flex;
   gap: 8px;
   flex-direction: row-reverse;
+  margin-right:368px
 }
 .right-sidebar {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  position: sticky;
+  /* justify-content: space-between; */
+  position: fixed;
+  padding-right: 12px;
+  padding-top:12px ;
   right: 0;
-  min-height: 100vh;
+  height: 100vh;
   width: 368px;
 }
 .right-sidebar-header {
   height: 44px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
   z-index: 2;
   gap: 10px;
 }
@@ -111,7 +114,7 @@
   border-radius: 16px;
   padding: 18px;
   position: relative;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 .try-super-box h2 {
   color: rgb(var(--color-eel));
@@ -200,6 +203,7 @@
 .scrollable-lesson-div {
   width: 95%;
   padding-right: 5%;
+  padding-top: 24px;
 }
 .section-name-header {
   display: flex;
@@ -255,12 +259,13 @@ section {
 .alignment-div{
   display: flex;
   justify-content: center;
-  margin: 30px;
+  margin-top: 20px;
   position: relative;
 }
 .circle_box{
   position: relative;
   width: 70px;
+  z-index:0;
 }
 .lesson-button {
   height: 65px;
@@ -311,6 +316,7 @@ circle-progress::part(value) {
   align-items: center;
   left:50%;
   bottom:-300%;
+  z-index: 2;
   transform: translateX(-50%);
 }
 .floating-start-box .text{
@@ -406,6 +412,14 @@ circle-progress::part(value) {
   background-color: rgb(var(--color-swan));
   color: rgb(var(--color-hare));
 }
+.locked button {
+  background: rgb(var(--color-swan));
+  box-shadow:  0 5px 0 rgb(var(--color-black),.2),0 5px 0 rgb(var(--color-swan));
+}
+.locked button:hover{
+  background: rgb(var(--color-swan));
+}
+
 @keyframes upAndDown {
   0%, 100% {
     transform: translateY(0);
@@ -413,4 +427,30 @@ circle-progress::part(value) {
   50% {
     transform: translateY(-10px);
   }
+}
+
+.completed .text-container{
+  background-color: rgb(var(--color-bee));
+  color: rgb(var(--color-guinea-pig-always-light));
+}
+
+.completed .triangle-top{
+  background-color: rgb(var(--color-bee));
+  z-index: 3;
+}
+.completed .text-container button{
+  background-color: rgb(var(--color-swan));
+  color: rgb(var(--color-bee));
+}
+.completed button {
+  background: rgb(var(--color-bee));
+  box-shadow:  0 5px 0 rgb(var(--color-guinea-pig-always-light),.5),0 5px 0 rgb(var(--color-bee));
+}
+.completed button:hover{
+  background: rgb(var(--color-bee),.8)
+}
+.star-image.bg{
+    translate:-4px -6px;
+    width: 55px;
+    height: 55px;
 }
