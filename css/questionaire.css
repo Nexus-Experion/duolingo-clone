@@ -161,7 +161,7 @@ body {
 /* Assist Section in questionaire */
 
 
-.challenge-assist .challenge-dialogue {
+.challenge-assist .challenge-dialogue .challenge-select-transcription {
     grid-template-columns: min-content;
     grid-template-rows: min-content;
     align-content: center;
@@ -216,7 +216,19 @@ body {
         margin-right: 15px;
     }
 
+    .transcription-content {
+        margin-top: 60px;
+        align-items: center;
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: none;
+        grid-gap: 24px;
+        display: grid;
+        /* text-align: initial; */
+    }
+
 }
+
+
 
 .dialogue-speaker:hover {
     filter: brightness(1.1);
@@ -381,6 +393,51 @@ body {
     width: 64px;
 }
 
+.transcription-content-question {
+    align-items: center;
+    display: inline-flex;
+    margin-top: 10px;
+    box-shadow: 0 4px 0px rgb(24, 153, 214);
+    border-radius: 25% !important;
+}
+
+.transcription-content-question:hover {
+    filter: brightness(1.05);
+}
+
+#transcription-options {
+    margin-top: 25px;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8px;
+    display: grid;
+    align-self: center;
+}
+
+.transcription-button-div {
+    position: relative;
+    font-family: "din-round-medium";
+    letter-spacing: 0.8px;
+    width: 140px;
+    height: 140px;
+    border-width: 0 0 4px;
+    border-radius: 25% !important;
+    transition: box-shadow translate 0.2s ease;
+    border: solid 2px #1cb0f6;
+    cursor: pointer;
+    background-color: #1cb0f6;
+    align-items: center;
+    display: flex;
+    font-size: 19px;
+    padding: 12px 16px;
+    justify-content: center;
+}
+
+#speaker-animation-white {
+    display: inline-block;
+    width: 70%;
+}
+
 .inner-empty-span {
     display: inline-flex;
     width: 70px;
@@ -494,20 +551,20 @@ body {
 
 
 .outer-options-div {
-    box-shadow: 0 4px 0px rgb(229, 229, 229);
+    box-shadow: 0 2.5px 0px rgb(229, 229, 229);
     border-radius: 12px;
     margin-bottom: 15px;
 }
 
 .outer-options-div-selected {
-    box-shadow: 0 4px 0px rgb(132, 216, 255);
+    box-shadow: 0 2.5px 0px rgb(132, 216, 255);
     border-radius: 12px;
     margin-bottom: 15px;
 
 }
 
 .outer-options-div-correct {
-    box-shadow: 0 4px 0px rgb(165, 237, 110);
+    box-shadow: 0 2.5px 0px rgb(165, 237, 110);
     border-radius: 12px;
     margin-bottom: 15px;
 

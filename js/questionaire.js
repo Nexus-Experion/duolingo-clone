@@ -7,7 +7,14 @@ function skipButton(id) {
     document.getElementById(id).classList.toggle('clicked');
     setTimeout(() => document.getElementById(id).classList.toggle('clicked'), 300);
 }
+function disablePointer() {
+    const parentDiv = document.querySelector('.mid-row');
+    const childElements = parentDiv.getElementsByTagName('*');
 
+    for (const childElement of childElements) {
+        childElement.style.pointerEvents = 'none';
+    }
+}
 function checkButton(id) {
     disablePointer();
     if (localStorage.getItem('correctIndex') == window.selectedOption) {
@@ -66,14 +73,18 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(data.challenges[index]);
             console.log(data.challenges[index].type);
             // challengeDialogue(data.challenges[12]);
-
             // data.challenges
+            // challengetranscription(data.challenges[13]);
+
             if (data.challenges[index].type == "assist") {
                 console.log("inner");
                 challengeAssist(data.challenges[index]);
             }
             else if (data.challenges[index].type == "dialogue") {
                 challengeDialogue(data.challenges[index]);
+            }
+            else if (data.challenges[index].type == "selectTranscription") {
+                challengetranscription(data.challenges[index]);
 
             }
         })

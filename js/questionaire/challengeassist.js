@@ -56,14 +56,7 @@ function correctOption(selectedOption) {
 }
 
 
-function disablePointer() {
-    const parentDiv = document.getElementById('assist-content-options');
-    const childElements = parentDiv.getElementsByTagName('*');
 
-    for (const childElement of childElements) {
-        childElement.style.pointerEvents = 'none';
-    }
-}
 
 // let question;
 // fetch('../assets/JSON/german_lev_1.json')

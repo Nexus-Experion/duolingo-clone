@@ -3,39 +3,39 @@ function challengeDialogue(question) {
 
 
     // Create the challenge-dialogue element
-    var challengeDialogue = document.createElement('div');
+    let challengeDialogue = document.createElement('div');
     challengeDialogue.classList.add('challenge-dialogue');
 
     // Create the challenge-section element
-    var challengeSection = document.createElement('div');
+    let challengeSection = document.createElement('div');
     challengeSection.classList.add('challenge-section');
 
     // Create the challenge-header element
-    var challengeHeader = document.createElement('div');
+    let challengeHeader = document.createElement('div');
     challengeHeader.classList.add('challenge-header');
 
     // Create the h1 element
-    var h1Element = document.createElement('h1');
+    let h1Element = document.createElement('h1');
 
     // Create the span element inside h1
-    var spanElement = document.createElement('span');
+    let spanElement = document.createElement('span');
     spanElement.textContent = 'Complete the chat';
 
     h1Element.appendChild(spanElement);
 
     // Create the dialogue-content element
-    var dialogueContent = document.createElement('div');
+    let dialogueContent = document.createElement('div');
     dialogueContent.classList.add('dialogue-content');
 
     // Create the dialogue-content-question element
-    var dialogueContentQuestion = document.createElement('div');
+    let dialogueContentQuestion = document.createElement('div');
     dialogueContentQuestion.classList.add('dialogue-content-question');
 
     // Create the dialogue-question-row element
-    var dialogueQuestionRow = document.createElement('div');
+    let dialogueQuestionRow = document.createElement('div');
     dialogueQuestionRow.classList.add('dialogue-question-row');
 
-    var assistContentOptions = document.createElement('div');
+    let assistContentOptions = document.createElement('div');
     assistContentOptions.id = 'assist-content-options';
 
     // Append the elements to build the structure
@@ -50,46 +50,46 @@ function challengeDialogue(question) {
     challengeDialogue.appendChild(challengeSection);
 
 
-    var midRowElement = document.querySelector('.mid-row');
+    let midRowElement = document.querySelector('.mid-row');
     midRowElement.appendChild(challengeDialogue);
 
 
 
     // Create the first-dialogue-row element
-    var firstDialogueRow = document.createElement('div');
+    let firstDialogueRow = document.createElement('div');
     firstDialogueRow.classList.add('first-dialogue-row');
 
     // Create the dialogue-row-content element for the first row
-    var firstDialogueRowContent = document.createElement('div');
+    let firstDialogueRowContent = document.createElement('div');
     firstDialogueRowContent.classList.add('dialogue-row-content', 'first-dialogue-row-content');
 
     // Create the image element for dialogue-character-one
-    var dialogueCharacterOne = document.createElement('img');
+    let dialogueCharacterOne = document.createElement('img');
     dialogueCharacterOne.id = 'dialogue-character-one';
 
     // Create the projection-dialogue element
-    var projectionDialogue = document.createElement('div');
+    let projectionDialogue = document.createElement('div');
     projectionDialogue.classList.add('projection-dialogue');
 
     // Create the dialogue-container element for the first row
-    var firstDialogueContainer = document.createElement('div');
+    let firstDialogueContainer = document.createElement('div');
     firstDialogueContainer.classList.add('dialogue-container', 'first-dialogue-container');
 
     // Create the span element for dialogue-speaker
-    var dialogueSpeakerSpan = document.createElement('span');
+    let dialogueSpeakerSpan = document.createElement('span');
     dialogueSpeakerSpan.classList.add('dialogue-speaker');
 
     // Create the button element for speaker-button
-    var speakerButton = document.createElement('button');
+    let speakerButton = document.createElement('button');
     speakerButton.classList.add('speaker-button');
 
     // Create the span element for speaker-animation
-    var speakerAnimationSpan = document.createElement('span');
+    let speakerAnimationSpan = document.createElement('span');
     speakerAnimationSpan.classList.add('speaker-animation');
     speakerAnimationSpan.id = 'speaker-animation';
 
     // Create the div element for dialogue-text
-    var dialogueTextDiv = document.createElement('div');
+    let dialogueTextDiv = document.createElement('div');
     dialogueTextDiv.id = 'dialogue-text';
 
     // Append the elements to build the structure
@@ -106,31 +106,31 @@ function challengeDialogue(question) {
 
 
     // Create the second-dialogue-row element
-    var secondDialogueRow = document.createElement('div');
+    let secondDialogueRow = document.createElement('div');
     secondDialogueRow.classList.add('second-dialogue-row');
 
     // Create the dialogue-row-content element for the second row
-    var secondDialogueRowContent = document.createElement('div');
+    let secondDialogueRowContent = document.createElement('div');
     secondDialogueRowContent.classList.add('dialogue-row-content', 'second-dialogue-row-content');
 
     // Create the dialogue-container element for the second row
-    var secondDialogueContainer = document.createElement('div');
+    let secondDialogueContainer = document.createElement('div');
     secondDialogueContainer.classList.add('dialogue-container', 'second-dialogue-container');
 
     // Create the span element for empty-dialogue
-    var emptyDialogueSpan = document.createElement('span');
+    let emptyDialogueSpan = document.createElement('span');
     emptyDialogueSpan.classList.add('empty-dialogue');
 
     // Create the span element for inner-empty-span
-    var innerEmptySpan = document.createElement('span');
+    let innerEmptySpan = document.createElement('span');
     innerEmptySpan.classList.add('inner-empty-span');
 
     // Create the projection-dialogue element for right-angle-projectile-dialogue
-    var rightAngleProjectileDialogue = document.createElement('div');
+    let rightAngleProjectileDialogue = document.createElement('div');
     rightAngleProjectileDialogue.classList.add('projection-dialogue', 'right-angle-projectile-dialogue');
 
     // Create the image element for dialogue-character-two
-    var dialogueCharacterTwo = document.createElement('img');
+    let dialogueCharacterTwo = document.createElement('img');
     dialogueCharacterTwo.id = 'dialogue-character-two';
 
     // Append the elements to build the structure for the second row
@@ -143,13 +143,11 @@ function challengeDialogue(question) {
 
     secondDialogueRow.appendChild(secondDialogueRowContent);
 
-    // Get the element with class "dialogue-question-row" and append the structure to it
-    var dialogueQuestionRowElement = document.querySelector('.dialogue-question-row');
 
 
 
     // Get the element with class "dialogue-question-row" and append the structure to it
-    var dialogueQuestionRowElement = document.querySelector('.dialogue-question-row');
+    let dialogueQuestionRowElement = document.querySelector('.dialogue-question-row');
     dialogueQuestionRowElement.appendChild(firstDialogueRow);
     dialogueQuestionRowElement.appendChild(secondDialogueRow);
 
@@ -249,9 +247,9 @@ function challengeDialogue(question) {
         audio.play();
     })
 
-    console.log(question.dialogue[0].displayTokens.length)
+    // console.log(question.dialogue[0].displayTokens.length)
 
-    console.log(question.dialogue[0].displayTokens[0].text)
+    // console.log(question.dialogue[0].displayTokens[0].text)
 
 
 }
