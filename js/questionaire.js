@@ -53,3 +53,32 @@ function wrongBottomRow() {
     document.getElementById('check-button').classList.remove('check-button-inner-active');
     document.getElementById('check-button').classList.add('check-button-inner-wrong');
 }
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Fetch the external JSON file
+    fetch('../assets/JSON/german_lev_1.json')
+        .then(response => response.json())
+        .then(data => {
+            let index = Math.floor(Math.random() * data.challenges.length);
+            // console.log(data.challenges[index]);
+            console.log(data.challenges[index]);
+            console.log(data.challenges[index].type);
+            // challengeDialogue(data.challenges[12]);
+
+            // data.challenges
+            if (data.challenges[index].type == "assist") {
+                console.log("inner");
+                challengeAssist(data.challenges[index]);
+            }
+            else if (data.challenges[index].type == "dialogue") {
+                challengeDialogue(data.challenges[index]);
+
+            }
+        })
+
+        .catch(error => {
+            console.error('Error fetching choices:', error);
+        });
+})

@@ -29,7 +29,7 @@ body {
 }
 
 .question-page-sections {
-    grid-gap: 24px;
+    grid-gap: 5px;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: min-content 1fr min-content;
@@ -161,7 +161,7 @@ body {
 /* Assist Section in questionaire */
 
 
-.challenge-assist {
+.challenge-assist .challenge-dialogue {
     grid-template-columns: min-content;
     grid-template-rows: min-content;
     align-content: center;
@@ -175,7 +175,7 @@ body {
     width: 100%;
 }
 
-.assist-section {
+.challenge-section {
     grid-template-rows: min-content minmax(0, 1fr);
     overflow-x: hidden;
     overflow-y: auto;
@@ -187,7 +187,7 @@ body {
 }
 
 @media only screen and (min-width:700px) and (max-width: 1864px) {
-    .assist-section {
+    .challenge-section {
 
         min-height: 450px;
         overflow: visible;
@@ -196,24 +196,49 @@ body {
         grid-gap: 24px;
     }
 
-    .assist-header h1 {
+    .challenge-header h1 {
         font-size: 32px;
     }
 
     .assist-content {
         grid-template-rows: min-content 1fr;
     }
+
+    .dialogue-content {
+        grid-gap: 24px;
+    }
+
+    .dialogue-container {
+        padding: 12px 24px
+    }
+
+    .dialogue-speaker {
+        margin-right: 15px;
+    }
+
 }
 
-.assist-header {
-    grid-gap: 8px;
+.dialogue-speaker:hover {
+    filter: brightness(1.1);
+}
+
+#dialogue-text {
+    font-family: 'din-round';
+    font-size: 19px;
+    position: relative;
+    display: inline-flex;
+    letter-spacing: .8px;
+}
+
+.challenge-header {
+    grid-gap: 2px;
     display: grid;
 }
 
-.assist-header h1 {
+.challenge-header h1 {
     font-family: 'din-round-medium';
     /* font-size: 25px; */
-    line-height: 1.25;
+    line-height: 3;
     margin: 0;
     text-align: left;
     width: 100%;
@@ -228,13 +253,20 @@ body {
 
 }
 
+.dialogue-content {
+    grid-gap: 16px;
+    display: grid;
+    text-align: initial;
+}
+
+
 @media only screen and (min-width:0px) and (max-width: 700px) {
     .assist-content {
         grid-template-rows: min-content min-content;
 
     }
 
-    .assist-header h1 {
+    .challenge-header h1 {
         font-size: 24px;
     }
 
@@ -258,6 +290,136 @@ body {
     align-items: center;
     display: flex;
 }
+
+.dialogue-question-row {
+    display: grid;
+    grid-gap: 8px;
+}
+
+.first-dialogue-row {
+    margin-right: 20%;
+}
+
+.second-dialogue-row {
+    margin-left: 20%;
+}
+
+.dialogue-row-content {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+}
+
+.first-dialogue-row-content {
+    justify-content: flex-start;
+}
+
+.second-dialogue-row-content {
+    justify-content: flex-end;
+}
+
+.dialogue-character {
+    width: 64px;
+    margin-right: 4px;
+
+}
+
+.projection-dialogue {
+    flex: 0 0 22px;
+    position: relative;
+}
+
+.projection-dialogue::after,
+.projection-dialogue::before {
+    content: "";
+    left: auto;
+    position: absolute;
+}
+
+.projection-dialogue::before {
+    border-right: 22px solid rgb(var(--color-swan));
+    border-top: 22px solid transparent;
+    right: -1px;
+    top: 16px;
+}
+
+.projection-dialogue::after {
+    border-right: 18px solid rgb(var(--color-polar));
+    border-top: 18px solid transparent;
+    right: -2px;
+    top: 18px;
+}
+
+.right-angle-projectile-dialogue {
+    transform: scaleX(-1);
+}
+
+.right-angle-projectile-dialogue::before {
+    border-right-color: rgb(var(--color-blue-jay));
+}
+
+.right-angle-projectile-dialogue::after {
+    border-right-color: rgb(var(--color-iguana));
+}
+
+.dialogue-container {
+
+    text-align: left;
+    border-radius: 16px;
+    /* padding: 6px 12px; */
+    line-height: 39px;
+}
+
+.empty-dialogue {
+    border-bottom: 2px solid rgb(var(--color-hare));
+    display: inline-flex;
+    margin: 0 3px -2px;
+    vertical-align: bottom;
+}
+
+.dialogue-content-question img {
+    width: 64px;
+}
+
+.inner-empty-span {
+    display: inline-flex;
+    width: 70px;
+}
+
+.first-dialogue-container {
+    background-color: rgb(var(--color-polar));
+    border: 2px solid rgb(var(--color-swan));
+}
+
+.second-dialogue-container {
+    background-color: rgb(var(--color-iguana));
+    border: 2px solid rgb(var(--color-blue-jay));
+}
+
+.dialogue-speaker {
+    float: left;
+    height: 39px;
+    display: inline-flex;
+}
+
+.speaker-button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    line-height: 0;
+    padding: 0;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.speaker-animation {
+    display: inline-block;
+    height: 22px;
+    width: 29px;
+    color: rgb(var(--color-macaw));
+}
+
+
 
 #assist-character {
     align-self: flex-end;

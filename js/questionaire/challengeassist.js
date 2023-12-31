@@ -89,10 +89,10 @@ function challengeAssist(question) {
     challengeAssistDiv.className = "challenge-assist";
 
     let assistSectionDiv = document.createElement("div");
-    assistSectionDiv.className = "assist-section";
+    assistSectionDiv.className = "challenge-section";
 
     let assistHeaderDiv = document.createElement("div");
-    assistHeaderDiv.className = "assist-header";
+    assistHeaderDiv.className = "challenge-header";
 
     let h1Element = document.createElement("h1");
     let spanElement = document.createElement("span");
@@ -220,26 +220,4 @@ function challengeAssist(question) {
     });
 
 }
-// challengeAssist(question);
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Fetch the external JSON file
-    fetch('../assets/JSON/german_lev_1.json')
-        .then(response => response.json())
-        .then(data => {
-            let index = Math.floor(Math.random() * data.challenges.length);
-            // console.log(data.challenges[index]);
-            console.log(data.challenges[index]);
-            console.log(data.challenges[index].type);
-
-            // data.challenges
-            if (data.challenges[index].type == "assist") {
-                console.log("inner");
-                challengeAssist(data.challenges[1]);
-            }
-        })
-
-        .catch(error => {
-            console.error('Error fetching choices:', error);
-        });
-})
