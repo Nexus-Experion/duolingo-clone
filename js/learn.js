@@ -49,15 +49,19 @@ var sectionData = {
     }
 }
 //======================End of JSON==============================
-let completedUnits = 2;
-let lockedUnits = 4
+
+
+const placeUnitsandLessons=(completedUnits,totalUnits,completedLessons,totalLessonsInUnit)=>{
+
+let lockedUnits = totalUnits-completedUnits-1;
+let lockedLessons=totalLessonsInUnit-completedLessons-1;
 
 let finishedUnitHeader = `
-<header class="unit unit-colorful">
-  <h1 class="unit-number">Unit 2</h1>
-  <span class="unit-description">
-  Introduce yourself, order food and drink</span>
-</header>`
+  <header class="unit unit-colorful">
+    <h1 class="unit-number">Unit 2</h1>
+    <span class="unit-description">
+    Introduce yourself, order food and drink</span>
+  </header>`
 
 let incompleteUnitHeader = `<section>
 <header class="unit unit-unfinished">
@@ -86,7 +90,7 @@ let onProgressHtml = `
   <div class="text-container">
     <h1>Form basic sentences</h1>
     <p>Lesson 2 of 4</p>
-    <button>Start +10 XP</button>
+    <button onclick="startLesson()">Start +10 XP</button>
   </div>
 </div>`
 
@@ -129,6 +133,68 @@ let completedDiv = `
     <button>Practice +5 XP</button>
   </div>
 </div>`
+
+let sectionHeader=`
+<div class="sticky">
+<div class="right-sidebar-header top-stats-mobile">
+<a href="" class="button-in-sidebar">
+  <span class="icon-and-text-wrap">
+    <div class="icon-in-button">
+      <img
+        src="../assets/svg/ja-flag.svg"
+        alt="home-icon"
+        class="profile"
+      />
+    </div>
+  </span>
+</a>
+<a href="" class="button-in-sidebar">
+  <span class="icon-and-text-wrap">
+    <div class="icon-in-button">
+      <img
+        src="../assets/svg/streak-fire-active.svg"
+        alt="home-icon"
+        class="profile"
+      />
+    </div>
+    <span class="text-in-button fire-text"> 400 </span>
+  </span>
+</a>
+<a href="" class="button-in-sidebar">
+  <span class="icon-and-text-wrap">
+    <div class="icon-in-button">
+      <img
+        src="../assets/svg/gems-icon.svg"
+        alt="home-icon"
+        class="profile"
+      />
+    </div>
+    <span class="text-in-button gem-text"> 7393 </span>
+  </span>
+</a>
+<a href="" class="button-in-sidebar">
+  <span class="icon-and-text-wrap">
+    <div class="icon-in-button">
+      <img
+        src="../assets/svg/heart-filled-red.svg"
+        alt="home-icon"
+        class="profile"
+      />
+    </div>
+    <span class="text-in-button heart-text"> 5 </span>
+  </span>
+</a>
+</div>
+<div class="section-name-header">
+<a href="/sections"
+  ><img alt="" src="../assets/svg/up-arrow-section.svg"
+/></a>
+<h2 class="_1Msxm">Section&nbsp;1:&nbsp;Rookie</h2>
+</div>
+</div>
+<div class="unit-placing-div">
+<div>
+`
 
 let paddingArr = [0, 2, 4, 2, 0, -2, -4, -2, 0];
 let index = 0;
@@ -174,13 +240,17 @@ const placeLockedLessons = (lessonCount, sectionRef,unitRef,start=0) => {
 }
 
 let unitCounter=1;
-let lessonContainer = document.querySelector(".scrollable-lesson-div");
+scrollableContainer=document.querySelector(".scrollable-lesson-div");
+scrollableContainer.innerHTML=''
+scrollableContainer.insertAdjacentHTML("beforeend",sectionHeader);
+let lessonContainer = document.querySelector(".unit-placing-div");
+
 for (i = 0; i < completedUnits; i++) {
     index = 0
     let section = document.createElement("section");
     section.setAttribute("id",`section-${unitCounter++}`);
     section.innerHTML = finishedUnitHeader;
-    placeCompletedLessons(9, section,unitCounter-2);
+    placeCompletedLessons(totalLessonsInUnit, section,unitCounter-2);
     section.querySelector("h1").textContent=sectionData.section.units[unitCounter-2].name;
     section.querySelector("span").textContent=sectionData.section.units[unitCounter-2].description;
     lessonContainer.append(section);
@@ -190,9 +260,9 @@ index = 0;
 let section = document.createElement("section");
 section.setAttribute("id",`section-${unitCounter++}`);
 section.innerHTML = incompleteUnitHeader;
-placeCompletedLessons(3, section,unitCounter-2);
+placeCompletedLessons(completedLessons, section,unitCounter-2);
 placeOngoingLessons(section,unitCounter-2,3);
-placeLockedLessons(5, section,unitCounter-2,4);
+placeLockedLessons(lockedLessons, section,unitCounter-2,4);
 section.querySelector("h1").textContent=sectionData.section.units[unitCounter-2].name;
 section.querySelector("span").textContent=sectionData.section.units[unitCounter-2].description;
 lessonContainer.append(section);
@@ -202,8 +272,32 @@ for (i = 0; i < lockedUnits; i++) {
     let section = document.createElement("section");
     section.setAttribute("id",`section-${unitCounter++}`);
     section.innerHTML = incompleteUnitHeader;
-    placeLockedLessons(9, section,unitCounter-2);
+    placeLockedLessons(totalLessonsInUnit, section,unitCounter-2);
     section.querySelector("h1").textContent=sectionData.section.units[unitCounter-2].name;
     section.querySelector("span").textContent=sectionData.section.units[unitCounter-2].description;
     lessonContainer.append(section);
+}
+
+}
+completedLessons=7
+completedUnits=2
+totalLessonsInUnit=9
+totalUnitsInSection=5
+placeUnitsandLessons(completedUnits,totalUnitsInSection,completedLessons,totalLessonsInUnit);
+
+
+const startLesson=()=>{
+  let currentProgress=document.querySelector("circle-progress").value;
+  currentProgress >=100 ? startNewLesson(): document.querySelector("circle-progress").value+=25;
+}
+
+const startNewLesson=()=>{
+  if (completedLessons+1 == totalLessonsInUnit) {
+    completedUnits += 1;
+    completedLessons=0;
+} else {
+    completedLessons += 1;
+}
+  
+  placeUnitsandLessons(completedUnits,5,completedLessons,totalLessonsInUnit);
 }

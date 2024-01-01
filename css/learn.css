@@ -91,6 +91,8 @@
   height: 100vh;
   width: 368px;
 }
+
+
 .right-sidebar-header {
   height: 44px;
   display: flex;
@@ -202,6 +204,7 @@
 
 .scrollable-lesson-div {
   width: 95%;
+  position: relative;
   padding-right: 5%;
   padding-top: 24px;
 }
@@ -453,4 +456,65 @@ circle-progress::part(value) {
     translate:-4px -6px;
     width: 55px;
     height: 55px;
+}
+
+.top-stats-mobile{
+  display: none;
+}
+
+@media (max-width: 1024px) {
+
+  .right-sidebar{
+    display: none;
+  }
+  .top-stats-mobile{
+    display: flex;
+  }
+  .content-container{
+    margin-right:0;
+  }
+
+}
+.unit-placing-div{
+  padding: 0 15px;
+}
+.sticky{
+  position: sticky;
+  width: 100%;
+  background: rgb(var(--color-snow));
+  top:0;
+  padding:15px 15px 0 15px;
+  z-index: 10;
+  box-sizing: border-box;
+}
+@media (max-width: 650px) {
+  .sidebar{
+    display: none;
+  }
+  .content-container{
+    padding: 0;
+  }
+  .scrollable-lesson-div{
+    padding: 0;
+    width: 100%;
+  }
+  .sticky{
+    background: rgb(var(--color-peacock));
+  }
+  .section-name-header{
+    border-bottom: none;
+  }
+  .section-name-header h2{
+    color: rgb(var(--color-snow));
+  }
+  .main-container{
+    padding-left: 0;
+  }
+
+  .button-in-sidebar:hover {
+    background-color: rgb(var(--color-snow),.2);
+  }
+  .text-in-button{
+    color:rgb(var(--color-snow));
+  }
 }
