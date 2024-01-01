@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../css/signup.css" />
     <link rel="stylesheet" href="../css/main.css" />
     <script src="../js/signup.js"></script>
+    <script type="module" src="../js/firebaseSignup.js"></script>
+    
   </head>
 
   <body>
@@ -25,7 +27,7 @@
             LOGIN
           </button>
         </div>
-        <form class="signup-section-main">
+        <form class="signup-section-main" id="main-form">
           <div class="signup-information-div">
             <h1 class="create-profile-heading">Create your profile</h1>
             <div class="input-fields-div">
@@ -81,9 +83,10 @@
 
             <div class="create-account-button-container">
               <button
+                type="submit"
                 class="create-account-button button-div"
                 id="create-account-button"
-                onclick="createAccountButtonAnimation(), validate(event)"
+                onclick="createAccountButtonAnimation()"
               >
                 CREATE ACCOUNT
               </button>
