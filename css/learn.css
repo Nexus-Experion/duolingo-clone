@@ -510,6 +510,9 @@ circle-progress::part(value) {
   .section-name-header h2 {
     color: rgb(var(--color-snow));
   }
+  .section-name-header img:nth-child(2){
+    display: none;
+  }
   .main-container {
     padding-left: 0;
   }
@@ -531,6 +534,12 @@ circle-progress::part(value) {
     margin-top: 10px;
     flex-direction: row;
     justify-content: space-between;
+  }
+  .section-name-header img:first-child{
+    display: none;
+  }
+  .section-name-header img:nth-child(2){
+    display: block;
   }
   .icon-in-button {
     margin: 0px;

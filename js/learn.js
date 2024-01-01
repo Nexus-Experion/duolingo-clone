@@ -187,7 +187,9 @@ const placeUnitsandLessons = (completedUnits, totalUnits, completedLessons, tota
 </div>
 <div class="section-name-header">
 <a href="/sections"
-  ><img alt="" src="../assets/svg/up-arrow-section.svg"
+  ><img alt="" src="../assets/svg/back-button-white.svg"
+/>
+<img alt="" src="../assets/svg/up-arrow-section.svg"
 /></a>
 <h2 class="_1Msxm">Section&nbsp;1:&nbsp;Rookie</h2>
 </div>
