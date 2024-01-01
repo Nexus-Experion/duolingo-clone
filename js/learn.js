@@ -196,7 +196,7 @@ const placeUnitsandLessons = (completedUnits, totalUnits, completedLessons, tota
 <div>
 `
 
-  let bottomNavBar = `<div class="sidebar-buttons">
+  let bottomNavBar = `<div class="sidebar-buttons bottom-nav">
 <a href="" class="button-in-sidebar">
   <span class="icon-and-text-wrap selected">
     <div class="icon-in-button">

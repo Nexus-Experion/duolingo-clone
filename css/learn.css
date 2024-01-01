@@ -487,6 +487,9 @@ circle-progress::part(value) {
   z-index: 10;
   box-sizing: border-box;
 }
+.bottom-nav{
+  display: none;
+}
 @media (max-width: 650px) {
   .sidebar {
     display: none;
@@ -531,5 +534,9 @@ circle-progress::part(value) {
   }
   .icon-in-button {
     margin: 0px;
+  }
+
+  .bottom-nav{
+    display: flex;
   }
 }
