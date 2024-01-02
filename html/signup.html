@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="../css/signup.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/signup.js"></script>
+    <script type="module" src="../js/firebaseSignup.js"></script>
+    
+  </head>
+
+  <body>
+    <div class="main-container">
+      <div class="signup-page-container">
+        <div class="close-button-div">
+          <a href="../html/en-landingpage.html">
+            <img src="../assets/svg/close-button.svg" alt="close button"
+          /></a>
+        </div>
+        <div class="login-button-container">
+          <button
+            class="login-button button-div"
+            id="login-button"
+            onclick="loginButtonAnimation()"
+          >
+            LOGIN
+          </button>
+        </div>
+        <form class="signup-section-main" id="main-form">
+          <div class="signup-information-div">
+            <h1 class="create-profile-heading">Create your profile</h1>
+            <div class="input-fields-div">
+              <div class="field-one">
+                <input
+                  class="input-field"
+                  id="age-input"
+                  type="text"
+                  placeholder="Age"
+                />
+                <div class="error-message" id="age-error-message"></div>
+                <div class="age-privacy-div" id="age-privacy-div">
+                  <span class="age-privacy-span">
+                    Providing your age ensures you get the right Duolingo
+                    experience. For more details, please visit our
+                    <a
+                      href="https://www.duolingo.com/privacy"
+                      target="_blank"
+                      class="privacy-policy-link"
+                      ><b>Privacy Policy</b></a
+                    >
+                  </span>
+                </div>
+              </div>
+              <div class="field-one">
+                <input
+                  class="input-field"
+                  id="name-input"
+                  type="text"
+                  placeholder="Name (optional)"
+                />
+                <div class="error-message" id="name-error-message"></div>
+              </div>
+              <div class="field-one">
+                <input
+                  class="input-field"
+                  id="email-input"
+                  type="text"
+                  placeholder="Email"
+                />
+                <div class="error-message" id="email-error-message"></div>
+              </div>
+              <div class="field-one">
+                <input
+                  class="input-field"
+                  id="password-input"
+                  type="password"
+                  placeholder="Password"
+                />
+                <div class="error-message" id="password-error-message"></div>
+              </div>
+            </div>
+
+            <div class="create-account-button-container">
+              <button
+                type="submit"
+                class="create-account-button button-div"
+                id="create-account-button"
+                onclick="createAccountButtonAnimation()"
+              >
+                CREATE ACCOUNT
+              </button>
+            </div>
+          </div>
+
+          <div class="split-line"></div>
+
+          <div class="terms-privacy-container">
+            <div class="terms-privacy">
+              <span
+                >By signing in to Duolingo, you agree to our
+                <a href="https://www.duolingo.com/privacy?wantsPlainInfo=1"
+                  ><b>Terms</b></a
+                >
+                and
+                <a href="https://www.duolingo.com/privacy?wantsPlainInfo=1"
+                  ><b>Privacy Policy</b></a
+                >.</span
+              >
+            </div>
+            <div class="terms-privacy">
+              <span
+                >This site is protected by reCAPTCHA Enterprise and the Google
+                <a href="https://policies.google.com/privacy">
+                  <b>Privacy Policy</b></a
+                >
+                and
+                <a href="https://policies.google.com/terms"
+                  ><b>Terms of Service</b></a
+                >
+                apply.</span
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,278 @@
+:root {
+  --color-snow: 255, 255, 255;
+  --color-snow-always-light: 255, 255, 255;
+  --color-snow-always-dark: 19, 31, 36;
+  --color-polar: 247, 247, 247;
+  --color-swan: 229, 229, 229;
+  --color-swan-always-light: 229, 229, 229;
+  --color-swan-always-dark: 55, 70, 79;
+  --color-hare: 175, 175, 175;
+  --color-hare-always-light: 175, 175, 175;
+  --color-wolf: 119, 119, 119;
+  --color-eel: 75, 75, 75;
+  --color-squid: 235, 227, 227;
+  --color-walking-fish: 255, 223, 224;
+  --color-flamingo: 255, 178, 178;
+  --color-pig: 245, 164, 164;
+  --color-crab: 255, 120, 120;
+  --color-cardinal: 255, 75, 75;
+  --color-fire-ant: 234, 43, 43;
+  --color-canary: 255, 245, 211;
+  --color-duck: 251, 229, 109;
+  --color-bee: 255, 200, 0;
+  --color-bee-always-dark: 255, 199, 0;
+  --color-lion: 255, 177, 0;
+  --color-fox: 255, 150, 0;
+  --color-cheetah: 255, 206, 142;
+  --color-monkey: 229, 162, 89;
+  --color-camel: 231, 166, 1;
+  --color-guinea-pig: 205, 121, 0;
+  --color-grizzly: 187, 113, 73;
+  --color-sea-sponge: 215, 255, 184;
+  --color-turtle: 165, 237, 110;
+  --color-owl: 88, 204, 2;
+  --color-tree-frog: 88, 167, 0;
+  --color-peacock: 0, 205, 156;
+  --color-iguana: 221, 244, 255;
+  --color-anchovy: 210, 228, 232;
+  --color-beluga: 187, 242, 255;
+  --color-moon-jelly: 122, 240, 242;
+  --color-blue-jay: 132, 216, 255;
+  --color-macaw: 28, 176, 246;
+  --color-whale: 24, 153, 214;
+  --color-humpback: 43, 112, 201;
+  --color-narwhal: 20, 83, 163;
+  --color-manta-ray: 4, 44, 96;
+  --color-starfish: 255, 134, 208;
+  --color-beetle: 206, 130, 255;
+  --color-betta: 144, 105, 205;
+  --color-butterfly: 111, 78, 161;
+  --color-dragon: 204, 52, 141;
+  --color-starling: 92, 108, 252;
+  --color-martin: 71, 85, 223;
+  --color-grackle: 167, 160, 255;
+  --color-honeycreeper: 193, 187, 255;
+  --color-deep-starling: 34, 33, 81;
+  --color-deep-martin: 16, 15, 62;
+  --color-legendary-foreground: 140, 65, 3;
+  --color-stardust: 199, 255, 254;
+  --color-cosmos: 60, 77, 255;
+  --color-nebula: 63, 34, 236;
+  --color-nova: 207, 23, 200;
+  --color-gamma: 38, 246, 99;
+  --color-starlight: 38, 138, 255;
+  --color-quasar: 252, 85, 255;
+  --color-celestia: 255, 255, 255;
+  --color-eclipse: 0, 4, 55;
+  --color-black: 0, 0, 0;
+  --color-aqua: 56, 238, 255;
+  --color-aqua-always-light: 56, 238, 255;
+  --color-ocean: 0, 124, 143;
+  --color-seafoam: 158, 224, 233;
+  --color-ice: 225, 253, 255;
+  --color-max-shadow: 20, 208, 225;
+  --color-diamond-stat: 86, 219, 226;
+  --color-mask-green: 137, 226, 25;
+  --color-pearl-stat: 255, 170, 222;
+  --color-snow-dark-swan: 255, 255, 255;
+  --color-black-text: 60, 60, 60;
+  --color-blue-space: 11, 62, 113;
+  --color-juicy-blue-space: 10, 74, 130;
+  --color-juicy-blue-space-light: 35, 83, 144;
+  --color-gold: 250, 169, 25;
+  --color-gray-text: 153, 153, 153;
+  --color-orange: 255, 157, 0;
+  --color-diamond-highlight: 231, 251, 251;
+  --color-diamond: 56, 208, 208;
+  --color-banana: 255, 176, 32;
+  --color-cloud: 207, 207, 207;
+  --color-cloud-light: 221, 221, 221;
+  --color-cloud-lightest: 240, 240, 240;
+  --color-kiwi: 122, 199, 12;
+  --color-kiwi-dark: 93, 151, 9;
+  --color-kiwi-light: 142, 224, 0;
+  --color-facebook: 59, 89, 152;
+  --color-facebook-dark: 45, 67, 115;
+  --color-google: 66, 133, 244;
+  --color-twitter: 29, 161, 242;
+  --color-hv-light-peach: 241, 218, 179;
+  --color-hv-peach: 219, 186, 131;
+  --color-hv-light-orange: 255, 177, 64;
+  --color-hv-orange: 204, 121, 0;
+  --color-hv-brown: 140, 90, 17;
+  --color-streak-panel-extended-background: 255, 150, 0;
+  --color-streak-panel-frozen-background: 221, 244, 255;
+  --color-streak-panel-frozen-flair-background: 132, 216, 255;
+  --color-streak-panel-frozen-subtitle: 28, 176, 246;
+  --color-streak-panel-frozen-text: 132, 216, 255;
+  --color-streak-panel-frozen-topbar-text: 24, 153, 214;
+  --color-streak-panel-streak-society-background: 255, 200, 0;
+  --color-streak-panel-streak-society-text: 205, 121, 0;
+  --color-streak-panel-topbar-border: 0, 0, 0;
+  --color-streak-panel-unextended-heading-text: 235, 195, 127;
+  --color-streak-panel-unextended-heading-background: 255, 245, 211;
+  --color-streak-panel-unextended-topbar-text: 235, 195, 127;
+  --color-streak-panel-milestone-gradient-start: 255, 147, 58;
+  --color-streak-panel-milestone-gradient-end: 255, 200, 0;
+  --color-streak-society-dark-orange: 255, 151, 1;
+  --color-streak-society-light-orange: 255, 179, 1;
+  --color-friends-quest-own-incomplete: 175, 175, 175;
+  --color-friends-quest-friend-incomplete: 145, 145, 145;
+  --color-black-text-always-light: 60, 60, 60;
+  --color-beetle-always-light: 206, 130, 255;
+  --color-cardinal-always-light: 255, 75, 75;
+  --color-cowbird-always-light: 174, 104, 2;
+  --color-dragon-always-light: 204, 52, 141;
+  --color-eel-always-light: 75, 75, 75;
+  --color-fox-always-light: 255, 150, 0;
+  --color-fire-ant-always-light: 234, 43, 43;
+  --color-grizzly-lite-always-light: 220, 143, 71;
+  --color-grizzly-always-light: 187, 113, 73;
+  --color-guinea-pig-always-light: 205, 121, 0;
+  --color-iguana-always-light: 221, 244, 255;
+  --color-macaw-always-light: 28, 176, 246;
+  --color-owl-always-light: 88, 204, 2;
+  --color-peacock-always-light: 0, 205, 156;
+  --color-polar-always-light: 247, 247, 247;
+  --color-sea-sponge-always-light: 215, 255, 184;
+  --color-starfish-always-light: 255, 134, 208;
+  --color-tree-frog-always-light: 88, 167, 0;
+  --color-turtle-always-light: 165, 237, 110;
+  --color-walking-fish-always-light: 255, 223, 224;
+  --color-wolf-always-light: 119, 119, 119;
+  --color-cardinal-always-dark: 238, 85, 85;
+  --color-eel-always-dark: 241, 247, 251;
+  --color-hare-always-dark: 82, 101, 109;
+  --color-macaw-always-dark: 73, 192, 248;
+  --color-owl-always-dark: 147, 211, 51;
+  --color-polar-always-dark: 32, 47, 54;
+  --color-wolf-always-dark: 220, 230, 236;
+  --color-rookie: 0, 175, 133;
+  --color-explorer: 255, 100, 191;
+  --color-traveler: 255, 145, 83;
+  --color-trailblazer: 154, 143, 232;
+  --color-adventurer: 96, 12, 199;
+  --color-discoverer: 111, 44, 57;
+  --color-daredevil: 46, 83, 138;
+  --color-navigator: 9, 47, 119;
+  --color-champion: 255, 110, 53;
+  --color-daily_refresh: 0, 148, 255;
+  --color-dark-mode-locked-path-section-text-color: 82, 101, 109;
+  --color-rookie-progress-bar: 0, 198, 150;
+  --color-explorer-progress-bar: 255, 138, 207;
+  --color-traveler-progress-bar: 255, 167, 106;
+  --color-trailblazer-progress-bar: 169, 157, 254;
+  --color-adventurer-progress-bar: 122, 13, 199;
+  --color-discoverer-progress-bar: 131, 50, 65;
+  --color-daredevil-progress-bar: 54, 98, 165;
+  --color-navigator-progress-bar: 12, 57, 141;
+  --color-champion-progress-bar: 255, 129, 80;
+  --color-daily_refresh-progress-bar: 28, 160, 255;
+  --color-course-complete-cta: 120, 219, 224;
+  --color-course-complete-cta-border: 94, 201, 204;
+  --color-bea-secondary: 24, 153, 214;
+  --color-eddy-secondary: 234, 43, 43;
+  --color-gilded-secondary: 231, 166, 1;
+  --color-lily-secondary: 165, 104, 204;
+  --color-vikram-secondary: 163, 42, 113;
+  --color-zari-secondary: 204, 107, 166;
+  --color-oscar-secondary: 0, 164, 125;
+  --color-falstaff-secondary: 150, 90, 58;
+  --color-bea-radio: 20, 123, 172;
+  --color-duo-radio: 62, 143, 1;
+  --color-eddy-radio: 179, 53, 53;
+  --color-falstaff-radio: 131, 79, 51;
+  --color-lucy-radio: 179, 105, 0;
+  --color-lily-radio: 144, 91, 179;
+  --color-vikram-radio: 143, 36, 99;
+  --color-zari-radio: 179, 94, 146;
+  --color-oscar-radio: 0, 144, 109;
+  --color-super-background-secondary: 26, 30, 76;
+  --color-super-gradient-background: 12, 47, 113;
+  --color-super-gradient-top-halo: 12, 76, 70;
+  --color-super-gradient-bottom-halo: 76, 29, 115;
+  --color-final-level-medium: 133, 123, 249;
+  --color-final-level-super-dark: 189, 219, 255;
+  --color-gold-shine: 255, 231, 0;
+  --color-legendary-gradient: 119, 109, 225;
+  --color-legendary-halo: 110, 107, 242;
+  --color-legendary-stripe: 246, 246, 255;
+  --color-legendary-dark-background: 24, 24, 24;
+  --color-roseate: 223, 75, 162;
+  --color-rosefinch: 180, 28, 117;
+  --color-bluebird: 3, 144, 211;
+  --color-cotinga: 121, 58, 227;
+  --color-sabrewing: 165, 112, 255;
+  --color-blueberry: 17, 82, 167;
+  --color-ether: 60, 89, 141;
+  --color-diamond-tournament-purple: 161, 161, 238;
+  --color-yir-page0: 221, 244, 255;
+  --color-yir-page1: 227, 255, 235;
+  --color-yir-page1-shadow: 19, 31, 36;
+  --color-yir-page3-shadow: 187, 172, 252;
+  --color-yir-page4-shadow: 143, 219, 255;
+  --color-yir-page5-shadow: 255, 183, 80;
+
+  --shine-background-color: linear-gradient(136deg,
+      transparent 10%,
+      rgb(var(--color-gold-shine), 0.5) 10%,
+      rgb(var(--color-gold-shine), 0.5) 40%,
+      transparent 40%,
+      transparent 53%,
+      rgb(var(--color-gold-shine), 0.5) 53%,
+      rgb(var(--color-gold-shine), 0.5) 71%,
+      transparent 71%),
+    rgb(var(--color-bee));
+  --shine-foreground-color: rgb(var(--color-guinea-pig-always-light));
+  --path-unit-background-color: rgb(var(--color-bee));
+  --path-unit-border-color: rgb(var(--color-guinea-pig-always-light), 0.5);
+  --path-unit-foreground-color: var(--shine-foreground-color);
+}
+
+@font-face {
+  font-family: "feather-bold";
+  src: url("../assets/fonts/feather-bold.woff2") format("woff");
+}
+
+@font-face {
+  font-family: "din-round-bold";
+  src: url("../assets/fonts/din-next-rounded-bold.woff2") format("woff");
+}
+
+@font-face {
+  font-family: "din-round";
+  src: url("../assets/fonts/din-next-rounded-regular.woff2") format("woff");
+}
+
+@font-face {
+  font-family: 'din-round-medium';
+  src: url('../assets/fonts/DINRoundPro-Medi.ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* button animation in duolingo */
+.button-div {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  font-family: "din-round-bold";
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-radius: 16px;
+  /* background-color: rgb(var(--color-snow)); */
+  /* color: rgb(var(--color-eclipse)); */
+  /* box-shadow: 0 4px 0 rgb(var(--color-snow-always-light), 0.6); */
+  transition: box-shadow translate 0.2s ease;
+}
+
+.clicked {
+  box-shadow: 0 !important;
+  translate: 0 3px;
+}
+
+/* button animation in duolingo */

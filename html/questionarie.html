@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/questionaire.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/questionaire.js"></script>
+
+    <title>Duolingo Question</title>
+  </head>
+  <body scroll="no">
+    <div class="question-overlay-page">
+      <div class="question-page-sections">
+        <div class="top-row-question-page-sections">
+          <div class="fields-top-row">
+            <a href="../html/learn.html"
+              ><img src="../assets/svg/close-button.svg"
+            /></a>
+            <div class="progress-bar-container">
+              <div class="inner-green-bar">
+                <div class="inner-light-green-bar"></div>
+              </div>
+            </div>
+            <div class="top-row-life">
+              <img class="heart-life" src="../assets/svg/heart.svg" />
+              <span id="heart-count">5</span>
+            </div>
+          </div>
+        </div>
+        <div class="mid-row-question-page-sections">
+          <div class="mid-row-sections">
+            <div class="mid-row"></div>
+          </div>
+        </div>
+        <div class="bottom-row-question-page-sections">
+          <div class="bottom-row">
+            <div class="bottom-buttons">
+              <div class="skip-button" style="display: block">
+                <button
+                  class="button-div skip-button-inner"
+                  id="skip-button"
+                  onclick="skipButton(this.id)"
+                >
+                  <span id="skip-span">Skip</span>
+                </button>
+              </div>
+              <div class="correct-left" id="correct-left" style="display: none">
+                <div class="correct-content">
+                  <div class="correct-tick">
+                    <img
+                      class="green-tick"
+                      src="../assets/svg/correct-tick-green.svg"
+                    />
+                  </div>
+                  <div class="correct-text">
+                    <h2>Good job!</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="correct-left" id="wrong-left" style="display: none">
+                <div class="correct-content">
+                  <div class="correct-tick">
+                    <img
+                      class="green-tick"
+                      src="../assets/svg/wrong-x-red.svg"
+                    />
+                  </div>
+                  <div class="wrong-text">
+                    <h2>Correct Solution:</h2>
+                    <div class="solution-text">Correct Answer</div>
+                  </div>
+                </div>
+              </div>
+              <div class="check-button" id="check-button-div">
+                <button
+                  class="button-div check-button-inner-inactive"
+                  id="check-button"
+                  onclick="checkButton(this.id)"
+                >
+                  <span id="continue-button">Check</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.7/lottie.min.js"></script>
+    <script src="../js/questionaire/challengeassist.js"></script>
+    <script src="../js/questionaire/challengedialogue.js"></script>
+    <script src="../js/questionaire/challengetranscription.js"></script>
+    <script src="../js/questionaire/lessson-complete.js"></script>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
