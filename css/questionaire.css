@@ -796,16 +796,34 @@ body {
     color: #3c3c3c;
 }
 
+.check-button-outer-inactive {
+    box-shadow: none;
+    margin-bottom: 30px;
+
+}
+
+
 .check-button-outer-active {
     box-shadow: 0 4px 0px #58a700;
     border-radius: 18px;
-    width: 180px;
+    /* width: 180px; */
+
 }
 
 .check-button-outer-wrong {
     box-shadow: 0 4px 0px rgb(234, 43, 43);
     border-radius: 18px;
-    width: 180px;
+    /* width: 180px; */
+    margin-bottom: 30px;
+
+}
+
+.check-button-inner-inactive {
+    font-size: 17px;
+    border: none;
+    cursor: none;
+    background-color: #58cc02;
+    color: white;
 }
 
 .check-button-inner-active {
@@ -835,8 +853,12 @@ body {
     cursor: pointer;
     background-color: #e5e5e5;
     color: #afafaf;
-    width: 200px;
+    /* width: 200px; */
     pointer-events: none;
+}
+
+.check-button-continue {
+    margin-bottom: 30px;
 }
 
 .skip-button {
@@ -976,4 +998,125 @@ body {
     font-family: "din-round";
     font-size: 17px;
 
+}
+
+.lesson-complete {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+
+}
+
+#lottie-lesson {
+    height: 45vh;
+    width: 100%;
+}
+
+.lesson-appreciation {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    align-items: center;
+    display: contents;
+}
+
+.appreciation-head {
+    font-family: "din-round-bold";
+
+    color: rgb(var(--color-bee));
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.appreciation-body {
+    font-family: "din-round";
+
+    color: rgb(var(--color-hare));
+    font-size: 19px;
+    margin-top: 8px;
+}
+
+.lesson-stats {
+    margin-top: 15px;
+    display: flex;
+    gap: 16px;
+    font-family: "din-round";
+
+}
+
+.xp-outer {
+    background-color: rgb(var(--color-snow));
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    width: 163px;
+    z-index: -2;
+}
+
+.lesson-xp {
+    border-radius: 16px;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    background-color: rgb(var(--color-bee));
+}
+
+.lesson-percent {
+    background-color: rgb(var(--color-owl));
+    border-radius: 16px;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.lesson-head {
+    text-align: center;
+    color: rgb(var(--color-snow));
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    padding: 4px 0;
+    text-transform: uppercase;
+    width: auto;
+}
+
+.inner-xp-container-percent {
+    border: 2px solid rgb(var(--color-owl));
+
+}
+
+.inner-xp-container-xp span {
+    color: rgb(var(--color-bee));
+}
+
+.inner-xp-container-percent span {
+    color: rgb(var(--color-owl));
+}
+
+.inner-xp-container-xp {
+    border: 2px solid rgb(var(--color-bee));
+
+}
+
+
+.inner-xp-container {
+    align-items: center;
+    background-color: rgb(var(--color-snow));
+    border-radius: 16px;
+    color: rgb(var(--color-owl));
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    font-weight: 700;
+    height: 70px;
+    justify-content: center;
+    transition: border-color .2s;
+}
+
+.inner-xp-container img {
+    margin-right: 10px;
 }

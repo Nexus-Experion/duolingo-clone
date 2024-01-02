@@ -1,5 +1,6 @@
 function challengeDialogue(question) {
 
+    document.querySelector('.mid-row').innerHTML = '';
 
 
     // Create the challenge-dialogue element

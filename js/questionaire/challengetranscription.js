@@ -1,4 +1,5 @@
 function challengetranscription(question) {
+    document.querySelector('.mid-row').innerHTML = '';
 
     // Create the challenge-select-transcription element
     let challengeSelectTranscription = document.createElement('div');

@@ -76,6 +76,7 @@ function correctOption(selectedOption) {
 
 
 function challengeAssist(question) {
+    document.querySelector('.mid-row').innerHTML = '';
     console.log(question);
 
     let challengeAssistDiv = document.createElement("div");
