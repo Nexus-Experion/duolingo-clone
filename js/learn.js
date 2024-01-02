@@ -12,46 +12,53 @@ const increasePercentage = (event) => {
   parentDiv.querySelector(".floating-start-box")?.classList.toggle("hidden");
 }
 // This should be replaced with API call ========================
-var sectionData = {
-  "section": {
-    "name": "Section 1: Rookie",
-    "units": [
-      {
-        "name": "Unit 1",
-        "description": "Tell others what to do, talk about health",
-        "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-      }, {
-        "name": "Unit 2",
-        "description": "Describe places, tell time",
-        "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-      }, {
-        "name": "Unit 3",
-        "description": "Describe what people do, make comparisons",
-        "chapters": ["Chapter 31", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-      }, {
-        "name": "Unit 4",
-        "description": "Use the future tense, talk about days",
-        "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-      }, {
-        "name": "Unit 5",
-        "description": "Discuss weather, describe relationships",
-        "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-      }, {
-        "name": "Unit 6",
-        "description": "Discuss food, talk about the past",
-        "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-      }, {
-        "name": "Unit 7",
-        "description": "Discuss nature, describe people",
-        "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-      },
-    ]
-  }
-}
+// var sectionData = {
+//   "section": {
+//     "name": "Section 1: Rookie",
+//     "completedChapters": 7,
+//     "completedUnits": 2,
+//     "totalChaptersInUnit": 9,
+//     "totalUnitsInSection": 5,
+//     "currentLesson": 4,
+//     "units": [
+//       {
+//         "name": "Unit 1",
+//         "description": "Tell others what to do, talk about health",
+//         "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
+//       }, {
+//         "name": "Unit 2",
+//         "description": "Describe places, tell time",
+//         "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
+//       }, {
+//         "name": "Unit 3",
+//         "description": "Describe what people do, make comparisons",
+//         "chapters": ["Chapter 31", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
+//       }, {
+//         "name": "Unit 4",
+//         "description": "Use the future tense, talk about days",
+//         "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
+//       }, {
+//         "name": "Unit 5",
+//         "description": "Discuss weather, describe relationships",
+//         "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
+//       }, {
+//         "name": "Unit 6",
+//         "description": "Discuss food, talk about the past",
+//         "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
+//       }, {
+//         "name": "Unit 7",
+//         "description": "Discuss nature, describe people",
+//         "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
+//       },
+//     ]
+//   }
+// }
+
+// localStorage.setItem("sectionData",JSON.stringify(sectionData));
 //======================End of JSON==============================
 
-const placeSectionList=()=>{
-  let sectionList=`<div class="section-container">
+const placeSectionList = () => {
+  let sectionList = `<div class="section-container">
   <div class="middle-dev">
     <h1 class="section-name">Section&nbsp;1:&nbsp;Rookie</h1>
     <div class="status-badge">
@@ -111,25 +118,30 @@ const placeSectionList=()=>{
     src="../assets/svg/section-images/champion-section-banner.svg"
   />
 </div>`
-scrollableContainer = document.querySelector(".scrollable-lesson-div");
-scrollableContainer.innerHTML = ''
-scrollableContainer.insertAdjacentHTML("beforeend", sectionList);
+  scrollableContainer = document.querySelector(".scrollable-lesson-div");
+  scrollableContainer.innerHTML = ''
+  scrollableContainer.insertAdjacentHTML("beforeend", sectionList);
 }
 
-const getUserDataFromSessionStorage=()=>{
+const getUserDataFromSessionStorage = () => {
   return JSON.parse(sessionStorage.getItem("user-info"))
 }
 
-const placeuserStatistics=()=>{
-  let userData=getUserDataFromSessionStorage();
-  document.querySelectorAll(".fire-text").forEach(item=>item.textContent=userData.xp);
-  document.querySelectorAll(".heart-text").forEach(item=>item.textContent=userData.hearts);
-  document.querySelectorAll(".gem-text").forEach(item=>item.textContent=userData.gems);
+const placeuserStatistics = () => {
+  let userData = getUserDataFromSessionStorage();
+  document.querySelectorAll(".fire-text").forEach(item => item.textContent = userData.xp);
+  document.querySelectorAll(".heart-text").forEach(item => item.textContent = userData.hearts);
+  document.querySelectorAll(".gem-text").forEach(item => item.textContent = userData.gems);
 }
-const placeUnitsandLessons = (completedUnits, totalUnits, completedLessons, totalLessonsInUnit) => {
+const placeUnitsandLessons = (sectionData) => {
 
-  let lockedUnits = totalUnits - completedUnits - 1;
-  let lockedLessons = totalLessonsInUnit - completedLessons - 1;
+  let completedChapters = sectionData.section.completedChapters;
+  let completedUnits = sectionData.section.completedUnits
+  let totalChaptersInUnit = sectionData.section.totalChaptersInUnit
+  let totalUnitsInSection = sectionData.section.totalUnitsInSection
+
+  let lockedUnits = totalUnitsInSection - completedUnits - 1;
+  let lockedLessons = totalChaptersInUnit - completedChapters - 1;
   let finishedUnitHeader = `
   <header class="unit unit-colorful">
     <h1 class="unit-number">Unit 2</h1>
@@ -330,7 +342,7 @@ const placeUnitsandLessons = (completedUnits, totalUnits, completedLessons, tota
     return `0 ${60 * paddingArr[index++]}px 0 0`
   }
 
-  const placeCompletedLessons = (lessonCount, sectionRef, unitRef, start = 0) => {
+  const placecompletedChapters = (lessonCount, sectionRef, unitRef, start = 0) => {
     for (let i = start; i < lessonCount + start; i++) {
       let circleNode = document.createElement("div");
       circleNode.setAttribute("class", "alignment-div");
@@ -374,7 +386,7 @@ const placeUnitsandLessons = (completedUnits, totalUnits, completedLessons, tota
     let section = document.createElement("section");
     section.setAttribute("id", `section-${unitCounter++}`);
     section.innerHTML = finishedUnitHeader;
-    placeCompletedLessons(totalLessonsInUnit, section, unitCounter - 2);
+    placecompletedChapters(totalChaptersInUnit, section, unitCounter - 2);
     section.querySelector("h1").textContent = sectionData.section.units[unitCounter - 2].name;
     section.querySelector("span").textContent = sectionData.section.units[unitCounter - 2].description;
     lessonContainer.append(section);
@@ -384,7 +396,7 @@ const placeUnitsandLessons = (completedUnits, totalUnits, completedLessons, tota
   let section = document.createElement("section");
   section.setAttribute("id", `section-${unitCounter++}`);
   section.innerHTML = incompleteUnitHeader;
-  placeCompletedLessons(completedLessons, section, unitCounter - 2);
+  placecompletedChapters(completedChapters, section, unitCounter - 2);
   placeOngoingLessons(section, unitCounter - 2, 3);
   placeLockedLessons(lockedLessons, section, unitCounter - 2, 4);
   section.querySelector("h1").textContent = sectionData.section.units[unitCounter - 2].name;
@@ -396,7 +408,7 @@ const placeUnitsandLessons = (completedUnits, totalUnits, completedLessons, tota
     let section = document.createElement("section");
     section.setAttribute("id", `section-${unitCounter++}`);
     section.innerHTML = incompleteUnitHeader;
-    placeLockedLessons(totalLessonsInUnit, section, unitCounter - 2);
+    placeLockedLessons(totalChaptersInUnit, section, unitCounter - 2);
     section.querySelector("h1").textContent = sectionData.section.units[unitCounter - 2].name;
     section.querySelector("span").textContent = sectionData.section.units[unitCounter - 2].description;
     lessonContainer.append(section);
@@ -404,32 +416,53 @@ const placeUnitsandLessons = (completedUnits, totalUnits, completedLessons, tota
 
   scrollableContainer.insertAdjacentHTML("beforeend", bottomNavBar);
   placeuserStatistics();
+  updateStatistics();
 }
 
-const showLessonsInSection=(num)=>{
+const showLessonsInSection = (num) => {
   //================These values must be taken when we get current Section's sectionData
-  completedLessons = 7
-  completedUnits = 2
-  totalLessonsInUnit = 9
-  totalUnitsInSection = 5
+  let sectionData = JSON.parse(localStorage.getItem("sectionData"));
+
   //=====================================================================================
-  placeUnitsandLessons(completedUnits, totalUnitsInSection, completedLessons, totalLessonsInUnit);
+  placeUnitsandLessons(sectionData);
+}
+const startNewChapter = () => {
+  console.log("Entering new chapter");
+  let sectionData = JSON.parse(localStorage.getItem("sectionData"));
+  console.log(sectionData.section.currentLesson)
+  if (sectionData.section.completedChapters + 1 == sectionData.section.totalChaptersInUnit) {
+    sectionData.section.completedUnits += 1;
+    sectionData.section.completedChapters = 0;
+    sectionData.section.currentLesson = 0;
+  } else {
+    sectionData.section.completedChapters += 1;
+    sectionData.section.currentLesson = 0;
+  }
+  localStorage.setItem("sectionData", JSON.stringify(sectionData));
+  setTimeout(()=> placeUnitsandLessons(sectionData),300);
+}
+const updateStatistics = () => {
+  console.log("calling updateStatistics");
+  let xpFromLesson = parseInt(localStorage.getItem("xpCount"));
+  isNaN(xpFromLesson) ? xpFromLesson = 0 : 0
+  console.log(xpFromLesson);
+  let sectionData = JSON.parse(localStorage.getItem("sectionData"));
+  if (xpFromLesson != 0) {
+    localStorage.removeItem("xpCount");
+    if (sectionData.section.currentLesson >= 4) { 
+      startNewChapter() 
+    } else { 
+      sectionData.section.currentLesson += 1;
+      localStorage.setItem("sectionData", JSON.stringify(sectionData));
+    }
+  }
+  console.log(sectionData.section.currentLesson);
+  setTimeout(() => document.querySelector("circle-progress").value = (25 * sectionData.section.currentLesson), 200);
 }
 
 showLessonsInSection(1);
 
 const startLesson = () => {
-  let currentProgress = document.querySelector("circle-progress").value;
-  currentProgress >= 100 ? startNewChapter() : document.querySelector("circle-progress").value += 25;
+  window.location.href = "questionarie.html"
 }
 
-const startNewChapter = () => {
-  if (completedLessons + 1 == totalLessonsInUnit) {
-    completedUnits += 1;
-    completedLessons = 0;
-  } else {
-    completedLessons += 1;
-  }
-
-  placeUnitsandLessons(completedUnits, 5, completedLessons, totalLessonsInUnit);
-}
