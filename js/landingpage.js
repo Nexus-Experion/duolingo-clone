@@ -9,10 +9,10 @@ const getStartedButtonAnimation = () => {
     setTimeout(() => document.getElementById("get-started-button").classList.toggle('clicked'), 300);
     window.location.href = "/html/signup.html";
 }
-const animation = bodymovin.loadAnimation({
-    container: document.getElementById('left-logging-header-video'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: '../assets/json-animations/header.json'
-});
+// const animation = bodymovin.loadAnimation({
+//     container: document.getElementById('left-logging-header-video'),
+//     renderer: 'svg',
+//     loop: true,
+//     autoplay: true,
+//     path: '../assets/json-animations/header.json'
+// });
