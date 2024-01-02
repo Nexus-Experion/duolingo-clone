@@ -213,8 +213,7 @@
   --color-yir-page4-shadow: 143, 219, 255;
   --color-yir-page5-shadow: 255, 183, 80;
 
-  --shine-background-color: linear-gradient(
-      136deg,
+  --shine-background-color: linear-gradient(136deg,
       transparent 10%,
       rgb(var(--color-gold-shine), 0.5) 10%,
       rgb(var(--color-gold-shine), 0.5) 40%,
@@ -222,8 +221,7 @@
       transparent 53%,
       rgb(var(--color-gold-shine), 0.5) 53%,
       rgb(var(--color-gold-shine), 0.5) 71%,
-      transparent 71%
-    ),
+      transparent 71%),
     rgb(var(--color-bee));
   --shine-foreground-color: rgb(var(--color-guinea-pig-always-light));
   --path-unit-background-color: rgb(var(--color-bee));
@@ -244,6 +242,11 @@
 @font-face {
   font-family: "din-round";
   src: url("../assets/fonts/din-next-rounded-regular.woff2") format("woff");
+}
+
+@font-face {
+  font-family: 'din-round-medium';
+  src: url('../assets/fonts/DINRoundPro-Medi.ttf');
 }
 
 body {
