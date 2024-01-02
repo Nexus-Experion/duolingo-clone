@@ -355,14 +355,14 @@
     border-top: 2px solid rgb(var(--color-swan-always-light));
     display: flex;
     justify-content: center;
-    padding-left: 40px;
+    padding-left:40px;
     padding-right: 40px;
 }
 
 .scrollable-navbar-nav{
     display: flex;
     align-items: center;
-    width: 70%;
+    width: 85%;
 }
 
 .left-arrow-svg{
