@@ -1,5 +1,6 @@
 function challengeDialogue(question) {
-
+    // const audioQuestion = new Audio(question.tts);
+    // audioQuestion.play();
     document.querySelector('.mid-row').innerHTML = '';
 
 
