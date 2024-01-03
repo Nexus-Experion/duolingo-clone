@@ -1,80 +1,3 @@
-
-//button click animation
-
-const buttonClickAnimation = (id) => {
-
-    document.getElementById(id).classList.toggle('clicked');
-    setTimeout(() => document.getElementById(id).classList.toggle('clicked'), 200);
-
-}
-
-//select option animation toggle
-window.selectedOption = 0;
-
-
-const selectOptionButton = (id) => {
-
-    //same 3 statements for activating check button
-    document.getElementById('check-button-div').classList.add('check-button-outer-active');
-    document.getElementById('check-button').classList.remove('check-button-inner-inactive')
-    document.getElementById('check-button').classList.add('check-button-inner-active')
-
-
-    selectedOption = parseInt(id);
-    console.log(selectedOption)
-    document.querySelectorAll('.option-no-selected').forEach((option) => {
-        option.classList.remove('option-no-selected');
-        option.className = 'option-no'
-    })
-    document.querySelectorAll('.outer-options-div-selected').forEach((option) => {
-        option.classList.remove('outer-options-div-selected');
-        option.className = 'outer-options-div'
-    });
-    document.querySelectorAll('.option-name-selected').forEach((option) => {
-        option.classList.remove('option-name-selected');
-        option.className = 'option-name'
-
-    });
-    document.querySelectorAll('.option-div-selected').forEach((option) => {
-        option.classList.remove('.option-div-selected');
-        option.className = 'option-div'
-    });
-    document.getElementById('option-no-' + id).className = 'option-no-selected';
-    document.getElementById('option-name-' + id).className = 'option-name-selected';
-    document.getElementById(id).className = 'option-div-selected';
-    document.getElementById('outer-options-div-' + id).className = 'outer-options-div-selected';
-
-}
-
-
-function correctOption(selectedOption) {
-
-    document.getElementById('option-no-' + selectedOption).className = 'option-no-correct';
-    document.getElementById('option-name-' + selectedOption).className = 'option-name-correct';
-    document.getElementById(selectedOption).className = 'option-div-correct';
-    document.getElementById('outer-options-div-' + selectedOption).className = 'outer-options-div-correct';
-}
-
-
-
-
-// let question;
-// fetch('../assets/JSON/german_lev_1.json')
-//     .then(response => response.json())
-//     .then(data => { question = data.challenges[4] })
-// challengeAssist(question);
-
-
-// function fetchQuestion() {
-//     fetch('../assets/JSON/german_lev_1.json')
-//         .then(response => response.json())
-//         .then(async data => { return await data.challenges[4] })
-//     console.log();
-// }
-
-// question = fetchQuestion();
-
-
 function challengeAssist(question) {
     document.querySelector('.mid-row').innerHTML = '';
     console.log(question);
@@ -157,14 +80,9 @@ function challengeAssist(question) {
     //question section
     document.getElementById('assist-text').textContent = question.prompt;
     const choices = question.options;
-    // console.log(data.challenges[4].choices[data.challenges[4].correctIndex])
     //set correct answer in local storage
     localStorage.setItem('correctIndex', question.correctIndex + 1);
     localStorage.setItem('solution', question.choices[question.correctIndex]);
-    // console.log(choices)
-    // console.log(data.challenges.length)
-    // num = Math.floor(Math.random() * data.challenges.length);
-    // console.log(num)
 
     // Get the container where buttons will be added
     const assistContent = document.getElementById('assist-content-options');

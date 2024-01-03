@@ -1,5 +1,67 @@
 let heartCount = 5;
 let clickCount = 0;
+
+
+//button click animation
+
+const buttonClickAnimation = (id) => {
+
+    document.getElementById(id).classList.toggle('clicked');
+    setTimeout(() => document.getElementById(id).classList.toggle('clicked'), 200);
+
+}
+
+
+//select option animation toggle
+window.selectedOption = 0;
+
+
+const selectOptionButton = (id) => {
+
+    //same 3 statements for activating check button
+    document.getElementById('check-button-div').classList.add('check-button-outer-active');
+    document.getElementById('check-button').classList.remove('check-button-inner-inactive')
+    document.getElementById('check-button').classList.add('check-button-inner-active')
+
+
+    selectedOption = parseInt(id);
+    console.log(selectedOption)
+    document.querySelectorAll('.option-no-selected').forEach((option) => {
+        option.classList.remove('option-no-selected');
+        option.className = 'option-no'
+    })
+    document.querySelectorAll('.outer-options-div-selected').forEach((option) => {
+        option.classList.remove('outer-options-div-selected');
+        option.className = 'outer-options-div'
+    });
+    document.querySelectorAll('.option-name-selected').forEach((option) => {
+        option.classList.remove('option-name-selected');
+        option.className = 'option-name'
+
+    });
+    document.querySelectorAll('.option-div-selected').forEach((option) => {
+        option.classList.remove('.option-div-selected');
+        option.className = 'option-div'
+    });
+    document.getElementById('option-no-' + id).className = 'option-no-selected';
+    document.getElementById('option-name-' + id).className = 'option-name-selected';
+    document.getElementById(id).className = 'option-div-selected';
+    document.getElementById('outer-options-div-' + id).className = 'outer-options-div-selected';
+
+}
+
+
+function correctOption(selectedOption) {
+
+    document.getElementById('option-no-' + selectedOption).className = 'option-no-correct';
+    document.getElementById('option-name-' + selectedOption).className = 'option-name-correct';
+    document.getElementById(selectedOption).className = 'option-div-correct';
+    document.getElementById('outer-options-div-' + selectedOption).className = 'outer-options-div-correct';
+}
+
+
+
+
 function currentHearts() {
     //FETCH HEART FROM FIRESTORE TO HERE AND UPDATE THROUGH HERE
     document.getElementById("heart-count").textContent = "3";
@@ -77,14 +139,9 @@ function checkButton(id) {
     setTimeout(() => document.getElementById(id).classList.toggle('clicked'), 300);
     document.getElementById('continue-button').textContent = 'Continue'
     clickCount++;
-    // console.log(clickCount + "after addition")
-    // console.log("lorem1234")
-    if (clickCount === 2) {
-        // Call your function on the second click
-        // console.log("lorem12345678")
 
+    if (clickCount === 2) {
         questionLoad();
-        // Reset clickCount for future clicks
         clickCount = 0;
     }
 
@@ -178,6 +235,8 @@ window.onload = setTimeout(() => questionLoad(), 300);
 
 
 function lessonComplete() {
+    const audio = new Audio('../assets/audio/duolingo-lesson.mp3');
+    audio.play();
     clickCount = 0;
     resetBottomRow();
     document.getElementById('check-button-div').classList.add('check-button-outer-active');
@@ -309,4 +368,4 @@ function switchToLearn() {
         window.location.href = './learn.html';
     }
 
-} a
+} 
