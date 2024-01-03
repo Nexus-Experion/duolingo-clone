@@ -342,3 +342,62 @@
         padding: 0 40px;
     }
 }
+
+
+/* Scrollable Navbar of Flags */
+
+.scrollable-navabar-div{
+    font-family: din-round-bold;
+    letter-spacing: 1px;
+    align-items: center;
+    height: 80px;
+    border-bottom: 2px solid rgb(var(--color-swan-always-light));
+    border-top: 2px solid rgb(var(--color-swan-always-light));
+    display: flex;
+    justify-content: center;
+    padding-left:40px;
+    padding-right: 40px;
+}
+
+.scrollable-navbar-nav{
+    display: flex;
+    align-items: center;
+    width: 85%;
+}
+
+.left-arrow-svg{
+    color: grey;
+    height: 14px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.right-arrow-svg{
+    color: grey;
+    height: 14px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.countries-div{
+    overflow: hidden;
+}
+
+.countries-list{
+    transition: transform .5s ease-in-out;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.conuntry-one{
+    display: flex;
+    align-items: center;
+    color: rgb(var(--color-wolf-always-light));
+    text-decoration: none;
+}
+
+.country-flag-svg{
+    margin-right: 10px;
+}
