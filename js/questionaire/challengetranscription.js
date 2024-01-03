@@ -1,4 +1,6 @@
 function challengetranscription(question) {
+    // const audioQuestion = new Audio(question.tts);
+    // audioQuestion.play();
     document.querySelector('.mid-row').innerHTML = '';
 
     // Create the challenge-select-transcription element
