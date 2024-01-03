@@ -1,0 +1,32 @@
+
+.main{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+}
+.left{
+
+}
+.right{
+    margin: 0 auto;
+    max-width: 1056px;
+    padding-top: 24px;
+    width: 100%;
+}
+.rightalldiv{
+    flex-direction: row-reverse;
+    padding: 0 24px 24px;
+    grid-gap: 48px;
+    display: flex;
+}
+.fdivinright{
+    
+    z-index: 1;
+}
+.sdivinright{
+    flex: 1;
+    z-index: 0;
+}
+flex: 1;
+    z-index: 0;
