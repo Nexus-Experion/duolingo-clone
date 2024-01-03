@@ -12,14 +12,14 @@ const increasePercentage = (event) => {
   parentDiv.querySelector(".floating-start-box")?.classList.toggle("hidden");
 }
 // This should be replaced with API call ========================
-// var sectionData = {
+//  var sectionData = {
 //   "section": {
 //     "name": "Section 1: Rookie",
 //     "completedChapters": 7,
 //     "completedUnits": 2,
 //     "totalChaptersInUnit": 9,
 //     "totalUnitsInSection": 5,
-//     "currentLesson": 4,
+//     "currentLesson": 3,
 //     "units": [
 //       {
 //         "name": "Unit 1",
@@ -175,7 +175,7 @@ const placeUnitsandLessons = (sectionData) => {
   <div class="triangle-top"></div>
   <div class="text-container">
     <h1>Form basic sentences</h1>
-    <p>Lesson 2 of 4</p>
+    <p>Lesson ${sectionData.section.currentLesson+1} of 4</p>
     <button onclick="startLesson()">Start +10 XP</button>
   </div>
 </div>`
@@ -238,7 +238,7 @@ const placeUnitsandLessons = (sectionData) => {
   <span class="icon-and-text-wrap">
     <div class="icon-in-button">
       <img
-        src="../assets/svg/streak-fire-active.svg"
+        src="../assets/svg/lesson-xp.svg"
         alt="home-icon"
         class="profile"
       />
@@ -439,7 +439,7 @@ const startNewChapter = () => {
     sectionData.section.currentLesson = 0;
   }
   localStorage.setItem("sectionData", JSON.stringify(sectionData));
-  setTimeout(()=> placeUnitsandLessons(sectionData),300);
+  setTimeout(()=> placeUnitsandLessons(sectionData),1000);
 }
 const updateStatistics = () => {
   console.log("calling updateStatistics");
@@ -447,14 +447,19 @@ const updateStatistics = () => {
   isNaN(xpFromLesson) ? xpFromLesson = 0 : 0
   console.log(xpFromLesson);
   let sectionData = JSON.parse(localStorage.getItem("sectionData"));
+  let userData = getUserDataFromSessionStorage();
   if (xpFromLesson != 0) {
     localStorage.removeItem("xpCount");
-    if (sectionData.section.currentLesson >= 4) { 
+    if (sectionData.section.currentLesson >= 3) { 
       startNewChapter() 
     } else { 
       sectionData.section.currentLesson += 1;
       localStorage.setItem("sectionData", JSON.stringify(sectionData));
+      
     }
+    userData.xp+=xpFromLesson;
+    sessionStorage.setItem("user-info",JSON.stringify(userData));
+    setTimeout(()=> placeUnitsandLessons(sectionData),1000);
   }
   console.log(sectionData.section.currentLesson);
   setTimeout(() => document.querySelector("circle-progress").value = (25 * sectionData.section.currentLesson), 200);
