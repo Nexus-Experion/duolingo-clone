@@ -3,7 +3,6 @@ function challengeDialogue(question) {
     // audioQuestion.play();
     document.querySelector('.mid-row').innerHTML = '';
 
-
     // Create the challenge-dialogue element
     let challengeDialogue = document.createElement('div');
     challengeDialogue.classList.add('challenge-dialogue');
@@ -54,8 +53,6 @@ function challengeDialogue(question) {
 
     let midRowElement = document.querySelector('.mid-row');
     midRowElement.appendChild(challengeDialogue);
-
-
 
     // Create the first-dialogue-row element
     let firstDialogueRow = document.createElement('div');
@@ -145,9 +142,6 @@ function challengeDialogue(question) {
 
     secondDialogueRow.appendChild(secondDialogueRowContent);
 
-
-
-
     // Get the element with class "dialogue-question-row" and append the structure to it
     let dialogueQuestionRowElement = document.querySelector('.dialogue-question-row');
     dialogueQuestionRowElement.appendChild(firstDialogueRow);
@@ -202,15 +196,6 @@ function challengeDialogue(question) {
         optionCounter++;
     });
 
-
-
-
-
-
-
-
-
-
     const speakerAnimation =
         bodymovin.loadAnimation({
             container:
@@ -248,10 +233,6 @@ function challengeDialogue(question) {
     speakerButton.addEventListener("click", function () {
         audio.play();
     })
-
-    // console.log(question.dialogue[0].displayTokens.length)
-
-    // console.log(question.dialogue[0].displayTokens[0].text)
 
 
 }

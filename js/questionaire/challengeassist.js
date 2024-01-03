@@ -84,7 +84,6 @@ function challengeAssist(question) {
     localStorage.setItem('correctIndex', question.correctIndex + 1);
     localStorage.setItem('solution', question.choices[question.correctIndex]);
 
-    // Get the container where buttons will be added
     const assistContent = document.getElementById('assist-content-options');
     let outerOptionsCounter = 1;
     let optionCounter = 1;
@@ -116,14 +115,11 @@ function challengeAssist(question) {
         optionNameSpan.id = "option-name-" + optionCounter;
         optionNameSpan.textContent = choice.text
 
-        // Append spans to the option div
         optionDiv.appendChild(optionNoSpan);
         optionDiv.appendChild(optionNameSpan);
 
-        // Append option div to outer options div
         outerOptionsDiv.appendChild(optionDiv);
 
-        // Append outer options div to the body
         assistContent.appendChild(outerOptionsDiv);
 
         // Increment counters for unique IDs
