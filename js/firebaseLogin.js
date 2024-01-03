@@ -26,7 +26,8 @@ let signInUser = (evt) => {
                         age: userData.age,
                         gems: userData.gems,
                         xp: userData.xp,
-                        hearts: userData.hearts
+                        hearts: userData.hearts,
+                        creationDate: userData.creationDate
                     }));
                     // sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
                     window.location.href = "./learn.html";

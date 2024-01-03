@@ -19,6 +19,8 @@ let RegisterUser = async (event) => {
 
         console.log("Account created successfully");
 
+        const currentDate = new Date();
+        
         const userDocRef = doc(db, 'UsersAuthList', credentials.user.uid);
         await setDoc(userDocRef, {
             age: ageInp.value,
@@ -26,7 +28,8 @@ let RegisterUser = async (event) => {
             email: emailInp.value,
             gems: 500,
             xp: 0,
-            hearts: 5
+            hearts: 5,
+            creationDate: currentDate
         });
 
         const dbref = doc(db, 'UsersAuthList', credentials.user.uid);
@@ -40,7 +43,8 @@ let RegisterUser = async (event) => {
                         age: userData.age,
                         gems: userData.gems,
                         xp: userData.xp,
-                        hearts: userData.hearts
+                        hearts: userData.hearts,
+                        creationDate: userData.creationDate
                     }));
                     // sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
                     window.location.href = "./learn.html";
