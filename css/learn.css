@@ -622,3 +622,6 @@ circle-progress::part(value) {
   grid-template-rows: repeat(2, min-content) 1fr;
   padding: 32px 0 28px;
 }
+section{
+  margin-bottom: 48px;
+}
