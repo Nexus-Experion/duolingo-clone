@@ -3,41 +3,33 @@ function challengetranscription(question) {
     // audioQuestion.play();
     document.querySelector('.mid-row').innerHTML = '';
 
-    // Create the challenge-select-transcription element
     let challengeSelectTranscription = document.createElement('div');
     challengeSelectTranscription.classList.add('challenge-select-transcription');
 
-    // Create the challenge-section element
     let challengeSection = document.createElement('div');
     challengeSection.classList.add('challenge-section');
 
-    // Create the challenge-header element
     let challengeHeader = document.createElement('div');
     challengeHeader.classList.add('challenge-header');
 
-    // Create the h1 element
     let h1Element = document.createElement('h1');
 
-    // Create the span element inside h1
     let spanElement = document.createElement('span');
     spanElement.textContent = 'What do you hear?';
 
     h1Element.appendChild(spanElement);
 
-    // Create the transcription-content element
     let transcriptionContent = document.createElement('div');
     transcriptionContent.classList.add('transcription-content');
 
-    // Create the transcription-content-question element
     let transcriptionContentQuestion = document.createElement('div');
     transcriptionContentQuestion.classList.add('transcription-content-question');
 
-    // Create the button element for transcription
     let transcriptionButton = document.createElement('button');
     transcriptionButton.classList.add('transcription-button-div');
     let transcriptionOptions = document.createElement('div');
     transcriptionOptions.id = 'transcription-options';
-    // Create the span element for speaker-animation-white
+
     let speakerAnimationWhite = document.createElement('span');
     speakerAnimationWhite.id = 'speaker-animation-white';
 
@@ -92,28 +84,25 @@ function challengetranscription(question) {
             audio.play();
         });
 
-        // Create option number span
+        // Create option number
         const optionNoSpan = document.createElement("span");
         optionNoSpan.className = "option-no";
         optionNoSpan.id = "option-no-" + optionCounter;
         optionNoSpan.textContent = optionCounter;
-        // Create option name span
+        // Create option name
         const optionNameSpan = document.createElement("span");
         optionNameSpan.className = "option-name";
         optionNameSpan.id = "option-name-" + optionCounter;
         optionNameSpan.textContent = choice.text;
 
-        // Append spans to the option div
         optionDiv.appendChild(optionNoSpan);
         optionDiv.appendChild(optionNameSpan);
 
-        // Append option div to outer options div
         outerOptionsDiv.appendChild(optionDiv);
 
-        // Append outer options div to the body
         transContent.appendChild(outerOptionsDiv);
 
-        // Increment counters for unique IDs
+        // Increment counters 
         outerOptionsCounter++;
         optionCounter++;
     });

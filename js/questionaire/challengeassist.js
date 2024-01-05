@@ -39,15 +39,12 @@ function challengeAssist(question) {
     let containerProjectionDiv = document.createElement("div");
     containerProjectionDiv.className = "container-projection";
 
-    // Create div with class "projection"
     let projectionDiv = document.createElement("div");
     projectionDiv.className = "projection";
 
-    // Create div with id "assist-content-options"
     let assistContentOptionsDiv = document.createElement("div");
     assistContentOptionsDiv.id = "assist-content-options";
 
-    // Append elements in a nested structure
     containerDiv.appendChild(assistTextDiv);
     containerProjectionDiv.appendChild(projectionDiv);
     assistWordContainerDiv.appendChild(containerDiv);
@@ -58,17 +55,15 @@ function challengeAssist(question) {
     assistContentDiv.appendChild(assistContentQuestionDiv);
     assistContentDiv.appendChild(assistContentOptionsDiv);
 
-    // Append all elements to the document body
     assistHeaderDiv.appendChild(h1Element);
     assistHeaderDiv.appendChild(assistContentDiv);
     assistSectionDiv.appendChild(assistHeaderDiv);
     challengeAssistDiv.appendChild(assistSectionDiv);
 
-    // Append the challengeAssistDiv to the div with class "mid-row"
     let midRowDiv = document.querySelector('.mid-row');
     midRowDiv.appendChild(challengeAssistDiv);
+
     let animationPath = '../assets/json-animations/assistheader.json';
-    // Replace with the actual link to your Lottie JSON file
     const animation = bodymovin.loadAnimation({
         container: document.getElementById('assist-character'),
         renderer: 'svg',
@@ -80,6 +75,7 @@ function challengeAssist(question) {
     //question section
     document.getElementById('assist-text').textContent = question.prompt;
     const choices = question.options;
+
     //set correct answer in local storage
     localStorage.setItem('correctIndex', question.correctIndex + 1);
     localStorage.setItem('solution', question.choices[question.correctIndex]);
@@ -104,12 +100,13 @@ function challengeAssist(question) {
             audio.play();
         });
 
-        // Create option number span
+        // Create option number 
         const optionNoSpan = document.createElement("span");
         optionNoSpan.className = "option-no";
         optionNoSpan.id = "option-no-" + optionCounter;
         optionNoSpan.textContent = optionCounter;
-        // Create option name span
+
+        // Create option name 
         const optionNameSpan = document.createElement("span");
         optionNameSpan.className = "option-name";
         optionNameSpan.id = "option-name-" + optionCounter;
@@ -126,6 +123,5 @@ function challengeAssist(question) {
         outerOptionsCounter++;
         optionCounter++;
     });
-
 }
 

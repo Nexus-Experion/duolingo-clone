@@ -1,6 +1,6 @@
 let heartCount = 5;
 let clickCount = 0;
-
+let progressValue = 0;
 
 //button click animation
 
@@ -82,6 +82,7 @@ function disablePointer() {
         childElement.style.pointerEvents = 'none';
     }
 }
+
 function resetBottomRow() {
     document.getElementById('skip-span').textContent = "SKIP";
 
@@ -108,28 +109,38 @@ function resetBottomRow() {
 
 function checkButton(id) {
     disablePointer();
+
     if (localStorage.getItem('correctIndex') == window.selectedOption) {
+
         correctOption(selectedOption);
 
-        correctBottomRow();
         if (clickCount == 0) {
+            correctBottomRow();
+
+            progressValue = progressValue + 25;
+            updateProgressBar(progressValue);
             const audio = new Audio('../assets/audio/correct-sound.mp3');
             audio.play();
             xpCount = xpCount + 2;
         }
+
     }
     else {
 
-        wrongBottomRow();
 
 
         if (clickCount == 0) {
+            wrongBottomRow();
+
+            progressValue = progressValue + 25;
+            updateProgressBar(progressValue);
             document.getElementById("heart-count").textContent = heartCount - 1;
             heartCount = heartCount - 1;
             const audio = new Audio('../assets/audio/wrong-sound.mp3');
             audio.play();
         }
     }
+    // localStorage.removeItem('correctIndex');
 
     // console.log(window.selectedOption)
     console.log(window.selectedOption)
@@ -177,8 +188,8 @@ let questionCount = 1;
 let xpCount = -1;
 
 function questionLoad() {
-    fetch('../assets/JSON/german_lev_1.json')
-        .then(response => response.json())
+    let learnLang = sessionStorage.getItem("learnLang");
+    fetch(`https://duolingo-serverless-endpoint.vercel.app/api/question?lang=de`).then(response => response.json())
         .then(data => {
             let index = Math.floor(Math.random() * data.challenges.length);
             // console.log(data.challenges[index]);
@@ -235,6 +246,7 @@ window.onload = setTimeout(() => questionLoad(), 300);
 
 
 function lessonComplete() {
+    document.querySelector('.mid-row').style.overflow = 'hidden';
     const audio = new Audio('../assets/audio/duolingo-lesson.mp3');
     audio.play();
     clickCount = 0;
@@ -368,4 +380,29 @@ function switchToLearn() {
         window.location.href = './learn.html';
     }
 
-} 
+}
+
+function updateProgressBar(progressValue) {
+    var progressBar = document.querySelector(".inner-green-bar");
+    var lightProgressBar = document.querySelector(".inner-light-green-bar");
+    lightProgressBar.style.width = progressValue + "%";
+    progressBar.style.width = progressValue + "%";
+}
+
+function revertQuestionScreen() {
+    document.querySelector('.exit-overlay').classList.toggle('clicked');
+    setTimeout(() => document.querySelector('.exit-overlay').classList.toggle('clicked'), 400);
+    document.querySelector('.exit-overlay').style.display = 'none'
+
+}
+
+function showAlertPopup() {
+    document.querySelector('.exit-overlay').style.display = 'flex'
+
+
+}
+
+function exitToLearn() {
+    window.location.href = './learn.html';
+
+}
