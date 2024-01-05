@@ -1,4 +1,6 @@
 function challengeSelect(question) {
+    document.querySelector('.mid-row').innerHTML = '';
+
     localStorage.setItem('challenge', question.type);
     var challengeSelect = document.createElement('div');
     challengeSelect.classList.add('challenge-select');

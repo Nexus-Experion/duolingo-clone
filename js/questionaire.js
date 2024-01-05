@@ -115,8 +115,7 @@ function checkButton(id) {
     if (localStorage.getItem('correctIndex') == window.selectedOption) {
 
         if ((localStorage.getItem('challenge')) == 'select') {
-            correctSelectOption(id)
-            localStorage.removeItem("challenge")
+            correctSelectOption(selectedOption)
         }
         else {
             correctOption(selectedOption);
