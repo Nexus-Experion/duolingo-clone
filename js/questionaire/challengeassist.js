@@ -1,4 +1,6 @@
 function challengeAssist(question) {
+    localStorage.setItem('challenge', question.type);
+
     document.querySelector('.mid-row').innerHTML = '';
     console.log(question);
 

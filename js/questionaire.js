@@ -57,6 +57,7 @@ function correctOption(selectedOption) {
     document.getElementById('option-name-' + selectedOption).className = 'option-name-correct';
     document.getElementById(selectedOption).className = 'option-div-correct';
     document.getElementById('outer-options-div-' + selectedOption).className = 'outer-options-div-correct';
+
 }
 
 
@@ -68,6 +69,7 @@ function currentHearts() {
 };
 
 function skipButton(id) {
+    localStorage.removeItem("correctIndex")
     document.getElementById(id).classList.toggle('clicked');
     setTimeout(() => document.getElementById(id).classList.toggle('clicked'), 300);
     // document.getElementById(id).classList.add('');
@@ -112,8 +114,13 @@ function checkButton(id) {
 
     if (localStorage.getItem('correctIndex') == window.selectedOption) {
 
-        correctOption(selectedOption);
-
+        if ((localStorage.getItem('challenge')) == 'select') {
+            correctSelectOption(id)
+            localStorage.removeItem("challenge")
+        }
+        else {
+            correctOption(selectedOption);
+        }
         if (clickCount == 0) {
             correctBottomRow();
 
@@ -188,9 +195,18 @@ let questionCount = 1;
 let xpCount = -1;
 
 function questionLoad() {
+    // fetch("../assets/JSON/german_lev_1.json").then(response => response.json())
+    //     .then(data => {
+    //         let index = Math.floor(Math.random() * data.challenges.length);
+    //         console.log(data.challenges[index]);
+    //         challengeSelect(data.challenges[0]);
+
+    //     })
+
     let learnLang = sessionStorage.getItem("learnLang");
     fetch(`https://duolingo-serverless-endpoint.vercel.app/api/question?lang=de`).then(response => response.json())
         .then(data => {
+
             let index = Math.floor(Math.random() * data.challenges.length);
             // console.log(data.challenges[index]);
             if (questionCount < 5) {
@@ -199,7 +215,6 @@ function questionLoad() {
                 // challengeDialogue(data.challenges[12]);
                 // data.challenges
                 // challengetranscription(data.challenges[13]);
-
                 if (data.challenges[index].type == "assist") {
                     resetBottomRow();
                     console.log("inner");
@@ -215,7 +230,13 @@ function questionLoad() {
                 }
                 else if (data.challenges[index].type == "selectTranscription") {
                     resetBottomRow();
-                    challengetranscription(data.challenges[index]);
+                    challengeTranscription(data.challenges[index]);
+                    questionCount++;
+
+                }
+                else if (data.challenges[index].type == "select") {
+                    resetBottomRow();
+                    challengeSelect(data.challenges[index]);
                     questionCount++;
 
                 }

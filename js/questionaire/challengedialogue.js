@@ -1,4 +1,6 @@
 function challengeDialogue(question) {
+    localStorage.setItem('challenge', question.type);
+
     // const audioQuestion = new Audio(question.tts);
     // audioQuestion.play();
     document.querySelector('.mid-row').innerHTML = '';
