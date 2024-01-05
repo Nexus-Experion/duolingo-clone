@@ -5,6 +5,72 @@
     "type": "LEXEME_SKILL_LEVEL_PRACTICE",
     "challenges": [
         {
+            "prompt": "coffee",
+            "choices": [
+                {
+                    "image": "https://d2pur3iezf4d1j.cloudfront.net/images/7afea32bcf0e8c6f9d446ad4aad416be",
+                    "phrase": "Wasser",
+                    "svg": "https://d2pur3iezf4d1j.cloudfront.net/images/7afea32bcf0e8c6f9d446ad4aad416be",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/paul/e245b0017d6bf8942ae7df109de7a3e9",
+                    "hint": "water"
+                },
+                {
+                    "image": "https://d2pur3iezf4d1j.cloudfront.net/images/6fd84b8a838c43c4a84b44b08b10177e",
+                    "phrase": "Kaffee",
+                    "svg": "https://d2pur3iezf4d1j.cloudfront.net/images/6fd84b8a838c43c4a84b44b08b10177e",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/mila/5beb8054de20d70eba4ca0e8a928eca4",
+                    "hint": "coffee"
+                },
+                {
+                    "image": "https://d2pur3iezf4d1j.cloudfront.net/images/645fa42dcea02c7e2970a1285e321562",
+                    "phrase": "Milch",
+                    "svg": "https://d2pur3iezf4d1j.cloudfront.net/images/645fa42dcea02c7e2970a1285e321562",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/mila/8652a17aee97beb79ba4885e74017fdd",
+                    "hint": "milk"
+                }
+            ],
+            "correctIndex": 1,
+            "type": "select",
+            "id": "21859faa67a847dbbae451dee1cb1389",
+            "challengeResponseTrackingProperties": {
+                "path_uses_unit_vision": false,
+                "level_session_index": 4,
+                "generation_timestamp": 1703089787190,
+                "session_type": "lexeme_skill_level_practice",
+                "is_v2": true,
+                "tagged_kc_ids": [
+                    "e25a8f420cb9576afd58b942b6294be5"
+                ]
+            },
+            "metadata": {
+                "challenge_construction_insights": {},
+                "highlight": [],
+                "hint": "coffee",
+                "phrase": "Kaffee",
+                "solution_key": "e25a8f420cb9576afd58b942b6294be5",
+                "source_language": "de",
+                "specific_type": "name_example",
+                "language": "de",
+                "lexeme_ids_to_update": [
+                    "e25a8f420cb9576afd58b942b6294be5"
+                ],
+                "type": "select",
+                "lexemes_to_update": [
+                    "e25a8f420cb9576afd58b942b6294be5"
+                ],
+                "generic_lexeme_map": {},
+                "num_comments": 0,
+                "learning_language": "de",
+                "from_language": "en"
+            },
+            "newWords": [],
+            "progressUpdates": [],
+            "challengeGeneratorIdentifier": {
+                "specificType": "name_example",
+                "generatorId": "e25a8f420cb9576afd58b942b6294be5"
+            }
+        },
+        {
             "prompt": "Milch oder Wasser?",
             "solutionTranslation": "Milk or water?",
             "soundId": "LDywzvhmUiqF6iPh",
@@ -4918,72 +4984,6 @@
                 "challengeGeneratorIdentifier": {
                     "specificType": "tap",
                     "generatorId": "40aa539af88578f33178fddba67f5869"
-                }
-            },
-            {
-                "prompt": "coffee",
-                "choices": [
-                    {
-                        "image": "https://d2pur3iezf4d1j.cloudfront.net/images/7afea32bcf0e8c6f9d446ad4aad416be",
-                        "phrase": "Wasser",
-                        "svg": "https://d2pur3iezf4d1j.cloudfront.net/images/7afea32bcf0e8c6f9d446ad4aad416be",
-                        "tts": "https://d1vq87e9lcf771.cloudfront.net/paul/e245b0017d6bf8942ae7df109de7a3e9",
-                        "hint": "water"
-                    },
-                    {
-                        "image": "https://d2pur3iezf4d1j.cloudfront.net/images/6fd84b8a838c43c4a84b44b08b10177e",
-                        "phrase": "Kaffee",
-                        "svg": "https://d2pur3iezf4d1j.cloudfront.net/images/6fd84b8a838c43c4a84b44b08b10177e",
-                        "tts": "https://d1vq87e9lcf771.cloudfront.net/mila/5beb8054de20d70eba4ca0e8a928eca4",
-                        "hint": "coffee"
-                    },
-                    {
-                        "image": "https://d2pur3iezf4d1j.cloudfront.net/images/645fa42dcea02c7e2970a1285e321562",
-                        "phrase": "Milch",
-                        "svg": "https://d2pur3iezf4d1j.cloudfront.net/images/645fa42dcea02c7e2970a1285e321562",
-                        "tts": "https://d1vq87e9lcf771.cloudfront.net/mila/8652a17aee97beb79ba4885e74017fdd",
-                        "hint": "milk"
-                    }
-                ],
-                "correctIndex": 1,
-                "type": "select",
-                "id": "21859faa67a847dbbae451dee1cb1389",
-                "challengeResponseTrackingProperties": {
-                    "path_uses_unit_vision": false,
-                    "level_session_index": 4,
-                    "generation_timestamp": 1703089787190,
-                    "session_type": "lexeme_skill_level_practice",
-                    "is_v2": true,
-                    "tagged_kc_ids": [
-                        "e25a8f420cb9576afd58b942b6294be5"
-                    ]
-                },
-                "metadata": {
-                    "challenge_construction_insights": {},
-                    "highlight": [],
-                    "hint": "coffee",
-                    "phrase": "Kaffee",
-                    "solution_key": "e25a8f420cb9576afd58b942b6294be5",
-                    "source_language": "de",
-                    "specific_type": "name_example",
-                    "language": "de",
-                    "lexeme_ids_to_update": [
-                        "e25a8f420cb9576afd58b942b6294be5"
-                    ],
-                    "type": "select",
-                    "lexemes_to_update": [
-                        "e25a8f420cb9576afd58b942b6294be5"
-                    ],
-                    "generic_lexeme_map": {},
-                    "num_comments": 0,
-                    "learning_language": "de",
-                    "from_language": "en"
-                },
-                "newWords": [],
-                "progressUpdates": [],
-                "challengeGeneratorIdentifier": {
-                    "specificType": "name_example",
-                    "generatorId": "e25a8f420cb9576afd58b942b6294be5"
                 }
             },
             {
