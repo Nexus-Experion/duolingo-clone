@@ -7,7 +7,7 @@ const closeOtherOpenDialogBoxes = (event) => {
 
   let currentButton = event.target.closest(".alignment-div").querySelector(".floating-start-box-bottom")
   document.querySelectorAll(".floating-start-box-bottom").forEach((dialog) => {
-    if (dialog!=currentButton) { dialog.classList.add("hidden") }
+    if (dialog != currentButton) { dialog.classList.add("hidden") }
   });
 }
 const openDialogBoxes = (event) => {
@@ -127,14 +127,14 @@ const placeUnitsandLessons = (sectionData) => {
     Introduce yourself, order food and drink</span>
   </header>`
 
-  let incompleteUnitHeader = `<section>
+  let incompleteUnitHeader = `
 <header class="unit unit-unfinished">
   <h1 class="unit-number">Unit 3</h1>
   <span class="unit-description">
   Talk about countries, ask for directions
   </span>
 </header>
-</section>`
+`
 
   let onProgressHtml = `
 <div class="circle_box">
@@ -319,9 +319,9 @@ const placeUnitsandLessons = (sectionData) => {
     }
     return `0 ${60 * paddingArr[index++]}px 0 0`
   }
-
+  let i = 0;
   const placecompletedChapters = (lessonCount, sectionRef, unitRef, start = 0) => {
-    for (let i = start; i < lessonCount + start; i++) {
+    for (i = start; i < lessonCount + start; i++) {
       let circleNode = document.createElement("div");
       circleNode.setAttribute("class", "alignment-div");
       circleNode.style.padding = calculateTranslate();
@@ -367,6 +367,34 @@ const placeUnitsandLessons = (sectionData) => {
     placecompletedChapters(totalChaptersInUnit, section, unitCounter - 2);
     section.querySelector("h1").textContent = sectionData.section.units[unitCounter - 2].name;
     section.querySelector("span").textContent = sectionData.section.units[unitCounter - 2].description;
+
+    let firstanimatedSpriteInLesson = document.createElement("div")
+    firstanimatedSpriteInLesson.setAttribute("class","animated-sprite-in-lesson-1")
+    let animationPath = '../assets/json-animations/duo-unit-one-one.json';
+
+    const animation = bodymovin.loadAnimation({
+      container: firstanimatedSpriteInLesson,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: animationPath
+    });
+
+    section.append(firstanimatedSpriteInLesson);
+
+    let secondanimatedSpriteInLesson = document.createElement("div")
+    secondanimatedSpriteInLesson.setAttribute("class","animated-sprite-in-lesson-2")
+    animationPath = '../assets/json-animations/duo-unit-one-two.json';
+
+    const animation2 = bodymovin.loadAnimation({
+      container: secondanimatedSpriteInLesson,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: animationPath
+    });
+
+    section.append(secondanimatedSpriteInLesson);
     lessonContainer.append(section);
   }
 
@@ -418,13 +446,13 @@ const startNewChapter = () => {
 }
 const updateStatistics = () => {
   console.log("calling updateStatistics");
-  let xpFromLesson = parseInt(localStorage.getItem("xpCount"));
-  isNaN(xpFromLesson) ? xpFromLesson = 0 : 0
-  console.log(xpFromLesson);
+  // let xpFromLesson = parseInt(localStorage.getItem("xpCount"));
+  // isNaN(xpFromLesson) ? xpFromLesson = 0 : 0
+  // console.log(xpFromLesson);
   let sectionData = JSON.parse(localStorage.getItem("sectionData"));
-  let userData = getUserDataFromSessionStorage();
+  // let userData = getUserDataFromSessionStorage();
   if (xpFromLesson != 0) {
-    localStorage.removeItem("xpCount");
+    // localStorage.removeItem("xpCount");
     if (sectionData.section.currentLesson >= 3) {
       startNewChapter()
     } else {
@@ -432,8 +460,8 @@ const updateStatistics = () => {
       localStorage.setItem("sectionData", JSON.stringify(sectionData));
 
     }
-    userData.xp += xpFromLesson;
-    sessionStorage.setItem("user-info", JSON.stringify(userData));
+    // userData.xp += xpFromLesson;
+    // sessionStorage.setItem("user-info", JSON.stringify(userData));
     setTimeout(() => placeUnitsandLessons(sectionData), 1000);
   }
   console.log(sectionData.section.currentLesson);
@@ -441,6 +469,20 @@ const updateStatistics = () => {
 }
 
 const startLesson = () => {
-  window.location.href = "questionarie.html"
+  document.querySelector(".loading-screen").classList.toggle("hidden");
+  setTimeout(() => {
+    document.querySelector(".loading-screen").classList.toggle("hidden");
+    window.location.href = "questionarie.html"
+  }, 2500);
+
 }
 
+let animationPath = '../assets/json-animations/duo-walking.json';
+
+const animation = bodymovin.loadAnimation({
+  container: document.getElementById('owl-walk-animation'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: animationPath
+});
