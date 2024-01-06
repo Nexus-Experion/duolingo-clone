@@ -462,7 +462,7 @@ const updateStatistics = () => {
     // } else {
     //   sectionData.section.currentLesson += 1;
     //   localStorage.setItem("sectionData", JSON.stringify(sectionData));
-      setTimeout(() => placeUnitsandLessons(sectionData,userData), 1000);
+      // setTimeout(() => placeUnitsandLessons(sectionData,userData), 1000);
     }
     // userData.xp += xpFromLesson;
     // sessionStorage.setItem("user-info", JSON.stringify(userData));

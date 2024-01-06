@@ -46,6 +46,6 @@ if (xpFromLesson != 0) {
     await updateDoc(dbref,userData);
     sessionStorage.setItem("user-info", JSON.stringify(userData));
     localStorage.removeItem("xpCount");
-    setTimeout(()=>location.reload(),1000)
+    setTimeout(()=>location.reload(),300)
 }
 
