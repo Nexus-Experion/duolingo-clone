@@ -1,0 +1,105 @@
+body{
+    font-family: din-round;
+    background-color: rgb(var(--color-juicy-blue-space-light));
+    background-image: url("/assets/svg/background-stars-white.svg");
+    z-index: 0;
+}
+
+.duolingo-logo-header{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    background-color: rgb(var(--color-juicy-blue-space-light));
+}
+
+.duolingo-logo-div{
+    padding: 0 40px;
+}
+
+.logo-a-tag{
+    float: left;
+    /* display: inline-block; */
+    margin-top: 18px;
+}
+
+.duolingo-logo-div img{
+    height: 36px;
+    width: 153px;
+}
+
+.countries-main-container{
+    padding: 60px 10px;
+}
+
+.countries-container{
+    padding: 24px 12px;
+}
+
+.flags-and-names-container{
+    padding: 0 24px;
+}
+
+h1{
+    font-family: din-round-bold;
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 50px;
+}
+
+.learn-heading{
+    color: rgb(var(--color-snow-always-light));
+    text-align: center;
+}
+
+.countries-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(210px,1fr));
+    justify-content: center;
+    margin: auto;
+    padding: 24px 0 36px;
+}
+
+.country-button{
+    background-color: transparent;
+    border-color: rgb(var(--color-snow-always-light),.5);
+
+    border-radius: 16px;
+    border-style: solid;
+    border-width: 2px 2px 4px;
+    cursor: pointer;
+    margin: 12px;
+    width: 200px;
+    height: 217px;
+    padding: 12px 12px 24px;
+    text-align: center;
+}
+
+.country-button:hover{
+    background-color: rgba(255, 255, 255, 0.278);
+}
+
+.div-for-gap{
+    margin-bottom: 6px;
+    height: 26px;
+}
+
+.country-flag{
+    height: 71px;
+}
+
+.language-name{
+    color: rgb(var(--color-snow-always-light));
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.no-of-learners{
+    color: rgb(var(--color-snow-always-light));
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 6px;
+    text-transform: none;
+}
