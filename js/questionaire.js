@@ -1,4 +1,4 @@
-let heartCount = 5;
+let heartCount = 2;
 let clickCount = 0;
 let progressValue = 0;
 
