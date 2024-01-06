@@ -1,0 +1,166 @@
+.flyingowl{
+    background: radial-gradient(216% 106% at 6% 3%,rgb(var(--color-gamma),.3) 0,rgb(var(--color-starlight),.3) 52%,rgb(var(--color-quasar),.3) 100%),rgb(var(--color-eclipse));
+    border-radius: 16px;
+    font-family: 'din-round-bold';
+    color: rgb(var(--color-snow-always-light));
+    margin-bottom: 32px;
+    margin-top: 40px;
+    overflow: visible;
+    padding: 20px 10px 10px;
+    position: relative;
+    vertical-align: middle;
+    z-index: 0;
+    padding: 20px;
+}
+.divowlhead{
+    display: flex;
+    flex-direction: row;
+
+}
+.owlpic{
+    font-family: 'din-round-bold';
+    flex-shrink: 0;
+    height: auto;
+    width: 90px;
+}
+.heading{
+    font-family: 'din-round-bold';
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    align-items: flex-start;
+}
+.divheadin{
+    font-size: 23px;
+    line-height: 34px;
+    
+}
+.logInButton {
+    font-family: 'din-round-bold';
+    height: 50px;
+    padding: 20px;
+    font-size: 15px;
+    display: inline-flex;
+    font-family: 'din-round-bold';
+    border-radius: 16px;
+    border: 2px solid;
+    color: rgb(var(--color-blue-space));
+    border-color: rgb(var(--color-snow-always-light),0.5);
+    background-color: rgb(var(--color-snow-always-light));
+    box-shadow: 0 4px 0 rgb(var(--color-snow-always-light),0.5);
+    letter-spacing: 0.8px;
+    filter: brightness(1);
+    align-items: center !important;
+    justify-content: center;
+    width: 100%;
+    margin-top: 24px;
+
+}
+.hearthead{
+    font-family: 'din-round-bold';
+    color: rgb(var(--color-black-text));
+    font-size: 24px;
+    line-height: 26px;
+    margin: 0 0 25px;
+    font-weight: 700;
+    margin-top: 40px;
+    text-align: start;
+}
+.divinShopping{
+    font-family: 'din-round-bold';
+    /* min-height: 120px; */
+    /* padding: 20px 0 20px 110px; */
+    border-top: 2px solid rgb(var(--color-swan));
+    padding: 10px 0 20px 95px;
+    margin-left: -75px;
+}
+.shoplist{
+    list-style-type:none;
+    margin-left: 44px;
+}
+
+.heart{
+    font-family: 'din-round-bold';
+    background-position: 50%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    float: left;
+    height: 100px;
+    margin: -5px 0 -20px -110px;
+    width: 100px;
+}
+.heartButton {
+    font-family: 'din-round-bold';
+    height: 50px;
+    padding: 20px;
+    font-size: 15px;
+    display: inline-flex;
+    font-family: 'din-round-bold';
+    border-radius: 16px;
+    border: 2px solid;
+    
+    border-color: rgb(var(--color-swan));
+    /* background-color: rgb(var(--color-snow-always-light)); */
+    box-shadow: 0 4px 0 rgb(var(--color-snow-always-light),0.9);
+    letter-spacing: 0.8px;
+    align-items: center !important;
+    justify-content: center;
+    display: inline-flex;
+
+    float: right;
+    margin-left: 18px;
+    min-width: 150px;
+    position: static;
+}
+.freetrialButton {
+    font-family: 'din-round-bold';
+    height: 50px;
+    padding: 20px;
+    font-size: 15px;
+    display: inline-flex;
+    font-family: 'din-round-bold';
+    border-radius: 16px;
+    border: 2px solid;
+    color: rgb(var(--color-nova));
+    border-color: rgb(var(--color-swan),0.9);
+    /* background-color: rgb(var(--color-snow-always-light)); */
+    box-shadow: 0 4px 0 rgb(var(--color-snow-always-light),0.9);
+    letter-spacing: 0.8px;
+    align-items: center !important;
+    justify-content: center;
+    display: inline-flex;
+
+    float: right;
+    margin-left: 18px;
+    min-width: 150px;
+    position: static;
+}
+.divinlist{
+    font-family: 'din-round-bold';
+    font-size: 19px;
+    font-weight: 700;
+    padding: 8px 0;
+    text-align: start;
+}
+.parainlist{
+    font-family: 'din-round-bold';
+    color: rgb(var(--color-wolf));
+    line-height: 1.75;
+    width: auto;
+    margin: 0;
+    text-align: start;
+}
+.super{
+    font-family: 'din-round-bold';
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    margin: 16px;
+    right: 0;
+    height: 23px;
+    margin-bottom: 8px;
+    width: 86px;
+}
+.firstHeading{
+    justify-content: left;
+}

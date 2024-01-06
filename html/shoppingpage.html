@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Duolingo</title>
+    <title>Duolingo-shopping</title>
     <link rel="stylesheet" href="../css/leaderboard.css" />
     <link rel="stylesheet" href="../css/learn.css" />
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/shoppingpage.css">
   </head>
   <body>
     <div class="main-container">
@@ -114,7 +115,7 @@
                     class="profile"
                   />
                 </div>
-                <span class="text-in-button heart-text"> 5 </span>
+                <span class="text-in-button heart-text" id="text-in-button heart-text"> 0</span>
               </span>
             </a>
           </div>
@@ -133,7 +134,7 @@
                 </div>
               </div>
               <div class="_1V6a-" style="grid-template-columns: repeat(6, 1fr);">
-                <button class="_1N-oo _36Vd3 _16r-S _2YJm6 _3eRjX" onclick=change(1)>
+                <button class="_1N-oo _36Vd3 _16r-S _2YJm6 _3eRjX" onclick=changeImage()>
                   <img class="kC7Wi _1fHYG" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/2439bac00452e99ba7bf6a7ed0b04196.svg">
                 </button>
                 <button class="_1N-oo _36Vd3 _16r-S _3Wtvm _3eRjX">
@@ -160,37 +161,44 @@
         <!----------------------------------- Scrollable area showing units ------------------------------------------------>
         <div class="scrollable-lesson-div">
             <div class="center-container">
-                <div class="center-container-firstdiv">
-                        <div class="diffmedals">
-                            <div class="medalsdiv" style="--offset: 5;">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/838ba65643baef4c8442317df514cab5.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/968f56b566887d7718898cf8b5e74f40.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/80fecb328c5aefd400db229794fd7a08.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/8b3ff5d2a2b0ec2ff7cec8ebd639a5ab.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/b7c96323c16272efa6794d33791686d2.svg">
-                                <div class="medaldiv">
-                                    <img class="p9XXu" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/f480e032c5222395e73dac88ce3592bb.svg">
-                                </div>
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
+                <div class="flyingowl">
+                    <div class="divowlhead">
+                        <img class="owlpic" src="https://d35aaqx5ub95lt.cloudfront.net/images/super/8183c77cba99daf1e900fb5f9b0cc671.svg" alt="">
+                        <div class="heading">
+                            <div class="divheadin">
+                                <span class="firstHeading">
+                                    Start a 
+                                        2 week free 
+                                    trial to enjoy exclusive Super benefits
+                                </span>
                             </div>
                         </div>
-                        <div class="_250dJ">Emerald League</div>
-                        <div class="_2Xv_D">Top 7 advance to the next league</div>
-                        <div class="_20QqV">
-                            <span class="YSucH">
-                                <span class="_29Ox2">3 days</span>
-                            </span>
-                        </div>
-                        <hr class="_3cgRx">
+                    </div>
+                    <button class="logInButton">
+                        <span>Start my free 14 days</span>
+                    </button>
+                    <img class="super"  src="https://d35aaqx5ub95lt.cloudfront.net/images/super/2e50c3e8358914df5285dc8cf45d0b4c.svg" alt="">
+
                 </div>
-                <div class="centre-container-secdiv" id="centre-container-secdiv">
-                                                        </div>
-
-                
-
+                <div class="hearthead">Hearts</div>
+                <ul class="shoplist">
+                    <li class="divinShopping">
+                        <img class="heart"  src="https://d35aaqx5ub95lt.cloudfront.net/images/hearts/547ffcf0e6256af421ad1a32c26b8f1a.svg" alt="">
+                        <button class="heartButton" id="heartButton">
+                            <span >Full</span>
+                        </button>
+                        <div class="divinlist">Refill Hearts</div>
+                        <p class="parainlist">Get full hearts so you can worry less about making mistakes in a lesson</p>
+                    </li>
+                    <li class="divinShopping">
+                        <img class="heart"  src="https://d35aaqx5ub95lt.cloudfront.net/images/hearts/4f3842c690acf9bf0d4b06e6ab2fffcf.svg" alt="">
+                        <button class="freetrialButton">
+                            <span>Free Trials</span>
+                        </button>
+                        <div class="divinlist">Unlimited Hearts</div>
+                        <p class="parainlist">Never run out of hearts with Super!</p>
+                    </li>
+                </ul>
 
             </div>
 
@@ -199,6 +207,6 @@
     </div>
     
       
-    <script src="../js/leaderboard.js"></script>
+    <script src="../js/shoppingpage.js"></script>
   </body>
 </html>
