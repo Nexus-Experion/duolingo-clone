@@ -22,7 +22,10 @@ let RegisterUser = async (event) => {
         const currentDate = new Date();
         
         const userDocRef = doc(db, 'UsersAuthList', credentials.user.uid);
+        console.log(credentials.user);
+
         await setDoc(userDocRef, {
+            userId: credentials.user.uid,
             age: ageInp.value,
             name: nameInp.value,
             email: emailInp.value,
@@ -43,6 +46,7 @@ let RegisterUser = async (event) => {
                 if (docSnapshot.exists()) {
                     const userData = docSnapshot.data();
                     sessionStorage.setItem("user-info", JSON.stringify({
+                        userId: userData.userId,
                         email: userData.email,
                         name: userData.name,
                         age: userData.age,
