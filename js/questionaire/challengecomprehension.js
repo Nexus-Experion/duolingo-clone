@@ -4,6 +4,9 @@ function buttonClick() {
 }
 
 function challengeReadComprehension(question) {
+    localStorage.setItem('challenge', question.type);
+
+    document.querySelector('.mid-row').innerHTML = '';
 
     console.log(question)
     // Create the main container
