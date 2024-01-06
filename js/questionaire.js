@@ -1,6 +1,6 @@
-let heartCount = 5;
+let heartCount = 2;
 let clickCount = 0;
-
+let progressValue = 0;
 
 //button click animation
 
@@ -57,17 +57,14 @@ function correctOption(selectedOption) {
     document.getElementById('option-name-' + selectedOption).className = 'option-name-correct';
     document.getElementById(selectedOption).className = 'option-div-correct';
     document.getElementById('outer-options-div-' + selectedOption).className = 'outer-options-div-correct';
+
 }
-
-
-
-
 function currentHearts() {
     //FETCH HEART FROM FIRESTORE TO HERE AND UPDATE THROUGH HERE
     document.getElementById("heart-count").textContent = "3";
 };
-
 function skipButton(id) {
+    localStorage.removeItem("correctIndex")
     document.getElementById(id).classList.toggle('clicked');
     setTimeout(() => document.getElementById(id).classList.toggle('clicked'), 300);
     // document.getElementById(id).classList.add('');
@@ -82,6 +79,7 @@ function disablePointer() {
         childElement.style.pointerEvents = 'none';
     }
 }
+
 function resetBottomRow() {
     document.getElementById('skip-span').textContent = "SKIP";
 
@@ -108,28 +106,42 @@ function resetBottomRow() {
 
 function checkButton(id) {
     disablePointer();
-    if (localStorage.getItem('correctIndex') == window.selectedOption) {
-        correctOption(selectedOption);
 
-        correctBottomRow();
+    if (localStorage.getItem('correctIndex') == window.selectedOption) {
+
+        if ((localStorage.getItem('challenge')) == 'select') {
+            correctSelectOption(selectedOption)
+        }
+        else {
+            correctOption(selectedOption);
+        }
         if (clickCount == 0) {
+            correctBottomRow();
+
+            progressValue = progressValue + 25;
+            updateProgressBar(progressValue);
             const audio = new Audio('../assets/audio/correct-sound.mp3');
             audio.play();
             xpCount = xpCount + 2;
         }
+
     }
     else {
 
-        wrongBottomRow();
 
 
         if (clickCount == 0) {
+            wrongBottomRow();
+
+            progressValue = progressValue + 25;
+            updateProgressBar(progressValue);
             document.getElementById("heart-count").textContent = heartCount - 1;
             heartCount = heartCount - 1;
             const audio = new Audio('../assets/audio/wrong-sound.mp3');
             audio.play();
         }
     }
+    // localStorage.removeItem('correctIndex');
 
     // console.log(window.selectedOption)
     console.log(window.selectedOption)
@@ -177,40 +189,59 @@ let questionCount = 1;
 let xpCount = -1;
 
 function questionLoad() {
-    fetch('../assets/JSON/german_lev_1.json')
-        .then(response => response.json())
+    // fetch("../assets/JSON/german_lev_1.json").then(response => response.json())
+    //     .then(data => {
+    //         let index = Math.floor(Math.random() * data.challenges.length);
+    //         console.log(data.challenges[index]);
+    //         challengeSelect(data.challenges[0]);
+
+    //     })
+
+    let learnLang = sessionStorage.getItem("learnLang");
+    fetch(`https://duolingo-serverless-endpoint.vercel.app/api/question?lang=de`).then(response => response.json())
         .then(data => {
+
             let index = Math.floor(Math.random() * data.challenges.length);
             // console.log(data.challenges[index]);
             if (questionCount < 5) {
-                console.log(data.challenges[index]);
-                console.log(data.challenges[index].type);
-                // challengeDialogue(data.challenges[12]);
-                // data.challenges
-                // challengetranscription(data.challenges[13]);
+                if (heartCount > 0) {
+                    console.log(data.challenges[index]);
+                    console.log(data.challenges[index].type);
+                    // challengeDialogue(data.challenges[12]);
+                    // data.challenges
+                    // challengetranscription(data.challenges[13]);
+                    if (data.challenges[index].type == "assist") {
+                        resetBottomRow();
+                        console.log("inner");
+                        challengeAssist(data.challenges[index]);
+                        questionCount++;
 
-                if (data.challenges[index].type == "assist") {
-                    resetBottomRow();
-                    console.log("inner");
-                    challengeAssist(data.challenges[index]);
-                    questionCount++;
+                    }
+                    else if (data.challenges[index].type == "dialogue") {
+                        resetBottomRow();
+                        challengeDialogue(data.challenges[index]);
+                        questionCount++;
 
-                }
-                else if (data.challenges[index].type == "dialogue") {
-                    resetBottomRow();
-                    challengeDialogue(data.challenges[index]);
-                    questionCount++;
+                    }
+                    else if (data.challenges[index].type == "selectTranscription") {
+                        resetBottomRow();
+                        challengeTranscription(data.challenges[index]);
+                        questionCount++;
 
-                }
-                else if (data.challenges[index].type == "selectTranscription") {
-                    resetBottomRow();
-                    challengetranscription(data.challenges[index]);
-                    questionCount++;
+                    }
+                    else if (data.challenges[index].type == "select") {
+                        resetBottomRow();
+                        challengeSelect(data.challenges[index]);
+                        questionCount++;
 
+                    }
+                    else {
+                        questionLoad();
+
+                    }
                 }
                 else {
-                    questionLoad();
-
+                    showShopPopup();
                 }
             }
             else {
@@ -235,6 +266,7 @@ window.onload = setTimeout(() => questionLoad(), 300);
 
 
 function lessonComplete() {
+    document.querySelector('.mid-row').style.overflow = 'hidden';
     const audio = new Audio('../assets/audio/duolingo-lesson.mp3');
     audio.play();
     clickCount = 0;
@@ -368,4 +400,35 @@ function switchToLearn() {
         window.location.href = './learn.html';
     }
 
-} 
+}
+
+function updateProgressBar(progressValue) {
+    var progressBar = document.querySelector(".inner-green-bar");
+    var lightProgressBar = document.querySelector(".inner-light-green-bar");
+    lightProgressBar.style.width = progressValue + "%";
+    progressBar.style.width = progressValue + "%";
+}
+
+function revertQuestionScreen() {
+    document.querySelector('.exit-overlay').classList.toggle('clicked');
+    setTimeout(() => document.querySelector('.exit-overlay').classList.toggle('clicked'), 400);
+    document.querySelector('.exit-overlay').style.display = 'none'
+
+}
+
+function showShopPopup() {
+    document.querySelector('.shop-overlay').style.display = 'flex'
+
+}
+
+
+function showAlertPopup() {
+    document.querySelector('.exit-overlay').style.display = 'flex'
+}
+function goToShop() {
+    window.location.href = './shoppingpage.html';
+}
+
+function exitToLearn() {
+    window.location.href = './learn.html';
+}
