@@ -4,6 +4,8 @@ body {
       rgb(var(--color-starlight), 0.3) 52%,
       rgb(var(--color-quasar), 0.3) 100%),
     rgb(var(--color-eclipse));
+
+    min-height: 100vh;
 }
 
 .gradient-div {

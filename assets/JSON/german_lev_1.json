@@ -5,6 +5,486 @@
     "type": "LEXEME_SKILL_LEVEL_PRACTICE",
     "challenges": [
         {
+            "passage": "Hallo! Kaffee und Milch, bitte.",
+            "passageTokens": [
+                {
+                    "value": "Hallo",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/paul/21774ea1644b4e4e8c04a33b89dc1dc8",
+                    "hintTable": {
+                        "headers": [],
+                        "rows": [
+                            [
+                                {
+                                    "colspan": 1,
+                                    "hint": "hello"
+                                }
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "value": "!"
+                },
+                {
+                    "value": " "
+                },
+                {
+                    "value": "Kaffee",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/paul/ffb240a25efd486750506ebedb94655e",
+                    "hintTable": {
+                        "headers": [],
+                        "rows": [
+                            [
+                                {
+                                    "colspan": 1,
+                                    "hint": "coffee"
+                                }
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "value": " "
+                },
+                {
+                    "value": "und",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/paul/8e9ce2b56fc1c88aff16a407a2ae04f4",
+                    "hintTable": {
+                        "headers": [],
+                        "rows": [
+                            [
+                                {
+                                    "colspan": 1,
+                                    "hint": "and"
+                                }
+                            ],
+                            [
+                                {
+                                    "colspan": 1,
+                                    "hint": "or"
+                                }
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "value": " "
+                },
+                {
+                    "value": "Milch",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/paul/3e01dad7e8c79407a9a88fb4f1d38543",
+                    "hintTable": {
+                        "headers": [],
+                        "rows": [
+                            [
+                                {
+                                    "colspan": 1,
+                                    "hint": "milk"
+                                }
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "value": ","
+                },
+                {
+                    "value": " "
+                },
+                {
+                    "value": "bitte",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/paul/ce58b86e24a3597264714dd591b25ab1",
+                    "hintTable": {
+                        "headers": [],
+                        "rows": [
+                            [
+                                {
+                                    "colspan": 1,
+                                    "hint": "please"
+                                }
+                            ],
+                            [
+                                {
+                                    "colspan": 1,
+                                    "hint": "am begging"
+                                }
+                            ],
+                            [
+                                {
+                                    "colspan": 1,
+                                    "hint": "ask"
+                                }
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "value": "."
+                }
+            ],
+            "question": "The speaker wants…",
+            "questionTokens": [
+                {
+                    "value": "The",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/paul/1e293a4637f79c0f4fcdedddb0c3819d",
+                    "hintTable": {
+                        "headers": [],
+                        "rows": [
+                            [
+                                {
+                                    "colspan": 1,
+                                    "hint": "The"
+                                }
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "value": " "
+                },
+                {
+                    "value": "speaker",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/paul/2e23b6bedbf40a15ec16c5361c038d10",
+                    "hintTable": {
+                        "headers": [],
+                        "rows": []
+                    }
+                },
+                {
+                    "value": " "
+                },
+                {
+                    "value": "wants",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/paul/b416af86e2e23cdecd3f44c39ebb5056",
+                    "hintTable": {
+                        "headers": [],
+                        "rows": [
+                            [
+                                {
+                                    "colspan": 1,
+                                    "hint": "shrouds"
+                                }
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "value": "…"
+                }
+            ],
+            "choices": [
+                "to look at the menu",
+                "to eat something else",
+                "to drink something"
+            ],
+            "correctIndex": 2,
+            "tts": "https://d1vq87e9lcf771.cloudfront.net/lucyde2/0123a4b1252fc784cbefb339db3f7f1c",
+            "type": "readComprehension",
+            "id": "eb3df09ad4eb43fd8142986dab2e3b75",
+            "challengeResponseTrackingProperties": {
+                "path_uses_unit_vision": false,
+                "level_session_index": 4,
+                "generation_timestamp": 1703094135058,
+                "session_type": "lexeme_skill_level_practice",
+                "is_v2": true,
+                "tagged_kc_ids": [
+                    "4d321578fac631e23ff68dee109c644d",
+                    "e0fc2007688b591de1acf8374c9ce38e",
+                    "e25a8f420cb9576afd58b942b6294be5",
+                    "b6744f58825816aa3c3367e6f79ddff1",
+                    "b77ab67cbe0cd5b103bae870365329f6"
+                ]
+            },
+            "metadata": {
+                "challenge_construction_insights": {},
+                "passage": "Hallo! Kaffee und Milch, bitte.",
+                "passage_hints": {
+                    "tokens": [
+                        {
+                            "value": "Hallo",
+                            "hint_table": {
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "hint": "hello",
+                                                "colspan": 1
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "references": []
+                            },
+                            "index": 0
+                        },
+                        {
+                            "value": "!"
+                        },
+                        {
+                            "value": " "
+                        },
+                        {
+                            "value": "Kaffee",
+                            "hint_table": {
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "hint": "coffee",
+                                                "colspan": 1
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "references": []
+                            },
+                            "index": 1
+                        },
+                        {
+                            "value": " "
+                        },
+                        {
+                            "value": "und",
+                            "hint_table": {
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "hint": "and",
+                                                "colspan": 1
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "hint": "or",
+                                                "colspan": 1
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "references": []
+                            },
+                            "index": 2
+                        },
+                        {
+                            "value": " "
+                        },
+                        {
+                            "value": "Milch",
+                            "hint_table": {
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "hint": "milk",
+                                                "colspan": 1
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "references": []
+                            },
+                            "index": 3
+                        },
+                        {
+                            "value": ","
+                        },
+                        {
+                            "value": " "
+                        },
+                        {
+                            "value": "bitte",
+                            "hint_table": {
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "hint": "please",
+                                                "colspan": 1
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "hint": "am begging",
+                                                "colspan": 1
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "hint": "ask",
+                                                "colspan": 1
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "references": []
+                            },
+                            "index": 4
+                        },
+                        {
+                            "value": "."
+                        }
+                    ]
+                },
+                "question": "The speaker wants…",
+                "question_hints": {
+                    "tokens": [
+                        {
+                            "value": "The",
+                            "hint_table": {
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "hint": "The",
+                                                "colspan": 1
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "references": []
+                            },
+                            "index": 0
+                        },
+                        {
+                            "value": " "
+                        },
+                        {
+                            "value": "speaker",
+                            "hint_table": {
+                                "rows": [],
+                                "references": []
+                            },
+                            "index": 1
+                        },
+                        {
+                            "value": " "
+                        },
+                        {
+                            "value": "wants",
+                            "hint_table": {
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "hint": "shrouds",
+                                                "colspan": 1
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "references": []
+                            },
+                            "index": 2
+                        },
+                        {
+                            "value": "…"
+                        }
+                    ]
+                },
+                "correct_index": 2,
+                "tts": "https://d1vq87e9lcf771.cloudfront.net/lucyde2/0123a4b1252fc784cbefb339db3f7f1c",
+                "solution_key": "e2dcf24a03d83f1b5d66463bf83d7da4",
+                "source_language": "de",
+                "specific_type": "read_comprehension",
+                "lexeme_ids_to_update": [
+                    "4d321578fac631e23ff68dee109c644d",
+                    "e0fc2007688b591de1acf8374c9ce38e",
+                    "e25a8f420cb9576afd58b942b6294be5",
+                    "b6744f58825816aa3c3367e6f79ddff1",
+                    "b77ab67cbe0cd5b103bae870365329f6"
+                ],
+                "type": "read_comprehension",
+                "lexemes_to_update": [
+                    "4d321578fac631e23ff68dee109c644d",
+                    "e0fc2007688b591de1acf8374c9ce38e",
+                    "e25a8f420cb9576afd58b942b6294be5",
+                    "b6744f58825816aa3c3367e6f79ddff1",
+                    "b77ab67cbe0cd5b103bae870365329f6"
+                ],
+                "generic_lexeme_map": {},
+                "learning_language": "de",
+                "from_language": "en"
+            },
+            "progressUpdates": [],
+            "challengeGeneratorIdentifier": {
+                "specificType": "read_comprehension",
+                "generatorId": "e2dcf24a03d83f1b5d66463bf83d7da4"
+            }
+        },
+        {
+            "prompt": "coffee",
+            "choices": [
+                {
+                    "image": "https://d2pur3iezf4d1j.cloudfront.net/images/7afea32bcf0e8c6f9d446ad4aad416be",
+                    "phrase": "Wasser",
+                    "svg": "https://d2pur3iezf4d1j.cloudfront.net/images/7afea32bcf0e8c6f9d446ad4aad416be",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/paul/e245b0017d6bf8942ae7df109de7a3e9",
+                    "hint": "water"
+                },
+                {
+                    "image": "https://d2pur3iezf4d1j.cloudfront.net/images/6fd84b8a838c43c4a84b44b08b10177e",
+                    "phrase": "Kaffee",
+                    "svg": "https://d2pur3iezf4d1j.cloudfront.net/images/6fd84b8a838c43c4a84b44b08b10177e",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/mila/5beb8054de20d70eba4ca0e8a928eca4",
+                    "hint": "coffee"
+                },
+                {
+                    "image": "https://d2pur3iezf4d1j.cloudfront.net/images/645fa42dcea02c7e2970a1285e321562",
+                    "phrase": "Milch",
+                    "svg": "https://d2pur3iezf4d1j.cloudfront.net/images/645fa42dcea02c7e2970a1285e321562",
+                    "tts": "https://d1vq87e9lcf771.cloudfront.net/mila/8652a17aee97beb79ba4885e74017fdd",
+                    "hint": "milk"
+                }
+            ],
+            "correctIndex": 1,
+            "type": "select",
+            "id": "21859faa67a847dbbae451dee1cb1389",
+            "challengeResponseTrackingProperties": {
+                "path_uses_unit_vision": false,
+                "level_session_index": 4,
+                "generation_timestamp": 1703089787190,
+                "session_type": "lexeme_skill_level_practice",
+                "is_v2": true,
+                "tagged_kc_ids": [
+                    "e25a8f420cb9576afd58b942b6294be5"
+                ]
+            },
+            "metadata": {
+                "challenge_construction_insights": {},
+                "highlight": [],
+                "hint": "coffee",
+                "phrase": "Kaffee",
+                "solution_key": "e25a8f420cb9576afd58b942b6294be5",
+                "source_language": "de",
+                "specific_type": "name_example",
+                "language": "de",
+                "lexeme_ids_to_update": [
+                    "e25a8f420cb9576afd58b942b6294be5"
+                ],
+                "type": "select",
+                "lexemes_to_update": [
+                    "e25a8f420cb9576afd58b942b6294be5"
+                ],
+                "generic_lexeme_map": {},
+                "num_comments": 0,
+                "learning_language": "de",
+                "from_language": "en"
+            },
+            "newWords": [],
+            "progressUpdates": [],
+            "challengeGeneratorIdentifier": {
+                "specificType": "name_example",
+                "generatorId": "e25a8f420cb9576afd58b942b6294be5"
+            }
+        },
+        {
             "prompt": "Milch oder Wasser?",
             "solutionTranslation": "Milk or water?",
             "soundId": "LDywzvhmUiqF6iPh",
@@ -4918,72 +5398,6 @@
                 "challengeGeneratorIdentifier": {
                     "specificType": "tap",
                     "generatorId": "40aa539af88578f33178fddba67f5869"
-                }
-            },
-            {
-                "prompt": "coffee",
-                "choices": [
-                    {
-                        "image": "https://d2pur3iezf4d1j.cloudfront.net/images/7afea32bcf0e8c6f9d446ad4aad416be",
-                        "phrase": "Wasser",
-                        "svg": "https://d2pur3iezf4d1j.cloudfront.net/images/7afea32bcf0e8c6f9d446ad4aad416be",
-                        "tts": "https://d1vq87e9lcf771.cloudfront.net/paul/e245b0017d6bf8942ae7df109de7a3e9",
-                        "hint": "water"
-                    },
-                    {
-                        "image": "https://d2pur3iezf4d1j.cloudfront.net/images/6fd84b8a838c43c4a84b44b08b10177e",
-                        "phrase": "Kaffee",
-                        "svg": "https://d2pur3iezf4d1j.cloudfront.net/images/6fd84b8a838c43c4a84b44b08b10177e",
-                        "tts": "https://d1vq87e9lcf771.cloudfront.net/mila/5beb8054de20d70eba4ca0e8a928eca4",
-                        "hint": "coffee"
-                    },
-                    {
-                        "image": "https://d2pur3iezf4d1j.cloudfront.net/images/645fa42dcea02c7e2970a1285e321562",
-                        "phrase": "Milch",
-                        "svg": "https://d2pur3iezf4d1j.cloudfront.net/images/645fa42dcea02c7e2970a1285e321562",
-                        "tts": "https://d1vq87e9lcf771.cloudfront.net/mila/8652a17aee97beb79ba4885e74017fdd",
-                        "hint": "milk"
-                    }
-                ],
-                "correctIndex": 1,
-                "type": "select",
-                "id": "21859faa67a847dbbae451dee1cb1389",
-                "challengeResponseTrackingProperties": {
-                    "path_uses_unit_vision": false,
-                    "level_session_index": 4,
-                    "generation_timestamp": 1703089787190,
-                    "session_type": "lexeme_skill_level_practice",
-                    "is_v2": true,
-                    "tagged_kc_ids": [
-                        "e25a8f420cb9576afd58b942b6294be5"
-                    ]
-                },
-                "metadata": {
-                    "challenge_construction_insights": {},
-                    "highlight": [],
-                    "hint": "coffee",
-                    "phrase": "Kaffee",
-                    "solution_key": "e25a8f420cb9576afd58b942b6294be5",
-                    "source_language": "de",
-                    "specific_type": "name_example",
-                    "language": "de",
-                    "lexeme_ids_to_update": [
-                        "e25a8f420cb9576afd58b942b6294be5"
-                    ],
-                    "type": "select",
-                    "lexemes_to_update": [
-                        "e25a8f420cb9576afd58b942b6294be5"
-                    ],
-                    "generic_lexeme_map": {},
-                    "num_comments": 0,
-                    "learning_language": "de",
-                    "from_language": "en"
-                },
-                "newWords": [],
-                "progressUpdates": [],
-                "challengeGeneratorIdentifier": {
-                    "specificType": "name_example",
-                    "generatorId": "e25a8f420cb9576afd58b942b6294be5"
                 }
             },
             {

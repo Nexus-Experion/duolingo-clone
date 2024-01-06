@@ -84,7 +84,7 @@
               <span class="icon-and-text-wrap">
                 <div class="icon-in-button">
                   <img
-                    src="../assets/svg/streak-fire-active.svg"
+                    src="../assets/svg/lesson-xp.svg"
                     alt="home-icon"
                     class="profile"
                   />
@@ -133,7 +133,7 @@
               <div class="description">
                 No ads, personalized practice, and unlimited Legendary!
               </div>
-              <button id="try-super-button" onclick="openSuper();">
+              <button id="try-super-button" onclick="openSuperDuolingoPage();">
                 Try 2 weeks free
               </button>
             </div>
@@ -158,13 +158,25 @@
           </div>
         </div>
         <!----------------------------------- Scrollable area showing units ------------------------------------------------>
-        <div class="scrollable-lesson-div"></div>
+        <div class="scrollable-lesson-div active">
+        </div>
+
       </div>
     </div>
-    <script src="../js/learn.js"></script>
+    <div class="loading-screen hidden">
+      <div class="text-animation-container">
+        <div class="lesson-loading-svg" id="owl-walk-animation"></div>
+        <span>Did You Know : Spanish is the second most spoken language globally, with over 460 million native speakers.</span>
+      </div>
+      
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/js-circle-progress/dist/circle-progress.min.js"
       type="module"
     ></script>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.7/lottie.min.js"></script>
+  <script src="../js/learn.js"></script>
+  <script src="../js/updateUserData.js" type="module"></script>
+  
 </html>
