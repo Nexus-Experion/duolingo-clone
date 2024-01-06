@@ -1,60 +1,38 @@
-const openSuper = () => {
+const openSuperDuolingoPage = () => {
   document.getElementById("try-super-button").classList.toggle('clicked');
   setTimeout(() => document.getElementById("try-super-button").classList.toggle('clicked'), 200)
   location.href = "../html/superduolingo.html"
 }
+const closeOtherOpenDialogBoxes = (event) => {
 
-const increasePercentage = (event) => {
+  let currentButton = event.target.closest(".alignment-div").querySelector(".floating-start-box-bottom")
+  document.querySelectorAll(".floating-start-box-bottom").forEach((dialog) => {
+    if (dialog != currentButton) { dialog.classList.add("hidden") }
+  });
+}
+const openDialogBoxes = (event) => {
+  closeOtherOpenDialogBoxes(event);
   let parentDiv = event.target.closest(".alignment-div");
   parentDiv.querySelector(".lesson-button").classList.toggle('clicked')
   parentDiv.querySelector(".floating-start-box-bottom").classList.toggle("hidden");
   setTimeout(() => parentDiv.querySelector(".lesson-button").classList.toggle('clicked'), 150)
   parentDiv.querySelector(".floating-start-box")?.classList.toggle("hidden");
 }
-// This should be replaced with API call ========================
-//  var sectionData = {
-//   "section": {
-//     "name": "Section 1: Rookie",
-//     "completedChapters": 7,
-//     "completedUnits": 2,
-//     "totalChaptersInUnit": 9,
-//     "totalUnitsInSection": 5,
-//     "currentLesson": 3,
-//     "units": [
-//       {
-//         "name": "Unit 1",
-//         "description": "Tell others what to do, talk about health",
-//         "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-//       }, {
-//         "name": "Unit 2",
-//         "description": "Describe places, tell time",
-//         "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-//       }, {
-//         "name": "Unit 3",
-//         "description": "Describe what people do, make comparisons",
-//         "chapters": ["Chapter 31", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-//       }, {
-//         "name": "Unit 4",
-//         "description": "Use the future tense, talk about days",
-//         "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-//       }, {
-//         "name": "Unit 5",
-//         "description": "Discuss weather, describe relationships",
-//         "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-//       }, {
-//         "name": "Unit 6",
-//         "description": "Discuss food, talk about the past",
-//         "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-//       }, {
-//         "name": "Unit 7",
-//         "description": "Discuss nature, describe people",
-//         "chapters": ["Chapter m1", "Chapter m2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9"]
-//       },
-//     ]
-//   }
-// }
+let sectionData;
+async function fetchSectionData(lang, sectionId) {
+  try {
+    let response = await fetch(`https://duolingo-serverless-endpoint.vercel.app/api/section-details?lang=${lang}&section=${sectionId}`);
+    sectionData = await response.json();
+    localStorage.setItem("sectionData", JSON.stringify(sectionData));
+    showLessonsInSection();
 
-// localStorage.setItem("sectionData",JSON.stringify(sectionData));
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return;
+  }
+}
+// This should be replaced with value from local storage ========================
+fetchSectionData("es", 1);
 //======================End of JSON==============================
 
 const placeSectionList = () => {
@@ -149,18 +127,18 @@ const placeUnitsandLessons = (sectionData) => {
     Introduce yourself, order food and drink</span>
   </header>`
 
-  let incompleteUnitHeader = `<section>
+  let incompleteUnitHeader = `
 <header class="unit unit-unfinished">
   <h1 class="unit-number">Unit 3</h1>
   <span class="unit-description">
   Talk about countries, ask for directions
   </span>
 </header>
-</section>`
+`
 
   let onProgressHtml = `
 <div class="circle_box">
-  <button class="lesson-button" onclick="increasePercentage(event);">
+  <button class="lesson-button" onclick="openDialogBoxes(event);">
     <img src="../assets/svg/star-in-lesson-white.svg" alt="star" class="star-image">
     <circle-progress value="0" max="100" text-format="none" ></circle-progress>
   </button>
@@ -175,13 +153,13 @@ const placeUnitsandLessons = (sectionData) => {
   <div class="triangle-top"></div>
   <div class="text-container">
     <h1>Form basic sentences</h1>
-    <p>Lesson ${sectionData.section.currentLesson+1} of 4</p>
+    <p>Lesson ${sectionData.section.currentLesson + 1} of 4</p>
     <button onclick="startLesson()">Start +10 XP</button>
   </div>
 </div>`
 
   let lockedDiv = `<div class="circle_box locked">
-<button class="lesson-button inactive" onclick="increasePercentage(event);">
+<button class="lesson-button inactive" onclick="openDialogBoxes(event);">
   <img src="../assets/svg/locked-button-grey.svg" alt="locked-button" class="star-image">
 </button>
 </div>
@@ -197,7 +175,7 @@ const placeUnitsandLessons = (sectionData) => {
 <div class="circle_box completed">
   <button
     class="lesson-button inactive"
-    onclick="increasePercentage(event);"
+    onclick="openDialogBoxes(event);"
   >
     <img
       src="../assets/svg/completed-lesson-background.svg"
@@ -341,9 +319,9 @@ const placeUnitsandLessons = (sectionData) => {
     }
     return `0 ${60 * paddingArr[index++]}px 0 0`
   }
-
+  let i = 0;
   const placecompletedChapters = (lessonCount, sectionRef, unitRef, start = 0) => {
-    for (let i = start; i < lessonCount + start; i++) {
+    for (i = start; i < lessonCount + start; i++) {
       let circleNode = document.createElement("div");
       circleNode.setAttribute("class", "alignment-div");
       circleNode.style.padding = calculateTranslate();
@@ -389,6 +367,34 @@ const placeUnitsandLessons = (sectionData) => {
     placecompletedChapters(totalChaptersInUnit, section, unitCounter - 2);
     section.querySelector("h1").textContent = sectionData.section.units[unitCounter - 2].name;
     section.querySelector("span").textContent = sectionData.section.units[unitCounter - 2].description;
+
+    let firstanimatedSpriteInLesson = document.createElement("div")
+    firstanimatedSpriteInLesson.setAttribute("class","animated-sprite-in-lesson-1")
+    let animationPath = '../assets/json-animations/duo-unit-one-one.json';
+
+    const animation = bodymovin.loadAnimation({
+      container: firstanimatedSpriteInLesson,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: animationPath
+    });
+
+    section.append(firstanimatedSpriteInLesson);
+
+    let secondanimatedSpriteInLesson = document.createElement("div")
+    secondanimatedSpriteInLesson.setAttribute("class","animated-sprite-in-lesson-2")
+    animationPath = '../assets/json-animations/duo-unit-one-two.json';
+
+    const animation2 = bodymovin.loadAnimation({
+      container: secondanimatedSpriteInLesson,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: animationPath
+    });
+
+    section.append(secondanimatedSpriteInLesson);
     lessonContainer.append(section);
   }
 
@@ -419,11 +425,8 @@ const placeUnitsandLessons = (sectionData) => {
   updateStatistics();
 }
 
-const showLessonsInSection = (num) => {
-  //================These values must be taken when we get current Section's sectionData
+const showLessonsInSection = () => {
   let sectionData = JSON.parse(localStorage.getItem("sectionData"));
-
-  //=====================================================================================
   placeUnitsandLessons(sectionData);
 }
 const startNewChapter = () => {
@@ -439,35 +442,47 @@ const startNewChapter = () => {
     sectionData.section.currentLesson = 0;
   }
   localStorage.setItem("sectionData", JSON.stringify(sectionData));
-  setTimeout(()=> placeUnitsandLessons(sectionData),1000);
+  setTimeout(() => placeUnitsandLessons(sectionData), 1000);
 }
 const updateStatistics = () => {
   console.log("calling updateStatistics");
-  let xpFromLesson = parseInt(localStorage.getItem("xpCount"));
-  isNaN(xpFromLesson) ? xpFromLesson = 0 : 0
-  console.log(xpFromLesson);
+  // let xpFromLesson = parseInt(localStorage.getItem("xpCount"));
+  // isNaN(xpFromLesson) ? xpFromLesson = 0 : 0
+  // console.log(xpFromLesson);
   let sectionData = JSON.parse(localStorage.getItem("sectionData"));
-  let userData = getUserDataFromSessionStorage();
+  // let userData = getUserDataFromSessionStorage();
   if (xpFromLesson != 0) {
-    localStorage.removeItem("xpCount");
-    if (sectionData.section.currentLesson >= 3) { 
-      startNewChapter() 
-    } else { 
+    // localStorage.removeItem("xpCount");
+    if (sectionData.section.currentLesson >= 3) {
+      startNewChapter()
+    } else {
       sectionData.section.currentLesson += 1;
       localStorage.setItem("sectionData", JSON.stringify(sectionData));
-      
+
     }
-    userData.xp+=xpFromLesson;
-    sessionStorage.setItem("user-info",JSON.stringify(userData));
-    setTimeout(()=> placeUnitsandLessons(sectionData),1000);
+    // userData.xp += xpFromLesson;
+    // sessionStorage.setItem("user-info", JSON.stringify(userData));
+    setTimeout(() => placeUnitsandLessons(sectionData), 1000);
   }
   console.log(sectionData.section.currentLesson);
   setTimeout(() => document.querySelector("circle-progress").value = (25 * sectionData.section.currentLesson), 200);
 }
 
-showLessonsInSection(1);
-
 const startLesson = () => {
-  window.location.href = "questionarie.html"
+  document.querySelector(".loading-screen").classList.toggle("hidden");
+  setTimeout(() => {
+    // document.querySelector(".loading-screen").classList.toggle("hidden");
+    window.location.href = "questionarie.html"
+  }, 2500);
+
 }
 
+let animationPath = '../assets/json-animations/duo-walking.json';
+
+const animation = bodymovin.loadAnimation({
+  container: document.getElementById('owl-walk-animation'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: animationPath
+});

@@ -66,8 +66,6 @@ body{
     width: 100%;
     /* border: 2px solid rgb(var(--color-swan)); */
     /* border-radius: 12px; */
-    background: rgb(var(--color-polar));
-
 }
 
 .passwordDiv{
@@ -158,12 +156,12 @@ body{
 
     color: rgb(var(--color-hare));
 }
-#errorEmail{
+#email-error-message{
     display: flex;
     text-align: start;
     color: rgb(var(--color-fire-ant));
 }
-#errorPassword{
+#password-error-message{
     display: flex;
     text-align: start;
     color: rgb(var(--color-fire-ant));

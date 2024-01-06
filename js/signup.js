@@ -1,14 +1,17 @@
 const validate = (event) => {
     event.preventDefault()
-    var ageInput = document.getElementById('age-input');
-    var emailInput = document.getElementById('email-input');
-    var passwordInput = document.getElementById('password-input');
+    let ageInput = document.getElementById('age-input');
+    let nameInput = document.getElementById('name-input');
+    let emailInput = document.getElementById('email-input');
+    let passwordInput = document.getElementById('password-input');
 
     let ageErrorMessage = document.getElementById('age-error-message');
+    let nameErrorMessage = document.getElementById('name-error-message');
     let emailErrorMessage = document.getElementById('email-error-message');
     let passwordErrorMessage = document.getElementById('password-error-message');
 
     ageErrorMessage.textContent = '';
+    nameErrorMessage.textContent = '';
     emailErrorMessage.textContent = '';
     passwordErrorMessage.textContent = '';
 
@@ -20,6 +23,17 @@ const validate = (event) => {
     else{
         ageErrorMessage.innerHTML = '';
         ageInput.style.border = ''; // Reset to the default border color
+    }
+
+    if (!nameInput.value) {
+        console.log("Entering Name if Block"); // Add this line
+        nameErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Please enter your Name.</span>';
+        nameInput.style.border = '2px solid #ff0000'; // Change border color to red  
+    }
+    else{
+        console.log("Name Input is not empty"); // Add this line
+        nameErrorMessage.innerHTML = '';
+        nameInput.style.border = ''; // Reset to the default border color
     }
 
     if (!emailInput.value) {
@@ -39,6 +53,7 @@ const validate = (event) => {
         passwordErrorMessage.innerHTML = '';
         passwordInput.style.border = ''; // Reset to the default border color
     }
+    // RegisterUser(event);
 }
 
 const createAccountButtonAnimation = () => {
