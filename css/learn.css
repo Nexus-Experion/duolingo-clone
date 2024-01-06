@@ -642,7 +642,9 @@ section {
   height: 25%;
   aspect-ratio: 1/1;
 }
-
+.greyd-sprite{
+  filter: grayscale(1);
+}
 /* Loading Screen Animation */
 
 .loading-screen {
