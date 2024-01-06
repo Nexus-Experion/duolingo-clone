@@ -22,7 +22,10 @@ let RegisterUser = async (event) => {
         const currentDate = new Date();
         
         const userDocRef = doc(db, 'UsersAuthList', credentials.user.uid);
+        console.log(credentials.user);
+
         await setDoc(userDocRef, {
+            userId: credentials.user.uid,
             age: ageInp.value,
             name: nameInp.value,
             email: emailInp.value,
@@ -32,8 +35,8 @@ let RegisterUser = async (event) => {
             creationDate: currentDate,
             learnLang: localStorage.getItem('selectedLang'),
             sectionNumber: 1,
-            completedUnits: 1,
-            completedChapters: 1,
+            completedUnits: 0,
+            completedChapters: 0,
             currentLesson: 1
         });
 
@@ -42,23 +45,24 @@ let RegisterUser = async (event) => {
             getDoc(dbref).then((docSnapshot) => {
                 if (docSnapshot.exists()) {
                     const userData = docSnapshot.data();
-                    sessionStorage.setItem("user-info", JSON.stringify({
-                        email: userData.email,
-                        name: userData.name,
-                        age: userData.age,
-                        gems: userData.gems,
-                        xp: userData.xp,
-                        hearts: userData.hearts,
-                        creationDate: userData.creationDate,
-                        learnLang: userData.learnLang,
-                        sectionNumber: userData.sectionNumber,
-                        completedUnits: userData.completedUnits,
-                        completedChapters: userData.completedChapters,
-                        currentLesson: userData.currentLesson
+                    // sessionStorage.setItem("user-info", JSON.stringify({
+                    //     userId: userData.userId,
+                    //     email: userData.email,
+                    //     name: userData.name,
+                    //     age: userData.age,
+                    //     gems: userData.gems,
+                    //     xp: userData.xp,
+                    //     hearts: userData.hearts,
+                    //     creationDate: userData.creationDate,
+                    //     learnLang: userData.learnLang,
+                    //     sectionNumber: userData.sectionNumber,
+                    //     completedUnits: userData.completedUnits,
+                    //     completedChapters: userData.completedChapters,
+                    //     currentLesson: userData.currentLesson
 
-                    }));
+                    // }));
                     console.log(userData);
-                    // sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+                    sessionStorage.setItem("user-info", JSON.stringify(credentials.user));
                     window.location.href = "./learn.html";
                 }
             });
