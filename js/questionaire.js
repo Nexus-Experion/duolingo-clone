@@ -59,15 +59,10 @@ function correctOption(selectedOption) {
     document.getElementById('outer-options-div-' + selectedOption).className = 'outer-options-div-correct';
 
 }
-
-
-
-
 function currentHearts() {
     //FETCH HEART FROM FIRESTORE TO HERE AND UPDATE THROUGH HERE
     document.getElementById("heart-count").textContent = "3";
 };
-
 function skipButton(id) {
     localStorage.removeItem("correctIndex")
     document.getElementById(id).classList.toggle('clicked');
@@ -209,39 +204,44 @@ function questionLoad() {
             let index = Math.floor(Math.random() * data.challenges.length);
             // console.log(data.challenges[index]);
             if (questionCount < 5) {
-                console.log(data.challenges[index]);
-                console.log(data.challenges[index].type);
-                // challengeDialogue(data.challenges[12]);
-                // data.challenges
-                // challengetranscription(data.challenges[13]);
-                if (data.challenges[index].type == "assist") {
-                    resetBottomRow();
-                    console.log("inner");
-                    challengeAssist(data.challenges[index]);
-                    questionCount++;
+                if (heartCount > 0) {
+                    console.log(data.challenges[index]);
+                    console.log(data.challenges[index].type);
+                    // challengeDialogue(data.challenges[12]);
+                    // data.challenges
+                    // challengetranscription(data.challenges[13]);
+                    if (data.challenges[index].type == "assist") {
+                        resetBottomRow();
+                        console.log("inner");
+                        challengeAssist(data.challenges[index]);
+                        questionCount++;
 
-                }
-                else if (data.challenges[index].type == "dialogue") {
-                    resetBottomRow();
-                    challengeDialogue(data.challenges[index]);
-                    questionCount++;
+                    }
+                    else if (data.challenges[index].type == "dialogue") {
+                        resetBottomRow();
+                        challengeDialogue(data.challenges[index]);
+                        questionCount++;
 
-                }
-                else if (data.challenges[index].type == "selectTranscription") {
-                    resetBottomRow();
-                    challengeTranscription(data.challenges[index]);
-                    questionCount++;
+                    }
+                    else if (data.challenges[index].type == "selectTranscription") {
+                        resetBottomRow();
+                        challengeTranscription(data.challenges[index]);
+                        questionCount++;
 
-                }
-                else if (data.challenges[index].type == "select") {
-                    resetBottomRow();
-                    challengeSelect(data.challenges[index]);
-                    questionCount++;
+                    }
+                    else if (data.challenges[index].type == "select") {
+                        resetBottomRow();
+                        challengeSelect(data.challenges[index]);
+                        questionCount++;
 
+                    }
+                    else {
+                        questionLoad();
+
+                    }
                 }
                 else {
-                    questionLoad();
-
+                    showShopPopup();
                 }
             }
             else {
@@ -416,13 +416,19 @@ function revertQuestionScreen() {
 
 }
 
+function showShopPopup() {
+    document.querySelector('.shop-overlay').style.display = 'flex'
+
+}
+
+
 function showAlertPopup() {
     document.querySelector('.exit-overlay').style.display = 'flex'
-
-
+}
+function goToShop() {
+    window.location.href = './shoppingpage.html';
 }
 
 function exitToLearn() {
     window.location.href = './learn.html';
-
 }

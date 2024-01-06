@@ -146,11 +146,9 @@ body {
 .inner-light-green-bar {
     background-color: white;
     opacity: .2;
-    width: fit-content;
-    /* width: 100%; */
-    /* width: 88%; */
+    width: auto;
+
     margin-left: 12px;
-    /* margin-right: 12px; */
     position: absolute;
     top: 20%;
     left: 2%;
@@ -220,6 +218,29 @@ body {
     text-align: center;
     width: 100%;
     overflow: auto;
+}
+
+.gem-head-popup {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+}
+
+.gem-count-div {
+    align-items: center;
+    display: flex;
+}
+
+.gem-img {
+    width: 32px;
+    height: 32px;
+}
+
+#gem-count-text {
+    color: rgb(var(--color-macaw));
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .challenge-section {
@@ -1338,6 +1359,23 @@ body {
 
 .inner-xp-container img {
     margin-right: 10px;
+}
+
+.shop-overlay {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Red color with 50% opacity */
+    opacity: 1.1;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100dvh;
+    min-width: 100vw;
+    position: relative;
+    z-index: 310;
+    transition-duration: 300ms;
+    transition: opacity;
+
 }
 
 

@@ -30,7 +30,90 @@
         </div>
         <div class="mid-row-question-page-sections">
           <div class="mid-row-sections">
-            <div class="mid-row"></div>
+            <div class="mid-row">
+              <div class="challenge-read-comprehension">
+                <div class="challenge-section">
+                  <div class="challenge-header">
+                    <h1>
+                      <span>Read and Respond</span>
+                    </h1>
+                    <div class="assist-content">
+                      <div class="select-challenge-options">
+                        <div class="select-options">
+                          <div class="select-outer-option-div">
+                            <div
+                              class="select-option-div select-option-inner-div"
+                              id="1"
+                              onclick="selectOptionButton(this.id),buttonClickAnimation(this.id)"
+                            >
+                              <div class="select-div-image">
+                                <img
+                                  src="https://d2pur3iezf4d1j.cloudfront.net/images/7afea32bcf0e8c6f9d446ad4aad416be"
+                                />
+                              </div>
+
+                              <div class="select-div-text">
+                                <span class="select-div-option"> Mutter </span>
+                                <span class="option-no" id="option-no-1"
+                                  >1</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <div class="select-outer-option-div">
+                            <div
+                              class="select-option-div select-option-inner-div"
+                              id="1"
+                              onclick="selectOptionButton(this.id),buttonClickAnimation(this.id)"
+                            >
+                              <div class="select-div-image">
+                                <img
+                                  src="https://d2pur3iezf4d1j.cloudfront.net/images/7afea32bcf0e8c6f9d446ad4aad416be"
+                                />
+                              </div>
+
+                              <div class="select-div-text">
+                                <span class="select-div-option"> Mutter </span>
+                                <span class="option-no" id="option-no-1"
+                                  >1</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <div class="select-outer-option-div">
+                            <div
+                              class="select-option-div select-option-inner-div"
+                              id="1"
+                              onclick="selectOptionButton(this.id),buttonClickAnimation(this.id)"
+                            >
+                              <div
+                                class="select-div-image"
+                                style="justify-content: space-evenly"
+                              >
+                                <img
+                                  src="https://d2pur3iezf4d1j.cloudfront.net/images/7afea32bcf0e8c6f9d446ad4aad416be"
+                                />
+                              </div>
+
+                              <div class="select-div-text">
+                                <span class="select-div-option-name">
+                                  Mutter
+                                </span>
+                                <span
+                                  class="select-div-option-no"
+                                  id="option-no-1"
+                                  >1
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="bottom-row-question-page-sections">
@@ -86,6 +169,35 @@
         </div>
       </div>
     </div>
+    <div class="shop-overlay" style="display: none">
+      <div class="exit-box">
+        <div class="exit-box-contents">
+          <div class="gem-head-popup">
+            <div class="gem-count-div">
+              <img class="gem-img" src="../assets/svg/gems-icon.svg" />
+              <span id="gem-count-text">500</span>
+            </div>
+          </div>
+          <span class="exit-text-head">You ran out of hearts!!</span>
+          <span class="exit-text-description"
+            >Get Super for Unlimited Hearts, or use gems to buy hearts.</span
+          >
+          <div class="keep-learning-button-outer-active" id="check-button-div">
+            <button
+              class="button-div keep-learning-button"
+              id="keep-learning-button"
+              onclick="revertQuestionScreen()"
+            >
+              <span id="keep-learning">GO TO SHOP</span>
+            </button>
+          </div>
+          <button class="end-question-session" onclick="exitToLearn()">
+            <span>END SESSION</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="exit-overlay-outer-div">
       <div class="exit-overlay" style="display: none">
         <div class="exit-box">
@@ -105,12 +217,12 @@
               <button
                 class="button-div keep-learning-button"
                 id="keep-learning-button"
-                onclick="revertQuestionScreen()"
+                onclick="goToShop()"
               >
                 <span id="keep-learning">KEEP LEARNING</span>
               </button>
             </div>
-            <button class="end-question-session" onclick="exitToLearn()">
+            <button class="end-question-session" onclick="goToShop()">
               <span>END SESSION</span>
             </button>
           </div>

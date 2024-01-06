@@ -2,22 +2,22 @@ function challengeSelect(question) {
     document.querySelector('.mid-row').innerHTML = '';
 
     localStorage.setItem('challenge', question.type);
-    var challengeSelect = document.createElement('div');
+    let challengeSelect = document.createElement('div');
     challengeSelect.classList.add('challenge-select');
 
     // Create challenge-section element
-    var challengeSection = document.createElement('div');
+    let challengeSection = document.createElement('div');
     challengeSection.classList.add('challenge-section');
 
     // Create challenge-header element
-    var challengeHeader = document.createElement('div');
+    let challengeHeader = document.createElement('div');
     challengeHeader.classList.add('challenge-header');
 
     // Create h1 element
-    var h1Element = document.createElement('h1');
+    let h1Element = document.createElement('h1');
 
     // Create span element
-    var spanElement = document.createElement('span');
+    let spanElement = document.createElement('span');
     spanElement.textContent = `Which one of these is \"${question.prompt}\" ?`;
 
     // Append span to h1
@@ -30,11 +30,11 @@ function challengeSelect(question) {
 
 
     // Create select-challenge-options element
-    var selectChallengeOptions = document.createElement('div');
+    let selectChallengeOptions = document.createElement('div');
     selectChallengeOptions.classList.add('select-challenge-options');
 
     // Create select-options element
-    var selectOptions = document.createElement('div');
+    let selectOptions = document.createElement('div');
     selectOptions.classList.add('select-options');
 
     // Append select-options to select-challenge-options
@@ -62,14 +62,14 @@ function challengeSelect(question) {
     let outerOptionsCounter = 1;
     let optionCounter = 1;
     choices.forEach(choice => {
-        var outerDiv = document.createElement("div");
+        let outerDiv = document.createElement("div");
         outerDiv.classList.add("select-outer-option-div");
         outerDiv.id = "select-outer-option-div-" + optionCounter;
         //audio
         const audio = new Audio(choice.tts);
 
         // Create inner div
-        var innerDiv = document.createElement("div");
+        let innerDiv = document.createElement("div");
         innerDiv.classList.add("select-option-div", "select-option-inner-div");
         innerDiv.id = optionCounter;
         innerDiv.addEventListener("click", function () {
@@ -80,12 +80,12 @@ function challengeSelect(question) {
 
 
         // Create image div
-        var imageDiv = document.createElement("div");
+        let imageDiv = document.createElement("div");
         imageDiv.classList.add("select-div-image");
         imageDiv.style.justifyContent = "space-evenly";
 
         // Create image element
-        var image = document.createElement("img");
+        let image = document.createElement("img");
         image.src = choice.image;
 
 
@@ -93,17 +93,17 @@ function challengeSelect(question) {
         imageDiv.appendChild(image);
 
         // Create text div
-        var textDiv = document.createElement("div");
+        let textDiv = document.createElement("div");
         textDiv.classList.add("select-div-text");
 
         // Create option name span
-        var optionNameSpan = document.createElement("span");
+        let optionNameSpan = document.createElement("span");
         optionNameSpan.classList.add("select-div-option-name");
         optionNameSpan.id = "select-div-option-name-" + optionCounter;
         optionNameSpan.textContent = choice.phrase;
 
         // Create option number span
-        var optionNoSpan = document.createElement("span");
+        let optionNoSpan = document.createElement("span");
         optionNoSpan.classList.add("select-div-option-no");
         optionNoSpan.id = "option-no-" + optionCounter;
         optionNoSpan.textContent = optionCounter;
