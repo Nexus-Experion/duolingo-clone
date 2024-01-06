@@ -237,7 +237,7 @@ function questionLoad() {
                     }
                     else if (data.challenges[index].type == "readComprehension") {
                         resetBottomRow();
-                        challengereadComprehension(data.challenges[index]);
+                        challengeReadComprehension(data.challenges[index]);
                         questionCount++;
                     }
                     else {
