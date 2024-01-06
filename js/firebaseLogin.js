@@ -27,25 +27,25 @@ let signInUser = (event) => {
 
       getDoc(dbref).then((docSnapshot) => {
         if (docSnapshot.exists()) {
-          const userData = docSnapshot.data();
-          sessionStorage.setItem(
-            "user-info",
-            JSON.stringify({
-              email: userData.email,
-              name: userData.name,
-              age: userData.age,
-              gems: userData.gems,
-              xp: userData.xp,
-              hearts: userData.hearts,
-              creationDate: userData.creationDate,
-
-              learnLang: userData.learnLang,
-              sectionId: userData.sectionId,
-              currentUnit: userData.currentUnit,
-              currentChapter: userData.currentChapter
-            })
-          );
-          // sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+          const userData = docSnapshot.data();[]
+          // sessionStorage.setItem(
+          //   "user-info",
+          //   JSON.stringify({
+          //     userId: userData.userId,
+          //     email: userData.email,
+          //     name: userData.name,
+          //     age: userData.age,
+          //     gems: userData.gems,
+          //     xp: userData.xp,
+          //     hearts: userData.hearts,
+          //     creationDate: userData.creationDate,
+          //     learnLang: userData.learnLang,
+          //     sectionId: userData.sectionId,
+          //     currentUnit: userData.currentUnit,
+          //     currentChapter: userData.currentChapter
+          //   })
+          // );
+          sessionStorage.setItem("user-info", JSON.stringify(userData));
           window.location.href = "./learn.html";
         }
       });
