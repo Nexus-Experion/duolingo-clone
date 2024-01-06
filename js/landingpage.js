@@ -7,7 +7,7 @@ const alreadyAccountButtonAnimation = () => {
 const getStartedButtonAnimation = () => {
     document.getElementById("get-started-button").classList.toggle('clicked');
     setTimeout(() => document.getElementById("get-started-button").classList.toggle('clicked'), 300);
-    window.location.href = "/html/signup.html";
+    window.location.href = "/html/languages-select-page.html";
 }
 // const animation = bodymovin.loadAnimation({
 //     container: document.getElementById('left-logging-header-video'),

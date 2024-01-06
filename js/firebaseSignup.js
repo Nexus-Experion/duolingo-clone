@@ -29,7 +29,12 @@ let RegisterUser = async (event) => {
             gems: 500,
             xp: 0,
             hearts: 5,
-            creationDate: currentDate
+            creationDate: currentDate,
+            learnLang: localStorage.getItem('selectedLang'),
+            sectionNumber: 1,
+            completedUnits: 1,
+            completedChapters: 1,
+            currentLesson: 1
         });
 
         const dbref = doc(db, 'UsersAuthList', credentials.user.uid);
@@ -44,8 +49,15 @@ let RegisterUser = async (event) => {
                         gems: userData.gems,
                         xp: userData.xp,
                         hearts: userData.hearts,
-                        creationDate: userData.creationDate
+                        creationDate: userData.creationDate,
+                        learnLang: userData.learnLang,
+                        sectionNumber: userData.sectionNumber,
+                        completedUnits: userData.completedUnits,
+                        completedChapters: userData.completedChapters,
+                        currentLesson: userData.currentLesson
+
                     }));
+                    console.log(userData);
                     // sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
                     window.location.href = "./learn.html";
                 }
