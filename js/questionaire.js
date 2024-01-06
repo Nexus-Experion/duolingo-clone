@@ -192,8 +192,8 @@ function questionLoad() {
     // fetch("../assets/JSON/german_lev_1.json").then(response => response.json())
     //     .then(data => {
     //         let index = Math.floor(Math.random() * data.challenges.length);
-    //         console.log(data.challenges[index]);
-    //         challengeSelect(data.challenges[0]);
+    //         console.log(data.challenges[1]);
+    //         challengeReadComprehension(data.challenges[0]);
 
     //     })
 
@@ -234,6 +234,11 @@ function questionLoad() {
                         challengeSelect(data.challenges[index]);
                         questionCount++;
 
+                    }
+                    else if (data.challenges[index].type == "readComprehension") {
+                        resetBottomRow();
+                        challengereadComprehension(data.challenges[index]);
+                        questionCount++;
                     }
                     else {
                         questionLoad();
@@ -431,4 +436,13 @@ function goToShop() {
 
 function exitToLearn() {
     window.location.href = './learn.html';
+}
+
+function correctSelectOption(selectedOption) {
+
+    document.getElementById('option-no-' + selectedOption).className = 'option-no-correct';
+    document.getElementById('select-div-option-name-' + selectedOption).className = 'option-name-correct';
+    document.getElementById(selectedOption).className = 'select-option-div-correct';
+    document.getElementById('select-outer-option-div-' + selectedOption).className = 'select-outer-options-div-correct';
+
 }

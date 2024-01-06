@@ -165,14 +165,7 @@ const selectChallengeOptionButton = (id) => {
 }
 
 
-function correctSelectOption(selectedOption) {
 
-    document.getElementById('option-no-' + selectedOption).className = 'option-no-correct';
-    document.getElementById('select-div-option-name-' + selectedOption).className = 'option-name-correct';
-    document.getElementById(selectedOption).className = 'select-option-div-correct';
-    document.getElementById('select-outer-option-div-' + selectedOption).className = 'select-outer-options-div-correct';
-
-}
 
 
 
