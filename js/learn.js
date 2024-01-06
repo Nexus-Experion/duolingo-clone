@@ -471,7 +471,7 @@ const updateStatistics = () => {
 const startLesson = () => {
   document.querySelector(".loading-screen").classList.toggle("hidden");
   setTimeout(() => {
-    document.querySelector(".loading-screen").classList.toggle("hidden");
+    // document.querySelector(".loading-screen").classList.toggle("hidden");
     window.location.href = "questionarie.html"
   }, 2500);
 
