@@ -111,12 +111,14 @@ const placeuserStatistics = () => {
   document.querySelectorAll(".heart-text").forEach(item => item.textContent = userData.hearts);
   document.querySelectorAll(".gem-text").forEach(item => item.textContent = userData.gems);
 }
-const placeUnitsandLessons = (sectionData) => {
-
-  let completedChapters = sectionData.section.completedChapters;
-  let completedUnits = sectionData.section.completedUnits
+const placeUnitsandLessons = (sectionData,userData) => {
+  console.log("userdata is ",userData);
+  let completedChapters = userData.completedChapters;
+  let completedUnits = userData.completedUnits
   let totalChaptersInUnit = sectionData.section.totalChaptersInUnit
   let totalUnitsInSection = sectionData.section.totalUnitsInSection
+
+  console.log(completedChapters,"bulubulu",completedUnits)
 
   let lockedUnits = totalUnitsInSection - completedUnits - 1;
   let lockedLessons = totalChaptersInUnit - completedChapters - 1;
@@ -427,45 +429,46 @@ const placeUnitsandLessons = (sectionData) => {
 
 const showLessonsInSection = () => {
   let sectionData = JSON.parse(localStorage.getItem("sectionData"));
-  placeUnitsandLessons(sectionData);
+  let userData=getUserDataFromSessionStorage();
+  placeUnitsandLessons(sectionData,userData);
 }
-const startNewChapter = () => {
-  console.log("Entering new chapter");
-  let sectionData = JSON.parse(localStorage.getItem("sectionData"));
-  console.log(sectionData.section.currentLesson)
-  if (sectionData.section.completedChapters + 1 == sectionData.section.totalChaptersInUnit) {
-    sectionData.section.completedUnits += 1;
-    sectionData.section.completedChapters = 0;
-    sectionData.section.currentLesson = 0;
-  } else {
-    sectionData.section.completedChapters += 1;
-    sectionData.section.currentLesson = 0;
-  }
-  localStorage.setItem("sectionData", JSON.stringify(sectionData));
-  setTimeout(() => placeUnitsandLessons(sectionData), 1000);
-}
+// const startNewChapter = () => {
+//   console.log("Entering new chapter");
+//   let sectionData = JSON.parse(localStorage.getItem("sectionData"));
+//   let userData=
+//   console.log(sectionData.section.currentLesson)
+//   if (sectionData.section.completedChapters + 1 == sectionData.section.totalChaptersInUnit) {
+//     sectionData.section.completedUnits += 1;
+//     sectionData.section.completedChapters = 0;
+//     sectionData.section.currentLesson = 0;
+//   } else {
+//     sectionData.section.completedChapters += 1;
+//     sectionData.section.currentLesson = 0;
+//   }
+//   localStorage.setItem("sectionData", JSON.stringify(sectionData));
+//   setTimeout(() => placeUnitsandLessons(sectionData), 1000);
+// }
 const updateStatistics = () => {
   console.log("calling updateStatistics");
-  // let xpFromLesson = parseInt(localStorage.getItem("xpCount"));
-  // isNaN(xpFromLesson) ? xpFromLesson = 0 : 0
+  let xpFromLesson = parseInt(localStorage.getItem("xpCount"));
+  isNaN(xpFromLesson) ? xpFromLesson = 0 : 0
   // console.log(xpFromLesson);
   let sectionData = JSON.parse(localStorage.getItem("sectionData"));
-  // let userData = getUserDataFromSessionStorage();
+  let userData = getUserDataFromSessionStorage();
   if (xpFromLesson != 0) {
-    // localStorage.removeItem("xpCount");
-    if (sectionData.section.currentLesson >= 3) {
-      startNewChapter()
-    } else {
-      sectionData.section.currentLesson += 1;
-      localStorage.setItem("sectionData", JSON.stringify(sectionData));
-
+    // // localStorage.removeItem("xpCount");
+    // if (sectionData.section.currentLesson >= 3) {
+    //   startNewChapter()
+    // } else {
+    //   sectionData.section.currentLesson += 1;
+    //   localStorage.setItem("sectionData", JSON.stringify(sectionData));
+      setTimeout(() => placeUnitsandLessons(sectionData,userData), 1000);
     }
     // userData.xp += xpFromLesson;
     // sessionStorage.setItem("user-info", JSON.stringify(userData));
-    setTimeout(() => placeUnitsandLessons(sectionData), 1000);
-  }
+  
   console.log(sectionData.section.currentLesson);
-  setTimeout(() => document.querySelector("circle-progress").value = (25 * sectionData.section.currentLesson), 200);
+  setTimeout(() => document.querySelector("circle-progress").value = (25 * (userData.currentLesson-1)), 200);
 }
 
 const startLesson = () => {
