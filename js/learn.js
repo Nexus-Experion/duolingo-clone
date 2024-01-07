@@ -314,21 +314,29 @@ const placeUnitsandLessons = (sectionData,userData) => {
 `
 
   let paddingArr = [0, 3, 5, 3, 0, -3, -5, -3, 0];
-  let index = 0;
+  let translateIndex=0
+  let paddingIndex = 0;
+
+  const calculatePadding = () => {
+    if (paddingArr[paddingIndex] < 0) {
+      return `0 0 0 ${-60 * paddingArr[paddingIndex++]}px`
+    }
+    return `0 ${60 * paddingArr[paddingIndex++]}px 0 0`
+  }
 
   const calculateTranslate = () => {
-    if (paddingArr[index] < 0) {
-      return `0 0 0 ${-60 * paddingArr[index++]}px`
-    }
-    return `0 ${60 * paddingArr[index++]}px 0 0`
+      return `${-30 * paddingArr[translateIndex++]}px`
   }
+
   let i = 0;
   const placecompletedChapters = (lessonCount, sectionRef, unitRef, start = 0) => {
     for (i = start; i < lessonCount + start; i++) {
       let circleNode = document.createElement("div");
       circleNode.setAttribute("class", "alignment-div");
-      circleNode.style.padding = calculateTranslate();
+      circleNode.style.padding = calculatePadding();
       circleNode.innerHTML = completedDiv;
+      let box=circleNode.querySelector(".floating-start-box-bottom");
+      box.style.translate=`calc(-50% + ${calculateTranslate()})`
       circleNode.querySelector("h1").textContent = sectionData.section.units[unitRef].chapters[i];
       sectionRef.appendChild(circleNode);
     }
@@ -337,8 +345,10 @@ const placeUnitsandLessons = (sectionData,userData) => {
   const placeOngoingLessons = (sectionRef, unitRef, start = 0) => {
     let circleNode = document.createElement("div");
     circleNode.setAttribute("class", "alignment-div");
-    circleNode.style.padding = calculateTranslate();
+    circleNode.style.padding = calculatePadding();
     circleNode.innerHTML = onProgressHtml;
+    let box=circleNode.querySelector(".floating-start-box-bottom");
+    box.style.translate=`calc(-50% + ${calculateTranslate()})`
     circleNode.querySelector("h1").textContent = sectionData.section.units[unitRef].chapters[start];
     sectionRef.appendChild(circleNode);
 
@@ -346,11 +356,14 @@ const placeUnitsandLessons = (sectionData,userData) => {
 
 
   const placeLockedLessons = (lessonCount, sectionRef, unitRef, start = 0) => {
+    console.log("starting from",start);
     for (let i = start; i < lessonCount + start; i++) {
       let circleNode = document.createElement("div");
       circleNode.setAttribute("class", "alignment-div");
-      circleNode.style.padding = calculateTranslate();
+      circleNode.style.padding = calculatePadding();
       circleNode.innerHTML = lockedDiv;
+      let box=circleNode.querySelector(".floating-start-box-bottom");
+      box.style.translate=`calc(-50% + ${calculateTranslate()})`
       circleNode.querySelector("h1").textContent = sectionData.section.units[unitRef].chapters[i];
       sectionRef.appendChild(circleNode);
     }
@@ -362,9 +375,11 @@ const placeUnitsandLessons = (sectionData,userData) => {
   scrollableContainer.insertAdjacentHTML("beforeend", sectionHeader);
   let lessonContainer = document.querySelector(".unit-placing-div");
   console.log(completedUnits,"units complted")
+
   for (let i = 0; i < completedUnits; i++) {
     console.log("loop",i);
-    index = 0
+    paddingIndex = 0
+    translateIndex = 0
     let section = document.createElement("section");
     section.setAttribute("id", `section-${unitCounter++}`);
     section.innerHTML = finishedUnitHeader;
@@ -394,7 +409,8 @@ const placeUnitsandLessons = (sectionData,userData) => {
     lessonContainer.append(section);
   }
 
-  index = 0;
+  paddingIndex = 0;
+  translateIndex = 0
   let section = document.createElement("section");
   section.setAttribute("id", `section-${unitCounter++}`);
   section.innerHTML = incompleteUnitHeader;
@@ -423,14 +439,15 @@ const placeUnitsandLessons = (sectionData,userData) => {
   section.append(firstanimatedSpriteInLesson);
   section.append(secondanimatedSpriteInLesson);
 
-  placeOngoingLessons(section, unitCounter - 2, 3);
-  placeLockedLessons(lockedLessons, section, unitCounter - 2, 4);
+  placeOngoingLessons(section, unitCounter - 2, );
+  placeLockedLessons(lockedLessons, section, unitCounter - 2, );
   section.querySelector("h1").textContent = sectionData.section.units[unitCounter - 2].name;
   section.querySelector("span").textContent = sectionData.section.units[unitCounter - 2].description;
   lessonContainer.append(section);
 
   for (let i = 0; i < lockedUnits; i++) {
-    index = 0;
+    paddingIndex = 0;
+    translateIndex=0
     let section = document.createElement("section");
     section.setAttribute("id", `section-${unitCounter++}`);
     section.innerHTML = incompleteUnitHeader;
