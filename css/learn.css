@@ -320,7 +320,7 @@ circle-progress::part(value) {
   left: 50%;
   bottom: -300%;
   z-index: 2;
-  transform: translateX(-50%);
+  /* translate:-50% 0; */
 }
 .floating-start-box .text {
   background-color: rgb(var(--color-owl));
@@ -642,7 +642,9 @@ section {
   height: 25%;
   aspect-ratio: 1/1;
 }
-
+.greyd-sprite{
+  filter: grayscale(1);
+}
 /* Loading Screen Animation */
 
 .loading-screen {

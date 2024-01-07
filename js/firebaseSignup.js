@@ -62,7 +62,7 @@ let RegisterUser = async (event) => {
 
                     // }));
                     console.log(userData);
-                    sessionStorage.setItem("user-info", JSON.stringify(credentials.user));
+                    sessionStorage.setItem("user-info", JSON.stringify(userData));
                     window.location.href = "./learn.html";
                 }
             });
