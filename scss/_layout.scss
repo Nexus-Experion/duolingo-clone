@@ -1,0 +1,21 @@
+.site-language-unordered-list {
+	padding: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+}
+.site-language-list-single {
+	align-items: center;
+	color: $color_2;
+	display: flex;
+	font-size: 15px;
+	font-weight: 500;
+	height: 42px;
+	padding: 0 20px;
+	white-space: nowrap;
+	background-color: $background-color_2;
+	border-radius: 15px;
+	&:hover {
+		background-color: $background-color_3;
+	}
+}
