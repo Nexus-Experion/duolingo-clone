@@ -3,13 +3,34 @@ const openSuperDuolingoPage = () => {
   setTimeout(() => document.getElementById("try-super-button").classList.toggle('clicked'), 200)
   location.href = "../html/superduolingo.html"
 }
-const closeOtherOpenDialogBoxes = (event) => {
 
+const getLanguageFullForm=(languageCode)=>{
+  switch(languageCode){
+    case 'de':return "German"
+    case 'ja':return "Japanese"
+    case 'fr':return "French"
+    case 'es':return "Spanish"
+    default: "Languages"
+  }
+}
+const getLanguageFlagPath=(languageCode)=>{
+  console.log(`../assets/svg/country-flags/${languageCode}-flag.svg`)
+  return `../assets/svg/country-flags/${languageCode}-flag.svg`
+}
+const closeOtherOpenDialogBoxes = (event) => {
+  event.stopPropagation();
   let currentButton = event.target.closest(".alignment-div").querySelector(".floating-start-box-bottom")
   document.querySelectorAll(".floating-start-box-bottom").forEach((dialog) => {
     if (dialog != currentButton) { dialog.classList.add("hidden") }
   });
 }
+
+const closeAllOpenDialogBoxes = () => {
+  document.querySelectorAll(".floating-start-box-bottom").forEach((dialog) => {
+    dialog.classList.add("hidden")
+  });
+}
+
 const openDialogBoxes = (event) => {
   closeOtherOpenDialogBoxes(event);
   let parentDiv = event.target.closest(".alignment-div");
@@ -107,16 +128,21 @@ const getUserDataFromSessionStorage = () => {
 
 const placeuserStatistics = () => {
   let userData = getUserDataFromSessionStorage();
+  document.title=`Duolingo - The world's best way to learn ${getLanguageFullForm(userData.learnLang)}`
+  document.querySelector(".country-flag").src=getLanguageFlagPath(userData.learnLang);
   document.querySelectorAll(".fire-text").forEach(item => item.textContent = userData.xp);
   document.querySelectorAll(".heart-text").forEach(item => item.textContent = userData.hearts);
   document.querySelectorAll(".gem-text").forEach(item => item.textContent = userData.gems);
 }
-const placeUnitsandLessons = (sectionData) => {
 
-  let completedChapters = sectionData.section.completedChapters;
-  let completedUnits = sectionData.section.completedUnits
+const placeUnitsandLessons = (sectionData,userData) => {
+  console.log("userdata is ",userData);
+  let completedChapters = userData.completedChapters;
+  let completedUnits = userData.completedUnits
   let totalChaptersInUnit = sectionData.section.totalChaptersInUnit
   let totalUnitsInSection = sectionData.section.totalUnitsInSection
+
+  console.log(completedChapters,"bulubulu",completedUnits)
 
   let lockedUnits = totalUnitsInSection - completedUnits - 1;
   let lockedLessons = totalChaptersInUnit - completedChapters - 1;
@@ -139,7 +165,7 @@ const placeUnitsandLessons = (sectionData) => {
   let onProgressHtml = `
 <div class="circle_box">
   <button class="lesson-button" onclick="openDialogBoxes(event);">
-    <img src="../assets/svg/star-in-lesson-white.svg" alt="star" class="star-image">
+    <img src="../assets/svg/star-in-lesson-white.svg" class="star-image">
     <circle-progress value="0" max="100" text-format="none" ></circle-progress>
   </button>
   <div class="floating-start-box">
@@ -153,14 +179,14 @@ const placeUnitsandLessons = (sectionData) => {
   <div class="triangle-top"></div>
   <div class="text-container">
     <h1>Form basic sentences</h1>
-    <p>Lesson ${sectionData.section.currentLesson + 1} of 4</p>
+    <p>Lesson ${userData.currentLesson} of 4</p>
     <button onclick="startLesson()">Start +10 XP</button>
   </div>
 </div>`
 
   let lockedDiv = `<div class="circle_box locked">
 <button class="lesson-button inactive" onclick="openDialogBoxes(event);">
-  <img src="../assets/svg/locked-button-grey.svg" alt="locked-button" class="star-image">
+  <img src="../assets/svg/locked-button-grey.svg" class="star-image">
 </button>
 </div>
 <div class="floating-start-box-bottom hidden locked">
@@ -179,12 +205,10 @@ const placeUnitsandLessons = (sectionData) => {
   >
     <img
       src="../assets/svg/completed-lesson-background.svg"
-      alt="finsished-tick"
       class="star-image bg"
     />
     <img
       src="../assets/svg/correct-tick-unit-completed.svg"
-      alt="finsished-tick"
       class="star-image"
     />
   </button>
@@ -205,9 +229,9 @@ const placeUnitsandLessons = (sectionData) => {
   <span class="icon-and-text-wrap">
     <div class="icon-in-button">
       <img
-        src="../assets/svg/ja-flag.svg"
+        src=${getLanguageFlagPath(userData.learnLang)}
         alt="home-icon"
-        class="profile"
+        class="country-flag"
       />
     </div>
   </span>
@@ -271,7 +295,7 @@ const placeUnitsandLessons = (sectionData) => {
 
   </span>
 </a>
-<a href="" class="button-in-sidebar">
+<a href="leaderboard.html" class="button-in-sidebar">
   <span class="icon-and-text-wrap">
     <div class="icon-in-button">
       <img src="../assets/svg/badge-in-sidebar.svg" alt="home-icon" />
@@ -279,7 +303,7 @@ const placeUnitsandLessons = (sectionData) => {
 
   </span>
 </a>
-<a href="" class="button-in-sidebar">
+<a href="profile-page.html" class="button-in-sidebar">
   <span class="icon-and-text-wrap">
     <div class="icon-in-button">
       <img
@@ -291,13 +315,12 @@ const placeUnitsandLessons = (sectionData) => {
 
   </span>
 </a>
-<a href="" class="button-in-sidebar">
-  <span class="icon-and-text-wrap">
-    <div class="icon-in-button">
-      <img src="../assets/svg/more-in-sidebar.svg" alt="home-icon" />
-    </div>
-
-  </span>
+<a href="./shoppingpage.html" class="button-in-sidebar">
+<span class="icon-and-text-wrap">
+  <div class="icon-in-button">
+    <img src="../assets/svg/shop-in-sidebar.svg" alt="home-icon" />
+  </div>
+</span>
 </a>
 <a href="./faq.html" class="button-in-sidebar">
   <span class="icon-and-text-wrap">
@@ -311,21 +334,29 @@ const placeUnitsandLessons = (sectionData) => {
 `
 
   let paddingArr = [0, 3, 5, 3, 0, -3, -5, -3, 0];
-  let index = 0;
+  let translateIndex=0
+  let paddingIndex = 0;
+
+  const calculatePadding = () => {
+    if (paddingArr[paddingIndex] < 0) {
+      return `0 0 0 ${-60 * paddingArr[paddingIndex++]}px`
+    }
+    return `0 ${60 * paddingArr[paddingIndex++]}px 0 0`
+  }
 
   const calculateTranslate = () => {
-    if (paddingArr[index] < 0) {
-      return `0 0 0 ${-60 * paddingArr[index++]}px`
-    }
-    return `0 ${60 * paddingArr[index++]}px 0 0`
+      return `${-30 * paddingArr[translateIndex++]}px`
   }
+
   let i = 0;
   const placecompletedChapters = (lessonCount, sectionRef, unitRef, start = 0) => {
     for (i = start; i < lessonCount + start; i++) {
       let circleNode = document.createElement("div");
       circleNode.setAttribute("class", "alignment-div");
-      circleNode.style.padding = calculateTranslate();
+      circleNode.style.padding = calculatePadding();
       circleNode.innerHTML = completedDiv;
+      let box=circleNode.querySelector(".floating-start-box-bottom");
+      box.style.translate=`calc(-50% + ${calculateTranslate()})`
       circleNode.querySelector("h1").textContent = sectionData.section.units[unitRef].chapters[i];
       sectionRef.appendChild(circleNode);
     }
@@ -334,8 +365,10 @@ const placeUnitsandLessons = (sectionData) => {
   const placeOngoingLessons = (sectionRef, unitRef, start = 0) => {
     let circleNode = document.createElement("div");
     circleNode.setAttribute("class", "alignment-div");
-    circleNode.style.padding = calculateTranslate();
+    circleNode.style.padding = calculatePadding();
     circleNode.innerHTML = onProgressHtml;
+    let box=circleNode.querySelector(".floating-start-box-bottom");
+    box.style.translate=`calc(-50% + ${calculateTranslate()})`
     circleNode.querySelector("h1").textContent = sectionData.section.units[unitRef].chapters[start];
     sectionRef.appendChild(circleNode);
 
@@ -343,11 +376,14 @@ const placeUnitsandLessons = (sectionData) => {
 
 
   const placeLockedLessons = (lessonCount, sectionRef, unitRef, start = 0) => {
+    console.log("starting from",start);
     for (let i = start; i < lessonCount + start; i++) {
       let circleNode = document.createElement("div");
       circleNode.setAttribute("class", "alignment-div");
-      circleNode.style.padding = calculateTranslate();
+      circleNode.style.padding = calculatePadding();
       circleNode.innerHTML = lockedDiv;
+      let box=circleNode.querySelector(".floating-start-box-bottom");
+      box.style.translate=`calc(-50% + ${calculateTranslate()})`
       circleNode.querySelector("h1").textContent = sectionData.section.units[unitRef].chapters[i];
       sectionRef.appendChild(circleNode);
     }
@@ -358,9 +394,12 @@ const placeUnitsandLessons = (sectionData) => {
   scrollableContainer.innerHTML = ''
   scrollableContainer.insertAdjacentHTML("beforeend", sectionHeader);
   let lessonContainer = document.querySelector(".unit-placing-div");
+  console.log(completedUnits,"units complted")
 
-  for (i = 0; i < completedUnits; i++) {
-    index = 0
+  for (let i = 0; i < completedUnits; i++) {
+    console.log("loop",i);
+    paddingIndex = 0
+    translateIndex = 0
     let section = document.createElement("section");
     section.setAttribute("id", `section-${unitCounter++}`);
     section.innerHTML = finishedUnitHeader;
@@ -370,53 +409,92 @@ const placeUnitsandLessons = (sectionData) => {
 
     let firstanimatedSpriteInLesson = document.createElement("div")
     firstanimatedSpriteInLesson.setAttribute("class","animated-sprite-in-lesson-1")
-    let animationPath = '../assets/json-animations/duo-unit-one-one.json';
+    let animationPath,animationPath2;
+    if(i%2==0){
+      animationPath = '../assets/json-animations/duo-unit-one-one.json';
+      animationPath2 = '../assets/json-animations/duo-unit-one-two.json';
+    }else{
+      animationPath = '../assets/json-animations/duo-unit-two-one.json';
+      animationPath2 = '../assets/json-animations/duo-unit-two-two.json';
+    }
 
-    const animation = bodymovin.loadAnimation({
-      container: firstanimatedSpriteInLesson,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: animationPath
-    });
-
+    animationFromJSON(firstanimatedSpriteInLesson,animationPath)
     section.append(firstanimatedSpriteInLesson);
 
     let secondanimatedSpriteInLesson = document.createElement("div")
     secondanimatedSpriteInLesson.setAttribute("class","animated-sprite-in-lesson-2")
-    animationPath = '../assets/json-animations/duo-unit-one-two.json';
-
-    const animation2 = bodymovin.loadAnimation({
-      container: secondanimatedSpriteInLesson,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: animationPath
-    });
-
+    animationFromJSON(secondanimatedSpriteInLesson,animationPath2)
     section.append(secondanimatedSpriteInLesson);
+
     lessonContainer.append(section);
   }
 
-  index = 0;
+  paddingIndex = 0;
+  translateIndex = 0
   let section = document.createElement("section");
   section.setAttribute("id", `section-${unitCounter++}`);
   section.innerHTML = incompleteUnitHeader;
   placecompletedChapters(completedChapters, section, unitCounter - 2);
-  placeOngoingLessons(section, unitCounter - 2, 3);
-  placeLockedLessons(lockedLessons, section, unitCounter - 2, 4);
+
+  let firstanimatedSpriteInLesson = document.createElement("div")
+  firstanimatedSpriteInLesson.classList.add("animated-sprite-in-lesson-1","greyd-sprite")
+  let secondanimatedSpriteInLesson = document.createElement("div")
+  secondanimatedSpriteInLesson.classList.add("animated-sprite-in-lesson-2","greyd-sprite")
+
+  let movement=false
+  let movement2=false;
+  let animationPath = '../assets/json-animations/duo-unit-one-one.json';
+  let animationPath2= '../assets/json-animations/duo-unit-one-two.json';
+  if(completedChapters > 3){
+    firstanimatedSpriteInLesson.classList.remove("greyd-sprite");
+    movement=true;
+  }
+  if(completedChapters > 6){
+    secondanimatedSpriteInLesson.classList.remove("greyd-sprite");
+    movement2=true;
+  }
+  animationFromJSON(firstanimatedSpriteInLesson,animationPath,movement);
+  animationFromJSON(secondanimatedSpriteInLesson,animationPath2,movement2)
+  
+  section.append(firstanimatedSpriteInLesson);
+  section.append(secondanimatedSpriteInLesson);
+
+  placeOngoingLessons(section, unitCounter - 2, );
+  placeLockedLessons(lockedLessons, section, unitCounter - 2, );
   section.querySelector("h1").textContent = sectionData.section.units[unitCounter - 2].name;
   section.querySelector("span").textContent = sectionData.section.units[unitCounter - 2].description;
   lessonContainer.append(section);
 
-  for (i = 0; i < lockedUnits; i++) {
-    index = 0;
+  for (let i = 0; i < lockedUnits; i++) {
+    paddingIndex = 0;
+    translateIndex=0
     let section = document.createElement("section");
     section.setAttribute("id", `section-${unitCounter++}`);
     section.innerHTML = incompleteUnitHeader;
     placeLockedLessons(totalChaptersInUnit, section, unitCounter - 2);
     section.querySelector("h1").textContent = sectionData.section.units[unitCounter - 2].name;
     section.querySelector("span").textContent = sectionData.section.units[unitCounter - 2].description;
+
+    let firstanimatedSpriteInLesson = document.createElement("div")
+    firstanimatedSpriteInLesson.classList.add("animated-sprite-in-lesson-1","greyd-sprite")
+    let animationPath,animationPath2;
+    if(i%2==0){
+      animationPath = '../assets/json-animations/duo-unit-one-one.json';
+      animationPath2 = '../assets/json-animations/duo-unit-one-two.json';
+    }else{
+      animationPath = '../assets/json-animations/duo-unit-two-one.json';
+      animationPath2 = '../assets/json-animations/duo-unit-two-two.json';
+    }
+
+    animationFromJSON(firstanimatedSpriteInLesson,animationPath,false)
+    section.append(firstanimatedSpriteInLesson);
+
+    let secondanimatedSpriteInLesson = document.createElement("div")
+    secondanimatedSpriteInLesson.classList.add("animated-sprite-in-lesson-2","greyd-sprite")
+    animationFromJSON(secondanimatedSpriteInLesson,animationPath2,false)
+    section.append(secondanimatedSpriteInLesson);
+
+
     lessonContainer.append(section);
   }
 
@@ -427,62 +505,39 @@ const placeUnitsandLessons = (sectionData) => {
 
 const showLessonsInSection = () => {
   let sectionData = JSON.parse(localStorage.getItem("sectionData"));
-  placeUnitsandLessons(sectionData);
+  let userData=getUserDataFromSessionStorage();
+  placeUnitsandLessons(sectionData,userData);
 }
-const startNewChapter = () => {
-  console.log("Entering new chapter");
-  let sectionData = JSON.parse(localStorage.getItem("sectionData"));
-  console.log(sectionData.section.currentLesson)
-  if (sectionData.section.completedChapters + 1 == sectionData.section.totalChaptersInUnit) {
-    sectionData.section.completedUnits += 1;
-    sectionData.section.completedChapters = 0;
-    sectionData.section.currentLesson = 0;
-  } else {
-    sectionData.section.completedChapters += 1;
-    sectionData.section.currentLesson = 0;
-  }
-  localStorage.setItem("sectionData", JSON.stringify(sectionData));
-  setTimeout(() => placeUnitsandLessons(sectionData), 1000);
-}
-const updateStatistics = () => {
-  console.log("calling updateStatistics");
-  // let xpFromLesson = parseInt(localStorage.getItem("xpCount"));
-  // isNaN(xpFromLesson) ? xpFromLesson = 0 : 0
-  // console.log(xpFromLesson);
-  let sectionData = JSON.parse(localStorage.getItem("sectionData"));
-  // let userData = getUserDataFromSessionStorage();
-  if (xpFromLesson != 0) {
-    // localStorage.removeItem("xpCount");
-    if (sectionData.section.currentLesson >= 3) {
-      startNewChapter()
-    } else {
-      sectionData.section.currentLesson += 1;
-      localStorage.setItem("sectionData", JSON.stringify(sectionData));
 
-    }
-    // userData.xp += xpFromLesson;
-    // sessionStorage.setItem("user-info", JSON.stringify(userData));
-    setTimeout(() => placeUnitsandLessons(sectionData), 1000);
-  }
-  console.log(sectionData.section.currentLesson);
-  setTimeout(() => document.querySelector("circle-progress").value = (25 * sectionData.section.currentLesson), 200);
+const updateStatistics = () => {
+  let userData = getUserDataFromSessionStorage();
+  setTimeout(() => document.querySelector("circle-progress").value = (25 * (userData.currentLesson-1)), 200);
 }
 
 const startLesson = () => {
   document.querySelector(".loading-screen").classList.toggle("hidden");
+  document.body.style.overflow="hidden"
   setTimeout(() => {
-    // document.querySelector(".loading-screen").classList.toggle("hidden");
     window.location.href = "questionarie.html"
   }, 2500);
 
 }
-
+let loadingPage=document.getElementById('owl-walk-animation');
 let animationPath = '../assets/json-animations/duo-walking.json';
 
-const animation = bodymovin.loadAnimation({
-  container: document.getElementById('owl-walk-animation'),
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: animationPath
-});
+
+
+const animationFromJSON=(ref,path,autoplay=true)=>{
+  let animationPath=path;
+
+  const animation = bodymovin.loadAnimation({
+    container: ref,
+    renderer: 'svg',
+    loop: true,
+    autoplay: autoplay,
+    path: animationPath
+  });
+
+}
+
+animationFromJSON(loadingPage,animationPath);

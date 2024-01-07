@@ -1,4 +1,4 @@
-function challengeDialogue(question) {
+let challengeDialogue = (question) => {
     localStorage.setItem('challenge', question.type);
 
     // const audioQuestion = new Audio(question.tts);
@@ -191,7 +191,7 @@ function challengeDialogue(question) {
     let imagePath2 = question.dialogue[1].character.image.svg;
 
     let imageElementOne = document.getElementById('dialogue-character-one');
-    // Set the src attribute of the image
+    // Set the path of the image
     imageElementOne.src = imagePath1;
 
     let imageElementTwo = document.getElementById('dialogue-character-two');
