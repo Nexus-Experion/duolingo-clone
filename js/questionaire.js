@@ -1,9 +1,23 @@
-let heartCount = 2;
+let heartCount;
 let clickCount = 0;
 let progressValue = 0;
 
-//button click animation
 
+
+
+//get heart count from session storage
+
+const sessionUserData = sessionStorage.getItem('user-info');
+if (sessionUserData) {
+    const userInfo = JSON.parse(sessionUserData);
+
+    heartCount = userInfo.hearts;
+    console.log(heartCount + "heartss");
+}
+
+
+
+//button click animation
 const buttonClickAnimation = (id) => {
 
     document.getElementById(id).classList.toggle('clicked');
@@ -60,8 +74,8 @@ function correctOption(selectedOption) {
 
 }
 function currentHearts() {
-    //FETCH HEART FROM FIRESTORE TO HERE AND UPDATE THROUGH HERE
-    document.getElementById("heart-count").textContent = "3";
+    let heartSpan = document.getElementById('heart-count')
+    heartSpan.innerText = heartCount;
 };
 function skipButton(id) {
     localStorage.removeItem("correctIndex")
@@ -252,6 +266,7 @@ function questionLoad() {
             else {
 
                 localStorage.setItem('xpCount', xpCount + 1);
+                localStorage.setItem('hearts', heartCount)
 
                 lessonComplete();
                 console.log("Ended the questionaire");
@@ -422,6 +437,8 @@ function revertQuestionScreen() {
 }
 
 function showShopPopup() {
+    localStorage.setItem('xpCount', xpCount + 1);
+    localStorage.setItem('hearts', heartCount)
     document.querySelector('.shop-overlay').style.display = 'flex'
 
 }
