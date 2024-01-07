@@ -73,6 +73,10 @@
 .profile {
   border-radius: 50%;
 }
+country-flag{
+  border: 2px solid transparent;
+
+}
 .content-container {
   padding-left: 24px;
   display: flex;
@@ -395,6 +399,10 @@ circle-progress::part(value) {
   border-radius: 16px;
   box-shadow: 0 4px 0 rgb(var(--color-snow), 0.6);
 }
+.floating-start-box-bottom .text-container button:hover{
+  filter: brightness(0.9);
+  cursor: pointer;
+}
 .hidden {
   display: none !important;
 }
@@ -442,8 +450,8 @@ circle-progress::part(value) {
   background-color: rgb(var(--color-bee));
   z-index: 3;
 }
-.completed .text-container button {
-  background-color: rgb(var(--color-swan));
+.completed .text-container button{
+  background-color: rgb(var(--color-swan)) !important;
   color: rgb(var(--color-bee));
 }
 .completed button {
@@ -453,6 +461,7 @@ circle-progress::part(value) {
 }
 .completed button:hover {
   background: rgb(var(--color-bee), 0.8);
+  color:rgb(var(--color-bee), 0.6);
 }
 .star-image.bg {
   translate: -4px -6px;

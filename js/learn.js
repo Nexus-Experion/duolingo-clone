@@ -3,13 +3,34 @@ const openSuperDuolingoPage = () => {
   setTimeout(() => document.getElementById("try-super-button").classList.toggle('clicked'), 200)
   location.href = "../html/superduolingo.html"
 }
-const closeOtherOpenDialogBoxes = (event) => {
 
+const getLanguageFullForm=(languageCode)=>{
+  switch(languageCode){
+    case 'de':return "German"
+    case 'ja':return "Japanese"
+    case 'fr':return "French"
+    case 'es':return "Spanish"
+    default: "Languages"
+  }
+}
+const getLanguageFlagPath=(languageCode)=>{
+  console.log(`../assets/svg/country-flags/${languageCode}-flag.svg`)
+  return `../assets/svg/country-flags/${languageCode}-flag.svg`
+}
+const closeOtherOpenDialogBoxes = (event) => {
+  event.stopPropagation();
   let currentButton = event.target.closest(".alignment-div").querySelector(".floating-start-box-bottom")
   document.querySelectorAll(".floating-start-box-bottom").forEach((dialog) => {
     if (dialog != currentButton) { dialog.classList.add("hidden") }
   });
 }
+
+const closeAllOpenDialogBoxes = () => {
+  document.querySelectorAll(".floating-start-box-bottom").forEach((dialog) => {
+    dialog.classList.add("hidden")
+  });
+}
+
 const openDialogBoxes = (event) => {
   closeOtherOpenDialogBoxes(event);
   let parentDiv = event.target.closest(".alignment-div");
@@ -107,6 +128,8 @@ const getUserDataFromSessionStorage = () => {
 
 const placeuserStatistics = () => {
   let userData = getUserDataFromSessionStorage();
+  document.title=`Duolingo - The world's best way to learn ${getLanguageFullForm(userData.learnLang)}`
+  document.querySelector(".country-flag").src=getLanguageFlagPath(userData.learnLang);
   document.querySelectorAll(".fire-text").forEach(item => item.textContent = userData.xp);
   document.querySelectorAll(".heart-text").forEach(item => item.textContent = userData.hearts);
   document.querySelectorAll(".gem-text").forEach(item => item.textContent = userData.gems);
@@ -142,7 +165,7 @@ const placeUnitsandLessons = (sectionData,userData) => {
   let onProgressHtml = `
 <div class="circle_box">
   <button class="lesson-button" onclick="openDialogBoxes(event);">
-    <img src="../assets/svg/star-in-lesson-white.svg" alt="star" class="star-image">
+    <img src="../assets/svg/star-in-lesson-white.svg" class="star-image">
     <circle-progress value="0" max="100" text-format="none" ></circle-progress>
   </button>
   <div class="floating-start-box">
@@ -156,14 +179,14 @@ const placeUnitsandLessons = (sectionData,userData) => {
   <div class="triangle-top"></div>
   <div class="text-container">
     <h1>Form basic sentences</h1>
-    <p>Lesson ${sectionData.section.currentLesson + 1} of 4</p>
+    <p>Lesson ${userData.currentLesson} of 4</p>
     <button onclick="startLesson()">Start +10 XP</button>
   </div>
 </div>`
 
   let lockedDiv = `<div class="circle_box locked">
 <button class="lesson-button inactive" onclick="openDialogBoxes(event);">
-  <img src="../assets/svg/locked-button-grey.svg" alt="locked-button" class="star-image">
+  <img src="../assets/svg/locked-button-grey.svg" class="star-image">
 </button>
 </div>
 <div class="floating-start-box-bottom hidden locked">
@@ -182,12 +205,10 @@ const placeUnitsandLessons = (sectionData,userData) => {
   >
     <img
       src="../assets/svg/completed-lesson-background.svg"
-      alt="finsished-tick"
       class="star-image bg"
     />
     <img
       src="../assets/svg/correct-tick-unit-completed.svg"
-      alt="finsished-tick"
       class="star-image"
     />
   </button>
@@ -208,9 +229,9 @@ const placeUnitsandLessons = (sectionData,userData) => {
   <span class="icon-and-text-wrap">
     <div class="icon-in-button">
       <img
-        src="../assets/svg/ja-flag.svg"
+        src=${getLanguageFlagPath(userData.learnLang)}
         alt="home-icon"
-        class="profile"
+        class="country-flag"
       />
     </div>
   </span>
@@ -274,7 +295,7 @@ const placeUnitsandLessons = (sectionData,userData) => {
 
   </span>
 </a>
-<a href="" class="button-in-sidebar">
+<a href="leaderboard.html" class="button-in-sidebar">
   <span class="icon-and-text-wrap">
     <div class="icon-in-button">
       <img src="../assets/svg/badge-in-sidebar.svg" alt="home-icon" />
@@ -282,7 +303,7 @@ const placeUnitsandLessons = (sectionData,userData) => {
 
   </span>
 </a>
-<a href="" class="button-in-sidebar">
+<a href="profile-page.html" class="button-in-sidebar">
   <span class="icon-and-text-wrap">
     <div class="icon-in-button">
       <img
@@ -294,13 +315,12 @@ const placeUnitsandLessons = (sectionData,userData) => {
 
   </span>
 </a>
-<a href="" class="button-in-sidebar">
-  <span class="icon-and-text-wrap">
-    <div class="icon-in-button">
-      <img src="../assets/svg/more-in-sidebar.svg" alt="home-icon" />
-    </div>
-
-  </span>
+<a href="./shoppingpage.html" class="button-in-sidebar">
+<span class="icon-and-text-wrap">
+  <div class="icon-in-button">
+    <img src="../assets/svg/shop-in-sidebar.svg" alt="home-icon" />
+  </div>
+</span>
 </a>
 <a href="./faq.html" class="button-in-sidebar">
   <span class="icon-and-text-wrap">
@@ -496,6 +516,7 @@ const updateStatistics = () => {
 
 const startLesson = () => {
   document.querySelector(".loading-screen").classList.toggle("hidden");
+  document.body.style.overflow="hidden"
   setTimeout(() => {
     window.location.href = "questionarie.html"
   }, 2500);
