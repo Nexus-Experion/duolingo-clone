@@ -11,6 +11,8 @@ const getStartedButtonAnimation = () => {
     window.location.href = "/html/languages-select-page.html";
 }
 const headerPath = '../assets/json-animations/header.json';
+const floatingPhone = '../assets/json-animations/floating-phone.json';
+
 const animationLoader = (id, path) => {
     bodymovin.loadAnimation({
         container: document.getElementById(id),
@@ -21,4 +23,4 @@ const animationLoader = (id, path) => {
     });
 }
 animationLoader("left-logging-header", headerPath)
-
+animationLoader("phone-animation", floatingPhone)
