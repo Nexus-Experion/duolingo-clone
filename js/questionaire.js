@@ -197,22 +197,13 @@ function wrongBottomRow() {
     document.getElementById('check-button').classList.add('check-button-inner-wrong');
 }
 
-
-
 let questionCount = 1;
 let xpCount = -1;
 
 function questionLoad() {
-    // fetch("../assets/JSON/german_lev_1.json").then(response => response.json())
-    //     .then(data => {
-    //         let index = Math.floor(Math.random() * data.challenges.length);
-    //         console.log(data.challenges[1]);
-    //         challengeReadComprehension(data.challenges[0]);
 
-    //     })
-
-    let learnLang = sessionStorage.getItem("learnLang");
-    fetch(`https://duolingo-serverless-endpoint.vercel.app/api/question?lang=de`).then(response => response.json())
+    let learnLang = localStorage.getItem("selectedLang");
+    fetch(`https://duolingo-serverless-endpoint.vercel.app/api/question?lang=${learnLang}`).then(response => response.json())
         .then(data => {
 
             let index = Math.floor(Math.random() * data.challenges.length);
@@ -282,7 +273,7 @@ function questionLoad() {
 }
 
 
-window.onload = setTimeout(() => questionLoad(), 300);
+window.onload = setTimeout(() => questionLoad());
 
 
 function lessonComplete() {
