@@ -1,13 +1,14 @@
 const myButton = document.getElementById('heartButton');
 const mySpan = document.getElementById('text-in-button heart-text');
+let userData = JSON.parse(sessionStorage.getItem("user-info"));
+let diamond = userData.gems;
+let hearts = userData.hearts;
 
-
-// Function to check the span value and disable the button
 function checkSpanValue() {
     console.log('entered');
   const spanValue = parseInt(mySpan.textContent);
   
-  if (spanValue >= 5) {
+  if (hearts >= 5) {
     myButton.disabled = true;
   } else {
     myButton.disabled = false;
@@ -16,9 +17,11 @@ function checkSpanValue() {
     
   }
 }
-
-// Event listener for changes in the span value
 mySpan.addEventListener('change', checkSpanValue);
-
-// Call the function initially to check the initial value
 checkSpanValue();
+function calcDiamond(){
+  userData.gems -= 10;
+  userData.hearts += 1;
+  sessionStorage.setItem("user-info",JSON.stringify(userData));
+}
+myButton.addEventListener('click',calcDiamond);

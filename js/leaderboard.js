@@ -1,24 +1,6 @@
-const profileList = [
-    { name: "Alice", 
-      xp:10,
-      image:'https://simg-ssl.duolingo.com/avatars/929498121/N8IA0Prd2S/medium'
-    },
-    { name: "Bob", 
-      xp:20,      
-      image:'../assets/images/india.png'
-      
-    },
-    { name: "Charlie",
-      xp:15,      
-      image:'../assets/images/india.png'
-    },
-    
-    { name: "Aloyse",
-      xp:40,      
-      image:'../assets/images/india.png'
-    },
-    // Add more objects as needed
-  ];
+import arrayForProfiles from './leaderBfetch.js';
+// console.log(arrayForProfiles);
+const profileList = arrayForProfiles;
 
   sortingArray();
 function sortingArray(){
@@ -30,10 +12,13 @@ function sortingArray(){
 
   function renderLeaderboard(profileList) {
     console.log("entered into function");
+    
     const leaderboardList = document.getElementById("centre-container-secdiv");
+
     profileList.forEach((entry, index) => {
       const listItem = document.createElement("a");
       listItem.classList.add('eachprofile');
+      listItem.setAttribute('id',`eachprofile_${index + 1}`);
       const profindex =document.createElement('div');
       
       if((index+1) <=3 ){
@@ -66,7 +51,7 @@ function sortingArray(){
       pic.classList.add('divforimg');
       const profpic =document.createElement('img');
       profpic.classList.add('image');
-      profpic.src=entry.image;
+      profpic.src=entry.profileImage;
 
       const bubblepicdiv =document.createElement("div");
       bubblepicdiv.classList.add('divforbubble');
@@ -94,10 +79,20 @@ function sortingArray(){
       listItem.appendChild(namediv);
       listItem.appendChild(xpSpan);
       leaderboardList.appendChild(listItem);
+      
+      //For Highlighting logined profile
+      let userData = JSON.parse(sessionStorage.getItem("user-info"));
+      let userName = userData.name;
+      if(userName == entry.name){
+          const profHighlight = document.getElementById(`eachprofile_${index + 1}`);
+          profHighlight.style.border = '1px solid red';
+          profHighlight.style.borderColor = '1px red';
+      } 
+
+      
     });
   }
   
-  // Call the function to render the leaderboard
   
   function change(num){
     changeImage(num,profileList);
