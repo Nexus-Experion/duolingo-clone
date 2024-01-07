@@ -19,7 +19,6 @@ if (sessionUserData) {
 
 //button click animation
 const buttonClickAnimation = (id) => {
-
     document.getElementById(id).classList.toggle('clicked');
     setTimeout(() => document.getElementById(id).classList.toggle('clicked'), 200);
 
@@ -29,10 +28,10 @@ const buttonClickAnimation = (id) => {
 //select option animation toggle
 window.selectedOption = 0;
 
+//button-select-animation
 
 const selectOptionButton = (id) => {
 
-    //same 3 statements for activating check button
     document.getElementById('check-button-div').classList.add('check-button-outer-active');
     document.getElementById('check-button').classList.remove('check-button-inner-inactive')
     document.getElementById('check-button').classList.add('check-button-inner-active')
@@ -64,8 +63,9 @@ const selectOptionButton = (id) => {
 
 }
 
+//check correct option for different challenges except challenge-select.
 
-function correctOption(selectedOption) {
+let correctOption = (selectedOption) => {
 
     document.getElementById('option-no-' + selectedOption).className = 'option-no-correct';
     document.getElementById('option-name-' + selectedOption).className = 'option-name-correct';
@@ -73,19 +73,24 @@ function correctOption(selectedOption) {
     document.getElementById('outer-options-div-' + selectedOption).className = 'outer-options-div-correct';
 
 }
-function currentHearts() {
+
+//set number of hearts in top header
+let currentHearts = () => {
     let heartSpan = document.getElementById('heart-count')
     heartSpan.innerText = heartCount;
 };
-function skipButton(id) {
+
+//skip button functionality in bottom row
+const skipButton = (id) => {
     localStorage.removeItem("correctIndex")
     document.getElementById(id).classList.toggle('clicked');
     setTimeout(() => document.getElementById(id).classList.toggle('clicked'), 300);
-    // document.getElementById(id).classList.add('');
     document.getElementById('check-button').classList.remove('check-button-inner-inactive')
     checkButton(id);
 }
-function disablePointer() {
+
+//disable pointer funtionality for all child elements of mid row
+let disablePointer = () => {
     const parentDiv = document.querySelector('.mid-row');
     const childElements = parentDiv.getElementsByTagName('*');
 
@@ -94,7 +99,9 @@ function disablePointer() {
     }
 }
 
-function resetBottomRow() {
+
+//reset bottom row ui
+const resetBottomRow = () => {
     document.getElementById('skip-span').textContent = "SKIP";
 
     const skipButton = document.querySelector('.skip-button');
@@ -118,9 +125,13 @@ function resetBottomRow() {
     document.getElementById('check-button').classList.remove('check-button-inner-wrong');
 }
 
-function checkButton(id) {
+//check answer comparing the index value
+
+let checkButton = (id) => {
+
     disablePointer();
 
+    //correct answer properties
     if (localStorage.getItem('correctIndex') == window.selectedOption) {
 
         if ((localStorage.getItem('challenge')) == 'select') {
@@ -140,10 +151,9 @@ function checkButton(id) {
         }
 
     }
+    //wrong answer properties
+
     else {
-
-
-
         if (clickCount == 0) {
             wrongBottomRow();
 
@@ -155,26 +165,24 @@ function checkButton(id) {
             audio.play();
         }
     }
-    // localStorage.removeItem('correctIndex');
-
-    // console.log(window.selectedOption)
+    //check button to continue button
     console.log(window.selectedOption)
-    // console.log(selectedOption)
     document.querySelector('#check-button-div').classList.add('check-button-continue');
     document.getElementById(id).classList.toggle('clicked');
     setTimeout(() => document.getElementById(id).classList.toggle('clicked'), 300);
     document.getElementById('continue-button').textContent = 'Continue'
     clickCount++;
 
+    //continue to next question functionality
     if (clickCount === 2) {
         questionLoad();
         clickCount = 0;
     }
-
 }
 
+//correct answer ui
 
-function correctBottomRow() {
+const correctBottomRow = () => {
     const skipButton = document.querySelector('.skip-button');
     skipButton.style.display = 'none';
     const bottomLeftRow = document.querySelector('#correct-left');
@@ -182,8 +190,8 @@ function correctBottomRow() {
     const bottomRow = document.querySelector('.bottom-row');
     bottomRow.style.backgroundColor = '#d7ffb8';
 }
-
-function wrongBottomRow() {
+//wrong answer ui
+const wrongBottomRow = () => {
     const bottomRow = document.querySelector('.bottom-row');
     bottomRow.style.backgroundColor = '#ffdfe0';
     const skipButton = document.querySelector('.skip-button');
@@ -200,21 +208,18 @@ function wrongBottomRow() {
 let questionCount = 1;
 let xpCount = -1;
 
-function questionLoad() {
+//load question by fetching from serverless endpoint
+let questionLoad = () => {
 
     let learnLang = localStorage.getItem("selectedLang");
     fetch(`https://duolingo-serverless-endpoint.vercel.app/api/question?lang=${learnLang}`).then(response => response.json())
         .then(data => {
-
+            //questionarie page funtionality
             let index = Math.floor(Math.random() * data.challenges.length);
-            // console.log(data.challenges[index]);
             if (questionCount < 5) {
                 if (heartCount > 0) {
                     console.log(data.challenges[index]);
                     console.log(data.challenges[index].type);
-                    // challengeDialogue(data.challenges[12]);
-                    // data.challenges
-                    // challengetranscription(data.challenges[13]);
                     if (data.challenges[index].type == "assist") {
                         resetBottomRow();
                         console.log("inner");
@@ -276,7 +281,10 @@ function questionLoad() {
 window.onload = setTimeout(() => questionLoad());
 
 
-function lessonComplete() {
+
+//lesson complete animation with stats
+
+let lessonComplete = () => {
     document.querySelector('.mid-row').style.overflow = 'hidden';
     const audio = new Audio('../assets/audio/duolingo-lesson.mp3');
     audio.play();
@@ -290,11 +298,9 @@ function lessonComplete() {
 
     document.querySelector('.mid-row').innerHTML = '';
     document.querySelector('.top-row-question-page-sections').innerHTML = '';
-    // Create the main container
     let lessonCompleteContainer = document.createElement('div');
     lessonCompleteContainer.className = 'lesson-complete';
 
-    // Create the inner elements
     let lottieLesson = document.createElement('div');
     lottieLesson.id = 'lottie-lesson';
 
@@ -379,6 +385,7 @@ function lessonComplete() {
     lessonCompleteContainer.appendChild(appreciationContainer);
     lessonCompleteContainer.appendChild(lessonStatsContainer);
     switchCount = 0;
+
     // Append the main container to the 'mid-row' class
     let midRow = document.querySelector('.mid-row');
     midRow.appendChild(lessonCompleteContainer);
@@ -389,10 +396,9 @@ function lessonComplete() {
     document.querySelector('#correct-left').style.display = 'none';
     document.querySelector('#wrong-left').style.display = 'none';
 
-
+    //fetch lottie animation
 
     let animationPath = '../assets/json-animations/lesson-complete.json';
-    // Replace with the actual link to your Lottie JSON file
     const animation = bodymovin.loadAnimation({
         container: document.getElementById('lottie-lesson'),
         renderer: 'svg',
@@ -403,7 +409,9 @@ function lessonComplete() {
 
 }
 
-function switchToLearn() {
+//switch to learnpage
+
+const switchToLearn = () => {
 
     switchCount++;
 
@@ -413,41 +421,47 @@ function switchToLearn() {
 
 }
 
-function updateProgressBar(progressValue) {
+//prgogress bar update functionality
+const updateProgressBar = (progressValue) => {
     var progressBar = document.querySelector(".inner-green-bar");
     var lightProgressBar = document.querySelector(".inner-light-green-bar");
     lightProgressBar.style.width = progressValue + "%";
     progressBar.style.width = progressValue + "%";
 }
 
-function revertQuestionScreen() {
+//revert exit overlay to questionaire screen
+const revertQuestionScreen = () => {
     document.querySelector('.exit-overlay').classList.toggle('clicked');
     setTimeout(() => document.querySelector('.exit-overlay').classList.toggle('clicked'), 400);
     document.querySelector('.exit-overlay').style.display = 'none'
-
 }
 
-function showShopPopup() {
+//heart zero shop popup 
+let showShopPopup = () => {
     localStorage.setItem('xpCount', xpCount + 1);
     localStorage.setItem('hearts', heartCount)
     document.querySelector('.shop-overlay').style.display = 'flex'
-
 }
 
+//exit alert popup 
 
-function showAlertPopup() {
+let showAlertPopup = () => {
     document.querySelector('.exit-overlay').style.display = 'flex'
 }
-function goToShop() {
+
+//navigate to shop page
+let goToShop = () => {
     window.location.href = './shoppingpage.html';
 }
 
-function exitToLearn() {
+//navigate to learn page
+
+let exitToLearn = () => {
     window.location.href = './learn.html';
 }
 
-function correctSelectOption(selectedOption) {
-
+// correct option animation for challenge select
+let correctSelectOption = (selectedOption) => {
     document.getElementById('option-no-' + selectedOption).className = 'option-no-correct';
     document.getElementById('select-div-option-name-' + selectedOption).className = 'option-name-correct';
     document.getElementById(selectedOption).className = 'select-option-div-correct';
