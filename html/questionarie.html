@@ -14,8 +14,8 @@
       <div class="question-page-sections">
         <div class="top-row-question-page-sections">
           <div class="fields-top-row">
-            <a onclick="showAlertPopup()"
-              ><img src="../assets/svg/close-button.svg"
+            <a onclick="showAlertPopup()" class="close-button"
+              ><img src="../assets/svg/close-button.svg" alt="Close"
             /></a>
             <div class="progress-bar-container">
               <div class="inner-green-bar">
@@ -24,7 +24,10 @@
             </div>
             <div class="top-row-life">
               <img class="heart-life" src="../assets/svg/heart.svg" />
-              <span id="heart-count">5</span>
+              <span id="heart-count"></span>
+              <script>
+                currentHearts();
+              </script>
             </div>
           </div>
         </div>
@@ -151,6 +154,7 @@
     <script src="../js/questionaire/challengetranscription.js"></script>
     <script src="../js/questionaire/lessson-complete.js"></script>
     <script src="../js/questionaire/challengeselect.js"></script>
+    <script src="../js/questionaire/challengecomprehension.js"></script>
 
     <script src="../js/main.js"></script>
   </body>
