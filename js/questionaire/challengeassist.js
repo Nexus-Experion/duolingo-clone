@@ -1,4 +1,4 @@
-function challengeAssist(question) {
+const challengeAssist = (question) => {
     localStorage.setItem('challenge', question.type);
 
     document.querySelector('.mid-row').innerHTML = '';

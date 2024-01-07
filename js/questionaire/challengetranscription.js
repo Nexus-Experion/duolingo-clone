@@ -1,4 +1,6 @@
-function challengeTranscription(question) {
+//create challenge transcription dynamically
+
+let challengeTranscription = (question) => {
     localStorage.setItem('challenge', question.type);
 
     // const audioQuestion = new Audio(question.tts);
@@ -45,7 +47,6 @@ function challengeTranscription(question) {
     challengeSection.appendChild(challengeHeader);
     challengeSelectTranscription.appendChild(challengeSection);
 
-    // Get the element with class "mid-row" and append the structure to it
     let midRowElement = document.querySelector('.mid-row');
     midRowElement.appendChild(challengeSelectTranscription);
 
