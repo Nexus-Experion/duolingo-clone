@@ -67,7 +67,7 @@ const placeSectionList = () => {
       <p >On Progress!</p>
     </div>
     <div class="_2n0sJ">
-      <button class="section-button" onclick="showLessonsInSection(1)">
+      <button class="section-button active-section-button" onclick="showLessonsInSection(1)">
         <span class="_1fHYG">Continue</span>
       </button>
     </div>
