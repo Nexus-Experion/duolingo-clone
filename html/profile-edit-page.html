@@ -1,0 +1,233 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="../css/profile-edit-page.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/learn.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="module" src="../js/profile-edit-page.js"></script>
+    <script type="module" src="../js/firebaseLogout.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="logo-container">
+                <img
+                src="../assets/svg/duolingo-green-text-only.svg"
+                alt="dolingo-text"
+                />
+            </div>
+            <div class="sidebar-buttons">
+                <a href="learn.html" class="button-in-sidebar">
+                <span class="icon-and-text-wrap">
+                    <div class="icon-in-button">
+                    <img src="../assets/svg/home-in-sidebar.svg" alt="home-icon" />
+                    </div>
+                    <span class="text-in-button"> Learn </span>
+                </span>
+                </a>
+                <a href="./leaderboard.html" class="button-in-sidebar">
+                <span class="icon-and-text-wrap">
+                    <div class="icon-in-button">
+                    <img src="../assets/svg/badge-in-sidebar.svg" alt="home-icon" />
+                    </div>
+                    <span class="text-in-button"> Leaderboard </span>
+                </span>
+                </a>
+                <a href="./profile-page.html" class="button-in-sidebar">
+                <span class="icon-and-text-wrap selected">
+                    <div class="icon-in-button">
+                    <img
+                        src="../assets/profile-icon-male.png"
+                        alt="home-icon"
+                        class="profile"
+                    />
+                    </div>
+                    <span class="text-in-button"> Profile </span>
+                </span>
+                </a>
+                <a href="" class="button-in-sidebar">
+                <span class="icon-and-text-wrap">
+                    <div class="icon-in-button">
+                    <img src="../assets/svg/more-in-sidebar.svg" alt="home-icon" />
+                    </div>
+                    <span class="text-in-button"> Settings </span>
+                </span>
+                </a>
+                <a href="./faq.html" class="button-in-sidebar">
+                <span class="icon-and-text-wrap">
+                    <div class="icon-in-button">
+                    <img src="../assets/sidebar-icon-faq.png" alt="home-icon" />
+                    </div>
+                    <span class="text-in-button"> FAQ </span>
+                </span>
+                </a>
+                <a href="" class="button-in-sidebar" id="logout-button">
+                    <span class="icon-and-text-wrap">
+                        <div class="icon-in-button">
+                        <img src="../assets/svg/Logout.svg" alt="home-icon" />
+                        </div>
+                        <span class="text-in-button"> Log Out </span>
+                    </span>
+                    </a>
+            </div>
+        </div>
+
+        <div class="content-container">
+        <!----------------------------------- Right sidebar ------------------------------------------------>
+            <div class="right-sidebar">
+                <div class="right-sidebar-header">
+                    <a href="" class="button-in-sidebar">
+                    <span class="icon-and-text-wrap">
+                        <div class="icon-in-button">
+                        <img
+                            src="../assets/svg/ja-flag.svg"
+                            alt="home-icon"
+                            class="profile"
+                        />
+                        </div>
+                    </span>
+                    </a>
+                    <a href="" class="button-in-sidebar">
+                    <span class="icon-and-text-wrap">
+                        <div class="icon-in-button">
+                        <img
+                            src="../assets/svg/streak-fire-active.svg"
+                            alt="home-icon"
+                            class="profile"
+                        />
+                        </div>
+                        <span class="text-in-button fire-text"> 400 </span>
+                    </span>
+                    </a>
+                    <a href="" class="button-in-sidebar">
+                    <span class="icon-and-text-wrap">
+                        <div class="icon-in-button">
+                        <img
+                            src="../assets/svg/gems-icon.svg"
+                            alt="home-icon"
+                            class="profile"
+                        />
+                        </div>
+                        <span class="text-in-button gem-text"> 7393 </span>
+                    </span>
+                    </a>
+                    <a href="" class="button-in-sidebar">
+                    <span class="icon-and-text-wrap">
+                        <div class="icon-in-button">
+                        <img
+                            src="../assets/svg/heart-filled-red.svg"
+                            alt="home-icon"
+                            class="profile"
+                        />
+                        </div>
+                        <span class="text-in-button heart-text"> 5 </span>
+                    </span>
+                    </a>
+                </div>
+                <div class="try-super-box">
+                    <img
+                    src="../assets/svg/super-icon.svg"
+                    alt="super-text"
+                    id="try-super-image-one"
+                    />
+                    <img
+                    src="../assets/svg/super-duo-owl.svg"
+                    alt="super-duo-owl"
+                    id="try-super-image-two"
+                    />
+                    <div class="content-text">
+                    <h2>Try Super for free</h2>
+                    <div class="description">
+                        No ads, personalized practice, and unlimited Legendary!
+                    </div>
+                    <button id="try-super-button" onclick="openSuperDuolingoPage();">
+                        Try 2 weeks free
+                    </button>
+                    </div>
+                </div>
+                <div class="try-super-box">
+                    <div class="league-header-with-link">
+                    <h2>Amethyst League</h2>
+                    <h2><a href="">View League</a></h2>
+                    </div>
+                    <div class="league-header-with-link">
+                    <img
+                        src="../assets/svg/amethyst-league-icon.svg"
+                        alt="amethyst-league-icon"
+                    />
+                    <div class="league-text-container">
+                        <h2>You're ranked <span>#29</span></h2>
+                        <div class="description">
+                        You moved down to the demotion zone!
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Section -->
+            <div class="middle-container">
+                <div class="edit-profile-container">
+                    <div class="account-heading">
+                        <h1>Edit Account</h1>
+                    </div>
+                    <table class="edit-profile-table">
+                        <tbody>
+                            <tr>
+                                <td class="edit-left-side-content">Profile picture</td>
+                                <td class="edit-right-side-content">
+                                    <div class="choose-file-div">
+                                        <label class="choose-file-label">
+                                            CHOOSE FILE
+                                            <input id="choose-file-input" type="file" accept="image/*" onchange="updateFileName()">
+                                        </label>
+                                        <div class="selected-file-name" id="selected-file-name">no file selected</div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="edit-left-side-content">
+                                    <label for="name">Name</label>
+                                </td>
+                                <td class="edit-right-side-content">
+                                    <div class="name-field-container">
+                                        <input name="name" class="input-field" id="name" type="text" value="">
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="edit-left-side-content">
+                                    <label for="name">Email</label>
+                                </td>
+                                <td class="edit-right-side-content">
+                                    <div class="name-field-container">
+                                        <input name="email" class="input-field" id="email" type="text" value="email id here">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="bottom-buttons-container">
+                        <div class="bottom-button-div">
+                            <button class="bottom-button" id="go-back">Go Back</button>
+                        </div>
+                        
+                        <div class="bottom-button-div">
+                            <button class="bottom-button" id="save-changes">Save Changes</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </body>
+</html>

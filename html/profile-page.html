@@ -5,8 +5,9 @@
     <title>Profile Page</title>
     <link rel="stylesheet" href="../css/profile-page.css" />
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/learn.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="../js/profile-page.js"></script>
+    <script type="module" src="../js/profile-page.js"></script>
     <script type="module" src="../js/firebaseLogout.js"></script>
   </head>
   <body>
@@ -20,7 +21,7 @@
                 />
             </div>
             <div class="sidebar-buttons">
-                <a href="learn.html" class="button-in-sidebar">
+                <a href="./learn.html" class="button-in-sidebar">
                 <span class="icon-and-text-wrap">
                     <div class="icon-in-button">
                     <img src="../assets/svg/home-in-sidebar.svg" alt="home-icon" />
@@ -28,7 +29,7 @@
                     <span class="text-in-button"> Learn </span>
                 </span>
                 </a>
-                <a href="" class="button-in-sidebar">
+                <a href="./leaderboard.html" class="button-in-sidebar">
                 <span class="icon-and-text-wrap">
                     <div class="icon-in-button">
                     <img src="../assets/svg/badge-in-sidebar.svg" alt="home-icon" />
@@ -36,7 +37,7 @@
                     <span class="text-in-button"> Leaderboard </span>
                 </span>
                 </a>
-                <a href="" class="button-in-sidebar">
+                <a href="./profile-page.html" class="button-in-sidebar">
                 <span class="icon-and-text-wrap selected">
                     <div class="icon-in-button">
                     <img
@@ -56,7 +57,7 @@
                     <span class="text-in-button"> Settings </span>
                 </span>
                 </a>
-                <a href="" class="button-in-sidebar">
+                <a href="./faq.html" class="button-in-sidebar">
                 <span class="icon-and-text-wrap">
                     <div class="icon-in-button">
                     <img src="../assets/sidebar-icon-faq.png" alt="home-icon" />
@@ -174,19 +175,25 @@
                     <div class="user-info-div">
                         <div class="user-info-text">
                             <h1 class="profile-username">
-                                <span class="first-and-last-name">Name</span>
-                                <div class="email">
+                                <span class="first-and-last-name" id="first-and-last-name">Name</span>
+                                <div class="email" id="email">
                                     mail
                                 </div>
                             </h1>
                             <div class="join-date-container">
                                 <img src="../assets/svg/join-date.svg"  class="date-image" alt="">
-                                <div class="join-date">Joined </div>
+                                <div class="join-date" id="join-date">Joined </div>
                             </div>
                         </div>
                         <div class="profile-image-div">
                             <span class=""></span>
-                            <img src="../assets/svg/profile-image-temp.svg" alt="">
+                            <img src="" alt="" id="profile-image" >
+                            <div class="edit-account-div">
+                                <a href="../html/profile-edit-page.html">
+                                    <img src="../assets/svg/edit-button-logo.svg" alt="">
+                                </a>
+                            </div>
+                            <!-- <img class src="" alt=""> -->
                         </div>
                     </div>
 
@@ -200,7 +207,7 @@
                                 <div class="statistics-section-one">
                                     <img src="../assets/svg/streak-fire-active.svg" class="statistics-streak-icon" alt="">
                                     <div class="statistics-section-one-content">
-                                        <h4 class="statistics-value" id="streak-value">streak value</h4>
+                                        <h4 class="statistics-value" id="streak-value">5</h4>
                                         <div class="statistics-text">Day Streak</div>
                                     </div>
                                 </div>
@@ -208,27 +215,27 @@
 
                             <div>
                                 <div class="statistics-section-one">
-                                    <img src="../assets/svg/streak-fire-active.svg" class="statistics-streak-icon" alt="">
+                                    <img src="../assets/svg/lesson-xp.svg" class="statistics-streak-icon" alt="">
                                     <div class="statistics-section-one-content">
-                                        <h4 class="statistics-value" id="xp-value">xp value</h4>
+                                        <h4 class="statistics-value" id="xp-value">xp</h4>
                                         <div class="statistics-text">Total XP</div>
                                     </div>
                                 </div>
                             </div>
                             <div>
                                 <div class="statistics-section-one">
-                                    <img src="../assets/svg/streak-fire-active.svg" class="statistics-streak-icon" alt="">
+                                    <img src="../assets/svg/bronze-league.svg" class="statistics-streak-icon" alt="">
                                     <div class="statistics-section-one-content">
-                                        <h4 class="statistics-value">400</h4>
+                                        <h4 class="statistics-value">Bronze</h4>
                                         <div class="statistics-text">Current League</div>
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <div class="statistics-section-one">
-                                    <img src="../assets/svg/streak-fire-active.svg" class="statistics-streak-icon" alt="">
+                                <div class="statistics-section-one disabled">
+                                    <img src="../assets/svg/top-finishes-disabled.svg" class="statistics-streak-icon" alt="">
                                     <div class="statistics-section-one-content">
-                                        <h4 class="statistics-value">400</h4>
+                                        <h4 class="statistics-value">0</h4>
                                         <div class="statistics-text">Top 3 Finishes</div>
                                     </div>
                                 </div>
