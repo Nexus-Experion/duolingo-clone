@@ -3,11 +3,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile Page</title>
-    <link rel="stylesheet" href="../css/profile-page.css" />
+    <link rel="stylesheet" href="../css/profile-edit-page.css" />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/learn.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script type="module" src="../js/profile-page.js"></script>
+    <script type="module" src="../js/profile-edit-page.js"></script>
     <script type="module" src="../js/firebaseLogout.js"></script>
   </head>
   <body>
@@ -21,7 +21,7 @@
                 />
             </div>
             <div class="sidebar-buttons">
-                <a href="./learn.html" class="button-in-sidebar">
+                <a href="learn.html" class="button-in-sidebar">
                 <span class="icon-and-text-wrap">
                     <div class="icon-in-button">
                     <img src="../assets/svg/home-in-sidebar.svg" alt="home-icon" />
@@ -170,80 +170,63 @@
             </div>
 
             <!-- Middle Section -->
-            <div class="profile-middle-container">
-                <div class="profile-middle-flex">
-                    <div class="user-info-div">
-                        <div class="user-info-text">
-                            <h1 class="profile-username">
-                                <span class="first-and-last-name" id="first-and-last-name">Name</span>
-                                <div class="email" id="email">
-                                    mail
-                                </div>
-                            </h1>
-                            <div class="join-date-container">
-                                <img src="../assets/svg/join-date.svg"  class="date-image" alt="">
-                                <div class="join-date" id="join-date">Joined </div>
-                            </div>
+            <div class="middle-container">
+                <div class="edit-profile-container">
+                    <div class="account-heading">
+                        <h1>Edit Account</h1>
+                    </div>
+                    <table class="edit-profile-table">
+                        <tbody>
+                            <tr>
+                                <td class="edit-left-side-content">Profile picture</td>
+                                <td class="edit-right-side-content">
+                                    <div class="choose-file-div">
+                                        <label class="choose-file-label">
+                                            CHOOSE FILE
+                                            <input id="choose-file-input" type="file" accept="image/*" onchange="updateFileName()">
+                                        </label>
+                                        <div class="selected-file-name" id="selected-file-name">no file selected</div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="edit-left-side-content">
+                                    <label for="name">Name</label>
+                                </td>
+                                <td class="edit-right-side-content">
+                                    <div class="name-field-container">
+                                        <input name="name" class="input-field" id="name" type="text" value="">
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="edit-left-side-content">
+                                    <label for="name">Email</label>
+                                </td>
+                                <td class="edit-right-side-content">
+                                    <div class="name-field-container">
+                                        <input name="email" class="input-field" id="email" type="text" value="email id here">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="bottom-buttons-container">
+                        <div class="bottom-button-div">
+                            <button class="bottom-button" id="go-back">Go Back</button>
                         </div>
-                        <div class="profile-image-div">
-                            <span class=""></span>
-                            <img src="" alt="" id="profile-image" >
-                            <div class="edit-account-div">
-                                <a href="../html/profile-edit-page.html">
-                                    <img src="../assets/svg/edit-button-logo.svg" alt="">
-                                </a>
-                            </div>
-                            <!-- <img class src="" alt=""> -->
+                        
+                        <div class="bottom-button-div">
+                            <button class="bottom-button" id="save-changes">Save Changes</button>
                         </div>
                     </div>
-
-                    <div class="statistics-section">
-                        <div class="statistics-heading-div">
-                            <h2 class="statistics-heading">Statistics</h2>
-                        </div>
-
-                        <div class="statistics-content-div">
-                            <div>
-                                <div class="statistics-section-one">
-                                    <img src="../assets/svg/streak-fire-active.svg" class="statistics-streak-icon" alt="">
-                                    <div class="statistics-section-one-content">
-                                        <h4 class="statistics-value" id="streak-value">5</h4>
-                                        <div class="statistics-text">Day Streak</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="statistics-section-one">
-                                    <img src="../assets/svg/lesson-xp.svg" class="statistics-streak-icon" alt="">
-                                    <div class="statistics-section-one-content">
-                                        <h4 class="statistics-value" id="xp-value">xp</h4>
-                                        <div class="statistics-text">Total XP</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="statistics-section-one">
-                                    <img src="../assets/svg/bronze-league.svg" class="statistics-streak-icon" alt="">
-                                    <div class="statistics-section-one-content">
-                                        <h4 class="statistics-value">Bronze</h4>
-                                        <div class="statistics-text">Current League</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="statistics-section-one disabled">
-                                    <img src="../assets/svg/top-finishes-disabled.svg" class="statistics-streak-icon" alt="">
-                                    <div class="statistics-section-one-content">
-                                        <h4 class="statistics-value">0</h4>
-                                        <div class="statistics-text">Top 3 Finishes</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
+
         </div>
     </div>
   </body>
