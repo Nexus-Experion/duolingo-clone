@@ -597,7 +597,8 @@ ul {
   padding-left: inherit;
 }
 
-.language {
+.languageRow {
+  justify-content: space-between;
   border-top: 2px solid rgb(var(--color-snow-always-light), 0.2);
   color: rgb(var(--color-snow-always-light));
   display: flex;
