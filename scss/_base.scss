@@ -1,0 +1,23 @@
+$color_1: #c5c3c3;
+$color_2: rgb(var(--color-wolf));
+$color_3: rgb(var(--color-hare-always-light));
+$color_4: inherit;
+$color_5: rgb(var(--color-eel-always-light));
+$color_6: white;
+$color_7: #1cb0f6;
+$color_8: grey;
+$color_9: rgb(var(--color-wolf-always-light));
+$font-family_1: 'din-round-bold';
+$font-family_2: 'din-round-medium', sans-serif;
+$font-family_3: 'din-round-bold', sans-serif;
+$font-family_4: 'feather-bold';
+$background-color_1: #ffffff;
+$background-color_2: white;
+$background-color_3: rgb(207, 207, 207);
+$background-color_4: #58cc02;
+
+
+@font-face {
+	font-family: 'din-round-medium';
+	src: url('../assets/fonts/DINRoundPro-Medi.ttf');
+}

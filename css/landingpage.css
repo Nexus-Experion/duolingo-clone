@@ -199,7 +199,7 @@
 
 /* left video logging section */
 
-#left-logging-header-video video {
+#left-logging-header {
     height: 466px;
     width: 464px;
 }
@@ -213,6 +213,8 @@
 @media only screen and (min-width:368px) and (max-width: 1080px) {
     .left-logging-header {
         flex: initial;
+        height: 360px;
+        width: 360px;
     }
 }
 
@@ -346,7 +348,7 @@
 
 /* Scrollable Navbar of Flags */
 
-.scrollable-navabar-div{
+.scrollable-navabar-div {
     font-family: din-round-bold;
     letter-spacing: 1px;
     align-items: center;
@@ -355,49 +357,51 @@
     border-top: 2px solid rgb(var(--color-swan-always-light));
     display: flex;
     justify-content: center;
-    padding-left:40px;
+    padding-left: 40px;
     padding-right: 40px;
 }
 
-.scrollable-navbar-nav{
+.scrollable-navbar-nav {
     display: flex;
     align-items: center;
-    width: 85%;
+    width: 69%;
 }
 
-.left-arrow-svg{
+.left-arrow-svg {
     color: grey;
     height: 14px;
     cursor: pointer;
     margin-right: 20px;
 }
 
-.right-arrow-svg{
+.right-arrow-svg {
     color: grey;
     height: 14px;
     cursor: pointer;
     margin-left: 20px;
 }
 
-.countries-div{
+.countries-div {
     overflow: hidden;
 }
 
-.countries-list{
+.countries-list {
     transition: transform .5s ease-in-out;
-    display: flex;
     gap: 20px;
     list-style: none;
     padding-left: 0px;
+
+    display: flex;
+    list-style: none;
 }
 
-.conuntry-one{
+.conuntry-one {
     display: flex;
     align-items: center;
     color: rgb(var(--color-wolf-always-light));
     text-decoration: none;
 }
 
-.country-flag-svg{
+.country-flag-svg {
     margin-right: 10px;
 }

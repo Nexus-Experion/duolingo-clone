@@ -1,0 +1,145 @@
+.site-language-unordered-list {
+	padding: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+}
+.site-language-list-single {
+	align-items: center;
+	color: $color_2;
+	display: flex;
+	font-size: 15px;
+	font-weight: 500;
+	height: 42px;
+	padding: 0 20px;
+	white-space: nowrap;
+	background-color: $background-color_2;
+	border-radius: 15px;
+	&:hover {
+		background-color: $background-color_3;
+	}
+}
+
+.floating-landing-page{
+	align-items: end;
+    display: flex;
+}
+
+
+
+
+.lastDiv{
+    font-family: din-round,sans-serif;
+    color: rgb(var(--color-snow-always-light));
+    padding-top: 80px;
+    text-align: center;
+    background-color: $background-color_4
+    // background-image: url(https://d35aaqx5ub95lt.cloudfront.net/images/4986531ca822d48e57b4a18f40ff5172.svg);
+}
+
+.divInLastDiv {
+    margin: 0 auto;
+    max-width: 1140px;
+    min-height: 70px;
+}
+.containList {
+    color: rgb(var(--color-snow-always-light));
+    font-size: 13px;
+    text-align: left;
+}
+._1KUWD {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1065px;
+    padding: 24px 40px;
+}
+.headings {
+    padding: 0 24px 48px 0;
+    width: 170px;
+    
+}
+.mainHeading {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: none;
+}
+.containList li {
+    padding: 5px 0;
+    list-style: none;
+    list-style-position: outside;
+}
+.containList a {
+    color: rgb(var(--color-snow-always-light));
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    opacity: .5;
+    text-decoration: none;
+    
+}
+._3CeMJ {
+    border-top: 2px solid rgb(var(--color-snow-always-light),.2);
+    color: rgb(var(--color-snow-always-light));
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    gap: 40px;
+    margin: 0 auto;
+    max-width: 1065px;
+    padding: 24px 40px 48px;
+    text-align: left;
+    flex-direction: row;
+}
+ul{
+    text-align: left;
+    padding-left: inherit;
+}
+.language {
+    border-top: 2px solid rgb(var(--color-snow-always-light),.2);
+    color: rgb(var(--color-snow-always-light));
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+    gap: 40px;
+    margin: 0 auto;
+    max-width: 1065px;
+    padding: 24px 40px 48px;
+    text-align: left;
+}
+.languageHeading {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 6px 0;
+    text-transform: none;
+}
+.owlFace {
+    align-self: start;
+    height: 64px;
+    width: 64px;
+    align-self: end;
+}
+.languages {
+    display: inline-block;
+    font-weight: 700;
+    opacity: .5;
+    padding-right: 24px;
+    padding-top: 6px;
+}
+.singleLang {
+    color: rgb(var(--color-snow-always-light));
+    text-decoration: none;
+}
+
+.duolingo-features{
+
+	
+	display: flex;
+  flex-direction: column;
+  gap: 96px;
+  padding: 96px 0;
+}
+

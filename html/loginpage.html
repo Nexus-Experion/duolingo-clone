@@ -5,109 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/loginpage.css" />
+    <link rel="stylesheet" href="../css/signup.css">
     <link rel="stylesheet" href="../css/main.css" />
     <script src="../js/loginpage.js"></script>
     <script type="module" src="../js/firebaseLogin.js"></script>
+    <script type="module" src="../js/forgotPassword.js"></script>
   </head>
   <body>
-    <div class="mainDiv">
-      <div class="parentDiv">
-        <div class="closeButton">
+    <div class="main-container">
+      <div class="signup-page-container">
+        <div class="close-button-div">
           <a href="../index.html">
-            <img src="../assets/svg/close-button.svg" class="imgPic"
+            <img src="../assets/svg/close-button.svg" alt="close button"
           /></a>
         </div>
-        <div class="form">
-          <form id="main-form">
-            <div><h1 class="logIn">Log in</h1></div>
-            <div class="emailPass">
-              <div class="inputEmailDiv">
+        <div class="login-button-container">
+          <button
+            class="login-button button-div"
+            id="login-button"
+            onclick="signupButtonAnimation()"
+          >
+            SIGN UP
+          </button>
+        </div>
+        
+        <form class="signup-section-main" id="main-form">
+          <div class="signup-information-div">
+            <h1 class="create-profile-heading">Log in</h1>
+            <div class="input-fields-div">
+              <div class="field-one">
                 <input
-                  data-test="email-input"
-                  onclick="borderColorChange(event)"
-                  autocomplete="email"
-                  placeholder="Email or username"
+                  class="input-field"
+                  id="email-input"
                   type="text"
-                  value=""
-                  id="emailInput"
-                  class="inputEmail"
+                  placeholder="Email"
                 />
-                <div id="email-error-message"></div>
+                <div class="error-message" id="email-error-message"></div>
               </div>
 
-              <div>
-                <div class="passwordDiv" id="divPassword">
-                  <input
-                    data-test="password-input"
-                    autocomplete="current-password"
-                    placeholder="Password"
-                    class="inputPassword"
-                    id="passInput"
-                    type="password"
-                    value=""
-                  />
-                  <a
+              <div class="field-one password-div">
+                <input
+                  class="input-field password-input"
+                  id="password-input"
+                  type="password"
+                  placeholder="Password"
+                />
+                <a
                     class="forgot"
-                    data-test="forgot-password"
-                    href="/forgot_password"
+                    id="forgot-password"
                     >Forgot?</a
                   >
-                </div>
-                <div id="password-error-message"></div>
+                <div class="error-message" id="password-error-message"></div>
               </div>
             </div>
-            <div>
+
+            <div class="create-account-button-container">
               <button
-              type="submit"
-                class="buttonLogIn"
-                id="buttonLogInButton"
-                data-test="sign-up-button"
-                onclick="getStartedButtonAnimation()"
+                type="submit"
+                class="create-account-button button-div"
+                id="create-account-button"
+                onclick="loginAccountButtonAnimation()"
               >
                 LOG IN
               </button>
             </div>
+          </div>
 
-            <div class="paragraph">
-              <div class="para">
-                <span
-                  >By signing in to Duolingo, you agree to our
-                  <a href="https://www.duolingo.com/terms?wantsPlainInfo=1">
-                    <b>Terms</b>
-                  </a>
-                  and
-                  <a href="https://www.duolingo.com/privacy?wantsPlainInfo=1">
-                    <b>Privacy Policy</b>
-                  </a>
-                  .
-                </span>
-              </div>
-              <div class="para">
-                <span
-                  >This site is protected by reCAPTCHA Enterprise and the Google
-                  <a href="https://policies.google.com/privacy"
-                    ><b>Privacy Policy</b></a
-                  >
-                  and
-                  <a href="https://policies.google.com/terms"
-                    ><b>Terms of Service</b></a
-                  >
-                  apply.
-                </span>
-              </div>
+          <div class="split-line"></div>
+
+          <div class="terms-privacy-container">
+            <div class="terms-privacy">
+              <span
+                >By signing in to Duolingo, you agree to our
+                <a href="https://www.duolingo.com/privacy?wantsPlainInfo=1"
+                  ><b>Terms</b></a
+                >
+                and
+                <a href="https://www.duolingo.com/privacy?wantsPlainInfo=1"
+                  ><b>Privacy Policy</b></a
+                >.</span
+              >
             </div>
-          </form>
-        </div>
-        <div class="signUp">
-          <button
-            class="buttonSign"
-            id="buttonSignButton"
-            data-test="sign-up-button"
-            onclick="getSignInButton()"
-          >
-            Sign up
-          </button>
-        </div>
+            <div class="terms-privacy">
+              <span
+                >This site is protected by reCAPTCHA Enterprise and the Google
+                <a href="https://policies.google.com/privacy">
+                  <b>Privacy Policy</b></a
+                >
+                and
+                <a href="https://policies.google.com/terms"
+                  ><b>Terms of Service</b></a
+                >
+                apply.</span
+              >
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </body>
