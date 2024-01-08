@@ -210,6 +210,7 @@ width: 360px;
 .buttonContainer{
     display: flex;
     align-items: inherit;
+    margin-right: -100px;
 }
 #list{
     display:hidden;

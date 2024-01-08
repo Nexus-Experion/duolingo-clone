@@ -153,9 +153,16 @@ td {
   border: none;
   box-shadow: 0 4px 0 rgb(var(--color-snow-always-light), 0.6);
   transition: box-shadow translate 0.3s ease;
+  cursor:pointer;
 }
 
 .clicked {
   box-shadow: none !important;
   translate: 0 3px;
+}
+
+/* Styles For RazorPay */
+
+.razorpay-backdrop span{
+  display: none;
 }

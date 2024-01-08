@@ -67,7 +67,7 @@ const placeSectionList = () => {
       <p >On Progress!</p>
     </div>
     <div class="_2n0sJ">
-      <button class="section-button" onclick="showLessonsInSection(1)">
+      <button class="section-button active-section-button" onclick="showLessonsInSection(1)">
         <span class="_1fHYG">Continue</span>
       </button>
     </div>
@@ -445,7 +445,7 @@ const placeUnitsandLessons = (sectionData,userData) => {
   let movement2=false;
   let animationPath = '../assets/json-animations/duo-unit-one-one.json';
   let animationPath2= '../assets/json-animations/duo-unit-one-two.json';
-  if(completedChapters > 3){
+  if(completedChapters > 1){
     firstanimatedSpriteInLesson.classList.remove("greyd-sprite");
     movement=true;
   }

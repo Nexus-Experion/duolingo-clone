@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../scss/landingpage.css" />
-    <link rel="stylesheet" href="../css/main.css" />
-    <script src="../js/landingpage.js" defer></script>
+    <link rel="stylesheet" href="./scss/landingpage.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/landingpage.js" defer></script>
+    <script src="./js/loadanimationindex.js" defer></script>
+
     <title>Duolingo</title>
-    <link rel="icon" href="../assets/images/favicon.ico" />
+    <link rel="icon" href="./assets/images/favicon.ico" />
   </head>
   <body>
     <header class="landing-header">
@@ -18,7 +20,7 @@
             <img
               alt="Duolingo"
               class="landing-header-logo"
-              src="../assets/svg/duolingo_landing_header_logo.svg"
+              src="./assets/svg/duolingo_landing_header_logo.svg"
             />
           </a>
           <div class="select-site-language">
@@ -27,7 +29,7 @@
               <img
                 alt=" "
                 class="site-language-select-dropdown"
-                src="../assets/svg/site-language-select-dropdown.svg"
+                src="./assets/svg/site-language-select-dropdown.svg"
               />
             </button>
             <div class="hover-site-language">
@@ -38,7 +40,7 @@
                     onclick="setIndexSiteLanguage('../assets/JSON/landing-german.json','german')"
                     ><img
                       class="country-flag-language-selection"
-                      src="../assets/svg/country-flags/de-flag.svg"
+                      src="./assets/svg/country-flags/de-flag.svg"
                     />
                     German</a
                   >
@@ -49,7 +51,7 @@
                     onclick="setIndexSiteLanguage('../assets/JSON/landing-hindi.json','hindi')"
                     ><img
                       class="country-flag-language-selection"
-                      src="../assets/images/india.png"
+                      src="./assets/images/india.png"
                     />
                     Hindi</a
                   >
@@ -60,7 +62,7 @@
                     onclick="setIndexSiteLanguage('../assets/JSON/landing-english.json','english')"
                     ><img
                       class="country-flag-language-selection"
-                      src="../assets/images/english.png"
+                      src="./assets/images/english.png"
                     />
                     English</a
                   >
@@ -71,7 +73,7 @@
                     onclick="setIndexSiteLanguage('../assets/JSON/landing-malayalam.json','malayalam')"
                     ><img
                       class="country-flag-language-selection"
-                      src="../assets/images/india.png"
+                      src="./assets/images/india.png"
                     />
                     Malayalam</a
                   >
@@ -116,11 +118,28 @@
             <path d="M10 2L4 8L10 14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
           </svg>
           <div class="countries-div">
+<<<<<<< HEAD
             <ul class="countries-list" style="transform: translateX(0px);">
               <li>
                 <a class="conuntry-one" onclick="selectLanguage()">
                   <svg class="country-flag-svg" viewBox="0 66 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
+=======
+            <ul class="countries-list" style="transform: translateX(0px)">
+              <li class="available-lang">
+                <a class="conuntry-one" onclick="selectLesson('es')">
+                  <svg
+                    class="country-flag-svg"
+                    viewBox="0 66 82 66"
+                    style="height: 28.9756px; width: 36px"
+                  >
+                    <image
+                      height="3168"
+                      href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                      width="82"
+                      xlink:href="./assets/svg/Flags_list.svg"
+                    ></image>
+>>>>>>> 1a9492854d3e04b064d089d1ffad594e18eb710a
                   </svg>
                   <span id="es">SPANISH</span>
                 </a>
@@ -133,42 +152,135 @@
                   <span id="fr">FRENCH</span>
                 </a>
               </li>
+<<<<<<< HEAD
               <li>
                 <a class="conuntry-one" href="">
                   <svg class="country-flag-svg" viewBox="0 198 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
+=======
+              <li class="available-lang">
+                <a class="conuntry-one" onclick="selectLesson('fr')">
+                  <svg
+                    class="country-flag-svg"
+                    viewBox="0 132 82 66"
+                    style="height: 28.9756px; width: 36px"
+                  >
+                    <image
+                      height="3168"
+                      href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                      width="82"
+                      xlink:href="./assets/svg/Flags_list.svg"
+                    ></image>
+>>>>>>> 1a9492854d3e04b064d089d1ffad594e18eb710a
                   </svg>
                   <span id="de">GERMAN</span>
                 </a>
               </li>
+<<<<<<< HEAD
               <li>
                 <a class="conuntry-one" href="">
                   <svg class="country-flag-svg" viewBox="0 264 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
+=======
+              <li class="available-lang">
+                <a class="conuntry-one" onclick="selectLesson('de')">
+                  <svg
+                    class="country-flag-svg"
+                    viewBox="0 198 82 66"
+                    style="height: 28.9756px; width: 36px"
+                  >
+                    <image
+                      height="3168"
+                      href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                      width="82"
+                      xlink:href="./assets/svg/Flags_list.svg"
+                    ></image>
+>>>>>>> 1a9492854d3e04b064d089d1ffad594e18eb710a
                   </svg>
                   <span id="ja">JAPANESE</span>
                 </a>
               </li>
+<<<<<<< HEAD
               <li>
                 <a class="conuntry-one" href="">
                   <svg class="country-flag-svg" viewBox="0 330 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
+=======
+              <li class="available-lang">
+                <a class="conuntry-one" onclick="selectLesson('ja')">
+                  <svg
+                    class="country-flag-svg"
+                    viewBox="0 264 82 66"
+                    style="height: 28.9756px; width: 36px"
+                  >
+                    <image
+                      height="3168"
+                      href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                      width="82"
+                      xlink:href="./assets/svg/Flags_list.svg"
+                    ></image>
+                  </svg>
+                  <span>JAPANESE</span>
+                </a>
+              </li>
+              <li>
+                <a class="conuntry-one" href="">
+                  <svg
+                    class="country-flag-svg"
+                    viewBox="0 330 82 66"
+                    style="height: 28.9756px; width: 36px"
+                  >
+                    <image
+                      height="3168"
+                      href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                      width="82"
+                      xlink:href="./assets/svg/Flags_list.svg"
+                    ></image>
+>>>>>>> 1a9492854d3e04b064d089d1ffad594e18eb710a
                   </svg>
                   <span>ITALIAN</span>
                 </a>
               </li>
               <li>
                 <a class="conuntry-one" href="">
+<<<<<<< HEAD
                   <svg class="country-flag-svg" viewBox="0 396 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
+=======
+                  <svg
+                    class="country-flag-svg"
+                    viewBox="0 396 82 66"
+                    style="height: 28.9756px; width: 36px"
+                  >
+                    <image
+                      height="3168"
+                      href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                      width="82"
+                      xlink:href="./assets/svg/Flags_list.svg"
+                    ></image>
+>>>>>>> 1a9492854d3e04b064d089d1ffad594e18eb710a
                   </svg>
                   <span>KOREAN</span>
                 </a>
               </li>
               <li>
                 <a class="conuntry-one" href="">
+<<<<<<< HEAD
                   <svg class="country-flag-svg" viewBox="0 462 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
+=======
+                  <svg
+                    class="country-flag-svg"
+                    viewBox="0 462 82 66"
+                    style="height: 28.9756px; width: 36px"
+                  >
+                    <image
+                      height="3168"
+                      href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                      width="82"
+                      xlink:href="./assets/svg/Flags_list.svg"
+                    ></image>
+>>>>>>> 1a9492854d3e04b064d089d1ffad594e18eb710a
                   </svg>
                   <span>CHINESE</span>
                 </a>
@@ -177,16 +289,44 @@
 
               <li>
                 <a class="conuntry-one" href="">
+<<<<<<< HEAD
                   <svg class="country-flag-svg" viewBox="0 528 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
+=======
+                  <svg
+                    class="country-flag-svg"
+                    viewBox="0 396 82 66"
+                    style="height: 28.9756px; width: 36px"
+                  >
+                    <image
+                      height="3168"
+                      href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                      width="82"
+                      xlink:href="./assets/svg/Flags_list.svg"
+                    ></image>
+>>>>>>> 1a9492854d3e04b064d089d1ffad594e18eb710a
                   </svg>
                   <span>RUSSIAN</span>
                 </a>
               </li>
               <li>
                 <a class="conuntry-one" href="">
+<<<<<<< HEAD
                   <svg class="country-flag-svg" viewBox="0 594 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
+=======
+                  <svg
+                    class="country-flag-svg"
+                    viewBox="0 462 82 66"
+                    style="height: 28.9756px; width: 36px"
+                  >
+                    <image
+                      height="3168"
+                      href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                      width="82"
+                      xlink:href="./assets/svg/Flags_list.svg"
+                    ></image>
+>>>>>>> 1a9492854d3e04b064d089d1ffad594e18eb710a
                   </svg>
                   <span>PORTUGESE</span>
                 </a>
@@ -194,16 +334,44 @@
 
               <li>
                 <a class="conuntry-one" href="">
+<<<<<<< HEAD
                   <svg class="country-flag-svg" viewBox="0 660 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
+=======
+                  <svg
+                    class="country-flag-svg"
+                    viewBox="0 132 82 66"
+                    style="height: 28.9756px; width: 36px"
+                  >
+                    <image
+                      height="3168"
+                      href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                      width="82"
+                      xlink:href="./assets/svg/Flags_list.svg"
+                    ></image>
+>>>>>>> 1a9492854d3e04b064d089d1ffad594e18eb710a
                   </svg>
                   <span>TURKISH</span>
                 </a>
               </li>
               <li>
                 <a class="conuntry-one" href="">
+<<<<<<< HEAD
                   <svg class="country-flag-svg" viewBox="0 726 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
+=======
+                  <svg
+                    class="country-flag-svg"
+                    viewBox="0 198 82 66"
+                    style="height: 28.9756px; width: 36px"
+                  >
+                    <image
+                      height="3168"
+                      href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                      width="82"
+                      xlink:href="./assets/svg/Flags_list.svg"
+                    ></image>
+>>>>>>> 1a9492854d3e04b064d089d1ffad594e18eb710a
                   </svg>
                   <span>DUTCH</span>
                 </a>
@@ -492,24 +660,16 @@
                     <a href="https://blog.duolingo.com" tabindex="0">Blog</a>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/duolingo" tabindex="0"
-                      >Instagram</a
-                    >
+                    <a href="https://www.instagram.com/duolingo">Instagram</a>
                   </li>
                   <li>
-                    <a href="https://www.facebook.com/duolingo" tabindex="0"
-                      >Facebook</a
-                    >
+                    <a href="https://www.facebook.com/duolingo">Facebook</a>
                   </li>
                   <li>
-                    <a href="https://twitter.com/duolingo" tabindex="0"
-                      >Twitter</a
-                    >
+                    <a href="https://twitter.com/duolingo">Twitter</a>
                   </li>
                   <li>
-                    <a href="https://www.youtube.com/user/duolingo" tabindex="0"
-                      >YouTube</a
-                    >
+                    <a href="https://www.youtube.com/user/duolingo">YouTube</a>
                   </li>
                 </ul>
               </div>
@@ -521,26 +681,18 @@
             <div class="languageHeading">Site language:</div>
             <ul>
               <li class="languages">
-                <a class="singleLang" href="//en.duolingo.com" tabindex="0"
-                  >English</a
-                >
+                <a class="singleLang" href="//en.duolingo.com">English</a>
               </li>
 
               <li class="languages">
-                <a class="singleLang" href="//hi.duolingo.com" tabindex="0"
-                  >हिंदी</a
-                >
+                <a class="singleLang" href="//hi.duolingo.com">हिंदी</a>
               </li>
 
               <li class="languages">
-                <a class="singleLang" href="//ko.duolingo.com" tabindex="0"
-                  >മലയാളം</a
-                >
+                <a class="singleLang" href="//ko.duolingo.com">മലയാളം</a>
               </li>
               <li class="languages">
-                <a class="singleLang" href="//dn.duolingo.com" tabindex="0"
-                  >DEUTSCH</a
-                >
+                <a class="singleLang" href="//dn.duolingo.com">DEUTSCH</a>
               </li>
             </ul>
           </div>
@@ -552,5 +704,6 @@
       </div>
     </div>
   </body>
+  <script src="./js/pointerpage.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.7/lottie.min.js"></script>
 </html>
