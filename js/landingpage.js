@@ -1,10 +1,10 @@
 
-const headerPath = '../assets/json-animations/header.json';
-const floatingPhone = '../assets/json-animations/floating-phone.json';
-const stayMotivated = '../assets/json-animations/stay-motivated.json';
-const personalisedLearning = '../assets/json-animations/personalised-learning.json';
-const backedByScience = '../assets/json-animations/backed-by-science.json';
-const freeFunEffective = '../assets/json-animations/free-fun-effective.json';
+const headerPath = 'assets/json-animations/header.json';
+const floatingPhone = 'assets/json-animations/floating-phone.json';
+const stayMotivated = 'assets/json-animations/stay-motivated.json';
+const personalisedLearning = 'assets/json-animations/personalised-learning.json';
+const backedByScience = 'assets/json-animations/backed-by-science.json';
+const freeFunEffective = 'assets/json-animations/free-fun-effective.json';
 
 const alreadyAccountButtonAnimation = () => {
     document.getElementById("already-have-account-button").classList.toggle('clicked');
@@ -70,10 +70,10 @@ const setIndexSiteLanguage = (path, language) => {
 
 translateLanguage = localStorage.getItem("translateLanguage")
 if (translateLanguage != undefined) {
-    setIndexSiteLanguage(`../assets/JSON/landing-${translateLanguage}.json`, translateLanguage)
+    setIndexSiteLanguage(`assets/JSON/landing-${translateLanguage}.json`, translateLanguage)
 }
 else {
-    setIndexSiteLanguage(`../assets/JSON/landing-english.json`, 'english')
+    setIndexSiteLanguage(`assets/JSON/landing-english.json`, 'english')
 }
 
 // const selectLanguage = (event) => {
