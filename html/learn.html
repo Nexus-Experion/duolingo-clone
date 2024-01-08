@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Duolingo</title>
+    <link rel="icon" href="../assets/images/favicon.ico">
     <link rel="stylesheet" href="../css/learn.css" />
     <link rel="stylesheet" href="../css/main.css" />
   </head>
@@ -26,7 +27,7 @@
               <span class="text-in-button"> Learn </span>
             </span>
           </a>
-          <a href="" class="button-in-sidebar">
+          <a href="leaderboard.html" class="button-in-sidebar">
             <span class="icon-and-text-wrap">
               <div class="icon-in-button">
                 <img src="../assets/svg/badge-in-sidebar.svg" alt="home-icon" />
@@ -46,12 +47,12 @@
               <span class="text-in-button"> Profile </span>
             </span>
           </a>
-          <a href="" class="button-in-sidebar">
+          <a href="./shoppingpage.html" class="button-in-sidebar">
             <span class="icon-and-text-wrap">
               <div class="icon-in-button">
-                <img src="../assets/svg/more-in-sidebar.svg" alt="home-icon" />
+                <img src="../assets/svg/shop-in-sidebar.svg" alt="home-icon" />
               </div>
-              <span class="text-in-button"> Settings </span>
+              <span class="text-in-button"> Shop </span>
             </span>
           </a>
           <a href="./faq.html" class="button-in-sidebar">
@@ -73,9 +74,8 @@
               <span class="icon-and-text-wrap">
                 <div class="icon-in-button">
                   <img
-                    src="../assets/svg/ja-flag.svg"
-                    alt="home-icon"
-                    class="profile"
+                    src="../assets/svg/country-flags/transparent.svg"
+                    class="country-flag"
                   />
                 </div>
               </span>
@@ -158,7 +158,7 @@
           </div>
         </div>
         <!----------------------------------- Scrollable area showing units ------------------------------------------------>
-        <div class="scrollable-lesson-div active">
+        <div class="scrollable-lesson-div active" onclick="closeAllOpenDialogBoxes()">
         </div>
 
       </div>

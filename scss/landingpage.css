@@ -1,0 +1,645 @@
+@font-face {
+  font-family: "din-round-medium";
+  src: url("../assets/fonts/DINRoundPro-Medi.ttf");
+}
+.site-language-button {
+  font-family: "din-round-medium", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgb(var(--color-hare-always-light));
+  background: none;
+  border: none;
+  padding: 0;
+  transition: filter 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.site-language-select-dropdown {
+  height: 14px;
+  margin-left: 8px;
+  width: 14px;
+}
+
+.country-name-flag-language {
+  align-items: center;
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.country-name-flag-language img {
+  margin-right: 10px;
+}
+
+.country-flag-language-selection {
+  border: 2px solid white;
+  border-radius: 6px;
+  height: 19.31px;
+  width: 24px;
+}
+
+.header-logging {
+  display: flex;
+  flex-grow: 1;
+  padding: 10px 15px 20px;
+}
+
+#left-logging-header {
+  height: 466px;
+  width: 464px;
+}
+
+.landing-navbar {
+  align-items: center;
+  display: flex;
+  height: 70px;
+  padding: 0 15px;
+  border-bottom: 1px #1cb0f6;
+}
+
+.header-navbar {
+  background: rgb(var(--color-snow-always-light));
+  border-bottom: 2px solid transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.landing-header-logo {
+  height: 38px;
+  width: 161px;
+}
+
+.landing-header {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 70px;
+}
+
+.hover-site-language {
+  font-family: "din-round-bold";
+  border: 1px solid #c5c3c3;
+  margin-left: -170px;
+  width: 360px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.select-site-language:hover span {
+  color: #c5c3c3;
+}
+.select-site-language:hover .hover-site-language {
+  display: grid;
+}
+
+.left-logging-header {
+  align-items: end;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+}
+
+.right-logging-header {
+  margin-left: 20px;
+  margin-top: 40px;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.right-logging-header h1 {
+  font-family: "din-round-bold", sans-serif;
+  color: rgb(var(--color-eel-always-light));
+  flex: 1;
+  letter-spacing: 0.8px;
+  font-size: 32px;
+  line-height: normal;
+  margin: 10px 15px 0;
+  max-width: 550px;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.right-logging-button-section {
+  font-family: "din-round-bold", sans-serif;
+  letter-spacing: 0.8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 40px;
+  max-width: 330px;
+  width: 100%;
+}
+
+.get-started-btn-div {
+  box-shadow: 0 4px 0px #58a700;
+  border-radius: 18px;
+}
+.get-started-btn-div:hover {
+  filter: brightness(1.1);
+}
+
+.logging-get-started-button {
+  border: none;
+  cursor: pointer;
+  background-color: #58cc02;
+  color: white;
+}
+
+.already-have-account-btn-div {
+  margin-top: 10px;
+  box-shadow: 0 4px 0px #e5e5e5;
+  border-radius: 18px;
+}
+.already-have-account-btn-div:hover {
+  filter: brightness(0.9);
+}
+
+.logging-already-have-account-button {
+  background-color: #ffffff;
+  border: 2px solid #ebebeb;
+  color: #1cb0f6;
+  cursor: pointer;
+}
+
+.scrollable-navabar-div {
+  font-family: "feather-bold";
+  letter-spacing: 1px;
+  align-items: center;
+  height: 80px;
+  border-bottom: 2px solid rgb(var(--color-swan-always-light));
+  border-top: 2px solid rgb(var(--color-swan-always-light));
+  display: flex;
+  justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.scrollable-navbar-nav {
+  display: flex;
+  align-items: center;
+  width: 85%;
+}
+
+.left-arrow-svg {
+  color: grey;
+  height: 14px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.right-arrow-svg {
+  color: grey;
+  height: 14px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.countries-div {
+  overflow: hidden;
+}
+
+.countries-list {
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding-left: 0px;
+}
+
+.conuntry-one {
+  display: flex;
+  align-items: center;
+  color: rgb(var(--color-wolf-always-light));
+  text-decoration: none;
+}
+
+.country-flag-svg {
+  margin-right: 10px;
+}
+
+.feature-body-1-substyle {
+  color: rgb(var(--color-macaw-always-light));
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 1080px) and (max-width: 1864px) {
+  .select-site-language {
+    display: flex;
+    position: relative;
+  }
+  .landing-navbar {
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 988px;
+    padding: 0;
+  }
+  .header-logging {
+    align-items: center;
+    flex-direction: row;
+    gap: 80px;
+    justify-content: end;
+    margin: 0 auto;
+    padding: 48px 0;
+    width: 988px;
+  }
+  .left-logging-header {
+    margin-right: -65px;
+  }
+  .right-logging-header h1 {
+    margin: 0;
+    width: 550px;
+  }
+  .footer-get-started-section {
+    margin-bottom: -10.35912%;
+  }
+  .footer-get-started-heading {
+    font-size: 64px;
+    max-width: 583px;
+  }
+  .duolingo-features {
+    gap: 0;
+    overflow: hidden;
+  }
+  .feature-class {
+    flex-direction: row;
+    gap: 140px;
+    margin: 0 auto;
+    width: 988px;
+  }
+  .duolingo-features-text {
+    align-items: start;
+    flex-shrink: 0;
+    text-align: initial;
+  }
+  .duolingo-features-text-head {
+    text-align: initial;
+    font-size: 48px;
+  }
+  .duolingo-feature-animation {
+    flex-shrink: 0;
+    width: 530px;
+  }
+  .duolingo-feature-animation {
+    max-width: none;
+    width: 532px;
+    flex-shrink: 0;
+    width: 532px;
+  }
+}
+@media only screen and (min-width: 368px) and (max-width: 1080px) {
+  .landing-navbar {
+    padding: 0 40px;
+    justify-content: center;
+  }
+  .select-site-language {
+    display: none;
+  }
+  .landing-header-logo {
+    height: 42px;
+    width: 179px;
+  }
+  .header-logging {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 40px 48px;
+    flex-direction: column;
+  }
+  .left-logging-header {
+    flex: initial;
+    height: 360px;
+    width: 360px;
+  }
+  .right-logging-header {
+    flex: initial;
+  }
+  .right-logging-header h1 {
+    flex: initial;
+    margin: 16px 20px 0;
+    max-width: 550px;
+  }
+  .right-logging-button-section {
+    margin-top: 40px;
+  }
+  .footer-get-started-heading {
+    font-size: 36px;
+    max-width: 363px;
+  }
+  .duolingo-feature-animation {
+    max-width: none;
+    width: 452px;
+  }
+  .features-column {
+    flex-direction: column;
+  }
+  .features-column-reverse {
+    flex-direction: column-reverse;
+  }
+  .duolingo-features-text-body {
+    text-align: center;
+  }
+  .duolingo-feature-animation {
+    height: 452px;
+    width: 452px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 750px) {
+  .scrollable-navabar-header {
+    display: none;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 680px) {
+  .duolingo-features-text-head {
+    font-size: 32px;
+  }
+  .scrollable-navabar-div {
+    display: none;
+  }
+}
+@media only screen and (min-width: 680px) and (max-width: 1864px) {
+  .scrollable-navabar-header {
+    align-items: center;
+    border-bottom: 2px solid rgb(var(--color-swan-always-light));
+    border-top: 2px solid rgb(var(--color-swan-always-light));
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    padding: 0 40px;
+  }
+  .footer-get-started-section {
+    margin-bottom: -8.76289%;
+    padding: 40px 0 0;
+  }
+  .duolingo-features-text-body {
+    min-width: 473px;
+    text-align: initial;
+  }
+  .duolingo-features-text-head {
+    text-align: initial;
+    font-size: 48px;
+    max-width: 503px;
+  }
+}
+.floating-footer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+.footer-get-started-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 100%;
+  padding: 40px 15px 0;
+}
+
+.footer-get-started-heading {
+  color: rgb(var(--color-owl-always-light));
+  font-family: "feather-bold";
+  letter-spacing: -0.02em;
+  line-height: normal;
+  margin: 0;
+  text-align: center;
+}
+
+.floating-get-started-button {
+  font-family: "din-round-bold", sans-serif;
+  letter-spacing: 0.8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 330px;
+  width: 100%;
+}
+
+.floating-animation {
+  margin-bottom: -6%;
+  aspect-ratio: 1448/708;
+  display: flex;
+  min-width: 696px;
+  pointer-events: none;
+  position: relative;
+  width: 100%;
+}
+
+#phone-animation {
+  bottom: 0;
+  margin-top: -16.98895%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.duolingo-features {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+  padding: 96px 0;
+}
+
+.feature-class {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 15px;
+}
+
+.duolingo-features-text {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: auto;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.duolingo-features-text-head {
+  color: rgb(var(--color-owl-always-light));
+  font-family: "feather-bold";
+}
+
+.duolingo-features-text-body {
+  color: rgb(var(--color-wolf-always-light));
+  font-size: 17px;
+  line-height: 24px;
+  margin: 0;
+  max-width: 330px;
+  font-family: "din-round-medium", sans-serif;
+}
+
+.duolingo-feature-animation {
+  aspect-ratio: 1/1;
+  line-height: 0;
+  max-width: 345px;
+  position: relative;
+  width: 100%;
+}
+
+.site-language-unordered-list {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.site-language-list-single {
+  align-items: center;
+  color: rgb(var(--color-wolf));
+  display: flex;
+  font-size: 15px;
+  font-weight: 500;
+  height: 42px;
+  padding: 0 20px;
+  white-space: nowrap;
+  background-color: white;
+  border-radius: 15px;
+}
+.site-language-list-single:hover {
+  background-color: rgb(207, 207, 207);
+}
+
+.floating-landing-page {
+  align-items: end;
+  display: flex;
+}
+
+.lastDiv {
+  font-family: din-round, sans-serif;
+  color: rgb(var(--color-snow-always-light));
+  padding-top: 80px;
+  text-align: center;
+  background-color: #58cc02;
+}
+
+.divInLastDiv {
+  margin: 0 auto;
+  max-width: 1140px;
+  min-height: 70px;
+}
+
+.containList {
+  color: rgb(var(--color-snow-always-light));
+  font-size: 13px;
+  text-align: left;
+}
+
+._1KUWD {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1065px;
+  padding: 24px 40px;
+}
+
+.headings {
+  padding: 0 24px 48px 0;
+  width: 170px;
+}
+
+.mainHeading {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: none;
+}
+
+.containList li {
+  padding: 5px 0;
+  list-style: none;
+  list-style-position: outside;
+}
+
+.containList a {
+  color: rgb(var(--color-snow-always-light));
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+._3CeMJ {
+  border-top: 2px solid rgb(var(--color-snow-always-light), 0.2);
+  color: rgb(var(--color-snow-always-light));
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  gap: 40px;
+  margin: 0 auto;
+  max-width: 1065px;
+  padding: 24px 40px 48px;
+  text-align: left;
+  flex-direction: row;
+}
+
+ul {
+  text-align: left;
+  padding-left: inherit;
+}
+
+.language {
+  border-top: 2px solid rgb(var(--color-snow-always-light), 0.2);
+  color: rgb(var(--color-snow-always-light));
+  display: flex;
+  flex-direction: row;
+  font-size: 13px;
+  gap: 40px;
+  margin: 0 auto;
+  max-width: 1065px;
+  padding: 24px 40px 48px;
+  text-align: left;
+}
+
+.languageHeading {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 6px 0;
+  text-transform: none;
+}
+
+.owlFace {
+  align-self: start;
+  height: 64px;
+  width: 64px;
+  align-self: end;
+}
+
+.languages {
+  display: inline-block;
+  font-weight: 700;
+  opacity: 0.5;
+  padding-right: 24px;
+  padding-top: 6px;
+}
+
+.singleLang {
+  color: rgb(var(--color-snow-always-light));
+  text-decoration: none;
+}
+
+.duolingo-features {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+  padding: 96px 0;
+}/*# sourceMappingURL=landingpage.css.map */

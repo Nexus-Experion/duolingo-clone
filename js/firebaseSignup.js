@@ -45,9 +45,9 @@ let RegisterUser = async (event) => {
             creationDate: currentDate,
             learnLang: localStorage.getItem('selectedLang'),
             sectionNumber: 1,
-            completedUnits: 1,
-            completedChapters: 1,
-            currentLesson: 1,
+            completedUnits: 0,
+            completedChapters: 0,
+            currentLesson: 1
             profileImage: "../assets/svg/profile-image-temp.svg"
         });
 
@@ -56,6 +56,7 @@ let RegisterUser = async (event) => {
             getDoc(dbref).then((docSnapshot) => {
                 if (docSnapshot.exists()) {
                     const userData = docSnapshot.data();
+
                     sessionStorage.setItem("user-info", JSON.stringify(userData));
 
                     console.log("User Data: ", userData);
