@@ -1,11 +1,4 @@
 
-const headerPath = 'assets/json-animations/header.json';
-const floatingPhone = 'assets/json-animations/floating-phone.json';
-const stayMotivated = 'assets/json-animations/stay-motivated.json';
-const personalisedLearning = 'assets/json-animations/personalised-learning.json';
-const backedByScience = 'assets/json-animations/backed-by-science.json';
-const freeFunEffective = 'assets/json-animations/free-fun-effective.json';
-
 const alreadyAccountButtonAnimation = () => {
     document.getElementById("already-have-account-button").classList.toggle('clicked');
     setTimeout(() => document.getElementById("already-have-account-button").classList.toggle('clicked'), 300)
@@ -20,25 +13,6 @@ const getStartedButtonAnimation = () => {
 }
 
 
-const animationLoader = (id, path, autoplays = false) => {
-    bodymovin.loadAnimation({
-        container: document.getElementById(id),
-        renderer: 'svg',
-        loop: true,
-        autoplay: autoplays,
-        path: path
-    });
-
-}
-
-
-//load all animations in index page
-animationLoader("left-logging-header", headerPath, true)
-animationLoader("phone-animation", floatingPhone, true)
-animationLoader("duolingo-feature-animation-stay-motivated", stayMotivated, true)
-animationLoader("duolingo-feature-animation-personalised-learning", personalisedLearning, true)
-animationLoader("duolingo-feature-animation-backed-by-science", backedByScience, true)
-animationLoader("duolingo-feature-animation-free-fun-effective", freeFunEffective, true)
 
 //function to set language
 
@@ -76,10 +50,3 @@ else {
     setIndexSiteLanguage(`assets/JSON/landing-english.json`, 'english')
 }
 
-// const selectLanguage = (event) => {
-//     let button = event.target.closest("a");
-//     selectedLang = button.querySelector("span").id;
-//     localStorage.setItem('selectedLang', selectedLang);
-
-//     window.location.href = "./html/language.html";
-// }
