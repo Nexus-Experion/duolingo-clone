@@ -59,6 +59,9 @@ const validate = (event) => {
 const createAccountButtonAnimation = () => {
     document.getElementById("create-account-button").classList.toggle('clicked');
     setTimeout(() => document.getElementById("create-account-button").classList.toggle('clicked'), 300)
+
+    document.getElementById('create-account-span').classList.toggle('hidden');
+    document.getElementById('loading-balls-container').classList.toggle('hidden');
 }
 
 const loginButtonAnimation = () => {

@@ -77,7 +77,7 @@ else {
 }
 
 const selectLanguage = (event) =>{
-    let button = event.target.closest("a");
+    let button = event.target.closest("button");
     selectedLang = button.querySelector("span").id;
     localStorage.setItem('selectedLang', selectedLang);
 

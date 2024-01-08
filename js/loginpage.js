@@ -2,6 +2,9 @@ const loginAccountButtonAnimation = (event) => {
     document.getElementById("create-account-button").classList.toggle('clicked');
     setTimeout(() => document.getElementById("create-account-button").classList.toggle('clicked'), 300)
     console.log("Reached Animation");
+
+    document.getElementById('login-span').classList.toggle('hidden');
+    document.getElementById('loading-balls-container').classList.toggle('hidden');
 }
 
 const signupButtonAnimation = () => {
