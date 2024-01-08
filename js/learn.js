@@ -218,7 +218,7 @@ const placeUnitsandLessons = (sectionData,userData) => {
   <div class="text-container">
     <h1>Form basic sentences</h1>
     <p>You completed this level!</p>
-    <button>Practice +5 XP</button>
+    <button>Completed</button>
   </div>
 </div>`
 
