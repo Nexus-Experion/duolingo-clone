@@ -1,8 +1,35 @@
+
+
+
 let myButton = document.getElementById('heartButton');
 let mySpan = document.getElementById('text-in-button heart-text');
 let userData = JSON.parse(sessionStorage.getItem("user-info"));
 let diamond = userData.gems;
 let hearts = userData.hearts;
+
+const getUserDataFromSessionStorage = () => {
+  return JSON.parse(sessionStorage.getItem("user-info"))
+}
+const getLanguageFlagPath=(languageCode)=>{
+  console.log(`../assets/svg/country-flags/${languageCode}-flag.svg`)
+  return `../assets/svg/country-flags/${languageCode}-flag.svg`
+}
+
+const placeuserStatistics = () => {
+  let userData = getUserDataFromSessionStorage();
+  document.querySelector(".country-flag").src=getLanguageFlagPath(userData.learnLang);
+  document.querySelectorAll(".fire-text").forEach(item => item.textContent = userData.xp);
+  document.querySelectorAll(".heart-text").forEach(item => item.textContent = userData.hearts);
+  document.querySelectorAll(".gem-text").forEach(item => item.textContent = userData.gems);
+
+}
+placeuserStatistics();
+
+const loginButtonAnimation = () => {
+  document.getElementById("superLink").classList.toggle('clicked');
+  setTimeout(() => document.getElementById("superLink").classList.toggle('clicked'), 500)
+  window.location.href="./superduolingo.html";
+}
 
 function checkSpanValue() {
   userData = JSON.parse(sessionStorage.getItem("user-info"));

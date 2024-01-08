@@ -616,7 +616,7 @@
 }
 .medaldiv {
     height: 91px;
-    width: 80px;
+    width: 89px;
 }
 ._250dJ {
   font-family: 'din-round-bold';
@@ -660,7 +660,7 @@
     align-items: center;
     color: inherit;
     display: flex;
-    padding: 8px 24px 8px 16px;
+    padding: 20px 24px 8px 16px;
     border-radius: 16px;
     border-color: black;
 }
@@ -779,7 +779,7 @@
   width: 46px;
 }
 .eachprofile:hover{
-  background-color:rgba(0, 0, 0, 0.166);
+  background-color:rgba(127, 127, 127, 0.17);
 }
 .indimage{
   height: 42px;

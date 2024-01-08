@@ -164,3 +164,6 @@
 .firstHeading{
     justify-content: left;
 }
+.scrollable-lesson-div{
+    width:65%;
+}

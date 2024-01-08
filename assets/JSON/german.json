@@ -1,10 +1,14 @@
 {
   "siteLan": "Website-Sprache: Deutsch",
-  "heading": "Lernen Sie Spanisch in nur 5 Minuten am Tag. Kostenlos.",
+  "heading": "Lernen Sie",
+  "lang":{
+    "es":" Spanisch",
+    "de":"German"
+  },
+  "head2": " in nur 5 Minuten am Tag. Kostenlos.",
   "startLearning": "Beginne zu lernen",
   "alreadyHave": "ICH HABE BEREITS EINEN ACCOUNT",
   "fireHead": "Effektiv und effizient",
-
   "fireLinkPara": "neueste Forschung",
   "tickHead": "Personalisiertes Lernen",
   "crownHead": "Bleib motiviert",

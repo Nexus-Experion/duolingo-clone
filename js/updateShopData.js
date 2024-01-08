@@ -21,10 +21,10 @@ userData.gems = newGem ;
 userData.hearts = newHeart;
 await updateDoc(dbref,userData);
 
-const heart = document.getElementById('heart-text');
-heart.textContent = newHeart;
-const gem = document.getElementById('gem-text');
-gem.textContent = newGem;
+// const heart = document.getElementById('heart-text');
+// heart.textContent = newHeart;
+// const gem = document.getElementById('gem-text');
+// gem.textContent = newGem;
 }
 myButton.addEventListener('click',upDate);
 

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/leaderboard.css" />
     <link rel="stylesheet" href="../css/learn.css" />
     <link rel="stylesheet" href="../css/main.css" />
+
   </head>
   <body>
     <div class="main-container">
@@ -19,16 +20,16 @@
           />
         </div>
         <div class="sidebar-buttons">
-          <a href="" class="button-in-sidebar">
-            <span class="icon-and-text-wrap selected">
+          <a href="./learn.html" class="button-in-sidebar">
+            <span class="icon-and-text-wrap">
               <div class="icon-in-button">
                 <img src="../assets/svg/home-in-sidebar.svg" alt="home-icon" />
               </div>
               <span class="text-in-button"> Learn </span>
             </span>
           </a>
-          <a href="" class="button-in-sidebar">
-            <span class="icon-and-text-wrap">
+          <a href="leaderboard.html" class="button-in-sidebar">
+            <span class="icon-and-text-wrap selected">
               <div class="icon-in-button">
                 <img src="../assets/svg/badge-in-sidebar.svg" alt="home-icon" />
               </div>
@@ -47,12 +48,12 @@
               <span class="text-in-button"> Profile </span>
             </span>
           </a>
-          <a href="" class="button-in-sidebar">
+          <a href="./shoppingpage.html" class="button-in-sidebar">
             <span class="icon-and-text-wrap">
               <div class="icon-in-button">
-                <img src="../assets/svg/more-in-sidebar.svg" alt="home-icon" />
+                <img src="../assets/svg/shop-in-sidebar.svg" alt="home-icon" />
               </div>
-              <span class="text-in-button"> Settings </span>
+              <span class="text-in-button"> Shop </span>
             </span>
           </a>
           <a href="./faq.html" class="button-in-sidebar">
@@ -74,9 +75,8 @@
               <span class="icon-and-text-wrap">
                 <div class="icon-in-button">
                   <img
-                    src="../assets/svg/ja-flag.svg"
-                    alt="home-icon"
-                    class="profile"
+                    src="../assets/svg/country-flags/transparent.svg"
+                    class="country-flag"
                   />
                 </div>
               </span>
@@ -85,7 +85,7 @@
               <span class="icon-and-text-wrap">
                 <div class="icon-in-button">
                   <img
-                    src="../assets/svg/streak-fire-active.svg"
+                    src="../assets/svg/lesson-xp.svg"
                     alt="home-icon"
                     class="profile"
                   />
@@ -127,13 +127,13 @@
             </div>
             <div class="divprofile">
               <div class="divforpic">
-                <img class="picture"  src="../assets/images/india.png" alt="">
+                <img class="picture"  id="profilePicture"  src="../assets/images/india.png" alt="">
                 <div class="_28T-y _2WS1S">
                   <img class="fte9h" id="addImage" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/a35f1db4398fd29e66f1abc33a0d11a2.svg">
                 </div>
               </div>
               <div class="_1V6a-" style="grid-template-columns: repeat(6, 1fr);">
-                <button class="_1N-oo _36Vd3 _16r-S _2YJm6 _3eRjX" onclick=change(1)>
+                <button class="_1N-oo _36Vd3 _16r-S _2YJm6 _3eRjX" onclick=changeImage()>
                   <img class="kC7Wi _1fHYG" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/2439bac00452e99ba7bf6a7ed0b04196.svg">
                 </button>
                 <button class="_1N-oo _36Vd3 _16r-S _3Wtvm _3eRjX">
@@ -153,52 +153,50 @@
                     <image height="3168" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg">
 
                     </image></svg></button></div>
-            </div>
-          </div>
+            </div> 
+        </div>
+           
+        
+        <!-- --------------------------------right sidebar end---------------------------- -->
           
-        </div>
         <!----------------------------------- Scrollable area showing units ------------------------------------------------>
-        <div class="scrollable-lesson-div">
-            <div class="center-container">
-                <div class="center-container-firstdiv">
-                        <div class="diffmedals">
-                            <div class="medalsdiv" style="--offset: 5;">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/838ba65643baef4c8442317df514cab5.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/968f56b566887d7718898cf8b5e74f40.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/80fecb328c5aefd400db229794fd7a08.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/8b3ff5d2a2b0ec2ff7cec8ebd639a5ab.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/b7c96323c16272efa6794d33791686d2.svg">
-                                <div class="medaldiv">
-                                    <img class="p9XXu" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/f480e032c5222395e73dac88ce3592bb.svg">
-                                </div>
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
-                                <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
-                            </div>
+       
+      </div>
+      <div class="scrollable-lesson-div">
+        <div class="center-container">
+            <div class="center-container-firstdiv">
+                    <div class="diffmedals">
+                        <div class="medalsdiv" style="--offset: 0;">
+                          <div class="medaldiv">
+                            <img class="p9XXu" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/838ba65643baef4c8442317df514cab5.svg">
                         </div>
-                        <div class="_250dJ">Emerald League</div>
-                        <div class="_2Xv_D">Top 7 advance to the next league</div>
-                        <div class="_20QqV">
-                            <span class="YSucH">
-                                <span class="_29Ox2">3 days</span>
-                            </span>
+                            <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
+                            <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
+                            <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
+                            <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
+                            <img class="_14I3k" src="https://d35aaqx5ub95lt.cloudfront.net/images/leagues/1b4fb092de75e4ecefd8e92f10b4ddd2.svg">
+                            
+                            
                         </div>
-                        <hr class="_3cgRx">
-                </div>
-                <div class="centre-container-secdiv" id="centre-container-secdiv">
-                                                        </div>
-
-                
-
-
+                    </div>
+                    <div class="_250dJ">Nexus League</div>
+                    <div class="_2Xv_D"></div>
+                    
+                    <hr class="_3cgRx">
             </div>
+            <div class="centre-container-secdiv" id="centre-container-secdiv">
+                                                    </div>
+
+            
+
 
         </div>
-      </div>
+
+    </div>
     </div>
     
       
     <script type="module"  src="../js/leaderboard.js"></script>
+    
   </body>
 </html>

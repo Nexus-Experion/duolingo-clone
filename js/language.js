@@ -38,16 +38,19 @@ table.addEventListener('mouseleave', function() {
   list.style.display = 'none';
 });
 
-
+changeToLanguage('english');
 // new Page
 function changeToLanguage(language){
   console.log("function is called");
 fetch(`../assets/JSON/${language}.json`) // Assuming data.json is your JSON file
       .then(response => response.json())
       .then(language => {
+        let userLearnLang=localStorage.getItem("lang");
+        console.log(userLearnLang,language);
         document.getElementById('siteLan').textContent = language.siteLan;
-        document.getElementById('heading').textContent = language.heading;
+        document.getElementById('heading').textContent = `${language.heading +language.lang[userLearnLang]+language.head2}`
         document.getElementById('startLearning').textContent = language.startLearning;
+        document.getElementById('lesson-flag').viewBox = language.flag[userLearnLang];
         document.getElementById('alreadyHave').textContent = language.alreadyHave;
         document.getElementById('fireHead').textContent = language.fireHead;
         document.getElementById('tickHead').textContent = language.tickHead;

@@ -1,8 +1,26 @@
 import arrayForProfiles from './leaderBfetch.js';
 // console.log(arrayForProfiles);
 const profileList = arrayForProfiles;
+const getUserDataFromSessionStorage = () => {
+  return JSON.parse(sessionStorage.getItem("user-info"))
+}
+const getLanguageFlagPath=(languageCode)=>{
+  console.log(`../assets/svg/country-flags/${languageCode}-flag.svg`)
+  return `../assets/svg/country-flags/${languageCode}-flag.svg`
+}
+
+const placeuserStatistics = () => {
+  let userData = getUserDataFromSessionStorage();
+  document.querySelector(".country-flag").src=getLanguageFlagPath(userData.learnLang);
+  document.querySelectorAll(".fire-text").forEach(item => item.textContent = userData.xp);
+  document.querySelectorAll(".heart-text").forEach(item => item.textContent = userData.hearts);
+  document.querySelectorAll(".gem-text").forEach(item => item.textContent = userData.gems);
+  const profilePicture = document.getElementById('profilePicture');
+  profilePicture.src = userData.profileImage;
+}
 
   sortingArray();
+  placeuserStatistics();
 function sortingArray(){
   profileList.forEach(profile=>{
     profileList.sort((a, b) => b.xp - a.xp );
@@ -86,7 +104,10 @@ function sortingArray(){
       if(userName == entry.name){
           const profHighlight = document.getElementById(`eachprofile_${index + 1}`);
           profHighlight.style.border = '1px solid red';
-          profHighlight.style.borderColor = '1px red';
+          profHighlight.style.borderColor = ' #84d8ff';
+          profHighlight.style.backgroundColor = ' #ddf4ff';
+          
+
       } 
 
       
@@ -97,6 +118,9 @@ function sortingArray(){
   function change(num){
     changeImage(num,profileList);
   }
+
+  
+  
   
   function changeImage(num,profileList){
     const addImage = document.getElementById('addImage');
