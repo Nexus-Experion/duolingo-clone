@@ -35,7 +35,7 @@
                 <li class="site-language-list-single">
                   <a
                     class="country-name-flag-language"
-                    onclick="setIndexSiteLanguage('./assets/JSON/landing-german.json','german')"
+                    onclick="setIndexSiteLanguage('../assets/JSON/landing-german.json','german')"
                     ><img
                       class="country-flag-language-selection"
                       src="./assets/svg/country-flags/de-flag.svg"
@@ -46,7 +46,7 @@
                 <li class="site-language-list-single">
                   <a
                     class="country-name-flag-language"
-                    onclick="setIndexSiteLanguage('./assets/JSON/landing-hindi.json','hindi')"
+                    onclick="setIndexSiteLanguage('../assets/JSON/landing-hindi.json','hindi')"
                     ><img
                       class="country-flag-language-selection"
                       src="./assets/images/india.png"
@@ -57,7 +57,7 @@
                 <li class="site-language-list-single">
                   <a
                     class="country-name-flag-language"
-                    onclick="setIndexSiteLanguage('./assets/JSON/landing-english.json','english')"
+                    onclick="setIndexSiteLanguage('../assets/JSON/landing-english.json','english')"
                     ><img
                       class="country-flag-language-selection"
                       src="./assets/images/english.png"
@@ -68,7 +68,7 @@
                 <li class="site-language-list-single">
                   <a
                     class="country-name-flag-language"
-                    onclick="setIndexSiteLanguage('./assets/JSON/landing-malayalam.json','malayalam')"
+                    onclick="setIndexSiteLanguage('../assets/JSON/landing-malayalam.json','malayalam')"
                     ><img
                       class="country-flag-language-selection"
                       src="./assets/images/india.png"
@@ -127,7 +127,7 @@
           </svg>
           <div class="countries-div">
             <ul class="countries-list" style="transform: translateX(0px)">
-              <li>
+              <li class="available-lang">
                 <a class="conuntry-one" onclick="selectLesson('es')">
                   <svg
                     class="country-flag-svg"
@@ -144,8 +144,8 @@
                   <span>SPANISH</span>
                 </a>
               </li>
-              <li>
-                <a class="conuntry-one" onclick="selectLesson('fe')">
+              <li class="available-lang">
+                <a class="conuntry-one" onclick="selectLesson('fr')">
                   <svg
                     class="country-flag-svg"
                     viewBox="0 132 82 66"
@@ -161,8 +161,8 @@
                   <span>FRENCH</span>
                 </a>
               </li>
-              <li>
-                <a class="conuntry-one" onclick="selectLesson('ge')">
+              <li class="available-lang">
+                <a class="conuntry-one" onclick="selectLesson('de')">
                   <svg
                     class="country-flag-svg"
                     viewBox="0 198 82 66"
@@ -178,7 +178,7 @@
                   <span>GERMAN</span>
                 </a>
               </li>
-              <li>
+              <li class="available-lang">
                 <a class="conuntry-one" onclick="selectLesson('ja')">
                   <svg
                     class="country-flag-svg"
@@ -602,24 +602,16 @@
                     <a href="https://blog.duolingo.com" tabindex="0">Blog</a>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/duolingo" tabindex="0"
-                      >Instagram</a
-                    >
+                    <a href="https://www.instagram.com/duolingo">Instagram</a>
                   </li>
                   <li>
-                    <a href="https://www.facebook.com/duolingo" tabindex="0"
-                      >Facebook</a
-                    >
+                    <a href="https://www.facebook.com/duolingo">Facebook</a>
                   </li>
                   <li>
-                    <a href="https://twitter.com/duolingo" tabindex="0"
-                      >Twitter</a
-                    >
+                    <a href="https://twitter.com/duolingo">Twitter</a>
                   </li>
                   <li>
-                    <a href="https://www.youtube.com/user/duolingo" tabindex="0"
-                      >YouTube</a
-                    >
+                    <a href="https://www.youtube.com/user/duolingo">YouTube</a>
                   </li>
                 </ul>
               </div>
@@ -631,26 +623,18 @@
             <div class="languageHeading">Site language:</div>
             <ul>
               <li class="languages">
-                <a class="singleLang" href="//en.duolingo.com" tabindex="0"
-                  >English</a
-                >
+                <a class="singleLang" href="//en.duolingo.com">English</a>
               </li>
 
               <li class="languages">
-                <a class="singleLang" href="//hi.duolingo.com" tabindex="0"
-                  >हिंदी</a
-                >
+                <a class="singleLang" href="//hi.duolingo.com">हिंदी</a>
               </li>
 
               <li class="languages">
-                <a class="singleLang" href="//ko.duolingo.com" tabindex="0"
-                  >മലയാളം</a
-                >
+                <a class="singleLang" href="//ko.duolingo.com">മലയാളം</a>
               </li>
               <li class="languages">
-                <a class="singleLang" href="//dn.duolingo.com" tabindex="0"
-                  >DEUTSCH</a
-                >
+                <a class="singleLang" href="//dn.duolingo.com">DEUTSCH</a>
               </li>
             </ul>
           </div>
