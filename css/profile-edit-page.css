@@ -94,6 +94,8 @@
 }
 
 .bottom-button{
+  display: flex;
+  justify-content: center;
   padding-top: 15px;
   padding-bottom: 15px;
   width: 100%;
@@ -115,4 +117,73 @@
   background:#58cc02;
   color: white;
   border: 2px solid #58cc02;
+}
+
+.description{
+  padding-top: 15px;
+}
+
+
+.hidden{
+  display: none!important;
+}
+
+/* Animation */
+.loading-balls-container {
+  display: flex;
+  background-color: #58cc02;
+  width: 100px;
+  justify-content: space-around;
+  padding: 10px;
+}
+.loading-balls-container .loading-ball {
+  background-color: currentcolor;
+  color: white;
+  height: 8px;
+  width: 8px;
+}
+.animation {
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-name: opacity-animation, scale-animation;
+  animation-timing-function: ease-in-out;
+}
+.second-animation {
+  animation-delay: 0.4s;
+}
+.third-animation {
+  animation-delay: 0.8s;
+}
+.loading-ball {
+  border-radius: 50%;
+}
+
+@keyframes scale-animation {
+  0% {
+    transform: scale(1);
+  }
+  33.3333% {
+    transform: scale(0.8);
+  }
+  66.6667% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes opacity-animation {
+  0% {
+    opacity: 1;
+  }
+  33.3333% {
+    opacity: 0.25;
+  }
+  66.6667% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
