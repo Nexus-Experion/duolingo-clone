@@ -1,6 +1,17 @@
 {
   "siteLan": "Site language: English",
-  "heading": "Learn Spanish in just 5 minutes a day. For free.",
+  "heading": "Learn ",
+  "lang":{
+    "es":"Spanish",
+    "fr":"French",
+    "de":"German",
+    "ja":"Japan"
+  },
+  "head2": " in just 5 minutes a day. For free.",
+  "flag":{
+    "de":"../assets/svg/country-flags/de-flag.svg",
+    "ja":"../assets/svg/country-flags/ja-flag.svg"
+  },
   "startLearning": "Start learning",
   "alreadyHave": "I ALREADY HAVE AN ACCOUNT",
   "secDivHeading": "The world's most popular way to learn Spanish online",
