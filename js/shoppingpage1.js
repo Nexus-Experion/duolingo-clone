@@ -1,36 +1,24 @@
 "use strict";
-const myButton = document.getElementById('heartButton');
-const mySpan = document.getElementById('text-in-button-heart-text');
-let userData = JSON.parse(sessionStorage.getItem("user-info") || "{}") || { gems: 0, hearts: 0 };
-let diamond = userData.gems;
-let hearts = userData.hearts;
 function checkSpanValue() {
-    console.log('entered');
-    const spanValue = parseInt(((mySpan === null || mySpan === void 0 ? void 0 : mySpan.textContent) || '0'), 10);
-    if (hearts >= 10) {
-        if (myButton)
-            myButton.disabled = true;
+    let userData = JSON.parse(sessionStorage.getItem("user-info") || '{}');
+    let hearts = userData.hearts;
+    console.log(userData.hearts);
+    let myButton = document.getElementById('heartButton');
+    if (!myButton)
+        return; // Handle the case when myButton is null
+    if (hearts >= 4) {
+        myButton.disabled = true;
+        const span = myButton.querySelector("span");
+        if (span) {
+            span.textContent = "Full";
+        }
     }
     else {
-        if (myButton) {
-            myButton.disabled = false;
-            myButton.style.color = 'rgb(var(--color-blue-space))';
-            const spanInsideButton = myButton.querySelector("span");
-            if (spanInsideButton)
-                spanInsideButton.textContent = "Buy";
+        myButton.disabled = false;
+        myButton.style.color = 'rgb(var(--color-blue-space))';
+        const span = myButton.querySelector("span");
+        if (span) {
+            span.textContent = "Buy";
         }
     }
 }
-if (mySpan)
-    mySpan.addEventListener('change', checkSpanValue);
-checkSpanValue();
-function calcDiamond() {
-    if (userData.gems >= 10 && userData.hearts < 5) {
-        userData.gems -= 10;
-        userData.hearts += 1;
-        sessionStorage.setItem("user-info", JSON.stringify(userData));
-        // Update hearts and gems display or any other necessary action
-    }
-}
-if (myButton)
-    myButton.addEventListener('click', calcDiamond);
