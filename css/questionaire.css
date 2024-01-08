@@ -1,5 +1,3 @@
-/* modified optimised css */
-
 body {
     overflow-x: hidden;
     max-width: 1000px;
@@ -84,6 +82,10 @@ body {
 }
 
 @media only screen and (min-width:0px) and (max-width:700px) {
+    .bottom-row {
+        border-top: none;
+    }
+
     .select-div-image {
         display: flex;
         flex-direction: column;
@@ -95,9 +97,53 @@ body {
         width: max-content
     }
 
-    .select-option-div {
-        width: fit-content
+    .select-div-option-name {
+        padding-right: 0px;
+        /* width: fit-content; */
     }
+
+    .question-overlay-page {
+        padding: 50px;
+    }
+
+    .mid-row {
+        padding: 40px;
+    }
+
+    .top-row-question-page-sections {
+        max-width: 200px;
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .bottom-row-question-page-sections {
+        padding: 20px;
+        /* border-top: none; */
+        /* height: 150px; */
+
+
+    }
+
+
+    .inner-empty-span {
+        padding: 10%;
+    }
+
+    .correct-left {
+        display: none;
+        visibility: hidden;
+        /* margin: 50px; */
+    }
+
+    .first-dialogue-container {
+        padding: 10px;
+    }
+
+    .select-option-div {
+        width: 60px;
+    }
+
+
 }
 
 .inner-green-bar,
@@ -231,6 +277,10 @@ body {
         grid-gap: 24px
     }
 
+    .select-div-option-name {
+        padding-right: 20px;
+    }
+
     .challenge-header h1 {
         font-size: 32px
     }
@@ -303,7 +353,7 @@ body {
 @media only screen and (min-width:0px) and (max-width:1000px) {
     .progress-bar-container {
         background-color: #e5e5e5;
-        width: 75vw;
+        width: 50vw;
         border-radius: 15px;
         height: 15px;
         position: relative;
@@ -739,7 +789,7 @@ body {
 
 .bottom-row {
     background-color: rgb(var(--color-snow));
-    border-top: 2px solid rgb(var(--color-swan));
+    /* border-top: 2px solid rgb(var(--color-swan)); */
     max-height: 120px;
     width: 100%
 }
@@ -747,7 +797,9 @@ body {
 @media only screen and (min-width:700px) and (max-width:1864px) {
     .bottom-row {
         min-height: 120px;
-        overflow: hidden
+        overflow: hidden;
+        border-top: 2px solid rgb(var(--color-swan));
+
     }
 
     .select-div-text {
@@ -796,7 +848,7 @@ body {
     text-align: center;
     font-size: 17px;
     display: flex;
-    padding-right: 20px
+    /* padding-right: 20px */
 }
 
 .select-div-option-no {

@@ -457,6 +457,8 @@ let goToShop = () => {
 //navigate to learn page
 
 let exitToLearn = () => {
+    localStorage.setItem('xpCount', xpCount + 1);
+    localStorage.setItem('hearts', heartCount)
     window.location.href = './learn.html';
 }
 

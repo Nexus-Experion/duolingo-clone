@@ -32,8 +32,7 @@ const animationLoader = (id, path, autoplays = false) => {
 }
 
 
-// setSiteLanguage();
-
+//load all animations in index page
 animationLoader("left-logging-header", headerPath, true)
 animationLoader("phone-animation", floatingPhone, true)
 animationLoader("duolingo-feature-animation-stay-motivated", stayMotivated, true)
@@ -41,6 +40,7 @@ animationLoader("duolingo-feature-animation-personalised-learning", personalised
 animationLoader("duolingo-feature-animation-backed-by-science", backedByScience, true)
 animationLoader("duolingo-feature-animation-free-fun-effective", freeFunEffective, true)
 
+//function to set language
 
 const setIndexSiteLanguage = (path, language) => {
     fetch(path)
