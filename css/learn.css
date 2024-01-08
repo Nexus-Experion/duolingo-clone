@@ -73,10 +73,6 @@
 .profile {
   border-radius: 50%;
 }
-country-flag{
-  border: 2px solid transparent;
-
-}
 .content-container {
   padding-left: 24px;
   display: flex;
@@ -152,6 +148,7 @@ country-flag{
   background-color: rgb(var(--color-cosmos));
   color: rgb(var(--color-snow-always-light));
   box-shadow: rgb(var(--color-nebula)) 0 4px 0;
+  cursor:pointer;
   transition: box-shadow translate 0.2s ease;
 }
 
@@ -221,6 +218,9 @@ country-flag{
 .section-name-header .arrow {
   position: absolute;
   left: 0;
+}
+.arrow img{
+  cursor: pointer;
 }
 .section-name-header h2 {
   color: rgb(var(--color-hare));
@@ -560,7 +560,7 @@ circle-progress::part(value) {
 }
 /* Section List Styling  */
 .section-container {
-  background-color: rgb(var(--color-champion));
+  background-color: rgb(var(--color-rookie));
   color: rgb(var(--color-snow-always-light));
   border-radius: 16px;
   display: grid;
@@ -610,7 +610,7 @@ circle-progress::part(value) {
   text-transform: uppercase;
   padding: 0 16px;
   position: absolute;
-  color: rgb(var(--color-champion));
+  color: rgb(var(--color-rookie));
   background: rgb(var(--color-snow));
   border: 2px solid rgb(var(--color-snow));
   box-shadow: 0 2px 0 rgb(var(--color-snow), 0.5);
@@ -620,6 +620,9 @@ circle-progress::part(value) {
 }
 .section-button:hover {
   filter: brightness(0.9);
+}
+.active-section-button{
+  cursor: pointer;
 }
 .section-banner-image {
   height: 210px;

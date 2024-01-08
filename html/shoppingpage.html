@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Duolingo</title>
-    <link rel="icon" href="../assets/images/favicon.ico">
+    <title>Duolingo-shopping</title>
+    <link rel="stylesheet" href="../css/leaderboard.css" />
     <link rel="stylesheet" href="../css/learn.css" />
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/shoppingpage.css">
   </head>
   <body>
     <div class="main-container">
@@ -19,8 +20,8 @@
           />
         </div>
         <div class="sidebar-buttons">
-          <a href="" class="button-in-sidebar">
-            <span class="icon-and-text-wrap selected">
+          <a href="./learn.html" class="button-in-sidebar">
+            <span class="icon-and-text-wrap ">
               <div class="icon-in-button">
                 <img src="../assets/svg/home-in-sidebar.svg" alt="home-icon" />
               </div>
@@ -48,7 +49,7 @@
             </span>
           </a>
           <a href="./shoppingpage.html" class="button-in-sidebar">
-            <span class="icon-and-text-wrap">
+            <span class="icon-and-text-wrap selected">
               <div class="icon-in-button">
                 <img src="../assets/svg/shop-in-sidebar.svg" alt="home-icon" />
               </div>
@@ -89,7 +90,7 @@
                     class="profile"
                   />
                 </div>
-                <span class="text-in-button fire-text"> 0 </span>
+                <span class="text-in-button fire-text"> 400 </span>
               </span>
             </a>
             <a href="" class="button-in-sidebar">
@@ -101,7 +102,7 @@
                     class="profile"
                   />
                 </div>
-                <span class="text-in-button gem-text"> 0 </span>
+                <span class="text-in-button gem-text"> 7393 </span>
               </span>
             </a>
             <a href="" class="button-in-sidebar">
@@ -113,7 +114,7 @@
                     class="profile"
                   />
                 </div>
-                <span class="text-in-button heart-text"> 0 </span>
+                <span class="text-in-button heart-text"> 5 </span>
               </span>
             </a>
           </div>
@@ -140,8 +141,8 @@
           </div>
           <div class="try-super-box">
             <div class="league-header-with-link">
-              <h2>Amethyst League</h2>
-              <h2><a href="leaderboard.html">View League</a></h2>
+              <h2>Nexus League</h2>
+              <h2><a href="">View League</a></h2>
             </div>
             <div class="league-header-with-link">
               <img
@@ -149,34 +150,67 @@
                 alt="amethyst-league-icon"
               />
               <div class="league-text-container">
-                <h2>You're ranked <span>#29</span></h2>
+                <h2>You're ranked <span id="yourRank">#29</span></h2>
                 <div class="description">
-                  You moved down to the demotion zone!
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!----------------------------------- Scrollable area showing units ------------------------------------------------>
-        <div class="scrollable-lesson-div active" onclick="closeAllOpenDialogBoxes()">
+          
         </div>
+        <!----------------------------------- Scrollable area showing units ------------------------------------------------>
+        <div class="scrollable-lesson-div">
+            <div class="center-container">
+                <div class="flyingowl">
+                    <div class="divowlhead">
+                        <img class="owlpic" src="https://d35aaqx5ub95lt.cloudfront.net/images/super/8183c77cba99daf1e900fb5f9b0cc671.svg" alt="">
+                        <div class="heading">
+                            <div class="divheadin">
+                                <span class="firstHeading">
+                                    Start a 
+                                        2 week free 
+                                    trial to enjoy exclusive Super benefits
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="logInButton" id="superLink" onclick="loginButtonAnimation()">
+                        <span>Start my free 14 days</span>
+                    </button>
+                    <img class="super"  src="https://d35aaqx5ub95lt.cloudfront.net/images/super/2e50c3e8358914df5285dc8cf45d0b4c.svg" alt="">
 
+                </div>
+                <div class="hearthead">Hearts</div>
+                <ul class="shoplist">
+                    <li class="divinShopping">
+                        <img class="heart"  src="https://d35aaqx5ub95lt.cloudfront.net/images/hearts/547ffcf0e6256af421ad1a32c26b8f1a.svg" alt="">
+                        <button class="heartButton" id="heartButton" onclick="checkSpanValue()">
+                            <span >Full</span>
+                        </button>
+                        <div class="divinlist">Refill Hearts</div>
+                        <p class="parainlist">Get full hearts so you can worry less about making mistakes in a lesson</p>
+                    </li>
+                    <li class="divinShopping">
+                        <img class="heart"  src="https://d35aaqx5ub95lt.cloudfront.net/images/hearts/4f3842c690acf9bf0d4b06e6ab2fffcf.svg" alt="">
+                        <button class="freetrialButton" onclick="window.location.href = './superduolingo.html';">
+                            <span>Free Trials</span>
+                        </button>
+                        <div class="divinlist">Unlimited Hearts</div>
+                        <p class="parainlist">Never run out of hearts with Super!</p>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
       </div>
     </div>
-    <div class="loading-screen hidden">
-      <div class="text-animation-container">
-        <div class="lesson-loading-svg" id="owl-walk-animation"></div>
-        <span>Did You Know : Spanish is the second most spoken language globally, with over 460 million native speakers.</span>
-      </div>
+    
       
-    </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/js-circle-progress/dist/circle-progress.min.js"
-      type="module"
-    ></script>
+    <script src="../js/shoppingpage.js"></script>
+    
+    <script src="../js/learn.js"></script>
+    <script type="module"   src="../js/updateShopData.js"></script>
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.7/lottie.min.js"></script>
-  <script src="../js/learn.js"></script>
-  <script src="../js/updateUserData.js" type="module"></script>
-  
 </html>
