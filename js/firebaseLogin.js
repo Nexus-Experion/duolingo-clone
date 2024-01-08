@@ -5,8 +5,8 @@ import { app } from "./firebaseConfig.js";
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-let emailInput = document.getElementById("emailInput");
-let passwordInput = document.getElementById("passInput");
+let emailInput = document.getElementById("email-input");
+let passwordInput = document.getElementById("password-input");
 let mainForm = document.getElementById("main-form");
 
 let emailErrorMessage = document.getElementById('email-error-message');
@@ -26,26 +26,12 @@ let signInUser = (event) => {
       console.log(dbref);
 
       getDoc(dbref).then((docSnapshot) => {
+        console.log("Document data:", docSnapshot.data());
         if (docSnapshot.exists()) {
           const userData = docSnapshot.data();
-          sessionStorage.setItem(
-            "user-info",
-            JSON.stringify({
-              email: userData.email,
-              name: userData.name,
-              age: userData.age,
-              gems: userData.gems,
-              xp: userData.xp,
-              hearts: userData.hearts,
-              creationDate: userData.creationDate,
-
-              learnLang: userData.learnLang,
-              sectionId: userData.sectionId,
-              currentUnit: userData.currentUnit,
-              currentChapter: userData.currentChapter
-            })
-          );
-          // sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+          console.log("userData = ", userData);
+          sessionStorage.setItem("user-info", JSON.stringify(userData));
+          
           window.location.href = "./learn.html";
         }
       });
@@ -97,12 +83,12 @@ const validateEntry = (event) =>{
 
     if (!passwordInput.value) {
         passwordErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Enter a Password.</span>';
-        divPassword.style.border = '2px solid #ff0000'; // Change border color to red  
+        passwordInput.style.border = '2px solid #ff0000'; // Change border color to red  
         isValid = false;
     }
     else{
         passwordErrorMessage.innerHTML = '';
-        divPassword.style.border = ''; // Reset to the default border color
+        passwordInput.style.border = ''; // Reset to the default border color
     }
     return isValid;
 }

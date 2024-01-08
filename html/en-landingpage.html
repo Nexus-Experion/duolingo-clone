@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/landingpage.css" />
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/learn.css">
     <script src="../js/landingpage.js" defer></script>
     <title>Duolingo Clone</title>
   </head>
@@ -126,7 +127,7 @@
                   <svg class="country-flag-svg" viewBox="0 66 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
                   </svg>
-                  <span>SPANISH</span>
+                  <span id="es">SPANISH</span>
                 </a>
               </li>
               <li>
@@ -134,7 +135,7 @@
                   <svg class="country-flag-svg" viewBox="0 132 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
                   </svg>
-                  <span>FRENCH</span>
+                  <span id="fr">FRENCH</span>
                 </a>
               </li>
               <li>
@@ -142,7 +143,7 @@
                   <svg class="country-flag-svg" viewBox="0 198 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
                   </svg>
-                  <span>GERMAN</span>
+                  <span id="ge">GERMAN</span>
                 </a>
               </li>
               <li>
@@ -150,7 +151,7 @@
                   <svg class="country-flag-svg" viewBox="0 264 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
                   </svg>
-                  <span>JAPANESE</span>
+                  <span id="jp">JAPANESE</span>
                 </a>
               </li>
               <li>
@@ -158,7 +159,7 @@
                   <svg class="country-flag-svg" viewBox="0 330 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
                   </svg>
-                  <span>ITALIAN</span>
+                  <span id="">ITALIAN</span>
                 </a>
               </li>
               <li>
@@ -181,35 +182,35 @@
 
               <li>
                 <a class="conuntry-one" href="">
-                  <svg class="country-flag-svg" viewBox="0 396 82 66" style="height: 28.9756px; width: 36px;">
+                  <svg class="country-flag-svg" viewBox="0 528 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
                   </svg>
-                  <span>KOREAN</span>
+                  <span>RUSSIAN</span>
                 </a>
               </li>
               <li>
                 <a class="conuntry-one" href="">
-                  <svg class="country-flag-svg" viewBox="0 462 82 66" style="height: 28.9756px; width: 36px;">
+                  <svg class="country-flag-svg" viewBox="0 594 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
                   </svg>
-                  <span>CHINESE</span>
+                  <span>PORTUGESE</span>
                 </a>
               </li>
 
               <li>
                 <a class="conuntry-one" href="">
-                  <svg class="country-flag-svg" viewBox="0 132 82 66" style="height: 28.9756px; width: 36px;">
+                  <svg class="country-flag-svg" viewBox="0 660 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
                   </svg>
-                  <span>FRENCH</span>
+                  <span>TURKISH</span>
                 </a>
               </li>
               <li>
                 <a class="conuntry-one" href="">
-                  <svg class="country-flag-svg" viewBox="0 198 82 66" style="height: 28.9756px; width: 36px;">
+                  <svg class="country-flag-svg" viewBox="0 726 82 66" style="height: 28.9756px; width: 36px;">
                     <image height="3168" href="	https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg" width="82" xlink:href="../assets/svg/Flags_list.svg"></image>
                   </svg>
-                  <span>GERMAN</span>
+                  <span>DUTCH</span>
                 </a>
               </li>
             </ul>
@@ -222,22 +223,36 @@
       
       <script>
         const countriesList = document.querySelector('.countries-list');
-        const itemsToShow = 7;
-        const itemsToScroll = 2;
+        const itemsToScroll = 1;
         let currentIndex = 0;
 
         function scrollNavbar(direction) {
-            const itemWidth = countriesList.firstElementChild.offsetWidth + 10; // 10 is the gap between items
+            const itemWidth = document.querySelector('.conuntry-one').offsetWidth + 150;
 
             if (direction === 'left' && currentIndex > 0) {
                 currentIndex -= itemsToScroll;
-            } else if (direction === 'right' && currentIndex < countriesList.children.length - itemsToShow) {
+                console.log("Left: ", currentIndex);
+            }
+            else if (direction === 'left' && currentIndex == 0)
+            {
+              currentIndex = 3;
+              console.log("Left infinite: ", currentIndex)
+            } 
+
+            else if (direction === 'right' && currentIndex <= 2) {
                 currentIndex += itemsToScroll;
+                console.log("Right Up: ", currentIndex);
+            } 
+
+            else if (direction === 'right' && currentIndex == 3) {
+                currentIndex = 0;
+                console.log("Right Down: ", currentIndex);
             }
 
             countriesList.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
         }
-      </script>
+
+    </script>
 
     </header>
   </body>

@@ -1,5 +1,5 @@
 import { getFirestore, setDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { app } from "./firebaseConfig.js";
 
 const db = getFirestore();
@@ -16,75 +16,34 @@ let nameErrorMessage = document.getElementById('name-error-message');
 let emailErrorMessage = document.getElementById('email-error-message');
 let passwordErrorMessage = document.getElementById('password-error-message');
 
-let RegisterUser = async (event) => {
-    event.preventDefault();
-
-    if(!validate(event))
-    {
-        return;
-    }
-
+const createAccount = async () => {
     try {
         const credentials = await createUserWithEmailAndPassword(auth, emailInp.value, passwordInp.value);
+        await sendEmailVerification(credentials.user);
 
-        console.log("Account created successfully");
-
-        const currentDate = new Date();
-        
-        const userDocRef = doc(db, 'UsersAuthList', credentials.user.uid);
-        console.log(credentials.user);
-
-        await setDoc(userDocRef, {
-            userId: credentials.user.uid,
-            age: ageInp.value,
-            name: nameInp.value,
-            email: emailInp.value,
-            gems: 500,
-            xp: 0,
-            hearts: 5,
-            creationDate: currentDate,
-            learnLang: localStorage.getItem('selectedLang'),
-            sectionNumber: 1,
-            completedUnits: 1,
-            completedChapters: 1,
-            currentLesson: 1,
-            profileImage: "../assets/svg/profile-image-temp.svg"
-        });
-
-        const dbref = doc(db, 'UsersAuthList', credentials.user.uid);
-
-            getDoc(dbref).then((docSnapshot) => {
-                if (docSnapshot.exists()) {
-                    const userData = docSnapshot.data();
-                    sessionStorage.setItem("user-info", JSON.stringify(userData));
-
-                    console.log("User Data: ", userData);
-                    // sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
-                    window.location.href = "./learn.html";
-                }
-            });
-
+        console.log("Verification email sent successfully");
+        return credentials.user.uid;
     } catch (error) {
-
-        switch(error.code){
-            case "auth/email-already-in-use":
-                emailErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Email Already In Use.</span>';
-                emailInp.style.border = '2px solid #ff0000'; // Change border color to red
-                break;
-            case "auth/invalid-email":
-                emailErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Invalid Email Id</span>';
-                emailInp.style.border = '2px solid #ff0000'; // Change border color to red
-                break;
-            case "auth/weak-password":
-                passwordErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Weak Password</span>';
-                passwordInp.style.border = '2px solid #ff0000'; // Change border color to red
-
-        }
-
-        // alert(error.message);
-        console.log(error.code);
-        console.log(error.message);
+        handleAuthError(error);
+        return null;
     }
+};
+
+const handleAuthError = (error) => {
+    // ... (same as your existing error handling logic)
+};
+
+const redirectToLearnPage = (userId) => {
+    const dbref = doc(db, 'UsersAuthList', userId);
+
+    getDoc(dbref).then((docSnapshot) => {
+        if (docSnapshot.exists()) {
+            const userData = docSnapshot.data();
+            sessionStorage.setItem("user-info", JSON.stringify(userData));
+            console.log("User Data: ", userData);
+            window.location.href = "./learn.html";
+        }
+    });
 };
 
 const validate = (event) => {
@@ -143,4 +102,61 @@ const validate = (event) => {
     return isValid;
 }
 
-mainForm.addEventListener('submit', RegisterUser);
+mainForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (!validate(event)) {
+        return;
+    }
+
+    const userId = await createAccount();
+
+    if (userId) {
+
+        const user = auth.currentUser;
+        const isEmailVerified = user.emailVerified;
+        console.log(isEmailVerified);
+        // Polling function to check email verification status
+        const checkEmailVerification = async () => {
+            const user = auth.currentUser;
+
+            if (user && user.emailVerified) {
+                // If the email is verified, set user data and redirect
+                await setUserInFirestore(userId);
+                redirectToLearnPage(user.uid);
+            } else {
+                // If the email is not verified, wait for a short interval and check again
+                setTimeout(checkEmailVerification, 1000); // Check every 1 second (adjust as needed)
+                console.log("Checked")
+            }
+        };
+
+        // Start the polling function
+        checkEmailVerification();
+    }
+});
+
+// Function to set user data in Firestore
+const setUserInFirestore = async (userId) => {
+    const currentDate = new Date();
+    const userDocRef = doc(db, 'UsersAuthList', userId);
+
+    await setDoc(userDocRef, {
+        userId: userId,
+        age: ageInp.value,
+        name: nameInp.value,
+        email: emailInp.value,
+        gems: 500,
+        xp: 0,
+        hearts: 5,
+        creationDate: currentDate,
+        learnLang: localStorage.getItem('selectedLang'),
+        sectionNumber: 1,
+        completedUnits: 1,
+        completedChapters: 1,
+        currentLesson: 1,
+        profileImage: "../assets/svg/profile-image-temp.svg"
+    });
+
+    console.log("User data set in Firestore");
+};
