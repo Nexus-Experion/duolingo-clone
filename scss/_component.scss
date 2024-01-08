@@ -38,10 +38,7 @@
 	flex-grow: 1;
 	padding: 10px 15px 20px;
 }
-#left-logging-header {
-	height: 466px;
-	width: 464px;
-}
+
 .landing-navbar {
 	align-items: center;
 	display: flex;
@@ -236,6 +233,10 @@
 		padding: 48px 0;
 		width: 988px;
 	}
+	#left-logging-header {
+		height: 466px;
+		width: 464px;
+	}
 	.left-logging-header {
 		margin-right: -65px;
 	}
@@ -309,6 +310,10 @@
 		height: 360px;
 		width: 360px;
 	}
+	#left-logging-header {
+		height: 355px;
+		width: 400px;
+	}
 	.right-logging-header {
 		flex: initial;
 		h1 {
@@ -346,6 +351,9 @@
 @media only screen and (min-width:0px) and (max-width: 750px) {
 	.scrollable-navabar-header {
 		display: none;
+	}
+	#left-logging-header {
+		
 	}}
 @media only screen and (min-width:0px) and (max-width: 680px) {
 	.duolingo-features-text-head{
@@ -422,7 +430,7 @@
 	width: 100%;
 }
 .floating-animation{
-	margin-bottom: -6%;
+	// margin-bottom: -25%;
 	aspect-ratio: 1448/708;
     display: flex;
     min-width: 696px;
