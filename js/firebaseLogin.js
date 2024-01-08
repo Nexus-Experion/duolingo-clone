@@ -37,6 +37,8 @@ let signInUser = (event) => {
       });
     })
     .catch((error) => {
+      document.getElementById('login-span').classList.toggle('hidden');
+      document.getElementById('loading-balls-container').classList.toggle('hidden');
 
       switch (error.code) {
         case "wrong-password":
@@ -73,22 +75,22 @@ const validateEntry = (event) =>{
     let isValid = true;
     if (!emailInput.value) {
         emailErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Enter an Email</span>';
-        emailInput.style.border = '2px solid #ff0000'; // Change border color to red  
+        emailInput.style.border = '2px solid #ff0000';
         isValid = false;
     }
     else{
         emailErrorMessage.innerHTML = '';
-        emailInput.style.border = ''; // Reset to the default border color
+        emailInput.style.border = '';
     }
 
     if (!passwordInput.value) {
         passwordErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Enter a Password.</span>';
-        passwordInput.style.border = '2px solid #ff0000'; // Change border color to red  
+        passwordInput.style.border = '2px solid #ff0000';
         isValid = false;
     }
     else{
         passwordErrorMessage.innerHTML = '';
-        passwordInput.style.border = ''; // Reset to the default border color
+        passwordInput.style.border = '';
     }
     return isValid;
 }
