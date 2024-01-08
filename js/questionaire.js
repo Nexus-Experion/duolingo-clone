@@ -1,8 +1,7 @@
 let heartCount;
 let clickCount = 0;
 let progressValue = 0;
-
-
+let learnLang;
 
 
 //get heart count from session storage
@@ -12,6 +11,7 @@ if (sessionUserData) {
     const userInfo = JSON.parse(sessionUserData);
 
     heartCount = userInfo.hearts;
+    learnLang = userInfo.learnLang;
     console.log(heartCount + "heartss");
 }
 
@@ -211,7 +211,7 @@ let xpCount = -1;
 //load question by fetching from serverless endpoint
 let questionLoad = () => {
 
-    let learnLang = localStorage.getItem("selectedLang");
+    // let learnLang = localStorage.getItem("selectedLang");
     fetch(`https://duolingo-serverless-endpoint.vercel.app/api/question?lang=${learnLang}`).then(response => response.json())
         .then(data => {
             //questionarie page funtionality
