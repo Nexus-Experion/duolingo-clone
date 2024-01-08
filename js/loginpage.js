@@ -1,13 +1,13 @@
-const getStartedButtonAnimation = (event) => {
-    document.getElementById("buttonLogInButton").classList.toggle('clicked');
-    setTimeout(() => document.getElementById("buttonLogInButton").classList.toggle('clicked'), 300)
+const loginAccountButtonAnimation = (event) => {
+    document.getElementById("create-account-button").classList.toggle('clicked');
+    setTimeout(() => document.getElementById("create-account-button").classList.toggle('clicked'), 300)
     console.log("Reached Animation");
 }
 
-const getSignInButton = () => {
-    document.getElementById("buttonSignButton").classList.toggle('clicked');
-    setTimeout(() => document.getElementById("buttonSignButton").classList.toggle('clicked'), 300)
-    window.location.href="./signup.html"
+const signupButtonAnimation = () => {
+    document.getElementById("login-button").classList.toggle('clicked');
+    setTimeout(() => document.getElementById("login-button").classList.toggle('clicked'), 300)
+    window.location.href="../html/languages-select-page.html";
 }
 
 const validateEntry = (event) =>{
@@ -39,13 +39,4 @@ const validateEntry = (event) =>{
         errorPassword.innerHTML = '';
         divPassword.style.border = ''; // Reset to the default border color
     }
-    // if(emailInput.value && passwordInput.value){
-    //     window.location.href="./learn.html"
-    // }
 }
-// var emailInput = document.getElementById('emailInput');
-// const borderColorChange = (event) =>{
-//     event.preventDefault();
-//     emailInput.style.border = '2px solid red'; // Change border color to red  
-
-// }
