@@ -364,7 +364,7 @@
 .scrollable-navbar-nav {
     display: flex;
     align-items: center;
-    width: 85%;
+    width: 69%;
 }
 
 .left-arrow-svg {
@@ -387,10 +387,12 @@
 
 .countries-list {
     transition: transform .5s ease-in-out;
-    display: flex;
     gap: 20px;
     list-style: none;
     padding-left: 0px;
+
+    display: flex;
+    list-style: none;
 }
 
 .conuntry-one {
