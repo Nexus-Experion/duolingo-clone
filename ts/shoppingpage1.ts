@@ -1,37 +1,34 @@
-const myButton: HTMLButtonElement | null = document.getElementById('heartButton') as HTMLButtonElement;
-const mySpan: HTMLElement | null = document.getElementById('text-in-button-heart-text');
-let userData: { gems: number, hearts: number } = JSON.parse(sessionStorage.getItem("user-info") || "{}") || { gems: 0, hearts: 0 };
-let diamond: number = userData.gems;
-let hearts: number = userData.hearts;
-
-
-
-
+let myButton: HTMLButtonElement | null = document.getElementById('heartButton') as HTMLButtonElement | null;
 
 function checkSpanValue() {
-  console.log('entered');
-  const spanValue: number = parseInt((mySpan?.textContent || '0'), 10);
-  
-  if (hearts >= 10) {
-    if (myButton) myButton.disabled = true;
-  } else {
-    if (myButton) {
+    const userDataString = sessionStorage.getItem("user-info");
+
+let userData: { gems: number; hearts: number } | null = null;
+
+if (userDataString !== null) {
+  userData = JSON.parse(userDataString) as { gems: number; hearts: number };
+}
+
+  let hearts: number = userData ? userData.hearts : 0; // Provide a default value if userData is null
+
+  console.log(userData?.hearts); // Optional chaining operator to avoid errors if userData is null
+
+  if (hearts && myButton) {
+    if (hearts >= 4) {
+      myButton.disabled = true;
+      let spanElement = myButton.querySelector("span");
+      if (spanElement) {
+        spanElement.textContent = "Full";
+      }
+    } else {
       myButton.disabled = false;
       myButton.style.color = 'rgb(var(--color-blue-space))';
-      const spanInsideButton = myButton.querySelector("span");
-      if (spanInsideButton) spanInsideButton.textContent = "Buy";
+      let spanElement = myButton.querySelector("span");
+      if (spanElement) {
+        spanElement.textContent = "Buy";
+      }
     }
   }
 }
-if (mySpan) mySpan.addEventListener('change', checkSpanValue);
-checkSpanValue();
 
-function calcDiamond() {
-  if (userData.gems >= 10 && userData.hearts < 5) {
-    userData.gems -= 10;
-    userData.hearts += 1;
-    sessionStorage.setItem("user-info", JSON.stringify(userData));
-    // Update hearts and gems display or any other necessary action
-  }
-}
-if (myButton) myButton.addEventListener('click', calcDiamond);
+checkSpanValue();
