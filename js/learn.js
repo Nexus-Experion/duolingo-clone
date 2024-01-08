@@ -14,7 +14,6 @@ const getLanguageFullForm=(languageCode)=>{
   }
 }
 const getLanguageFlagPath=(languageCode)=>{
-  console.log(`../assets/svg/country-flags/${languageCode}-flag.svg`)
   return `../assets/svg/country-flags/${languageCode}-flag.svg`
 }
 const closeOtherOpenDialogBoxes = (event) => {
