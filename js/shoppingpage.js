@@ -1,6 +1,6 @@
 
 
-updateOnLoad();
+
 let myButton = document.getElementById('heartButton');
 let mySpan = document.getElementById('text-in-button heart-text');
 let userData = JSON.parse(sessionStorage.getItem("user-info"));
