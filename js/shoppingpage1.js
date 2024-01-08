@@ -5,9 +5,9 @@ let userData = JSON.parse(sessionStorage.getItem("user-info") || "{}") || { gems
 let diamond = userData.gems;
 let hearts = userData.hearts;
 function checkSpanValue() {
-    console.log('entered');
-    const spanValue = parseInt(((mySpan === null || mySpan === void 0 ? void 0 : mySpan.textContent) || '0'), 10);
-    if (hearts >= 8) {
+    let userData = JSON.parse(sessionStorage.getItem("user-info") || "{}") || { gems: 0, hearts: 0 };
+    console.log(userData.hearts);
+    if (userData.hearts >= 5) {
         if (myButton)
             myButton.disabled = true;
     }
@@ -18,14 +18,12 @@ function checkSpanValue() {
             const spanInsideButton = myButton.querySelector("span");
             if (spanInsideButton)
                 spanInsideButton.textContent = "Buy";
-        }
-    }
-}
-if (mySpan)
-    mySpan.addEventListener('change', checkSpanValue);
-checkSpanValue();
-function calcDiamond() {
-    if (userData.gems >= 10 && userData.hearts < 10) {
+            
+
+            function calcDiamond() {
+    
+
+    if (userData.gems >= 10 && userData.hearts < 5) {
         userData.gems -= 10;
         userData.hearts += 1;
         sessionStorage.setItem("user-info", JSON.stringify(userData));
@@ -33,4 +31,23 @@ function calcDiamond() {
     }
 }
 if (myButton)
-    myButton.addEventListener('click', calcDiamond);
+    myButton.addEventListener('click', calcDiamond,checkSpanValue);    
+
+        }
+    }
+}
+// if (myButton)
+//     myButton.addEventListener('click', checkSpanValue);
+
+function calcDiamond() {
+    
+
+    if (userData.gems >= 10 && userData.hearts < 5) {
+        userData.gems -= 10;
+        userData.hearts += 1;
+        sessionStorage.setItem("user-info", JSON.stringify(userData));
+        // Update hearts and gems display or any other necessary action
+    }
+}
+if (myButton)
+    myButton.addEventListener('click', calcDiamond,checkSpanValue);
