@@ -77,8 +77,8 @@ else {
 }
 
 const selectLanguage = (event) =>{
-    let button = event.target.closest("button");
-    selectedLang = button.querySelector("h2").id;
+    let button = event.target.closest("a");
+    selectedLang = button.querySelector("span").id;
     localStorage.setItem('selectedLang', selectedLang);
 
     window.location.href = "../html/signup.html";
