@@ -76,10 +76,10 @@ else {
     setIndexSiteLanguage(`../assets/JSON/landing-english.json`, 'english')
 }
 
-const selectLanguage = (event) =>{
+const selectLanguage = (event) => {
     let button = event.target.closest("a");
     selectedLang = button.querySelector("span").id;
     localStorage.setItem('selectedLang', selectedLang);
 
-    window.location.href = "../html/signup.html";
+    window.location.href = "./html/language.html";
 }
