@@ -1,7 +1,7 @@
-function selectLesson(lang){
-    
+function selectLesson(lang) {
+
     console.log("entered");
     console.log(lang);
-    localStorage.setItem("lang",lang);
-    window.location.href = './language.html';
+    localStorage.setItem("lang", lang);
+    window.location.href = "./html/language.html";
 }
