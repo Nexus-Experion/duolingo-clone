@@ -1,10 +1,10 @@
 
-const headerPath = '../assets/json-animations/header.json';
-const floatingPhone = '../assets/json-animations/floating-phone.json';
-const stayMotivated = '../assets/json-animations/stay-motivated.json';
-const personalisedLearning = '../assets/json-animations/personalised-learning.json';
-const backedByScience = '../assets/json-animations/backed-by-science.json';
-const freeFunEffective = '../assets/json-animations/free-fun-effective.json';
+const headerPath = 'assets/json-animations/header.json';
+const floatingPhone = 'assets/json-animations/floating-phone.json';
+const stayMotivated = 'assets/json-animations/stay-motivated.json';
+const personalisedLearning = 'assets/json-animations/personalised-learning.json';
+const backedByScience = 'assets/json-animations/backed-by-science.json';
+const freeFunEffective = 'assets/json-animations/free-fun-effective.json';
 
 const alreadyAccountButtonAnimation = () => {
     document.getElementById("already-have-account-button").classList.toggle('clicked');
@@ -32,8 +32,7 @@ const animationLoader = (id, path, autoplays = false) => {
 }
 
 
-// setSiteLanguage();
-
+//load all animations in index page
 animationLoader("left-logging-header", headerPath, true)
 animationLoader("phone-animation", floatingPhone, true)
 animationLoader("duolingo-feature-animation-stay-motivated", stayMotivated, true)
@@ -41,6 +40,7 @@ animationLoader("duolingo-feature-animation-personalised-learning", personalised
 animationLoader("duolingo-feature-animation-backed-by-science", backedByScience, true)
 animationLoader("duolingo-feature-animation-free-fun-effective", freeFunEffective, true)
 
+//function to set language
 
 const setIndexSiteLanguage = (path, language) => {
     fetch(path)
@@ -70,16 +70,16 @@ const setIndexSiteLanguage = (path, language) => {
 
 translateLanguage = localStorage.getItem("translateLanguage")
 if (translateLanguage != undefined) {
-    setIndexSiteLanguage(`../assets/JSON/landing-${translateLanguage}.json`, translateLanguage)
+    setIndexSiteLanguage(`assets/JSON/landing-${translateLanguage}.json`, translateLanguage)
 }
 else {
-    setIndexSiteLanguage(`../assets/JSON/landing-english.json`, 'english')
+    setIndexSiteLanguage(`assets/JSON/landing-english.json`, 'english')
 }
 
-const selectLanguage = (event) =>{
-    let button = event.target.closest("button");
-    selectedLang = button.querySelector("h2").id;
-    localStorage.setItem('selectedLang', selectedLang);
+// const selectLanguage = (event) => {
+//     let button = event.target.closest("a");
+//     selectedLang = button.querySelector("span").id;
+//     localStorage.setItem('selectedLang', selectedLang);
 
-    window.location.href = "../html/signup.html";
-}
+//     window.location.href = "./html/language.html";
+// }

@@ -38,10 +38,7 @@
 	flex-grow: 1;
 	padding: 10px 15px 20px;
 }
-#left-logging-header {
-	height: 466px;
-	width: 464px;
-}
+
 .landing-navbar {
 	align-items: center;
 	display: flex;
@@ -170,6 +167,10 @@
 	padding-left: 40px;
 	padding-right: 40px;
 }
+.available-lang{
+	cursor: pointer;
+}
+
 .scrollable-navbar-nav {
 	display: flex;
 	align-items: center;
@@ -196,12 +197,14 @@
 	gap: 20px;
 	list-style: none;
 	padding-left: 0px;
+	cursor: pointer;
 }
 .conuntry-one {
 	display: flex;
 	align-items: center;
 	color: $color_9;
 	text-decoration: none;
+	cursor: pointer;
 }
 .country-flag-svg {
 	margin-right: 10px;
@@ -229,6 +232,10 @@
 		margin: 0 auto;
 		padding: 48px 0;
 		width: 988px;
+	}
+	#left-logging-header {
+		height: 466px;
+		width: 464px;
 	}
 	.left-logging-header {
 		margin-right: -65px;
@@ -303,6 +310,10 @@
 		height: 360px;
 		width: 360px;
 	}
+	#left-logging-header {
+		height: 355px;
+		width: 400px;
+	}
 	.right-logging-header {
 		flex: initial;
 		h1 {
@@ -340,6 +351,9 @@
 @media only screen and (min-width:0px) and (max-width: 750px) {
 	.scrollable-navabar-header {
 		display: none;
+	}
+	#left-logging-header {
+		
 	}}
 @media only screen and (min-width:0px) and (max-width: 680px) {
 	.duolingo-features-text-head{
@@ -400,11 +414,9 @@
 .footer-get-started-heading{
 	color: rgb(var(--color-owl-always-light));
     font-family: $font-family_4;
-    // font-size: 64px;
     letter-spacing: -.02em;
     line-height: normal;
     margin: 0;
-    // max-width: 583px;
     text-align: center;
 }
 .floating-get-started-button {
@@ -418,7 +430,7 @@
 	width: 100%;
 }
 .floating-animation{
-	margin-bottom: -6%;
+	// margin-bottom: -25%;
 	aspect-ratio: 1448/708;
     display: flex;
     min-width: 696px;

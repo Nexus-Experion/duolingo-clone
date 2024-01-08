@@ -47,7 +47,7 @@ let RegisterUser = async (event) => {
             sectionNumber: 1,
             completedUnits: 0,
             completedChapters: 0,
-            currentLesson: 1
+            currentLesson: 1,
             profileImage: "../assets/svg/profile-image-temp.svg"
         });
 
