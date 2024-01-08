@@ -133,3 +133,13 @@ ul{
     color: rgb(var(--color-snow-always-light));
     text-decoration: none;
 }
+
+.duolingo-features{
+
+	
+	display: flex;
+  flex-direction: column;
+  gap: 96px;
+  padding: 96px 0;
+}
+

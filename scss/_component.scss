@@ -206,6 +206,10 @@
 .country-flag-svg {
 	margin-right: 10px;
 }
+.feature-body-1-substyle{
+	color: rgb(var(--color-macaw-always-light));
+    font-weight: 700;
+}
 @media only screen and (min-width:1080px) and (max-width: 1864px) {
 	.select-site-language {
 		display: flex;
@@ -241,6 +245,38 @@
 	.footer-get-started-heading{
 		font-size: 64px;
     	max-width: 583px;
+	}
+	.duolingo-features{
+		gap: 0;
+		overflow: hidden;
+	}	
+	.feature-class{
+		flex-direction: row;
+		gap: 140px;
+		margin: 0 auto;
+		width: 988px;
+	}
+	.duolingo-features-text{
+		align-items: start;
+		flex-shrink: 0;
+		text-align: initial;
+	}
+	.duolingo-features-text-head{
+		text-align: initial;
+		font-size: 48px;
+
+	}
+	.duolingo-feature-animation{
+	flex-shrink: 0;
+    width: 530px;
+
+	}
+	.duolingo-feature-animation{
+		max-width: none;
+    width: 532px;
+	flex-shrink: 0;
+    width: 532px;
+  
 	}
 }
 @media only screen and (min-width:368px) and (max-width: 1080px) {
@@ -282,11 +318,39 @@
 		font-size: 36px;
     	max-width: 363px;
 	}
+	.duolingo-feature-animation{
+		max-width: none;
+    width: 452px;
+
+	}
+	.features-column{
+		  flex-direction: column;
+	}
+	.features-column-reverse{
+		flex-direction: column-reverse;
+  }
+	.duolingo-features-text-body{
+		text-align: center;
+	}
+	.duolingo-feature-animation{
+		height: 452px;
+		width: 452px;
+	}
 }
-@media only screen and (min-width:0px) and (max-width: 680px) {
+@media only screen and (min-width:0px) and (max-width: 750px) {
 	.scrollable-navabar-header {
 		display: none;
+	}}
+@media only screen and (min-width:0px) and (max-width: 680px) {
+	.duolingo-features-text-head{
+		font-size: 32px;
+
 	}
+	.scrollable-navabar-div{
+		display: none;
+	}
+	
+
 }
 @media only screen and (min-width:680px) and (max-width: 1864px) {
 	.scrollable-navabar-header {
@@ -301,6 +365,17 @@
 	.footer-get-started-section{
 		margin-bottom: -8.76289%;
 		padding: 40px 0 0;
+	}
+	.duolingo-features-text-body{
+	min-width: 473px;
+	text-align: initial;
+
+
+	}
+	.duolingo-features-text-head{
+		text-align: initial;
+	font-size: 48px;
+    max-width: 503px;
 	}
 	
 }
@@ -357,4 +432,43 @@
     position: absolute;
     top: 0;
     width: 100%;
+}
+.duolingo-features{
+	display: flex;
+  flex-direction: column;
+  gap: 96px;
+  padding: 96px 0;
+}
+.feature-class{
+	align-items: center;
+  display: flex;
+justify-content: space-evenly;  padding: 0 15px;
+}
+.duolingo-features-text{
+	align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: auto;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.duolingo-features-text-head{
+	color: rgb(var(--color-owl-always-light));
+    font-family: $font-family_4;
+}
+.duolingo-features-text-body{
+	color: rgb(var(--color-wolf-always-light));
+  font-size: 17px;
+  line-height: 24px;
+  margin: 0;
+  max-width: 330px;
+  font-family: $font-family_2;
+}
+.duolingo-feature-animation{
+	aspect-ratio: 1/1;
+  line-height: 0;
+  max-width: 345px;
+  position: relative;
+  width: 100%;
+
 }

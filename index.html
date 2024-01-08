@@ -22,7 +22,7 @@
           </a>
           <div class="select-site-language">
             <button class="site-language-button">
-              <span id="site-language"> SITE LANGUAGE: ENGLISH </span>
+              <span id="site-language"> </span>
               <img
                 alt=" "
                 class="site-language-select-dropdown"
@@ -34,18 +34,18 @@
                 <li class="site-language-list-single">
                   <a
                     class="country-name-flag-language"
-                    href="./ita-landingpage.html"
+                    onclick="setIndexSiteLanguage('../assets/JSON/landing-german.json','german')"
                     ><img
                       class="country-flag-language-selection"
-                      src="../assets/images/italian.png"
+                      src="../assets/svg/country-flags/de-flag.svg"
                     />
-                    Italiano</a
+                    German</a
                   >
                 </li>
                 <li class="site-language-list-single">
                   <a
                     class="country-name-flag-language"
-                    href="./in-landingpage.html"
+                    onclick="setIndexSiteLanguage('../assets/JSON/landing-hindi.json','hindi')"
                     ><img
                       class="country-flag-language-selection"
                       src="../assets/images/india.png"
@@ -56,7 +56,7 @@
                 <li class="site-language-list-single">
                   <a
                     class="country-name-flag-language"
-                    href="./en-landingpage.html"
+                    onclick="setIndexSiteLanguage('../assets/JSON/landing-english.json','english')"
                     ><img
                       class="country-flag-language-selection"
                       src="../assets/images/english.png"
@@ -67,12 +67,12 @@
                 <li class="site-language-list-single">
                   <a
                     class="country-name-flag-language"
-                    href="./te-landingpage.html"
+                    onclick="setIndexSiteLanguage('../assets/JSON/landing-malayalam.json','malayalam')"
                     ><img
                       class="country-flag-language-selection"
                       src="../assets/images/india.png"
                     />
-                    Telugu</a
+                    Malayalam</a
                   >
                 </li>
               </ul>
@@ -82,15 +82,9 @@
       </div>
       <!-- content below navbar -->
       <div class="header-logging">
-        <div class="left-logging-header" id="left-logging-header">
-          <!-- <span id="left-logging-header-video">
-            <video autoplay muted loop id="myVideo">
-              <source src="../assets/videos/video.mp4" type="video/mp4" />
-            </video>
-          </span> -->
-        </div>
+        <div class="left-logging-header" id="left-logging-header"></div>
         <div class="right-logging-header">
-          <h1>The free, fun, and effective way to learn a language!</h1>
+          <h1 id="header-text"></h1>
           <div class="right-logging-button-section">
             <div class="get-started-btn-div">
               <button
@@ -98,7 +92,7 @@
                 onclick="getStartedButtonAnimation();"
                 id="get-started-button"
               >
-                <span>GET STARTED</span>
+                <span id="get-started-text"></span>
               </button>
             </div>
             <div class="already-have-account-btn-div">
@@ -107,7 +101,7 @@
                 onclick="alreadyAccountButtonAnimation();"
                 id="already-have-account-button"
               >
-                <span>I ALREADY HAVE AN ACCOUNT</span>
+                <span id="already-have-account-text"></span>
               </button>
             </div>
           </div>
@@ -364,13 +358,62 @@
         }
       </script>
     </header>
-    <section></section>
+
+    <section class="duolingo-features">
+      <section class="feature-class features-column">
+        <div class="duolingo-features-text">
+          <h2 class="duolingo-features-text-head" id="feature-head-1"></h2>
+          <p class="duolingo-features-text-body">
+            <span id="feature-body-1"></span>
+          </p>
+        </div>
+        <div
+          id="duolingo-feature-animation-free-fun-effective"
+          class="duolingo-feature-animation"
+        ></div>
+      </section>
+
+      <section class="feature-class features-column-reverse">
+        <div
+          id="duolingo-feature-animation-backed-by-science"
+          class="duolingo-feature-animation"
+        ></div>
+        <div class="duolingo-features-text">
+          <h2 class="duolingo-features-text-head" id="feature-head-2"></h2>
+          <p class="duolingo-features-text-body">
+            <span id="feature-body-2"></span>
+          </p>
+        </div>
+      </section>
+      <section class="feature-class features-column">
+        <div class="duolingo-features-text">
+          <h2 class="duolingo-features-text-head" id="feature-head-3"></h2>
+          <p class="duolingo-features-text-body">
+            <span id="feature-body-3"></span>
+          </p>
+        </div>
+        <div
+          id="duolingo-feature-animation-stay-motivated"
+          class="duolingo-feature-animation"
+        ></div>
+      </section>
+      <section class="feature-class features-column-reverse">
+        <div
+          id="duolingo-feature-animation-personalised-learning"
+          class="duolingo-feature-animation"
+        ></div>
+        <div class="duolingo-features-text">
+          <h2 class="duolingo-features-text-head" id="feature-head-4"></h2>
+          <p class="duolingo-features-text-body">
+            <span id="feature-body-4"></span>
+          </p>
+        </div>
+      </section>
+    </section>
     <section class="floating-landing-page">
       <div class="floating-footer">
         <div class="footer-get-started-section">
-          <h1 class="footer-get-started-heading">
-            learn a language with duolingo
-          </h1>
+          <h1 class="footer-get-started-heading" id="float-heading"></h1>
           <div class="floating-get-started-button">
             <div class="get-started-btn-div">
               <button
@@ -378,7 +421,7 @@
                 onclick="getStartedButtonAnimation();"
                 id="get-started-button"
               >
-                <span>GET STARTED</span>
+                <span id="bottom-get-started-text"></span>
               </button>
             </div>
           </div>
@@ -397,7 +440,7 @@
                 <div class="mainHeading" id="aboutUs">About us</div>
                 <ul>
                   <li>
-                    <a data-test="courses-link" href="/courses">Courses</a>
+                    <a href="/courses">Courses</a>
                   </li>
                   <li><a href="/info">Mission</a></li>
                   <li><a href="/approach">Approach</a></li>
