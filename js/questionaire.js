@@ -2,14 +2,14 @@ let heartCount;
 let clickCount = 0;
 let progressValue = 0;
 let learnLang;
-
+let gems;
 
 //get heart count from session storage
 
 const sessionUserData = sessionStorage.getItem('user-info');
 if (sessionUserData) {
     const userInfo = JSON.parse(sessionUserData);
-
+    gems = userInfo.gems;
     heartCount = userInfo.hearts;
     learnLang = userInfo.learnLang;
     console.log(heartCount + "heartss");
@@ -438,6 +438,7 @@ const revertQuestionScreen = () => {
 
 //heart zero shop popup 
 let showShopPopup = () => {
+    document.getElementById("gem-count-text").textContent = gems;
     localStorage.setItem('xpCount', xpCount + 1);
     localStorage.setItem('hearts', heartCount)
     document.querySelector('.shop-overlay').style.display = 'flex'
@@ -457,6 +458,8 @@ let goToShop = () => {
 //navigate to learn page
 
 let exitToLearn = () => {
+    localStorage.setItem('xpCount', xpCount + 1);
+    localStorage.setItem('hearts', heartCount)
     window.location.href = './learn.html';
 }
 
