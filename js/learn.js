@@ -445,7 +445,7 @@ const placeUnitsandLessons = (sectionData,userData) => {
   let movement2=false;
   let animationPath = '../assets/json-animations/duo-unit-one-one.json';
   let animationPath2= '../assets/json-animations/duo-unit-one-two.json';
-  if(completedChapters > 3){
+  if(completedChapters > 1){
     firstanimatedSpriteInLesson.classList.remove("greyd-sprite");
     movement=true;
   }

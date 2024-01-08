@@ -36,9 +36,11 @@ const makepayment = (prefillData) => {
     console.log(options);
     var propay = new Razorpay(options);
     propay.open();
+    setSuperStatus()
     document.querySelector(".razorpay-backdrop").querySelector("span").style.display="none"
 };
 
 const setSuperStatus=()=>{
-    localStorage.setItem("hearts",Infinity);
+    localStorage.setItem("hearts",1000);
+    localStorage.setItem("xpCount",100);
 }
