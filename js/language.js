@@ -38,10 +38,35 @@ table.addEventListener('mouseleave', function () {
   list.style.display = 'none';
 });
 
+const loginButtonAnimation = () => {
+  document.getElementById("learningaButtonText").classList.toggle('clicked');
+  setTimeout(() => document.getElementById("learningaButtonText").classList.toggle('clicked'), 500)
+ window.location.href="./signup.html";
+}
+
+const getstartedAnimation = () => {
+  document.getElementById("learningButton").classList.toggle('clicked');
+  setTimeout(() => document.getElementById("learningButton").classList.toggle('clicked'), 500)
+ window.location.href="./signup.html";
+}
+
+const loginAnimation = () => {
+  document.getElementById("loginButtonText").classList.toggle('clicked');
+  setTimeout(() => document.getElementById("loginButtonText").classList.toggle('clicked'), 500)
+  window.location.href="./loginpage.html";
+}
+
+const alreadyAnimation = () => {
+  document.getElementById("accountButton").classList.toggle('clicked');
+  setTimeout(() => document.getElementById("accountButton").classList.toggle('clicked'), 500)
+  window.location.href="./loginpage.html";
+}
+
 changeToLanguage('en');
 // new Page
 function changeToLanguage(language) {
   let userLearnLang = localStorage.getItem("lang");
+  localStorage.setItem("selectedLang",userLearnLang);
   fetch(`https://duolingo-serverless-endpoint.vercel.app/api/individual-lang-page-translation?lang=${language}`) // Assuming data.json is your JSON file
     .then(response => response.json())
     .then(language => {
