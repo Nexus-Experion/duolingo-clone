@@ -1,7 +1,8 @@
 
 const scrollButton = document.getElementById('scrollNow');
 const scrollButtonLog = document.getElementById('logInButtonScroll');
-
+let userLearnLang = localStorage.getItem("lang");
+localStorage.setItem("selectedLang", userLearnLang)
 // Function to toggle button visibility based on scroll position
 function toggleScrollButton() {
   if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
@@ -42,6 +43,8 @@ changeToLanguage('en');
 // new Page
 function changeToLanguage(language) {
   let userLearnLang = localStorage.getItem("lang");
+  localStorage.setItem("selectedLang", userLearnLang)
+
   fetch(`https://duolingo-serverless-endpoint.vercel.app/api/individual-lang-page-translation?lang=${language}`) // Assuming data.json is your JSON file
     .then(response => response.json())
     .then(language => {
@@ -81,8 +84,8 @@ function changeToLanguage(language) {
       b.textContent = language.fireLinkPara;
       document.getElementById('firePara').textContent = language.firePara;
       document.getElementById('firePara').append(b);
-      
-      
+
+
     })
     .catch(error => console.error('Error fetching data:', error));
 }        
