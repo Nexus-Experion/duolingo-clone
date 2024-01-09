@@ -88,7 +88,16 @@
                 id="create-account-button"
                 onclick="createAccountButtonAnimation()"
               >
-                CREATE ACCOUNT
+                <span id="create-account-span">CREATE ACCOUNT</span>
+                <div
+                  class="loading-balls-container hidden"
+                  style="transition-duration: 250ms"
+                  id="loading-balls-container"
+                >
+                  <div class="animation loading-ball"></div>
+                  <div class="animation second-animation loading-ball"></div>
+                  <div class="animation third-animation loading-ball"></div>
+                </div>
               </button>
             </div>
           </div>

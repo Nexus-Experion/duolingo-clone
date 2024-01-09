@@ -1,3 +1,7 @@
+.description{
+  padding-top: 15px;
+}
+
 /* Styles for the Middle Section */
 .profile-middle-container {
   width: 95%;
@@ -103,6 +107,7 @@
 }
 
 .statistics-value {
+  color: black !important;
   font-size: 20px;
   margin-bottom: 4px;
 }

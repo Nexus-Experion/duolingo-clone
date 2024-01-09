@@ -352,9 +352,10 @@
 	.scrollable-navabar-header {
 		display: none;
 	}
-	#left-logging-header {
+	// #left-logging-header {
 		
-	}}
+	// }
+}
 @media only screen and (min-width:0px) and (max-width: 680px) {
 	.duolingo-features-text-head{
 		font-size: 32px;
@@ -363,6 +364,8 @@
 	.scrollable-navabar-div{
 		display: none;
 	}
+	.floating-footer{
+		margin-bottom: -40px;}
 	
 
 }
@@ -391,6 +394,8 @@
 	font-size: 48px;
     max-width: 503px;
 	}
+	.floating-footer{
+		margin-bottom: -85px;}
 	
 }
 

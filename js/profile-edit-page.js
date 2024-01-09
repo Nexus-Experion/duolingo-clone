@@ -10,7 +10,6 @@ const userId = userInfo.userId;
 console.log(userId);
 const userDocRef = doc(db, 'UsersAuthList', userId);
 
-const profileImage = document.getElementById("profileImage");
 const imageInput = document.getElementById("choose-file-input");
 
 const updateProfile = async () => {
@@ -53,6 +52,10 @@ const updateProfile = async () => {
         // Redirect to the profile page
         redirectToProfilePage();
     } catch (error) {
+
+        document.getElementById('save-changes-span').classList.toggle('hidden');
+        document.getElementById('loading-balls-container').classList.toggle('hidden');
+
         console.error("Error during profile update:", error);
     }
 };
@@ -60,16 +63,6 @@ const updateProfile = async () => {
 const redirectToProfilePage = () => {
     window.location.href = "../html/profile-page.html";
 };
-
-
-//Display the initial profile picture on page load
-// onSnapshot(userDocRef, (doc) => {
-//     console.log("Snapshot triggered");
-//     const data = doc.data();
-//     if (data && data.profileImage) {
-//         profileImage.src = data.profileImage;
-//     }
-// });
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -82,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("go-back").onclick = goBackButtonAnimation;
     document.getElementById("save-changes").onclick = saveChangesButtonAnimation;
 
+    updateLeftProfileImage();
 });
-
 
 const updateFileName = () => {
 
@@ -93,9 +86,18 @@ const updateFileName = () => {
     fileNameDiv.textContent = fileInput.files[0].name;
 }
 
+const updateLeftProfileImage = () => {
+    const leftProfileImage = document.getElementById('left-profile-image');
+
+    leftProfileImage.src = userInfo.profileImage;
+}
+
 const saveChangesButtonAnimation = () => {
     document.getElementById("save-changes").classList.toggle('clicked');
-    setTimeout(() => document.getElementById("save-changes").classList.toggle('clicked'), 300)
+    setTimeout(() => document.getElementById("save-changes").classList.toggle('clicked'), 300);
+    
+    document.getElementById('save-changes-span').classList.toggle('hidden');
+    document.getElementById('loading-balls-container').classList.toggle('hidden');
     updateProfile();
 }
 

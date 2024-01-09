@@ -378,6 +378,9 @@
   .scrollable-navabar-div {
     display: none;
   }
+  .floating-footer {
+    margin-bottom: -40px;
+  }
 }
 @media only screen and (min-width: 680px) and (max-width: 1864px) {
   .scrollable-navabar-header {
@@ -401,6 +404,9 @@
     text-align: initial;
     font-size: 48px;
     max-width: 503px;
+  }
+  .floating-footer {
+    margin-bottom: -85px;
   }
 }
 .floating-footer {
@@ -549,7 +555,7 @@
   text-align: left;
 }
 
-._1KUWD {
+.list-head {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
@@ -584,20 +590,6 @@
   line-height: 1.5;
   opacity: 0.5;
   text-decoration: none;
-}
-
-._3CeMJ {
-  border-top: 2px solid rgb(var(--color-snow-always-light), 0.2);
-  color: rgb(var(--color-snow-always-light));
-  display: flex;
-  flex-direction: column;
-  font-size: 13px;
-  gap: 40px;
-  margin: 0 auto;
-  max-width: 1065px;
-  padding: 24px 40px 48px;
-  text-align: left;
-  flex-direction: row;
 }
 
 ul {
