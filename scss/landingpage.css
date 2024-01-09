@@ -46,11 +46,6 @@
   padding: 10px 15px 20px;
 }
 
-#left-logging-header {
-  height: 466px;
-  width: 464px;
-}
-
 .landing-navbar {
   align-items: center;
   display: flex;
@@ -188,6 +183,10 @@
   padding-right: 40px;
 }
 
+.available-lang {
+  cursor: pointer;
+}
+
 .scrollable-navbar-nav {
   display: flex;
   align-items: center;
@@ -218,6 +217,7 @@
   gap: 20px;
   list-style: none;
   padding-left: 0px;
+  cursor: pointer;
 }
 
 .conuntry-one {
@@ -225,6 +225,7 @@
   align-items: center;
   color: rgb(var(--color-wolf-always-light));
   text-decoration: none;
+  cursor: pointer;
 }
 
 .country-flag-svg {
@@ -255,6 +256,10 @@
     margin: 0 auto;
     padding: 48px 0;
     width: 988px;
+  }
+  #left-logging-header {
+    height: 466px;
+    width: 464px;
   }
   .left-logging-header {
     margin-right: -65px;
@@ -324,6 +329,10 @@
     height: 360px;
     width: 360px;
   }
+  #left-logging-header {
+    height: 355px;
+    width: 400px;
+  }
   .right-logging-header {
     flex: initial;
   }
@@ -369,6 +378,9 @@
   .scrollable-navabar-div {
     display: none;
   }
+  .floating-footer {
+    margin-bottom: -40px;
+  }
 }
 @media only screen and (min-width: 680px) and (max-width: 1864px) {
   .scrollable-navabar-header {
@@ -392,6 +404,9 @@
     text-align: initial;
     font-size: 48px;
     max-width: 503px;
+  }
+  .floating-footer {
+    margin-bottom: -85px;
   }
 }
 .floating-footer {
@@ -431,7 +446,6 @@
 }
 
 .floating-animation {
-  margin-bottom: -6%;
   aspect-ratio: 1448/708;
   display: flex;
   min-width: 696px;
@@ -541,7 +555,7 @@
   text-align: left;
 }
 
-._1KUWD {
+.list-head {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
@@ -576,20 +590,6 @@
   line-height: 1.5;
   opacity: 0.5;
   text-decoration: none;
-}
-
-._3CeMJ {
-  border-top: 2px solid rgb(var(--color-snow-always-light), 0.2);
-  color: rgb(var(--color-snow-always-light));
-  display: flex;
-  flex-direction: column;
-  font-size: 13px;
-  gap: 40px;
-  margin: 0 auto;
-  max-width: 1065px;
-  padding: 24px 40px 48px;
-  text-align: left;
-  flex-direction: row;
 }
 
 ul {
