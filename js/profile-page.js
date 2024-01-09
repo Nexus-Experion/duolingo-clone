@@ -2,7 +2,6 @@ import { getFirestore, doc, onSnapshot } from "https://www.gstatic.com/firebasej
 import { app } from "./firebaseConfig.js";
 
 const db = getFirestore(app);
-// const storage = getStorage(app);
 
 let userInfo = JSON.parse(sessionStorage.getItem('user-info'));
 const userId = userInfo.userId;
@@ -10,8 +9,9 @@ const userId = userInfo.userId;
 const userDocRef = doc(db, 'UsersAuthList', userId);
 
 const profileImage = document.getElementById('profile-image');
+const leftProfileImage = document.getElementById('left-profile-image');
 
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
 
     if (userInfo) {
 
@@ -35,14 +35,7 @@ $(document).ready(function() {
             document.getElementById('join-date').innerHTML = "Unknown Date";
         }
 
-        profileImage.src = userInfo.profileImage
+        profileImage.src = userInfo.profileImage;
+        leftProfileImage.src = userInfo.profileImage;
     }
 });
-
-// onSnapshot(userDocRef, (doc) => {
-//     console.log("Snapshot triggered");
-//     const data = doc.data();
-//     if (data && data.profileImage) {
-//         profileImage.src = data.profileImage;
-//     }
-// });

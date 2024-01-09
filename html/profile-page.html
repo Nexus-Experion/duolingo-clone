@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/learn.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- <script src="../js/learn.js"></script> -->
     <script type="module" src="../js/profile-page.js"></script>
+    <script src="../js/profile-page-values.js"></script>
     <script type="module" src="../js/firebaseLogout.js"></script>
   </head>
   <body>
@@ -44,6 +46,7 @@
                         src="../assets/profile-icon-male.png"
                         alt="home-icon"
                         class="profile"
+                        id="left-profile-image"
                     />
                     </div>
                     <span class="text-in-button"> Profile </span>
@@ -78,96 +81,94 @@
 
         <div class="content-container">
         <!----------------------------------- Right sidebar ------------------------------------------------>
-            <div class="right-sidebar">
-                <div class="right-sidebar-header">
-                    <a href="" class="button-in-sidebar">
-                    <span class="icon-and-text-wrap">
-                        <div class="icon-in-button">
-                        <img
-                            src="../assets/svg/ja-flag.svg"
-                            alt="home-icon"
-                            class="profile"
-                        />
-                        </div>
-                    </span>
-                    </a>
-                    <a href="" class="button-in-sidebar">
-                    <span class="icon-and-text-wrap">
-                        <div class="icon-in-button">
-                        <img
-                            src="../assets/svg/streak-fire-active.svg"
-                            alt="home-icon"
-                            class="profile"
-                        />
-                        </div>
-                        <span class="text-in-button fire-text"> 400 </span>
-                    </span>
-                    </a>
-                    <a href="" class="button-in-sidebar">
-                    <span class="icon-and-text-wrap">
-                        <div class="icon-in-button">
-                        <img
-                            src="../assets/svg/gems-icon.svg"
-                            alt="home-icon"
-                            class="profile"
-                        />
-                        </div>
-                        <span class="text-in-button gem-text"> 7393 </span>
-                    </span>
-                    </a>
-                    <a href="" class="button-in-sidebar">
-                    <span class="icon-and-text-wrap">
-                        <div class="icon-in-button">
-                        <img
-                            src="../assets/svg/heart-filled-red.svg"
-                            alt="home-icon"
-                            class="profile"
-                        />
-                        </div>
-                        <span class="text-in-button heart-text"> 5 </span>
-                    </span>
-                    </a>
-                </div>
-                <div class="try-super-box">
+        <div class="right-sidebar">
+            <div class="right-sidebar-header">
+              <a href="" class="button-in-sidebar">
+                <span class="icon-and-text-wrap">
+                  <div class="icon-in-button">
                     <img
-                    src="../assets/svg/super-icon.svg"
-                    alt="super-text"
-                    id="try-super-image-one"
+                      src="../assets/svg/country-flags/transparent.svg"
+                      class="country-flag"
                     />
+                  </div>
+                </span>
+              </a>
+              <a href="" class="button-in-sidebar">
+                <span class="icon-and-text-wrap">
+                  <div class="icon-in-button">
                     <img
-                    src="../assets/svg/super-duo-owl.svg"
-                    alt="super-duo-owl"
-                    id="try-super-image-two"
+                      src="../assets/svg/lesson-xp.svg"
+                      alt="home-icon"
+                      class="profile"
                     />
-                    <div class="content-text">
-                    <h2>Try Super for free</h2>
-                    <div class="description">
-                        No ads, personalized practice, and unlimited Legendary!
-                    </div>
-                    <button id="try-super-button" onclick="openSuperDuolingoPage();">
-                        Try 2 weeks free
-                    </button>
-                    </div>
-                </div>
-                <div class="try-super-box">
-                    <div class="league-header-with-link">
-                    <h2>Amethyst League</h2>
-                    <h2><a href="">View League</a></h2>
-                    </div>
-                    <div class="league-header-with-link">
+                  </div>
+                  <span class="text-in-button fire-text"> 400 </span>
+                </span>
+              </a>
+              <a href="" class="button-in-sidebar">
+                <span class="icon-and-text-wrap">
+                  <div class="icon-in-button">
                     <img
-                        src="../assets/svg/amethyst-league-icon.svg"
-                        alt="amethyst-league-icon"
+                      src="../assets/svg/gems-icon.svg"
+                      alt="home-icon"
+                      class="profile"
                     />
-                    <div class="league-text-container">
-                        <h2>You're ranked <span>#29</span></h2>
-                        <div class="description">
-                        You moved down to the demotion zone!
-                        </div>
-                    </div>
-                    </div>
-                </div>
+                  </div>
+                  <span class="text-in-button gem-text"> 7393 </span>
+                </span>
+              </a>
+              <a href="" class="button-in-sidebar">
+                <span class="icon-and-text-wrap">
+                  <div class="icon-in-button">
+                    <img
+                      src="../assets/svg/heart-filled-red.svg"
+                      alt="home-icon"
+                      class="profile"
+                    />
+                  </div>
+                  <span class="text-in-button heart-text"> 5 </span>
+                </span>
+              </a>
             </div>
+            <div class="try-super-box">
+              <img
+                src="../assets/svg/super-icon.svg"
+                alt="super-text"
+                id="try-super-image-one"
+              />
+              <img
+                src="../assets/svg/super-duo-owl.svg"
+                alt="super-duo-owl"
+                id="try-super-image-two"
+              />
+              <div class="content-text">
+                <h2>Try Super for free</h2>
+                <div class="description">
+                  No ads, personalized practice, and unlimited Legendary!
+                </div>
+                <button id="try-super-button" onclick="window.location.href='./superduolingo.html'">
+                  Try 2 weeks free
+                </button>
+              </div>
+            </div>
+            <div class="try-super-box">
+              <div class="league-header-with-link">
+                <h2>Nexus League</h2>
+                <h2><a href="./leaderboard.html">View League</a></h2>
+              </div>
+              <div class="league-header-with-link">
+                <img
+                  src="../assets/svg/amethyst-league-icon.svg"
+                  alt="amethyst-league-icon"
+                />
+                <div class="league-text-container">
+                  <div class="description">
+                    Compete with others to move up the league.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
             <!-- Middle Section -->
             <div class="profile-middle-container">
@@ -193,7 +194,6 @@
                                     <img src="../assets/svg/edit-button-logo.svg" alt="">
                                 </a>
                             </div>
-                            <!-- <img class src="" alt=""> -->
                         </div>
                     </div>
 
@@ -205,10 +205,10 @@
                         <div class="statistics-content-div">
                             <div>
                                 <div class="statistics-section-one">
-                                    <img src="../assets/svg/streak-fire-active.svg" class="statistics-streak-icon" alt="">
+                                    <img src="../assets/svg/gems-icon.svg" class="statistics-streak-icon" alt="">
                                     <div class="statistics-section-one-content">
-                                        <h4 class="statistics-value" id="streak-value">5</h4>
-                                        <div class="statistics-text">Day Streak</div>
+                                        <h4 class="statistics-value gem-text" id="streak-value">0</h4>
+                                        <div class="statistics-text">Gems</div>
                                     </div>
                                 </div>
                             </div>
@@ -226,7 +226,7 @@
                                 <div class="statistics-section-one">
                                     <img src="../assets/svg/bronze-league.svg" class="statistics-streak-icon" alt="">
                                     <div class="statistics-section-one-content">
-                                        <h4 class="statistics-value">Bronze</h4>
+                                        <h4 class="statistics-value">Nexus</h4>
                                         <div class="statistics-text">Current League</div>
                                     </div>
                                 </div>

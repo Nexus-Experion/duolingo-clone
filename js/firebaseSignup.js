@@ -67,6 +67,9 @@ let RegisterUser = async (event) => {
 
     } catch (error) {
 
+        document.getElementById('create-account-span').classList.toggle('hidden');
+        document.getElementById('loading-balls-container').classList.toggle('hidden');
+        
         switch(error.code){
             case "auth/email-already-in-use":
                 emailErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Email Already In Use.</span>';
