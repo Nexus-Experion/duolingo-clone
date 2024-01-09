@@ -4,6 +4,9 @@
     width: 100%;
     z-index: 2;
 }
+.flags{
+    margin-bottom: 50px;
+}
 ._2RvHF{
     height: 36px;
     width: 153px;
@@ -121,6 +124,12 @@
     max-height: 192px;
     text-align: center;
     padding: 40px;
+    position: relative;
+}
+#lessonflag{
+    position: absolute;
+    bottom: -20%;
+    right: 20%;
 }
 .divForLogin{
     

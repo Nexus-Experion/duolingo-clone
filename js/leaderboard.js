@@ -100,8 +100,8 @@ function sortingArray(){
       
       //For Highlighting logined profile
       let userData = JSON.parse(sessionStorage.getItem("user-info"));
-      let userName = userData.name;
-      if(userName == entry.name){
+      let userId = userData.userId;
+      if(userId == entry.userId){
           const profHighlight = document.getElementById(`eachprofile_${index + 1}`);
           profHighlight.style.border = '1px solid red';
           profHighlight.style.borderColor = ' #84d8ff';
