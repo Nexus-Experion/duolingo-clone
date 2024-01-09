@@ -46,11 +46,6 @@
   padding: 10px 15px 20px;
 }
 
-#left-logging-header {
-  height: 466px;
-  width: 464px;
-}
-
 .landing-navbar {
   align-items: center;
   display: flex;
@@ -188,6 +183,10 @@
   padding-right: 40px;
 }
 
+.available-lang {
+  cursor: pointer;
+}
+
 .scrollable-navbar-nav {
   display: flex;
   align-items: center;
@@ -218,6 +217,7 @@
   gap: 20px;
   list-style: none;
   padding-left: 0px;
+  cursor: pointer;
 }
 
 .conuntry-one {
@@ -225,6 +225,7 @@
   align-items: center;
   color: rgb(var(--color-wolf-always-light));
   text-decoration: none;
+  cursor: pointer;
 }
 
 .country-flag-svg {
@@ -255,6 +256,10 @@
     margin: 0 auto;
     padding: 48px 0;
     width: 988px;
+  }
+  #left-logging-header {
+    height: 466px;
+    width: 464px;
   }
   .left-logging-header {
     margin-right: -65px;
@@ -323,6 +328,10 @@
     flex: initial;
     height: 360px;
     width: 360px;
+  }
+  #left-logging-header {
+    height: 355px;
+    width: 400px;
   }
   .right-logging-header {
     flex: initial;
@@ -431,7 +440,6 @@
 }
 
 .floating-animation {
-  margin-bottom: -6%;
   aspect-ratio: 1448/708;
   display: flex;
   min-width: 696px;
