@@ -2,14 +2,20 @@
 const alreadyAccountButtonAnimation = () => {
     document.getElementById("already-have-account-button").classList.toggle('clicked');
     setTimeout(() => document.getElementById("already-have-account-button").classList.toggle('clicked'), 300)
-    window.location.href = "/html/loginpage.html";
+    window.location.href = "html/loginpage.html";
 }
 
 const getStartedButtonAnimation = () => {
     document.getElementById("get-started-button").classList.toggle('clicked');
     setTimeout(() => document.getElementById("get-started-button").classList.toggle('clicked'), 300);
     animationLoader()
-    window.location.href = "/html/languages-select-page.html";
+    window.location.href = "html/languages-select-page.html";
+}
+
+//animation footer get started button in index
+const showNextItem = () => {
+    document.getElementById("footer-button").classList.toggle('clicked');
+    setTimeout(() => document.getElementById("footer-button").classList.toggle('clicked'), 300)
 }
 
 

@@ -10,15 +10,15 @@ const loginAccountButtonAnimation = (event) => {
 const signupButtonAnimation = () => {
     document.getElementById("login-button").classList.toggle('clicked');
     setTimeout(() => document.getElementById("login-button").classList.toggle('clicked'), 300)
-    window.location.href="../html/languages-select-page.html";
+    window.location.href = "languages-select-page.html";
 }
 
-const validateEntry = (event) =>{
+const validateEntry = (event) => {
     event.preventDefault();
     var emailInput = document.getElementById('emailInput');
     var passwordInput = document.getElementById('passInput');
     var divPassword = document.getElementById('divPassword');
-    
+
     var errorEmail = document.getElementById('errorEmail');
     var errorPassword = document.getElementById('errorPassword');
 
@@ -29,7 +29,7 @@ const validateEntry = (event) =>{
         errorEmail.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Invalid email address.</span>';
         emailInput.style.border = '2px solid #ff0000'; // Change border color to red  
     }
-    else{
+    else {
         errorEmail.innerHTML = '';
         emailInput.style.border = ''; // Reset to the default border color
     }
@@ -38,7 +38,7 @@ const validateEntry = (event) =>{
         errorPassword.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Password too short.</span>';
         divPassword.style.border = '2px solid #ff0000'; // Change border color to red  
     }
-    else{
+    else {
         errorPassword.innerHTML = '';
         divPassword.style.border = ''; // Reset to the default border color
     }

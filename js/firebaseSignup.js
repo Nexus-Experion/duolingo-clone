@@ -19,8 +19,7 @@ let passwordErrorMessage = document.getElementById('password-error-message');
 let RegisterUser = async (event) => {
     event.preventDefault();
 
-    if(!validate(event))
-    {
+    if (!validate(event)) {
         return;
     }
 
@@ -30,7 +29,7 @@ let RegisterUser = async (event) => {
         console.log("Account created successfully");
 
         const currentDate = new Date();
-        
+
         const userDocRef = doc(db, 'UsersAuthList', credentials.user.uid);
         console.log(credentials.user);
 
@@ -53,24 +52,24 @@ let RegisterUser = async (event) => {
 
         const dbref = doc(db, 'UsersAuthList', credentials.user.uid);
 
-            getDoc(dbref).then((docSnapshot) => {
-                if (docSnapshot.exists()) {
-                    const userData = docSnapshot.data();
+        getDoc(dbref).then((docSnapshot) => {
+            if (docSnapshot.exists()) {
+                const userData = docSnapshot.data();
 
-                    sessionStorage.setItem("user-info", JSON.stringify(userData));
+                sessionStorage.setItem("user-info", JSON.stringify(userData));
 
-                    console.log("User Data: ", userData);
-                    // sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
-                    window.location.href = "./learn.html";
-                }
-            });
+                console.log("User Data: ", userData);
+                // sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+                window.location.href = "./learn.html";
+            }
+        });
 
     } catch (error) {
 
         document.getElementById('create-account-span').classList.toggle('hidden');
         document.getElementById('loading-balls-container').classList.toggle('hidden');
-        
-        switch(error.code){
+
+        switch (error.code) {
             case "auth/email-already-in-use":
                 emailErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Email Already In Use.</span>';
                 emailInp.style.border = '2px solid #ff0000'; // Change border color to red
@@ -104,10 +103,10 @@ const validate = (event) => {
     if (!ageInp.value) {
         ageErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Please enter your age.</span>';
         ageInp.style.border = '2px solid #ff0000'; // Change border color to red
-        document.getElementById('age-privacy-div').innerHTML='';   
+        document.getElementById('age-privacy-div').innerHTML = '';
         isValid = false;
     }
-    else{
+    else {
         ageErrorMessage.innerHTML = '';
         ageInp.style.border = ''; // Reset to the default border color
     }
@@ -118,7 +117,7 @@ const validate = (event) => {
         nameInp.style.border = '2px solid #ff0000'; // Change border color to red  
         isValid = false;
     }
-    else{
+    else {
         console.log("Name Input is not empty"); // Add this line
         nameErrorMessage.innerHTML = '';
         nameInp.style.border = ''; // Reset to the default border color
@@ -129,7 +128,7 @@ const validate = (event) => {
         emailInp.style.border = '2px solid #ff0000'; // Change border color to red
         isValid = false;
     }
-    else{
+    else {
         emailErrorMessage.innerHTML = '';
         emailInp.style.border = ''; // Reset to the default border color
     }
@@ -139,7 +138,7 @@ const validate = (event) => {
         passwordInp.style.border = '2px solid #ff0000'; // Change border color to red
         isValid = false;
     }
-    else{
+    else {
         passwordErrorMessage.innerHTML = '';
         passwordInp.style.border = ''; // Reset to the default border color
     }
