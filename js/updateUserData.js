@@ -35,7 +35,7 @@ if (xpFromLesson > -1) {
       if(userData.currentLesson > 4){
         userData.currentLesson=1
         userData.completedChapters+=1
-        if(userData.completedChapters >= sectionData.totalChaptersInUnit){
+        if(userData.completedChapters >= 9){
           userData.completedChapters=0
           userData.completedUnits+=1
         }
