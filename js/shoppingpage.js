@@ -32,27 +32,27 @@ const loginButtonAnimation = () => {
   window.location.href="./superduolingo.html";
 }
 
-// function checkSpanValue() {
-//   userData = JSON.parse(sessionStorage.getItem("user-info"));
-//   hearts=userData.hearts
-//   console.log(userData.hearts);
-//   if (hearts >= 4) {
-//     myButton.disabled = true;
-//     myButton.querySelector("span").textContent = "Full";
-//   } else {
-//     myButton.disabled = false;
-//     myButton.style.color = 'rgb(var(--color-blue-space))';
-//     myButton.querySelector("span").textContent = "Buy";
-//   }
-// }
-// checkSpanValue();
+function checkSpanValue() {
+  userData = JSON.parse(sessionStorage.getItem("user-info"));
+  hearts=userData.hearts
+  console.log(userData.hearts);
+  if (hearts >= 4) {
+    myButton.disabled = true;
+    myButton.querySelector("span").textContent = "Full";
+  } else {
+    myButton.disabled = false;
+    myButton.style.color = 'rgb(var(--color-blue-space))';
+    myButton.querySelector("span").textContent = "Buy";
+  }
+}
+checkSpanValue();
 
 function calcDiamond(){
   checkSpanValue();
-  
   console.log("userdata is ",userData);
   userData.gems -= 10;
   userData.hearts += 1;
   sessionStorage.setItem("user-info",JSON.stringify(userData));
+  placeuserStatistics();
 }
 myButton.addEventListener('click',calcDiamond);
