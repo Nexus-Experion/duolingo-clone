@@ -738,7 +738,7 @@
     border-radius: 50px;
 }
 
-._1V6a- {
+.classcontainstatus {
   display: grid;
   gap: 8px;
   grid-template-columns: repeat(6, 1fr);
@@ -750,11 +750,11 @@
   width: 48px;
   background-color: rgb(var(--color-owl));
 }
-.kC7Wi {
+.statusimage {
   height: 100%;
   width: 100%;
 }
-._2WS1S {
+.statuscontainer {
   background-color: rgb(var(--color-snow-always-light));
   border: 2px solid rgb(var(--color-swan));
   border-radius: 50% 50% 50% 16%;
@@ -764,20 +764,24 @@
   top: -6px;
   transition: opacity .25s;
   width: 28px;
+  height: 46px;
+  left: 66px;
+  top: -12px;
+  width: 46px;
 }
-.fte9h {
+.profilestatus {
   height: 36px;
   width: 36px;
   position: absolute;
     right: 3px;
     top: 3px;
 }
-._28T-y {
+/* ._28T-y {
   height: 46px;
   left: 66px;
   top: -12px;
   width: 46px;
-}
+} */
 .eachprofile:hover{
   background-color:rgba(127, 127, 127, 0.17);
 }

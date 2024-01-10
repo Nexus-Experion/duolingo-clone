@@ -1,0 +1,13 @@
+.flyingowl {
+  background: radial-gradient(216% 106% at 6% 3%, rgb(var(--color-gamma), 0.3) 0, rgb(var(--color-starlight), 0.3) 52%, rgb(var(--color-quasar), 0.3) 100%), rgb(var(--color-eclipse));
+  border-radius: 16px;
+  font-family: "din-round-bold";
+  color: rgb(var(--color-snow-always-light));
+  margin-bottom: 32px;
+  margin-top: 40px;
+  overflow: visible;
+  padding: 20px;
+  position: relative;
+  vertical-align: middle;
+  z-index: 0;
+}/*# sourceMappingURL=shoppingpage.css.map */
