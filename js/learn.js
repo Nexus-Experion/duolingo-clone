@@ -4,16 +4,16 @@ const openSuperDuolingoPage = () => {
   location.href = "../html/superduolingo.html"
 }
 
-const getLanguageFullForm=(languageCode)=>{
-  switch(languageCode){
-    case 'de':return "German"
-    case 'ja':return "Japanese"
-    case 'fr':return "French"
-    case 'es':return "Spanish"
+const getLanguageFullForm = (languageCode) => {
+  switch (languageCode) {
+    case 'de': return "German"
+    case 'ja': return "Japanese"
+    case 'fr': return "French"
+    case 'es': return "Spanish"
     default: "Languages"
   }
 }
-const getLanguageFlagPath=(languageCode)=>{
+const getLanguageFlagPath = (languageCode) => {
   return `../assets/svg/country-flags/${languageCode}-flag.svg`
 }
 const closeOtherOpenDialogBoxes = (event) => {
@@ -27,6 +27,15 @@ const closeOtherOpenDialogBoxes = (event) => {
 const closeAllOpenDialogBoxes = () => {
   document.querySelectorAll(".floating-start-box-bottom").forEach((dialog) => {
     dialog.classList.add("hidden")
+  });
+}
+
+const scrollToCurrentLesson = () => {
+  const targetDivs = document.querySelectorAll(".circle_box.completed");
+  const targetDiv= targetDivs[targetDivs.length-3];
+  console.log(targetDiv);
+  targetDiv.scrollIntoView({
+    behavior: 'smooth'
   });
 }
 
@@ -127,21 +136,21 @@ const getUserDataFromSessionStorage = () => {
 
 const placeuserStatistics = () => {
   let userData = getUserDataFromSessionStorage();
-  document.title=`Duolingo - The world's best way to learn ${getLanguageFullForm(userData.learnLang)}`
-  document.querySelector(".country-flag").src=getLanguageFlagPath(userData.learnLang);
+  document.title = `Duolingo - The world's best way to learn ${getLanguageFullForm(userData.learnLang)}`
+  document.querySelector(".country-flag").src = getLanguageFlagPath(userData.learnLang);
   document.querySelectorAll(".fire-text").forEach(item => item.textContent = userData.xp);
   document.querySelectorAll(".heart-text").forEach(item => item.textContent = userData.hearts);
   document.querySelectorAll(".gem-text").forEach(item => item.textContent = userData.gems);
 }
 
-const placeUnitsandLessons = (sectionData,userData) => {
-  console.log("userdata is ",userData);
+const placeUnitsandLessons = (sectionData, userData) => {
+  console.log("userdata is ", userData);
   let completedChapters = userData.completedChapters;
   let completedUnits = userData.completedUnits
   let totalChaptersInUnit = sectionData.section.totalChaptersInUnit
   let totalUnitsInSection = sectionData.section.totalUnitsInSection
 
-  console.log(completedChapters,"bulubulu",completedUnits)
+  console.log(completedChapters, "bulubulu", completedUnits)
 
   let lockedUnits = totalUnitsInSection - completedUnits - 1;
   let lockedLessons = totalChaptersInUnit - completedChapters - 1;
@@ -333,7 +342,7 @@ const placeUnitsandLessons = (sectionData,userData) => {
 `
 
   let paddingArr = [0, 3, 5, 3, 0, -3, -5, -3, 0];
-  let translateIndex=0
+  let translateIndex = 0
   let paddingIndex = 0;
 
   const calculatePadding = () => {
@@ -344,7 +353,7 @@ const placeUnitsandLessons = (sectionData,userData) => {
   }
 
   const calculateTranslate = () => {
-      return `${-30 * paddingArr[translateIndex++]}px`
+    return `${-30 * paddingArr[translateIndex++]}px`
   }
 
   let i = 0;
@@ -354,8 +363,8 @@ const placeUnitsandLessons = (sectionData,userData) => {
       circleNode.setAttribute("class", "alignment-div");
       circleNode.style.padding = calculatePadding();
       circleNode.innerHTML = completedDiv;
-      let box=circleNode.querySelector(".floating-start-box-bottom");
-      box.style.translate=`calc(-50% + ${calculateTranslate()})`
+      let box = circleNode.querySelector(".floating-start-box-bottom");
+      box.style.translate = `calc(-50% + ${calculateTranslate()})`
       circleNode.querySelector("h1").textContent = sectionData.section.units[unitRef].chapters[i];
       sectionRef.appendChild(circleNode);
     }
@@ -366,8 +375,8 @@ const placeUnitsandLessons = (sectionData,userData) => {
     circleNode.setAttribute("class", "alignment-div");
     circleNode.style.padding = calculatePadding();
     circleNode.innerHTML = onProgressHtml;
-    let box=circleNode.querySelector(".floating-start-box-bottom");
-    box.style.translate=`calc(-50% + ${calculateTranslate()})`
+    let box = circleNode.querySelector(".floating-start-box-bottom");
+    box.style.translate = `calc(-50% + ${calculateTranslate()})`
     circleNode.querySelector("h1").textContent = sectionData.section.units[unitRef].chapters[start];
     sectionRef.appendChild(circleNode);
 
@@ -375,14 +384,14 @@ const placeUnitsandLessons = (sectionData,userData) => {
 
 
   const placeLockedLessons = (lessonCount, sectionRef, unitRef, start = 0) => {
-    console.log("starting from",start);
+    console.log("starting from", start);
     for (let i = start; i < lessonCount + start; i++) {
       let circleNode = document.createElement("div");
       circleNode.setAttribute("class", "alignment-div");
       circleNode.style.padding = calculatePadding();
       circleNode.innerHTML = lockedDiv;
-      let box=circleNode.querySelector(".floating-start-box-bottom");
-      box.style.translate=`calc(-50% + ${calculateTranslate()})`
+      let box = circleNode.querySelector(".floating-start-box-bottom");
+      box.style.translate = `calc(-50% + ${calculateTranslate()})`
       circleNode.querySelector("h1").textContent = sectionData.section.units[unitRef].chapters[i];
       sectionRef.appendChild(circleNode);
     }
@@ -393,10 +402,10 @@ const placeUnitsandLessons = (sectionData,userData) => {
   scrollableContainer.innerHTML = ''
   scrollableContainer.insertAdjacentHTML("beforeend", sectionHeader);
   let lessonContainer = document.querySelector(".unit-placing-div");
-  console.log(completedUnits,"units complted")
+  console.log(completedUnits, "units complted")
 
   for (let i = 0; i < completedUnits; i++) {
-    console.log("loop",i);
+    console.log("loop", i);
     paddingIndex = 0
     translateIndex = 0
     let section = document.createElement("section");
@@ -407,22 +416,22 @@ const placeUnitsandLessons = (sectionData,userData) => {
     section.querySelector("span").textContent = sectionData.section.units[unitCounter - 2].description;
 
     let firstanimatedSpriteInLesson = document.createElement("div")
-    firstanimatedSpriteInLesson.setAttribute("class","animated-sprite-in-lesson-1")
-    let animationPath,animationPath2;
-    if(i%2==0){
+    firstanimatedSpriteInLesson.setAttribute("class", "animated-sprite-in-lesson-1")
+    let animationPath, animationPath2;
+    if (i % 2 == 0) {
       animationPath = '../assets/json-animations/duo-unit-one-one.json';
       animationPath2 = '../assets/json-animations/duo-unit-one-two.json';
-    }else{
+    } else {
       animationPath = '../assets/json-animations/duo-unit-two-one.json';
       animationPath2 = '../assets/json-animations/duo-unit-two-two.json';
     }
 
-    animationFromJSON(firstanimatedSpriteInLesson,animationPath)
+    animationFromJSON(firstanimatedSpriteInLesson, animationPath)
     section.append(firstanimatedSpriteInLesson);
 
     let secondanimatedSpriteInLesson = document.createElement("div")
-    secondanimatedSpriteInLesson.setAttribute("class","animated-sprite-in-lesson-2")
-    animationFromJSON(secondanimatedSpriteInLesson,animationPath2)
+    secondanimatedSpriteInLesson.setAttribute("class", "animated-sprite-in-lesson-2")
+    animationFromJSON(secondanimatedSpriteInLesson, animationPath2)
     section.append(secondanimatedSpriteInLesson);
 
     lessonContainer.append(section);
@@ -436,37 +445,37 @@ const placeUnitsandLessons = (sectionData,userData) => {
   placecompletedChapters(completedChapters, section, unitCounter - 2);
 
   let firstanimatedSpriteInLesson = document.createElement("div")
-  firstanimatedSpriteInLesson.classList.add("animated-sprite-in-lesson-1","greyd-sprite")
+  firstanimatedSpriteInLesson.classList.add("animated-sprite-in-lesson-1", "greyd-sprite")
   let secondanimatedSpriteInLesson = document.createElement("div")
-  secondanimatedSpriteInLesson.classList.add("animated-sprite-in-lesson-2","greyd-sprite")
+  secondanimatedSpriteInLesson.classList.add("animated-sprite-in-lesson-2", "greyd-sprite")
 
-  let movement=false
-  let movement2=false;
+  let movement = false
+  let movement2 = false;
   let animationPath = '../assets/json-animations/duo-unit-one-one.json';
-  let animationPath2= '../assets/json-animations/duo-unit-one-two.json';
-  if(completedChapters > 1){
+  let animationPath2 = '../assets/json-animations/duo-unit-one-two.json';
+  if (completedChapters > 1) {
     firstanimatedSpriteInLesson.classList.remove("greyd-sprite");
-    movement=true;
+    movement = true;
   }
-  if(completedChapters > 6){
+  if (completedChapters > 6) {
     secondanimatedSpriteInLesson.classList.remove("greyd-sprite");
-    movement2=true;
+    movement2 = true;
   }
-  animationFromJSON(firstanimatedSpriteInLesson,animationPath,movement);
-  animationFromJSON(secondanimatedSpriteInLesson,animationPath2,movement2)
-  
+  animationFromJSON(firstanimatedSpriteInLesson, animationPath, movement);
+  animationFromJSON(secondanimatedSpriteInLesson, animationPath2, movement2)
+
   section.append(firstanimatedSpriteInLesson);
   section.append(secondanimatedSpriteInLesson);
 
-  placeOngoingLessons(section, unitCounter - 2, );
-  placeLockedLessons(lockedLessons, section, unitCounter - 2, );
+  placeOngoingLessons(section, unitCounter - 2,);
+  placeLockedLessons(lockedLessons, section, unitCounter - 2,);
   section.querySelector("h1").textContent = sectionData.section.units[unitCounter - 2].name;
   section.querySelector("span").textContent = sectionData.section.units[unitCounter - 2].description;
   lessonContainer.append(section);
 
   for (let i = 0; i < lockedUnits; i++) {
     paddingIndex = 0;
-    translateIndex=0
+    translateIndex = 0
     let section = document.createElement("section");
     section.setAttribute("id", `section-${unitCounter++}`);
     section.innerHTML = incompleteUnitHeader;
@@ -475,22 +484,22 @@ const placeUnitsandLessons = (sectionData,userData) => {
     section.querySelector("span").textContent = sectionData.section.units[unitCounter - 2].description;
 
     let firstanimatedSpriteInLesson = document.createElement("div")
-    firstanimatedSpriteInLesson.classList.add("animated-sprite-in-lesson-1","greyd-sprite")
-    let animationPath,animationPath2;
-    if(i%2==0){
+    firstanimatedSpriteInLesson.classList.add("animated-sprite-in-lesson-1", "greyd-sprite")
+    let animationPath, animationPath2;
+    if (i % 2 == 0) {
       animationPath = '../assets/json-animations/duo-unit-one-one.json';
       animationPath2 = '../assets/json-animations/duo-unit-one-two.json';
-    }else{
+    } else {
       animationPath = '../assets/json-animations/duo-unit-two-one.json';
       animationPath2 = '../assets/json-animations/duo-unit-two-two.json';
     }
 
-    animationFromJSON(firstanimatedSpriteInLesson,animationPath,false)
+    animationFromJSON(firstanimatedSpriteInLesson, animationPath, false)
     section.append(firstanimatedSpriteInLesson);
 
     let secondanimatedSpriteInLesson = document.createElement("div")
-    secondanimatedSpriteInLesson.classList.add("animated-sprite-in-lesson-2","greyd-sprite")
-    animationFromJSON(secondanimatedSpriteInLesson,animationPath2,false)
+    secondanimatedSpriteInLesson.classList.add("animated-sprite-in-lesson-2", "greyd-sprite")
+    animationFromJSON(secondanimatedSpriteInLesson, animationPath2, false)
     section.append(secondanimatedSpriteInLesson);
 
 
@@ -499,35 +508,36 @@ const placeUnitsandLessons = (sectionData,userData) => {
 
   scrollableContainer.insertAdjacentHTML("beforeend", bottomNavBar);
   placeuserStatistics();
+  scrollToCurrentLesson();
   updateStatistics();
 }
 
 const showLessonsInSection = () => {
   let sectionData = JSON.parse(localStorage.getItem("sectionData"));
-  let userData=getUserDataFromSessionStorage();
-  placeUnitsandLessons(sectionData,userData);
+  let userData = getUserDataFromSessionStorage();
+  placeUnitsandLessons(sectionData, userData);
 }
 
 const updateStatistics = () => {
   let userData = getUserDataFromSessionStorage();
-  setTimeout(() => document.querySelector("circle-progress").value = (25 * (userData.currentLesson-1)), 200);
+  setTimeout(() => document.querySelector("circle-progress").value = (25 * (userData.currentLesson - 1)), 200);
 }
 
 const startLesson = () => {
   document.querySelector(".loading-screen").classList.toggle("hidden");
-  document.body.style.overflow="hidden"
+  document.body.style.overflow = "hidden"
   setTimeout(() => {
     window.location.href = "questionarie.html"
   }, 2500);
 
 }
-let loadingPage=document.getElementById('owl-walk-animation');
+let loadingPage = document.getElementById('owl-walk-animation');
 let animationPath = '../assets/json-animations/duo-walking.json';
 
 
 
-const animationFromJSON=(ref,path,autoplay=true)=>{
-  let animationPath=path;
+const animationFromJSON = (ref, path, autoplay = true) => {
+  let animationPath = path;
 
   const animation = bodymovin.loadAnimation({
     container: ref,
@@ -539,4 +549,4 @@ const animationFromJSON=(ref,path,autoplay=true)=>{
 
 }
 
-animationFromJSON(loadingPage,animationPath);
+animationFromJSON(loadingPage, animationPath);
