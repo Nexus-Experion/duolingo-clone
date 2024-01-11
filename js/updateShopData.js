@@ -14,6 +14,7 @@ const myButton = document.getElementById('heartButton');
 
 async function upDate(){
 const dbref = doc(db, 'UsersAuthList',userData.userId);
+console.log("firing firebase");
 let newGem = userData.gems - 10;
 let newHeart = userData.hearts + 1;
 userData.gems = newGem ;

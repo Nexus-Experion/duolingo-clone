@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="../css/leaderboard.css" />
     <link rel="stylesheet" href="../css/learn.css" />
     <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/shoppingpage.css">
-    <link rel="stylesheet" href="../scss/shoppingpage.css">
-  
+    <link rel="stylesheet" href="../css/shoppingpage.css" />
+    <link rel="stylesheet" href="../scss/shoppingpage.css" />
   </head>
   <body>
     <div class="main-container">
@@ -23,7 +22,7 @@
         </div>
         <div class="sidebar-buttons">
           <a href="./learn.html" class="button-in-sidebar">
-            <span class="icon-and-text-wrap ">
+            <span class="icon-and-text-wrap">
               <div class="icon-in-button">
                 <img src="../assets/svg/home-in-sidebar.svg" alt="home-icon" />
               </div>
@@ -42,7 +41,8 @@
             <span class="icon-and-text-wrap">
               <div class="icon-in-button">
                 <img
-                  src="../assets/profile-icon-male.png"
+                id="profile-image"
+                  src="../assets/svg/profile-image-temp.svg"
                   alt="home-icon"
                   class="profile"
                 />
@@ -61,7 +61,10 @@
           <a href="./faq.html" class="button-in-sidebar">
             <span class="icon-and-text-wrap">
               <div class="icon-in-button">
-                <img src="../assets/sidebar-icon-faq.png" alt="home-icon" />
+                <img
+                  src="../assets/images/sidebar-icon-faq.png"
+                  alt="home-icon"
+                />
               </div>
               <span class="text-in-button"> FAQ </span>
             </span>
@@ -159,60 +162,82 @@
             </div>
           </div>
         </div>
-          
+        <div class="scrollable-lesson-div">
+          <div class="center-container">
+            <div class="flyingowl">
+              <div class="divowlhead">
+                <img
+                  class="owlpic"
+                  src="https://d35aaqx5ub95lt.cloudfront.net/images/super/8183c77cba99daf1e900fb5f9b0cc671.svg"
+                  alt=""
+                />
+                <div class="heading">
+                  <div class="divheadin">
+                    <span class="firstHeading">
+                      Start a 2 week free trial to enjoy exclusive Super
+                      benefits
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="logInButton"
+                id="superLink"
+                onclick="loginButtonAnimation()"
+              >
+                <span>Start my free 14 days</span>
+              </button>
+              <img
+                class="super"
+                src="https://d35aaqx5ub95lt.cloudfront.net/images/super/2e50c3e8358914df5285dc8cf45d0b4c.svg"
+                alt=""
+              />
+            </div>
+            <div class="hearthead">Hearts</div>
+            <ul class="shoplist">
+              <li class="divinShopping">
+                <img
+                  class="heart"
+                  src="https://d35aaqx5ub95lt.cloudfront.net/images/hearts/547ffcf0e6256af421ad1a32c26b8f1a.svg"
+                  alt=""
+                />
+                <button
+                  class="heartButton"
+                  id="heartButton"
+                  onclick="checkSpanValue()"
+                >
+                  <span>Full</span>
+                </button>
+                <div class="divinlist">Refill Hearts</div>
+                <p class="parainlist">
+                  Get full hearts so you can worry less about making mistakes in
+                  a lesson
+                </p>
+              </li>
+              <li class="divinShopping">
+                <img
+                  class="heart"
+                  src="https://d35aaqx5ub95lt.cloudfront.net/images/hearts/4f3842c690acf9bf0d4b06e6ab2fffcf.svg"
+                  alt=""
+                />
+                <button
+                  class="freetrialButton"
+                  onclick="window.location.href = './superduolingo.html';"
+                >
+                  <span>Free Trials</span>
+                </button>
+                <div class="divinlist">Unlimited Hearts</div>
+                <p class="parainlist">Never run out of hearts with Super!</p>
+              </li>
+            </ul>
+          </div>
         </div>
         <!----------------------------------- Scrollable area showing units ------------------------------------------------>
-        <div class="scrollable-lesson-div">
-            <div class="center-container">
-                <div class="flyingowl">
-                    <div class="divowlhead">
-                        <img class="owlpic" src="https://d35aaqx5ub95lt.cloudfront.net/images/super/8183c77cba99daf1e900fb5f9b0cc671.svg" alt="">
-                        <div class="heading">
-                            <div class="divheadin">
-                                <span class="firstHeading">
-                                    Start a 
-                                        2 week free 
-                                    trial to enjoy exclusive Super benefits
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="logInButton" id="superLink" onclick="loginButtonAnimation()">
-                        <span>Start my free 14 days</span>
-                    </button>
-                    <img class="super"  src="https://d35aaqx5ub95lt.cloudfront.net/images/super/2e50c3e8358914df5285dc8cf45d0b4c.svg" alt="">
-
-                </div>
-                <div class="hearthead">Hearts</div>
-                <ul class="shoplist">
-                    <li class="divinShopping">
-                        <img class="heart"  src="https://d35aaqx5ub95lt.cloudfront.net/images/hearts/547ffcf0e6256af421ad1a32c26b8f1a.svg" alt="">
-                        <button class="heartButton" id="heartButton" onclick="checkSpanValue()">
-                            <span >Full</span>
-                        </button>
-                        <div class="divinlist">Refill Hearts</div>
-                        <p class="parainlist">Get full hearts so you can worry less about making mistakes in a lesson</p>
-                    </li>
-                    <li class="divinShopping">
-                        <img class="heart"  src="https://d35aaqx5ub95lt.cloudfront.net/images/hearts/4f3842c690acf9bf0d4b06e6ab2fffcf.svg" alt="">
-                        <button class="freetrialButton" onclick="window.location.href = './superduolingo.html';">
-                            <span>Free Trials</span>
-                        </button>
-                        <div class="divinlist">Unlimited Hearts</div>
-                        <p class="parainlist">Never run out of hearts with Super!</p>
-                    </li>
-                </ul>
-
-            </div>
-
-        </div>
       </div>
     </div>
-    
-      
+
     <script src="../js/shoppingpage.js"></script>
-    <script src="../js/shoppingpage1.js"></script>
     <script src="../js/learn.js"></script>
-    <script type="module"   src="../js/updateShopData.js"></script>
+    <script type="module" src="../js/updateShopData.js"></script>
   </body>
 </html>

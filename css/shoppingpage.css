@@ -35,6 +35,7 @@
     line-height: 34px;
     
 }
+
 .logInButton {
     font-family: 'din-round-bold';
     height: 50px;
@@ -163,7 +164,4 @@
 }
 .firstHeading{
     justify-content: left;
-}
-.scrollable-lesson-div{
-    width:65%;
 }

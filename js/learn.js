@@ -34,9 +34,7 @@ const scrollToCurrentLesson = () => {
   const targetDivs = document.querySelectorAll(".circle_box.completed");
   const targetDiv= targetDivs[targetDivs.length-3];
   console.log(targetDiv);
-  targetDiv.scrollIntoView({
-    behavior: 'smooth'
-  });
+  targetDiv.scrollIntoView();
 }
 
 const openDialogBoxes = (event) => {
@@ -137,6 +135,7 @@ const getUserDataFromSessionStorage = () => {
 const placeuserStatistics = () => {
   let userData = getUserDataFromSessionStorage();
   document.title = `Duolingo - The world's best way to learn ${getLanguageFullForm(userData.learnLang)}`
+  document.querySelectorAll("#profile-image").forEach(item => item.src = userData.profileImage);
   document.querySelector(".country-flag").src = getLanguageFlagPath(userData.learnLang);
   document.querySelectorAll(".fire-text").forEach(item => item.textContent = userData.xp);
   document.querySelectorAll(".heart-text").forEach(item => item.textContent = userData.hearts);
@@ -315,7 +314,7 @@ const placeUnitsandLessons = (sectionData, userData) => {
   <span class="icon-and-text-wrap">
     <div class="icon-in-button">
       <img
-        src="../assets/profile-icon-male.png"
+        src="../assets/svg/profile-image-temp.svg"
         alt="home-icon"
         class="profile"
       />
@@ -333,7 +332,7 @@ const placeUnitsandLessons = (sectionData, userData) => {
 <a href="./faq.html" class="button-in-sidebar">
   <span class="icon-and-text-wrap">
     <div class="icon-in-button">
-      <img src="../assets/sidebar-icon-faq.png" alt="home-icon" />
+      <img src="../assets/images/sidebar-icon-faq.png" alt="home-icon" />
     </div>
 
   </span>
