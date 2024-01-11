@@ -19,8 +19,8 @@ body{
 
 .login-button-container {
     position: absolute;
-    right: 30px;
-    top: 30px;
+    right:3%;
+    top: 2%;
     box-shadow: 0 4px 0px #e5e5e5;
     border-radius: 18px;
 }
@@ -38,11 +38,11 @@ body{
 }
 
 .signup-section-main {
-    margin-top: 0;
     width: 375px;
     position: relative;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 80px;
+    padding: 0 15px;
 }
 
 .create-profile-heading{

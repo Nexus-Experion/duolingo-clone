@@ -4,7 +4,10 @@
     width: 100%;
     z-index: 2;
 }
-._2RvHF{
+.flags{
+    margin-bottom: 50px;
+}
+.leftDuoHead{
     height: 36px;
     width: 153px;
 }
@@ -121,10 +124,14 @@
     max-height: 192px;
     text-align: center;
     padding: 40px;
+    position: relative;
 }
-.divForLogin{
-    
+#lessonflag{
+    position: absolute;
+    bottom: -20%;
+    right: 20%;
 }
+
 
 .picEarth{
     background-size: 192px;
@@ -335,11 +342,11 @@ width: 360px;
     flex-grow: 1;
     padding-top: 48px;
 }
-.kyf6a {
+.eachSection {
     display: flex;
 }
 
-._2tSmF {
+.eachicon {
     background-image: url(https://d35aaqx5ub95lt.cloudfront.net/images/1994201dce8a55a0017d59b58a035fc3.svg);
     background-repeat: no-repeat;
     background-size: 43px;
@@ -348,19 +355,19 @@ width: 360px;
     margin-top: -7px;
     min-width: 43px;
 }
-._1P3Id {
+.eachsecParagraph {
     display: flex;
     flex-direction: column;
     padding: 5px 0 18px 15px;
     text-align: left;
 }
-._36neC{
+.secparaheading{
     color: rgb(var(--color-black-text-always-light));
     margin: 0 0 10px;
     font-size: 19px;
     font-weight: 700;
 }
-._2lUYH {
+.secparacontent {
     color: rgb(var(--color-wolf-always-light));
     font-size: 14px;
     line-height: 1.7;

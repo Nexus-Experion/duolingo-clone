@@ -20,28 +20,27 @@ let newHearts = parseInt(localStorage.getItem("hearts"));
 
 let sectionData=JSON.parse(localStorage.getItem("sectionData"));
 
-isNaN(xpFromLesson) ? xpFromLesson = 0 : 0
+isNaN(xpFromLesson) ? xpFromLesson = -2 : 0
 isNaN(newHearts) ? newHearts = 0 : 0
 
 console.log(userData);
 
-if (xpFromLesson != 0) {
+
+if (xpFromLesson > -1) {
     let newXp=userData.xp+xpFromLesson;
     userData.xp=newXp;
     userData.hearts=newHearts;
-    userData.currentLesson+=1
-
-    if(userData.currentLesson > 4){
-      userData.currentLesson=1
-      userData.completedChapters+=1
-      if(userData.completedChapters >= sectionData.totalChaptersInUnit){
-        userData.completedChapters=0
-        userData.completedUnits+=1
+    if(xpFromLesson > 0){
+      userData.currentLesson+=1
+      if(userData.currentLesson > 4){
+        userData.currentLesson=1
+        userData.completedChapters+=1
+        if(userData.completedChapters >= 9){
+          userData.completedChapters=0
+          userData.completedUnits+=1
+        }
       }
-
-      // setTimeout(()=>location.reload(),1000)
     }
-
 
     await updateDoc(dbref,userData);
     sessionStorage.setItem("user-info", JSON.stringify(userData));

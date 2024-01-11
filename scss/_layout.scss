@@ -47,7 +47,7 @@
     font-size: 13px;
     text-align: left;
 }
-._1KUWD {
+.list-head {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
@@ -80,19 +80,6 @@
     opacity: .5;
     text-decoration: none;
     
-}
-._3CeMJ {
-    border-top: 2px solid rgb(var(--color-snow-always-light),.2);
-    color: rgb(var(--color-snow-always-light));
-    display: flex;
-    flex-direction: column;
-    font-size: 13px;
-    gap: 40px;
-    margin: 0 auto;
-    max-width: 1065px;
-    padding: 24px 40px 48px;
-    text-align: left;
-    flex-direction: row;
 }
 ul{
     text-align: left;

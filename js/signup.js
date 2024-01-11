@@ -18,9 +18,9 @@ const validate = (event) => {
     if (!ageInput.value) {
         ageErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Please enter your age.</span>';
         ageInput.style.border = '2px solid #ff0000'; // Change border color to red
-        document.getElementById('age-privacy-div').innerHTML='';   
+        document.getElementById('age-privacy-div').innerHTML = '';
     }
-    else{
+    else {
         ageErrorMessage.innerHTML = '';
         ageInput.style.border = ''; // Reset to the default border color
     }
@@ -30,7 +30,7 @@ const validate = (event) => {
         nameErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Please enter your Name.</span>';
         nameInput.style.border = '2px solid #ff0000'; // Change border color to red  
     }
-    else{
+    else {
         console.log("Name Input is not empty"); // Add this line
         nameErrorMessage.innerHTML = '';
         nameInput.style.border = ''; // Reset to the default border color
@@ -40,7 +40,7 @@ const validate = (event) => {
         emailErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Please enter your Email.</span>';
         emailInput.style.border = '2px solid #ff0000'; // Change border color to red
     }
-    else{
+    else {
         emailErrorMessage.innerHTML = '';
         emailInput.style.border = ''; // Reset to the default border color
     }
@@ -49,7 +49,7 @@ const validate = (event) => {
         passwordErrorMessage.innerHTML = '<img src="../assets/svg/error-message-icon.svg" alt=""> <span>Please enter your Password.</span>';
         passwordInput.style.border = '2px solid #ff0000'; // Change border color to red
     }
-    else{
+    else {
         passwordErrorMessage.innerHTML = '';
         passwordInput.style.border = ''; // Reset to the default border color
     }
@@ -67,6 +67,6 @@ const createAccountButtonAnimation = () => {
 const loginButtonAnimation = () => {
     document.getElementById("login-button").classList.toggle('clicked');
     setTimeout(() => document.getElementById("login-button").classList.toggle('clicked'), 300)
-    window.location.href="/html/loginpage.html";
+    window.location.href = "loginpage.html";
 }
 

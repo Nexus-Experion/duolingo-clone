@@ -1,7 +1,8 @@
 
 const scrollButton = document.getElementById('scrollNow');
 const scrollButtonLog = document.getElementById('logInButtonScroll');
-
+let userLearnLang = localStorage.getItem("lang");
+localStorage.setItem("selectedLang", userLearnLang)
 // Function to toggle button visibility based on scroll position
 function toggleScrollButton() {
   if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
@@ -38,19 +39,44 @@ table.addEventListener('mouseleave', function () {
   list.style.display = 'none';
 });
 
-changeToLanguage('english');
+const loginButtonAnimation = () => {
+  document.getElementById("learningaButtonText").classList.toggle('clicked');
+  setTimeout(() => document.getElementById("learningaButtonText").classList.toggle('clicked'), 500)
+ window.location.href="./signup.html";
+}
+
+const getstartedAnimation = () => {
+  document.getElementById("learningButton").classList.toggle('clicked');
+  setTimeout(() => document.getElementById("learningButton").classList.toggle('clicked'), 500)
+ window.location.href="./signup.html";
+}
+
+const loginAnimation = () => {
+  document.getElementById("loginButtonText").classList.toggle('clicked');
+  setTimeout(() => document.getElementById("loginButtonText").classList.toggle('clicked'), 500)
+  window.location.href="./loginpage.html";
+}
+
+const alreadyAnimation = () => {
+  document.getElementById("accountButton").classList.toggle('clicked');
+  setTimeout(() => document.getElementById("accountButton").classList.toggle('clicked'), 500)
+  window.location.href="./loginpage.html";
+}
+
+changeToLanguage('en');
 // new Page
 function changeToLanguage(language) {
-  console.log("function is called");
-  fetch(`../assets/JSON/${language}.json`) // Assuming data.json is your JSON file
+  let userLearnLang = localStorage.getItem("lang");
+  localStorage.setItem("selectedLang", userLearnLang)
+
+  fetch(`https://duolingo-serverless-endpoint.vercel.app/api/individual-lang-page-translation?lang=${language}`) // Assuming data.json is your JSON file
     .then(response => response.json())
     .then(language => {
-      let userLearnLang = localStorage.getItem("selectedLang");
-      console.log(userLearnLang, language);
+      let userLearnLang = localStorage.getItem("lang");
       document.getElementById('siteLan').textContent = language.siteLan;
       document.getElementById('heading').textContent = `${language.heading + language.lang[userLearnLang] + language.head2}`
       document.getElementById('startLearning').textContent = language.startLearning;
-      document.getElementById('lesson-flag').viewBox = language.flag[userLearnLang];
+      document.getElementById('lessonflag').src = language.flag[userLearnLang];
       document.getElementById('alreadyHave').textContent = language.alreadyHave;
       document.getElementById('fireHead').textContent = language.fireHead;
       document.getElementById('tickHead').textContent = language.tickHead;
@@ -82,6 +108,8 @@ function changeToLanguage(language) {
       b.textContent = language.fireLinkPara;
       document.getElementById('firePara').textContent = language.firePara;
       document.getElementById('firePara').append(b);
+
+
     })
     .catch(error => console.error('Error fetching data:', error));
 }        

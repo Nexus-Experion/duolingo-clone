@@ -15,7 +15,7 @@
           <a class="leftHeadImage">
             <img
               alt="Duolingo"
-              class="_2RvHF"
+              class="leftDuoHead"
               src="https://d35aaqx5ub95lt.cloudfront.net/images/dca3b978d07a7dfc05adb1d5526e9e21.svg"
             />
           </a>
@@ -32,15 +32,14 @@
                 </button>
                 <div class="hoverTable" id="hoverTable">
                   <ul class="site-language-unordered-list" id="tableHover">
-                    <li class="site-language-list-single">
+                    <li class="site-language-list-single"  onclick="changeToLanguage('es')">
                       <a
                         class="country-name-flag-language"
-                        href="/course/es/en/Learn-Spanish"
+                        
                       >
                         <svg
                           viewBox="0 66 82 66"
                           data-test="flag-es"
-                          class="_1v6Jc"
                           style="height: 19.31px; width: 24px"
                         >
                           <image
@@ -50,17 +49,16 @@
                             xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
                           ></image>
                         </svg>
-                        <span class="w9lql">Spanish</span>
+                        <span >Spanish</span>
                       </a>
                     </li>
 
-                    <li class="site-language-list-single" onclick="changeToLanguage('english')">
+                    <li class="site-language-list-single" onclick="changeToLanguage('fr')">
                       <a
                         class="country-name-flag-language"
                         ><svg
                           viewBox="0 132 82 66"
                           data-test="flag-fr"
-                          class="_1v6Jc"
                           style="height: 19.31px; width: 24px"
                         >
                           <image
@@ -70,16 +68,15 @@
                             xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
                           ></image>
                         </svg>
-                        <span class="w9lql">French</span></a
+                        <span >French</span></a
                       >
                     </li>
-                    <li class="site-language-list-single" onclick="changeToLanguage('german')">
+                    <li class="site-language-list-single" onclick="changeToLanguage('de')">
                       <a
                         class="country-name-flag-language"
                         ><svg
                           viewBox="0 198 82 66"
                           data-test="flag-de"
-                          class="_1v6Jc"
                           style="height: 19.31px; width: 24px"
                         >
                           <image
@@ -88,17 +85,16 @@
                             width="82"
                             xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
                           ></image>
-                          </svg><span class="w9lql">German</span></a
+                          </svg><span >German</span></a
                       >
                     </li>
-                    <li class="site-language-list-single">
+                    <li class="site-language-list-single"  onclick="changeToLanguage('ja')">
                       <a
                         class="country-name-flag-language"
-                        href="/course/ja/en/Learn-Japanese"
+                      
                         ><svg
                           viewBox="0 264 82 66"
                           data-test="flag-ja"
-                          class="_1v6Jc"
                           style="height: 19.31px; width: 24px"
                         >
                           <image
@@ -107,17 +103,16 @@
                             width="82"
                             xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
                           ></image>
-                          </svg><span class="w9lql">Japanese</span></a
+                          </svg><span >Japanese</span></a
                       >
                     </li>
-                    <li class="site-language-list-single">
+                    <li class="site-language-list-single" onclick="changeToLanguage('ma')">
                       <a
                         class="country-name-flag-language"
-                        href="/course/hi/en/Learn-Hindi"
+                        
                         ><svg
                           viewBox="0 1914 82 66"
                           data-test="flag-hi"
-                          class="_1v6Jc"
                           style="height: 19.31px; width: 24px"
                         >
                           <image
@@ -125,19 +120,36 @@
                             href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
                             width="82"
                             xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
-                          ></image></svg><span class="w9lql">Malayalam</span></a
+                          ></image></svg><span >Malayalam</span></a
+                      >
+                    </li>
+                    <li class="site-language-list-single" onclick="changeToLanguage('hi')">
+                      <a
+                        class="country-name-flag-language"
+                        
+                        ><svg
+                          viewBox="0 1914 82 66"
+                          data-test="flag-hi"
+                          style="height: 19.31px; width: 24px"
+                        >
+                          <image
+                            height="3168"
+                            href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                            width="82"
+                            xlink:href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
+                          ></image></svg><span >Hindi</span></a
                       >
                     </li>
                   </ul>
                 </div>
               </div>
               <div class="">
-                <button class="getStartedButton" id="scrollNow">
+                <button class="getStartedButton" id="scrollNow" onclick="loginButtonAnimation()">
                   <span class="learningaButtonText" id="learningaButtonText"> Get started </span>
                 </button>
               </div>
               <div class="divForLogin">
-                <button class="logInButton" id="logInButtonScroll">
+                <button class="logInButton" id="logInButtonScroll" onclick="loginAnimation()">
                   <span class="loginButtonText" id="loginButtonText"> log in </span>
                 </button>
               </div>
@@ -148,22 +160,10 @@
       <div class="bluePicture">
         <div class="earthFlag">
           <div class="earth">
-            <div class="_2eTYC"></div>
-            <!-- <svg
-              viewBox="0 132 82 66"
-              data-test="flag-es"
-              id="lesson-flag"
-              class="EZsOD"
-              style="height: 70.8293px; width: 88px"
-            >
-              <image id="imgflagcountry"
-                height="3168"
-                href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"
-                width="82"
-               
-              ></image>
-            </svg> -->
-            <img  id="lessonflag"     src="../assets/svg/country-flags/ja-flag.svg" alt="SVG Image">
+            <div class="_2eTYC">
+            </div>
+            <div class="flags">
+              <img  id="lessonflag" src="../assets/svg/country-flags/ja-flag.svg" alt="SVG Image"></div>
           </div>
           <div class="paraHeading">
             <div>
@@ -174,12 +174,12 @@
             <div class="buttons">
               <div>
                 <div>
-                  <button class="learningButton" onclick="window.location.href='signup.html'">
+                  <button class="learningButton"  id="learningButton" onclick="getstartedAnimation()">
                     <span class="learningaButtonText" id="startLearning"> Start learning </span>
                   </button>
                 </div>
                 <div>
-                  <button class="accountButton" onclick="window.location.href='loginpage.html'">
+                  <button class="accountButton"  id="accountButton" onclick="alreadyAnimation()">
                     <span class="learningaButtonText" id="alreadyHave">
                       I ALREADY HAVE AN ACCOUNT
                     </span>
@@ -223,11 +223,11 @@
             </h2>
             <div class="flx">
               <div class="leftDiv">
-                <div class="kyf6a">
-                  <div class="_2tSmF mdluY"></div>
-                  <div class="_1P3Id">
-                    <h3 class="_36neC" id="fireHead">Effective and efficient</h3>
-                    <div class="_2lUYH">
+                <div class="eachSection">
+                  <div class="eachicon "></div>
+                  <div class="eachsecParagraph">
+                    <h3 class="secparaheading" id="fireHead">Effective and efficient</h3>
+                    <div class="secparacontent">
                       <span class="firePara" id="firePara">
                         Our courses effectively and efficiently teach reading,
                         listening, and speaking skills. Check out our
@@ -237,11 +237,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="kyf6a">
+                <div class="eachSection">
                   <div class="tick"></div>
-                  <div class="_1P3Id">
-                    <h3 class="_36neC" id="tickHead">Personalized learning</h3>
-                    <div class="_2lUYH">
+                  <div class="eachsecParagraph">
+                    <h3 class="secparaheading" id="tickHead">Personalized learning</h3>
+                    <div class="secparacontent">
                       <span class="tickPara" id="tickPara">
                         Combining the best of AI and language science, lessons
                         are tailored to help you learn at just the right level
@@ -253,11 +253,11 @@
               </div>
               <div class="centerImage"></div>
               <div class="leftDiv">
-                <div class="kyf6a">
+                <div class="eachSection">
                   <div class="crown"></div>
-                  <div class="_1P3Id">
-                    <h3 class="_36neC" id="crownHead">Stay motivated</h3>
-                    <div class="_2lUYH">
+                  <div class="eachsecParagraph">
+                    <h3 class="secparaheading" id="crownHead">Stay motivated</h3>
+                    <div class="secparacontent">
                       <span class="crownPara" id="crownPara">
                         We make it easy to form a habit of language learning,
                         with game-like features, fun challenges, and reminders
@@ -266,11 +266,11 @@
                     </div>
                   </div>
                 </div>
-                <div class="kyf6a">
+                <div class="eachSection">
                   <div class="girl"></div>
-                  <div class="_1P3Id">
-                    <h3 class="_36neC" id="girlHead">Have fun with it!</h3>
-                    <div class="_2lUYH" >
+                  <div class="eachsecParagraph">
+                    <h3 class="secparaheading" id="girlHead">Have fun with it!</h3>
+                    <div class="secparacontent" >
                       <span class="girlPara" id="girlPara">
                         Effective learning doesn’t have to be boring! Build your
                         skills each day with engaging exercises and playful
@@ -406,47 +406,24 @@
                   <div class="mainHeading" id="aboutUs">About us</div>
                   <ul>
                     <li>
-                      <a data-test="courses-link" href="/courses">Courses</a>
+                      <a >Courses</a>
                     </li>
-                    <li><a href="/info">Mission</a></li>
-                    <li><a href="/approach">Approach</a></li>
-                    <li><a href="/efficacy">Efficacy</a></li>
+                    <li><a>Mission</a></li>
+                    <li><a>Approach</a></li>
+                    <li><a>Efficacy</a></li>
+                    <li><a>Team</a></li>
+                    <li><a>Research</a>
+                    </li>
+                    <li><a>Careers</a></li>
                     <li>
-                      <a href="https://careers.duolingo.com/about" tabindex="0"
-                        >Team</a
-                      >
-                    </li>
+                      <a>Brand guidelines</a></li>
                     <li>
-                      <a href="https://research.duolingo.com" tabindex="0"
-                        >Research</a
-                      >
-                    </li>
+                      <a>Store</a></li>
                     <li>
-                      <a href="https://careers.duolingo.com" tabindex="0"
-                        >Careers</a
-                      >
-                    </li>
+                      <a>Press</a></li>
                     <li>
-                      <a href="https://design.duolingo.com" tabindex="0"
-                        >Brand guidelines</a
-                      >
-                    </li>
-                    <li>
-                      <a href="https://store.duolingo.com/" tabindex="0"
-                        >Store</a
-                      >
-                    </li>
-                    <li>
-                      <a href="https://press.duolingo.com" tabindex="0"
-                        >Press</a
-                      >
-                    </li>
-                    <li>
-                      <a href="https://investors.duolingo.com" tabindex="0"
-                        >Investors</a
-                      >
-                    </li>
-                    <li><a href="/contact">Contact us</a></li>
+                      <a>Investors</a></li>
+                    <li><a>Contact us</a></li>
                   </ul>
                 </div>
               </div>
@@ -454,37 +431,20 @@
                 <div>
                   <div class="mainHeading">Products</div>
                   <ul>
+                    <li><a>Duolingo</a></li>
                     <li>
-                      <a aria-current="page" class="" href="/">Duolingo</a>
-                    </li>
+                      <a>Duolingo for Schools</a></li>
                     <li>
-                      <a href="https://schools.duolingo.com" tabindex="0"
-                        >Duolingo for Schools</a
-                      >
-                    </li>
+                      <a>Duolingo English Test</a></li>
                     <li>
-                      <a href="https://englishtest.duolingo.com/en" tabindex="0"
-                        >Duolingo English Test</a
-                      >
-                    </li>
+                      <a>Duolingo ABC</a></li>
                     <li>
-                      <a href="https://www.duolingo.com/abc" tabindex="0"
-                        >Duolingo ABC</a
-                      >
-                    </li>
+                      <a>Duolingo Math</a></li>
                     <li>
-                      <a href="https://www.duolingo.com/math" tabindex="0"
-                        >Duolingo Math</a
-                      >
-                    </li>
-                    <li>
-                      <a href="https://podcast.duolingo.com" tabindex="0"
-                        >Podcast</a
-                      >
-                    </li>
-                    <li><a href="/business">Duolingo for Business</a></li>
-                    <li><a href="/super">Super Duolingo</a></li>
-                    <li><a href="/gift">Gift Super Duolingo</a></li>
+                      <a>Podcast</a></li>
+                    <li><a>Duolingo for Business</a></li>
+                    <li><a>Super Duolingo</a></li>
+                    <li><a>Gift Super Duolingo</a></li>
                   </ul>
                 </div>
               </div>
@@ -493,26 +453,11 @@
                   <div class="mainHeading">Apps</div>
                   <ul>
                     <li>
-                      <a
-                        href="//play.google.com/store/apps/details?hl=en&amp;id=com.duolingo&amp;referrer=utm_source%3Dduolingo.com%26utm_medium%3Dduolingo_web%26utm_content%3Ddownload_button%26utm_campaign%3Dsite_map"
-                        tabindex="0"
-                        >Duolingo for Android</a
-                      >
-                    </li>
+                      <a>Duolingo for Android</a></li>
                     <li>
-                      <a
-                        href="//itunes.apple.com/app/duolingo-learn-spanish-french/id570060128?mt=8"
-                        tabindex="0"
-                        >Duolingo for iOS</a
-                      >
-                    </li>
+                      <a>Duolingo for iOS</a></li>
                     <li>
-                      <a
-                        href="https://apps.apple.com/app/duolingo-abc-learn-to-read/id1440502568?pt=1374442&amp;ct=Site%20map&amp;mt=8"
-                        tabindex="0"
-                        >Duolingo ABC (iOS)</a
-                      >
-                    </li>
+                      <a>Duolingo ABC (iOS)</a></li>
                   </ul>
                 </div>
               </div>
@@ -521,48 +466,27 @@
                   <div class="mainHeading">Help and support</div>
                   <ul>
                     <li>
-                      <a
-                        href="https://support.duolingo.com/hc/en-us"
-                        data-test="faq-link"
-                        tabindex="0"
-                        >Duolingo FAQs</a
+                      <a>Duolingo FAQs</a></li>
+                    <li>
+                      <a>Schools FAQs</a></li>
+                    <li>
+                      <a>Duolingo English Test FAQs</a
                       >
                     </li>
                     <li>
-                      <a
-                        href="https://duolingoschools.zendesk.com/hc/en-us"
-                        tabindex="0"
-                        >Schools FAQs</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://englishtest.duolingo.com/faq"
-                        tabindex="0"
-                        >Duolingo English Test FAQs</a
-                      >
-                    </li>
-                    <li>
-                      <a href="https://status.duolingo.com/" tabindex="0"
-                        >Status</a
-                      >
-                    </li>
+                      <a>Status</a></li>
                   </ul>
                 </div>
               </div>
               <div class="headings">
                 <div>
-                  <div class="mainHeading">Privacy and terms</div>
+                  <div>Privacy and terms</div>
                   <ul>
-                    <li><a href="/guidelines">Community guidelines</a></li>
-                    <li><a href="/terms">Terms</a></li>
-                    <li><a href="/privacy">Privacy</a></li>
-                    <li>
-                      <a href="/privacy#california"
-                        >Respecting your "do not sell my personal information"
-                        rights</a
-                      >
-                    </li>
+                    <li><a>Community guidelines</a></li>
+                    <li><a>Terms</a></li>
+                    <li><a>Privacy</a></li>
+                    <li><a>Respecting your "do not sell my personal information"
+                        rights</a></li>
                   </ul>
                 </div>
                 <div class="headings"></div>
@@ -570,28 +494,18 @@
                   <div class="mainHeading">Social</div>
                   <ul>
                     <li>
-                      <a href="https://blog.duolingo.com">Blog</a>
+                      <a>Blog</a>
                     </li>
                     <li>
-                      <a href="https://www.instagram.com/duolingo" 
-                        >Instagram</a
+                      <a>Instagram</a></li>
+                    <li>
+                      <a>Facebook</a></li>
+                    <li>
+                      <a>Twitter</a
                       >
                     </li>
                     <li>
-                      <a href="https://www.facebook.com/duolingo" 
-                        >Facebook</a
-                      >
-                    </li>
-                    <li>
-                      <a href="https://twitter.com/duolingo" 
-                        >Twitter</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.youtube.com/user/duolingo"
-                      
-                        >YouTube</a
+                      <a>YouTube</a
                       >
                     </li>
                   </ul>
@@ -604,134 +518,21 @@
               <div class="languageHeading">Site language:</div>
               <ul>
                 <li class="languages">
-                  <a class="singleLang" href="//ar.duolingo.com" 
-                    >العربية</a
-                  >
+                  <a class="singleLang">English</a></li>
+                <li class="languages">
+                  <a class="singleLang">French</a></li>
+                <li class="languages">
+                  <a class="singleLang">हिंदी</a></li>
+                <li class="languages">
+                  <a class="singleLang">German</a></li>
+                <li class="languages">
+                  <a class="singleLang">Malayalam</a>
                 </li>
                 <li class="languages">
-                  <a class="singleLang" href="//bn.duolingo.com" 
-                    >বাংলা</a
-                  >
+                  <a class="singleLang">Japanese</a>
                 </li>
                 <li class="languages">
-                  <a class="singleLang" href="//cs.duolingo.com" 
-                    >Čeština</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//de.duolingo.com" 
-                    >Deutsch</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//el.duolingo.com" 
-                    >Ελληνικά</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//en.duolingo.com" 
-                    >English</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//es.duolingo.com" 
-                    >Español</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//fr.duolingo.com" 
-                    >Français</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//hi.duolingo.com" 
-                    >हिंदी</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//hu.duolingo.com" 
-                    >Magyar</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//id.duolingo.com" 
-                    >Bahasa Indonesia</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//it.duolingo.com" 
-                    >Italiano</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//ja.duolingo.com" 
-                    >日本語</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//ko.duolingo.com" 
-                    >한국어</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//dn.duolingo.com" 
-                    >Nederlands</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//pl.duolingo.com" 
-                    >Polski</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//pt.duolingo.com" 
-                    >Português</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//ro.duolingo.com" 
-                    >Română</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//ru.duolingo.com" 
-                    >Русский</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//te.duolingo.com" 
-                    >తెలుగు</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//th.duolingo.com" 
-                    >ภาษาไทย</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//tl.duolingo.com" 
-                    >Tagalog</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//tr.duolingo.com" 
-                    >Türkçe</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//uk.duolingo.com" 
-                    >Українською</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//vi.duolingo.com" 
-                    >Tiếng Việt</a
-                  >
-                </li>
-                <li class="languages">
-                  <a class="singleLang" href="//zs.duolingo.com" 
-                    >中文</a
-                  >
+                  <a class="singleLang">Spanish</a>
                 </li>
               </ul>
             </div>

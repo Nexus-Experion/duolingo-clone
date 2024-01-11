@@ -1,4 +1,4 @@
-.flyingowl{
+/* .flyingowl{
     background: radial-gradient(216% 106% at 6% 3%,rgb(var(--color-gamma),.3) 0,rgb(var(--color-starlight),.3) 52%,rgb(var(--color-quasar),.3) 100%),rgb(var(--color-eclipse));
     border-radius: 16px;
     font-family: 'din-round-bold';
@@ -11,7 +11,7 @@
     vertical-align: middle;
     z-index: 0;
     padding: 20px;
-}
+} */
 .divowlhead{
     display: flex;
     flex-direction: row;
@@ -35,6 +35,7 @@
     line-height: 34px;
     
 }
+
 .logInButton {
     font-family: 'din-round-bold';
     height: 50px;
@@ -163,7 +164,4 @@
 }
 .firstHeading{
     justify-content: left;
-}
-.scrollable-lesson-div{
-    width:65%;
 }

@@ -558,7 +558,7 @@ circle-progress::part(value) {
     display: flex;
   }
 }
-/* Section List Styling  */
+/* Section List Styling =================================================== */
 .section-container {
   background-color: rgb(var(--color-rookie));
   color: rgb(var(--color-snow-always-light));
@@ -567,6 +567,7 @@ circle-progress::part(value) {
   grid-template-columns: 1fr min-content;
   padding: 0 24px;
   position: relative;
+  margin: 15px;
   margin-bottom: 24px;
 }
 .locked-section {

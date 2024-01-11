@@ -17,6 +17,7 @@ const getLanguageFlagPath=(languageCode)=>{
 
 const placeuserStatistics = () => {
   let userData = getUserDataFromSessionStorage();
+  document.querySelectorAll("#profile-image").forEach(item => item.src = userData.profileImage);
   document.querySelector(".country-flag").src=getLanguageFlagPath(userData.learnLang);
   document.querySelectorAll(".fire-text").forEach(item => item.textContent = userData.xp);
   document.querySelectorAll(".heart-text").forEach(item => item.textContent = userData.hearts);
@@ -48,10 +49,10 @@ checkSpanValue();
 
 function calcDiamond(){
   checkSpanValue();
-  
   console.log("userdata is ",userData);
   userData.gems -= 10;
   userData.hearts += 1;
   sessionStorage.setItem("user-info",JSON.stringify(userData));
+  placeuserStatistics();
 }
 myButton.addEventListener('click',calcDiamond);
