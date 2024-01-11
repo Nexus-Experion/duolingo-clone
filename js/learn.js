@@ -34,9 +34,7 @@ const scrollToCurrentLesson = () => {
   const targetDivs = document.querySelectorAll(".circle_box.completed");
   const targetDiv= targetDivs[targetDivs.length-3];
   console.log(targetDiv);
-  targetDiv.scrollIntoView({
-    behavior: 'smooth'
-  });
+  targetDiv.scrollIntoView();
 }
 
 const openDialogBoxes = (event) => {
