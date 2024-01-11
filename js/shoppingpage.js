@@ -39,10 +39,12 @@ function checkSpanValue() {
   if (hearts >= 4) {
     myButton.disabled = true;
     myButton.querySelector("span").textContent = "Full";
+    myButton.style.cursor="auto";
   } else {
     myButton.disabled = false;
     myButton.style.color = 'rgb(var(--color-blue-space))';
     myButton.querySelector("span").textContent = "Buy";
+    myButton.style.cursor="pointer";
   }
 }
 checkSpanValue();

@@ -110,7 +110,7 @@
 
     float: right;
     margin-left: 18px;
-    min-width: 150px;
+    min-width: 120px;
     position: static;
 }
 .freetrialButton {
@@ -133,7 +133,7 @@
 
     float: right;
     margin-left: 18px;
-    min-width: 150px;
+    min-width: 120px;
     position: static;
 }
 .divinlist{
@@ -164,4 +164,11 @@
 }
 .firstHeading{
     justify-content: left;
+}
+
+@media (max-width: 650px) {
+    .center-container{
+        padding:15px;
+        width: 90%;
+    }
 }
