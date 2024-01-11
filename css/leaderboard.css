@@ -207,6 +207,7 @@ body{
   .scrollable-lesson-div {
     width: 95%;
     position: relative;
+    min-height: 100vh;
     padding-right: 5%;
     padding-top: 24px;
   }
@@ -550,6 +551,7 @@ body{
   
     .bottom-nav{
       display: flex;
+      position: sticky !important;
     }
   }
 .center-container{
