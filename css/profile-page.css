@@ -160,11 +160,16 @@
   .profile-middle-container {
     margin-right: 0px;
     margin-left: 0px;
-    padding: 25px;
+    width: 100%;
   }
- 
+  .profile-middle-flex{
+    margin: 25px;
+  }
 
   .logout-button{
     visibility: visible;
+  }
+  .icon-in-button img{
+    width: 32px !important;
   }
 }
