@@ -314,7 +314,7 @@ const placeUnitsandLessons = (sectionData, userData) => {
   <span class="icon-and-text-wrap">
     <div class="icon-in-button">
       <img
-        src="../assets/profile-icon-male.png"
+        src="../assets/svg/profile-image-temp.svg"
         alt="home-icon"
         class="profile"
       />
