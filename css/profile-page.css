@@ -6,7 +6,7 @@
 .profile-middle-container {
   width: 95%;
   font-family: din-round;
-
+  min-height:100vh;
   margin-top: 25px;
   margin-right: 100px;
   margin-left: 100px;
