@@ -118,9 +118,49 @@
 }
 
 /* Logout Button */
-.logout-button {
-  padding: 10px;
+
+.icon-and-text-wrap {
+  height: 40px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
   border-radius: 12px;
-  background-color: rgb(var(--color-blue-jay));
+  padding: 4px 8px;
+  border: 2px solid transparent;
+}
+
+.icon-in-button {
+  display: flex;
+  position: relative;
+  margin-right: 20px;
+}
+
+.logout-button {
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  font-size: 15px;
+  font-family: din-round-bold;
+  color: white;
+
+  padding: 2px;
+  border-radius: 12px;
+  background-color: #ea2b2b;
   cursor: pointer;
+  visibility: hidden;
+}
+.logout-button:hover{
+  filter: brightness(1.2);
+}
+
+@media only screen and (min-width:0px) and (max-width: 650px) {
+  .profile-middle-container {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 25px;
+  }
+ 
+
+  .logout-button{
+    visibility: visible;
+  }
 }
