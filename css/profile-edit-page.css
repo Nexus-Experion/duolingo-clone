@@ -1,11 +1,8 @@
 /* Middle Section */
 .middle-container {
     font-family: din-round;
-    width: 95%;
-
+    width: 100%;
     margin-top: 25px;
-    margin-right: 100px;
-    margin-left: 100px;
 }
 
 .account-heading h1{
@@ -22,7 +19,6 @@
 
 .edit-left-side-content {
     font-family: din-round-bold;
-    width: 180px;
     text-align: right;
     padding-right: 20px;
 
@@ -84,7 +80,7 @@
   display: flex;
   gap: 15px;
   margin-top: 50px;
-  margin-left: 250px;
+  margin-left: 17%;
 }
 
 .bottom-button-div {
@@ -184,5 +180,18 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+
+@media only screen and (min-width:0px) and (max-width: 650px) {
+  .middle-container {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 25px;
+    width:90%;
+  }
+  .bottom-buttons-container{
+    margin-left: 0;
   }
 }
