@@ -3,6 +3,7 @@ import { app } from "./firebaseConfig.js";
 
 const auth = getAuth(app);
 const logoutButton = document.getElementById('logout-button');
+const logoutButtonMobile = document.getElementById('logout-button-mobile');
 
 const logoutUser = async () => {
     try {
@@ -16,6 +17,7 @@ const logoutUser = async () => {
     }
 };
 
-if (logoutButton) {
+if (logoutButton || logoutButtonMobile) {
     logoutButton.addEventListener('click', logoutUser);
+    logoutButtonMobile.addEventListener('click', logoutUser);
 }
