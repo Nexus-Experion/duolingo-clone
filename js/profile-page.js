@@ -9,6 +9,7 @@ const userId = userInfo.userId;
 const userDocRef = doc(db, 'UsersAuthList', userId);
 
 const profileImage = document.getElementById('profile-image');
+const profileImageBottom = document.getElementById('profile-bottom');
 const leftProfileImage = document.getElementById('left-profile-image');
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         profileImage.src = userInfo.profileImage;
+        profileImageBottom.src = userInfo.profileImage;
         leftProfileImage.src = userInfo.profileImage;
     }
 });

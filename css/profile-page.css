@@ -121,12 +121,12 @@
 
 .icon-and-text-wrap {
   height: 40px;
-  align-items: center;
   display: flex;
   flex-direction: row;
   border-radius: 12px;
   padding: 4px 8px;
   border: 2px solid transparent;
+  padding-left: 20%;
 }
 
 .icon-in-button {
