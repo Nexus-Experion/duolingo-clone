@@ -498,6 +498,8 @@ circle-progress::part(value) {
 }
 .bottom-nav {
   display: none;
+  width: 90% !important;
+  bottom: 0;
 }
 @media (max-width: 650px) {
   .sidebar {

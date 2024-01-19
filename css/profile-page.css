@@ -6,7 +6,7 @@
 .profile-middle-container {
   width: 95%;
   font-family: din-round;
-
+  min-height:100vh;
   margin-top: 25px;
   margin-right: 100px;
   margin-left: 100px;
@@ -121,12 +121,12 @@
 
 .icon-and-text-wrap {
   height: 40px;
-  align-items: center;
   display: flex;
   flex-direction: row;
   border-radius: 12px;
   padding: 4px 8px;
   border: 2px solid transparent;
+  padding-left: 20%;
 }
 
 .icon-in-button {
@@ -160,11 +160,16 @@
   .profile-middle-container {
     margin-right: 0px;
     margin-left: 0px;
-    padding: 25px;
+    width: 100%;
   }
- 
+  .profile-middle-flex{
+    margin: 25px;
+  }
 
   .logout-button{
     visibility: visible;
+  }
+  .icon-in-button img{
+    width: 32px !important;
   }
 }
