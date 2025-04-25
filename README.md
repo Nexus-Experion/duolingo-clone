@@ -29,4 +29,4 @@ The endpoints are
 This project is licensed under the MIT License - see the [license.md](./license.md) file for details.
 
 ### Disclaimer
-All the assets like lottie animations and question and answer JSON file data used here are taken from hours of network monitoring and manual inspection, from the original website. All the copyright for those assets goes to the respective website.
+All the assets like lottie animations and question and answer JSON file data used here are taken from hours of network monitoring and manual inspection, from the original website. All the copyright for those assets goes to the respective website. 
